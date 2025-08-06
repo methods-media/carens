@@ -109,7 +109,7 @@ const ParallaxSection = () => {
                             x: xTransform
                         }}
                     >
-                        It's for those who aren't<br />afraid to get
+                        {`It's for those who aren't`}<br />{`afraid to get`}
                         <span className='ms-3'>
                             {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
                                 <motion.span

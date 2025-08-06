@@ -257,6 +257,7 @@ const VRShowroom = ({ height }) => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', direction: 'ltr' }}>
               {COLORS.map(color => (
                 <div
+                  key={color.id}
                   className='flex items-center gap-2 '
                 >
                   <button
