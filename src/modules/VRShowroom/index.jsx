@@ -221,64 +221,69 @@ const VRShowroom = ({ height }) => {
         transform: 'translateZ(0)',
       }}
     >
+      <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] !absolute start-10 !top-22 text-start  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
+        {'The Tasman Meets All Tastes'}
+
+
+
+      </p>
       <div
         style={{
           marginTop: '50px',
           position:'absolute',
-          top:'50px',
+          bottom:'50px',
           width:'100%',
           color: 'white',
           fontSize: '14px',
           zIndex: '50',
           display: 'flex', 
           flexDirection: 'column',
-          justifyContent: 'center',
+          justifyContent: 'end',
           paddingInlineStart:'70px',
-          gap:'32px',
-          alignItems:'start',
+          gap:'16px',
+          alignItems:'center',
         }}
       >
-        <p id='vrShowroomText' className={`text-white text-lg md:text-[28px] text-start  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-          {'The Tasman Meets All Tastes'}
+      
+
        
-         
+        {view == 'exterior' ?
+          <div className='flex items-center flex-row-reverse gap-2'>
 
- </p>
+            <div className='flex flex-col items-center gap-4'>
+              <p className='text-white text-2xl'>{COLORS?.filter?.((item) => item?.id == currentColor)?.[0]?.name}</p>
+              <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', direction: 'ltr' }}>
+                {COLORS.map(color => (
+                  <div
+                    key={color.id}
+                    className='flex items-center gap-2 '
+                  >
+                    <button
+                      key={color.name}
+                      className=' rounded-sm w-7 btn-color-showRoom h-7 md:w-[50px] md:h-[50px] hover:scale-110 cursor-pointer '
+                      onClick={() => handleColorChange(color.id)}
+                      style={{
+                        background: `url(${color.chip}) no-repeat center center`,
 
+                        backgroundSize: 'cover',
+                      }}
+
+
+                    />
+
+
+                  </div>
+                ))}
+              </div>
+       </div>
+          </div> : <p className={`text-white text-lg md:text-xl btn-showRoom mt-2 ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>        {t('colors.onyx_black')}</p>
+        }
         <VRControls
-          
+
           onViewChange={setView}
           view={view}
 
         />
-        {view == 'exterior' ?
-          <div className='flex items-center flex-row-reverse gap-2'>
-
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', direction: 'ltr' }}>
-              {COLORS.map(color => (
-                <div
-                  key={color.id}
-                  className='flex items-center gap-2 '
-                >
-                  <button
-                    key={color.name}
-                    className=' rounded-full w-7 btn-color-showRoom h-7 md:w-[50px] md:h-[50px] hover:scale-110 cursor-pointer '
-                    onClick={() => handleColorChange(color.id)}
-                    style={{
-                      background: `url(${color.chip}) no-repeat center center`,
-
-                      backgroundSize: 'cover',
-                    }}
-
-
-                  />
-                  <p className='text-white text-[19px]'>{color?.name}</p>
-
-                </div>
-              ))}
-            </div>
-          </div> : <p className={`text-white text-lg md:text-xl btn-showRoom mt-2 ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>        {t('colors.onyx_black')}</p>
-        }
       </div>
 
       <div

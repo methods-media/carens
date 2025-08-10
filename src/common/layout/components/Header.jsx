@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <>
       {router.pathname.includes('configurator') ? null : (
-        <header className="top-0 fixed z-[250] left-0 w-full shadow-md  p-4 flex items-center justify-between border-y h-[58px] border--solid border-[#FFFFFF42] !bg-black/20" dir='ltr'>
+        <header className="top-0 fixed z-[1000] left-0 w-full shadow-md  p-4 flex items-center justify-between border-y h-[58px] border--solid border-[#FFFFFF42] !bg-black/20" dir='ltr'>
           <div className="w-full  items-center hidden md:flex justify-between px-5">
             <img
               src="/assets/images/logoWhite.png"

@@ -4,13 +4,18 @@ import Head from 'next/head';
 import Banner from '../src/modules/Banner';
 import ScrollSequence from '../src/modules/ImageSequence';
 import { exterior1 } from 'public/assets/seq/seq';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { EngineSection } from '@src/components/EngineSection';
 import { SwiperSection } from '../src/components/SwiperSection';
 import ParallaxSection from '@src/components/parallex';
-import { motion, useScroll, useTransform, useMotionValue } from 'framer-motion';
 import ParallaxSectionSecond from '@src/components/parallex2';
+import { EngineTypesSection } from '@src/components/EngineTypes';
+import AmbiantLight from '@src/components/ambiant';
+import VRShowroom from '@src/modules/VRShowroom';
+import Dimensions from '@src/components/dimensions';
+import KiaConnect from '@src/components/kiaConnect';
+import Specs from '@src/components/specs';
 
 export default function Home() {
   const { t } = useTranslation('common');
@@ -18,9 +23,9 @@ export default function Home() {
   const isArabic = false; // Replace with your actual language detection logic
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false)
+
   const router = useRouter();
   const { locale, query } = useRouter();
-
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -29,11 +34,11 @@ export default function Home() {
     return null; // or a loading state
   }
 
-  const openModal = () => {
-    setIsModalOpen(true)
-  }
+
+
   return (
-    <main className="">
+    <main className="relative">
+
       <Head>
         {router.locale == 'ar' ? <title>كيا تاسمان - البروشور الرقمي</title> : <title>Kia Tasman - Digital Brochure</title>}
         <link rel="icon" href="/kia.ico"  />
@@ -57,71 +62,56 @@ export default function Home() {
           endTextFrame2={exterior1?.length}
         />
       </div>
-      <SwiperSection />
-      <div className='relative'>
-        <img src='https://methods.ae/wp-content/uploads/ktk-dashboard.png' width={'100vw'} height={'100vh'} className='!w-[100vw] !h-[100vh] !object-cover' />
-        <div onClick={openModal} className=' absolute top-1/4 left-1/5 !w-5 bg-white z-[90] rounded-full !cursor-pointer !h-5'
-        > </div>
-        <div onClick={openModal} className=' absolute top-[35%] left-[80%] !w-5 bg-white z-[90] rounded-full cursor-pointer !h-5'
-        > </div>
-        <div onClick={openModal} className=' absolute top-[45%] left-[60%] !w-5 bg-white z-[90] rounded-full cursor-pointer !h-5'
-        > </div>
+      <SwiperSection id={0} />
 
+      <div className="relative" style={{ zIndex: 1000 }}>
+        <ScrollSequence
+          id="canvas4"
+          imagesUrl={exterior1}
+          totalFrames={exterior1?.length}
+          text={t('led_rear_lamps')}
+          description={t('led_rear_lamps_description')}
+          endTextFrame={100}
+          text2={t('fastback_design')}
+          description2={t('fastback_description')}
+          startTextFrame={30}
 
-        {isModalOpen ?
-          <div className='bg-black/90 z-[100] flex flex-col items-center justify-center absolute left-0 top-0 w-screen h-screen'>
-            <div className="bg-white rounded-xl flex flex-col  items-end w-[500px] min-h-[500px] relative" >
-              <button onClick={() => {
-                setIsModalOpen(false)
-              }} className="text-black text-3xl rounded-full w-10 h-10 bg-white absolute end-4 top-4 ">×</button>
-              <div className='flex flex-col items-center gap-6 w-full'>
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400" width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" />
-                <div className="px-6">
-                  <div className="text-[#333] text-center font-[InterBold] text-[20px]">Analytics Overview</div>
-                  <div className="text-[#666]  text-center font-[InterRegular] text-sm">Real-time analytics dashboard showing key performance indicators, user engagement metrics, and conversion rates.</div>
-                </div>
-              </div>
-            </div>
-          </div> : null}
+          startTextFrame2={120}
+          endTextFrame2={exterior1?.length}
+        />
       </div>
+      <AmbiantLight isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+
+      <SwiperSection id={1} />
+      <VRShowroom />
       <ParallaxSection />
-      <div className='w-screen h-screen bg-[#06141F]  flex flex-col items-center gap-10'>
-        <div className='w-full flex items-start justify-center gap-12'>
-          <div className='flex items-start gap-5'>
-            <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px] text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 rounded-sm  btn-showRoom ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'} cursor-pointer `} onClick={() => onViewChange('exterior')}
-            >             Engine 1</button>
-            <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]  text-gray-200  hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 rounded-sm   btn-showRoom ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'} cursor-pointer `} onClick={() => onViewChange('interior')}
-            >
-
-              Engine 2
-
-
-            </button>
-            <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]  text-gray-200  hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 rounded-sm   btn-showRoom ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'} cursor-pointer `} onClick={() => onViewChange('interior')}
-            >
-
-              Engine 2
-
-
-            </button>
-
-          </div>
-          <img
-            src='https://methods.ae/wp-content/uploads/tk-engine.png'
-            height={550}
-            width={450}
-            className="animate-bounce"
-            style={{
-              animation: 'float 2.5s ease-in-out infinite'
-
-            }}
-          />
-        </div>
-
-      </div>
+      <EngineTypesSection />
 
       <ParallaxSectionSecond />
-
+      <div className=' bg-white '>
+        <SwiperSection id={3} noBg dark={true} />
+      </div>
+      <KiaConnect/>
+      <Dimensions />
+      <Specs/>
+      {isModalOpen ?
+        <div className='fixed w-screen h-screen bg-black/90 z-[10000] flex flex-col items-center justify-center  left-0 top-0'>
+          <div className="bg-white rounded-xl flex flex-col  items-end w-[500px]  relative" >
+            <button onClick={() => {
+              document.body.style.overflow = 'auto'
+              setIsModalOpen(false)
+            }} className="text-black text-3xl rounded-full w-10 h-10 bg-white absolute end-4 top-4 ">×</button>
+            <div className='flex flex-col items-center  w-full'>
+              <img src={isModalOpen == 1 ? 'https://methods.ae/wp-content/uploads/ktk-panoramicdisplay.jpg' : isModalOpen == 2 ? 'https://methods.ae/wp-content/uploads/ktk-dualwirelesscharger.jpg' : isModalOpen == 3 ? 'https://methods.ae/wp-content/uploads/ktk-consoletable.jpg' : 'https://methods.ae/wp-content/uploads/ktk-walkinswitch.jpg'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" />
+              <div className="p-6 flex flex-col gap-3 ">
+                <div className="text-[#333] text-center font-[InterBold] text-[20px]">{isModalOpen == 1 ? 'Panoramic Integrated Display' : isModalOpen == 2 ? 'Dual Wireless Charger' : isModalOpen == 3 ? 'Console Table' : 'Passenger Walk-in Switch'}</div>
+                <div className="text-[#666]  text-center font-[InterRegular] text-sm">{
+                  isModalOpen == 1 ? `Enjoy the brand's state-of-the-art infotainment system with the widest display in its class. You can also maintain your vehicle to the latest through OTA Update.` : isModalOpen == 2 ? `Comprehensive user management system with role-based access control and activity tracking across your platform.` : isModalOpen == 3 ? `An expandable console table turns the Kia Tasman into a private mobile office. Unfold the upper part of the console armrest to create a wide table you can use for checking your laptop or documents—or enjoying a simple meal.` : `This function allows you to adjust the forward/backward position and angle of the passenger seat from the driver's seat or the rear seat to improve the convenience of getting in and out of the vehicle and living in the rear seat.`
+                }</div>
+              </div>
+            </div>
+          </div>
+        </div> : null}
     </main>
   );
 }

@@ -40,7 +40,7 @@ const ParallaxSection = () => {
                 {`
               .parallax-container {
   position: relative;
-  height: 300vh; /* Make the container tall enough to allow scrolling */
+  height: 200vh; /* Make the container tall enough to allow scrolling */
   overflow: hidden;
 }
 
@@ -101,9 +101,8 @@ const ParallaxSection = () => {
                         />
                     </video>
                 </div>
-                <VRShowroom />
                 <div className="content2" ref={textRef}>
-                    <motion.span
+                    {/* <motion.span
                         className='text-[56px] font-[InterBold] font-extrabold  uppercase'
                         style={{
                             x: xTransform
@@ -130,10 +129,30 @@ const ParallaxSection = () => {
                             ))}
                         </span>
 
-                    </motion.span>
+                    </motion.span> */}
+                    <span
+                        className='text-[40px] font-[InterBold] font-extrabold  uppercase'
+                        
+                    >
+                        {`It's for those who aren't afraid to get`}
+                        <br/>
+                        <span className='ms-3'>
+                            {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
+                                <span
+                                    key={index}
+                                    className='text-[100px] font-[InterBold] font-extrabold uppercase inline-block'
+                                   
+                                   
+                                >
+                                    {item}
+                                </span>
+                            ))}
+                        </span>
+
+                    </span>
                 </div>
                 <div className="content3 bg- bg-[linear-gradient(180deg,_#06141F00_0%,_#06141F00_20%,_#06141F_80%)]  ">
-                    <SwiperSection noBg={true} />
+                    <SwiperSection id={2} noBg={true} />
                 </div>
             </div>
         </ParallaxProvider>

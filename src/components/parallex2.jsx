@@ -40,7 +40,7 @@ const ParallaxSectionSecond = () => {
                 {`
               .parallax-container1 {
   position: relative;
-  height: 300vh; /* Make the container tall enough to allow scrolling */
+  height: 200vh; /* Make the container tall enough to allow scrolling */
   overflow: hidden;
 }
 
@@ -93,27 +93,26 @@ const ParallaxSectionSecond = () => {
 
             <div className="parallax-container1" ref={sectionRef}>
                 <div className="parallax-video1">
-                    <img src='https://methods.ae/wp-content/uploads/696798.jpg' className="image-element">
+                    <img src='https://methods.ae/wp-content/uploads/KTK-Towing.jpg' className="image-element ">
 
                     </img>
                 </div>
-                <div class="fixed-section" id="bg-section">
-                    <div class="bg-image bg-image-1 visible w-screen h-screen bg-no-repeat bg-cover" style={{
-
-                        backgroundImage: `url('https://methods.ae/wp-content/uploads/ktk-boat5.png')`
-                    }} />
+                <div class="bg-gradient-to-b from-0% h-screen w-screen from-[#06141F] to-100% to-[#00000000]" id="bg-section">
+                    
+                   
                   
 
 
                 </div>
-                <div className="content22 !w-full flex items-center justify-start font-[InterBold] !text-[62px]" ref={textRef}>
-                    Advanced Driver <br/>
-                    Assistance System<br />
-                    (ADAS)
-                </div>
-                <div className="content33 bg- bg-[linear-gradient(180deg,_#FCFEFF00_0%,_#FCFEFF_100%)]  ">
-                    <SwiperSection dark={true} noBg={true} />
-                </div>
+                    <div className="content22 !w-full flex items-center justify-start font-[InterBold] !text-[62px] " style={{
+                        backgroundImage: `url(${'https://methods.ae/wp-content/uploads/696798.jpg'})`,
+                    }} ref={textRef}>
+                        Advanced Driver <br />
+                        Assistance System<br />
+                        (ADAS)
+                    </div>
+                   
+               
             </div>
         </ParallaxProvider>
     );

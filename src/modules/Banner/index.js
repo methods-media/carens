@@ -38,7 +38,7 @@ const Banner = () => {
           muted
           className='w-full h-full object-cover'
         >
-          <source src="https://methods.ae/wp-content/uploads/ktk-cover-reveal.mp4" type="video/mp4" />
+          <source src="https://methods.ae/wp-content/uploads/ktk-cover.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}
@@ -77,8 +77,8 @@ const Banner = () => {
             <Engine />
         </div>
          <div className='flex flex-col '>
-            <p className='text-white text-lg'>{'2.2L Turbo Engine'}</p>
-            <p className='text-[#A3A8AD] text-sm'>{'278HP / 8-Speed AT'}</p>
+            <p className='text-white text-lg'>{'2.5L T-GDI'}</p>
+            <p className='text-[#A3A8AD] text-sm'>{`277HP / 8-Speed SBW`}</p>
          </div>
         </div>
         <div className='flex items-center justify-center gap-[10px]'>
@@ -86,8 +86,8 @@ const Banner = () => {
             <Treck />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-lg'>{'X-Trek Mode'}</p>
-            <p className='text-[#A3A8AD] text-sm'>{'278HP / 8-Speed AT'}</p>
+            <p className='text-white text-lg'>{`Desert Mode`}</p>
+            <p className='text-[#A3A8AD] text-sm'>{'32-degree Approach Angle'}</p>
           </div>
         </div>
         <div className='flex items-center justify-center gap-[10px]'>
@@ -95,8 +95,8 @@ const Banner = () => {
             <Terrain />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-lg'>{'Terrain / Drive Mode'}</p>
-            <p className='text-[#A3A8AD] text-sm'>{'Normal, Sport, ECO'}</p>
+            <p className='text-white text-lg'>{'Kia Connect'}</p>
+            <p className='text-[#A3A8AD] text-sm'>{'With Digital Key'}</p>
           </div>
         </div>
         <div className='flex items-center justify-center gap-[10px]'>
@@ -105,7 +105,7 @@ const Banner = () => {
           </div>
           <div className='flex flex-col '>
             <p className='text-white text-lg'>{'5 Years Warranty'}</p>
-            <p className='text-[#A3A8AD] text-sm'>{'5 Years/150,000 Km'}</p>
+            <p className='text-[#A3A8AD] text-sm'>{'Or 100,000 Km W.C.F'}</p>
           </div>
         </div>
             </div>
