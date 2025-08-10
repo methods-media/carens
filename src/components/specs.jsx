@@ -94,13 +94,13 @@ const Specs = () => {
                     </h1>
                     <p className="text-xl text-[#06141F]  mx-auto text-start">
                         From rugged to refined, choose the Tasman trim that matches your drive and your style.
+
                     </p>
                 </div>
                
 
                 {/* Main Content */}
-                <div className="flex gap-8 h-[500px]">
-                    {/* Left Column - Trim Selection */}
+                <div className="flex gap-8 h-[500px] ">
                     <div className="w-1/4">
                         <div className="flex flex-col gap-3">
                             {trimLevels.map((trim) => (
