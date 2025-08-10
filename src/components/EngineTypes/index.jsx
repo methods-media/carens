@@ -52,12 +52,12 @@ export const EngineTypesSection = () => {
         <div ref={sectionRef} className='w-screen min-h-screen bg-[#06141F]  flex flex-col items-center justify-start '>
             <style >{`
            
-                .animate-bg-wipe {
+                .animate-bg-wipe1 {
                     position: relative;
                     overflow: hidden;
                 }
                 
-                .animate-bg-wipe.in-view::before {
+                .animate-bg-wipe1.in-view::before {
                     content: '';
                     position: absolute;
                     top: 0;
@@ -104,8 +104,8 @@ export const EngineTypesSection = () => {
                         </p>
                         <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`engine-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '2.5L' : '2.2L'}</p>
-                            <p key={`engine-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'T-GDI' : 'Turbocharged'}</p>
+                            <p key={`engine-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '2.5L' : '2.2L'}</p>
+                            <p key={`engine-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'T-GDI' : 'Turbocharged'}</p>
                         </div>
                     </div>
 
@@ -115,8 +115,8 @@ export const EngineTypesSection = () => {
                         </p>
                         <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`hp-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '277'}</p>
-                            <p key={`hp-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'HP' : 'HP'}</p>
+                            <p key={`hp-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '277'}</p>
+                            <p key={`hp-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'HP' : 'HP'}</p>
                         </div>
                     </div>
                     <div className='relative flex items-end min-h-[120px] '>
@@ -125,8 +125,8 @@ export const EngineTypesSection = () => {
                         </p>
                         <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`torque-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
-                            <p key={`torque-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'Nm' : 'Nm'}</p>
+                            <p key={`torque-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
+                            <p key={`torque-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'Nm' : 'Nm'}</p>
                         </div>
                     </div>
                     <div className='relative flex items-end min-h-[120px] '>
@@ -135,8 +135,8 @@ export const EngineTypesSection = () => {
                         </p>
                         <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`trans-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '8-Speed' : '8-Speed'}</p>
-                            <p key={`trans-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'SBW' : 'SBW'}</p>
+                            <p key={`trans-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '8-Speed' : '8-Speed'}</p>
+                            <p key={`trans-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'SBW' : 'SBW'}</p>
                         </div>
                     </div>
                 </div>
