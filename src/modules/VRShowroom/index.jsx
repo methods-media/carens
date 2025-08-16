@@ -221,28 +221,15 @@ const VRShowroom = ({ height }) => {
         transform: 'translateZ(0)',
       }}
     >
-      <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] !absolute start-10 !top-22 text-start  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
+      <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] !absolute start-0 text-center lg:text-start lg:start-10 !top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
         {'The Tasman Meets All Tastes'}
 
 
 
       </p>
       <div
-        style={{
-          marginTop: '50px',
-          position:'absolute',
-          bottom:'50px',
-          width:'100%',
-          color: 'white',
-          fontSize: '14px',
-          zIndex: '50',
-          display: 'flex', 
-          flexDirection: 'column',
-          justifyContent: 'end',
-          paddingInlineStart:'70px',
-          gap:'16px',
-          alignItems:'center',
-        }}
+          className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-12.5 w-full text-white text-sm z-50 flex flex-col justify-end ps-0 lg:ps-[70px] gap-2 lg:gap-4 items-center'
+        
       >
       
 
@@ -250,9 +237,9 @@ const VRShowroom = ({ height }) => {
         {view == 'exterior' ?
           <div className='flex items-center flex-row-reverse gap-2'>
 
-            <div className='flex flex-col items-center gap-4'>
-              <p className='text-white text-2xl'>{COLORS?.filter?.((item) => item?.id == currentColor)?.[0]?.name}</p>
-              <div style={{ display: 'flex', flexDirection: 'row', gap: '12px', direction: 'ltr' }}>
+            <div className='flex flex-col items-center gap-2 lg:gap-4'>
+              <p className='text-white text-base lg:text-2xl'>{COLORS?.filter?.((item) => item?.id == currentColor)?.[0]?.name}</p>
+              <div className='flex  gap-1.5 lg:gap-3' dir='ltr' >
                 {COLORS.map(color => (
                   <div
                     key={color.id}

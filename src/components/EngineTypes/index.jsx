@@ -79,10 +79,10 @@ export const EngineTypesSection = () => {
                 }
             `}</style>
 
-            <div className='w-full flex items-center justify-center gap-20 '>
+            <div className='w-full flex-col lg:flex-row flex items-center justify-center gap-20 '>
 
-                <div className='flex flex-col gap-5 '>
-                    <p class="!text-[62px] !font-[InterBold] !text-white">Powertrain</p>
+                <div className='flex items-center lg:items-start flex-col gap-5  max-w-full'>
+                    <p class="text-4xl mt-5 lg:mt-0 lg:!text-[62px] !font-[InterBold] !text-white">Powertrain</p>
 
                     <div className='flex items-start gap-5 mb-7'>
                         <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom font-["InterRegular"] cursor-pointer `} onClick={() => setSelectedEngine(1)}
@@ -98,45 +98,45 @@ export const EngineTypesSection = () => {
 
 
                     </div>
-                    <div className='relative flex items-end min-h-[120px] '>
-                        <p className={`absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-[70px]`}>
+                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
+                        <p className={`lg:absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
                             ENGINE
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`engine-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '2.5L' : '2.2L'}</p>
-                            <p key={`engine-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'T-GDI' : 'Turbocharged'}</p>
+                            <p key={`engine-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '2.5L' : '2.2L'}</p>
+                            <p key={`engine-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'T-GDI' : 'Turbocharged'}</p>
                         </div>
                     </div>
 
-                    <div className='relative flex items-end min-h-[120px] '>
-                        <p className={`absolute top-[-0px]   font-[InterRegular]  justify-center  text-[#2A4152] text-[70px]`}>
+                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
+                        <p className={`lg:absolute top-[-0px]   font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
                             HORSEPOWER
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`hp-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '277'}</p>
-                            <p key={`hp-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'HP' : 'HP'}</p>
+                            <p key={`hp-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '277'}</p>
+                            <p key={`hp-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'HP' : 'HP'}</p>
                         </div>
                     </div>
-                    <div className='relative flex items-end min-h-[120px] '>
-                        <p className={`absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-[70px]`}>
+                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
+                        <p className={`lg:absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
                             TORQUE
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`torque-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
-                            <p key={`torque-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'Nm' : 'Nm'}</p>
+                            <p key={`torque-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
+                            <p key={`torque-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'Nm' : 'Nm'}</p>
                         </div>
                     </div>
-                    <div className='relative flex items-end min-h-[120px] '>
-                        <p className={`absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-[70px]`}>
+                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
+                        <p className={`lg:absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
                             TRANSMISSION
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
 
-                            <p key={`trans-1-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '8-Speed' : '8-Speed'}</p>
-                            <p key={`trans-2-${animationKey}`} className={`text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'SBW' : 'SBW'}</p>
+                            <p key={`trans-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '8-Speed' : '8-Speed'}</p>
+                            <p key={`trans-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'SBW' : 'SBW'}</p>
                         </div>
                     </div>
                 </div>
@@ -146,7 +146,7 @@ export const EngineTypesSection = () => {
                         src='https://methods.ae/wp-content/uploads/tk-engine.png'
                         height={450}
                         width={550}
-                        className="animate-bounce"
+                        className="animate-bounce w-[250px] h-[250px] lg:w-[550px] lg:h-[450px]"
                         style={{
                             animation: 'float 2.5s ease-in-out infinite'
 
@@ -156,13 +156,13 @@ export const EngineTypesSection = () => {
             </div>
             <div className="flex flex-col gap-5 py-10">
                 <h3
-                    className="text-[40px] text-white font-[InterBold]"
+                    className="text-base text-center lg:text-start lg:text-[40px] text-white font-[InterBold]"
 
                 >
                     With such power, the Tasman can tow
                 </h3>
                 <motion.h3
-                    className="text-[64px] text-white font-[InterBold] uppercase"
+                    className="text-xl lg:text-[64px] text-center lg:text-start text-white font-[InterBold] uppercase"
                     style={{
                         scale: anythingScale
                     }}

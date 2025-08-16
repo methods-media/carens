@@ -72,29 +72,29 @@ export const EngineSection = () => {
     };
 
     return (
-        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[20%] w-full h-[100vh]'>
+        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[20%] w-full h-[55vh] gap-10 md:gap-0  md:h-[100vh]'>
             <motion.p
-                className='text-[52px] font-[InterBold] text-white uppercase font-[900]'
+                className='text-3xl md:text-[52px] font-[InterBold] text-white uppercase font-[900]'
                 style={{ scale, y, opacity }}
             >
                 Where your bold spirit and true practicality
             </motion.p>
             <div className='flex'>
                 <motion.p 
-                    className='text-[84px] font-[InterBold] text-white uppercase font-[900]'
+                    className='text-4xl md:text-[84px] font-[InterBold] text-white uppercase font-[900]'
                     style={{ x: comeX, opacity: textOpacity }}
                 >
                     COME
                 </motion.p>
                 <motion.p
-                    className='text-[84px] text-white uppercase font-[900]'
+                    className='text-4xl md:text-[84px] text-white uppercase font-[900]'
                     style={{ x: togetherX, opacity: textOpacity }}
                 >
                     &nbsp;TOGETHER
                 </motion.p>
             </div>
             <motion.p
-                className='text-[62px] font-[InterBold] text-white   uppercase font-[900]'
+                className='text-3xl md:text-[62px] font-[InterBold] text-white text-center   uppercase font-[900]'
                 style={{
                     y: dimensionY,
                     scale: dimensionScale,

@@ -140,7 +140,7 @@ const ParallaxSection = () => {
                             {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
                                 <span
                                     key={index}
-                                    className='text-[100px] font-[InterBold] font-extrabold uppercase inline-block'
+                                    className='text-[50px] lg:text-[100px] font-[InterBold] font-extrabold uppercase inline-block'
                                    
                                    
                                 >

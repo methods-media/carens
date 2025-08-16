@@ -22,7 +22,7 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                     <p className="text-xs font-[InterBold] text-white">On</p>
                 </div>
             </div>
-            <img src='https://methods.ae/wp-content/uploads/ktk-dashboard.png' width={'100vw'} height={'100vh'} className='!w-[100vw] !h-[100vh] !object-cover' />
+            <img src='https://methods.ae/wp-content/uploads/ktk-dashboard.png' width={'100vw'} height={'100vh'} className=' h-[60vh] !w-[100vw] md:!h-[100vh] !object-cover' />
             <>
                 {isAmbiant ? null : <>
                         <div onClick={() => {

@@ -83,24 +83,24 @@ const Dimensions = () => {
             <section ref={sectionRef} className="h-screen bg-white flex flex-col  gap-5 justify-center  relative overflow-hidden">
                 <div className='h-full max-w-[1200px] mx-auto flex flex-col justify-center '>
 
-                <h2 className="text-5xl font-bold text-[#06141F] mb-8">
+                <h2 className="text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8">
                                 Tasman in Numbers
                 </h2>
-                <div className="flex flex-wrap justify-between w-full">
+                    <div className="flex flex-wrap space-y-3   items-start  justify-center lg:justify-between w-full">
                     {specifications.map((spec) => (
                         <button
                             key={spec.key}
                             onClick={() => setSelectedSpec(spec.key)}
-                            className={`text-[22px] cursor-pointer font-medium transition-colors pb-3 px-2 duration-300 ${selectedSpec === spec.key
-                                ? 'text-[#06141F] border-b-3 border-b-[#06141F]  underline-offset-4'
-                                : 'text-[#54595F] hover:text-[#06141F] hover:border-b-3 hover:border-b-[#06141F]'
+                            className={`text-sm lg:text-[22px] cursor-pointer font-medium transition-colorspb-3 px-1 lg:px-2 duration-300 ${selectedSpec === spec.key
+                                ? 'text-[#06141F]  border-b-1 lg:border-b-3 border-b-[#06141F]  underline-offset-4'
+                                : 'text-[#54595F] hover:text-[#06141F] hover:border-b-1 lg:hover:border-b-3 hover:border-b-[#06141F]'
                                 }`}
                         >
                             {spec.label}
                         </button>
                     ))}
                 </div>
-                <div className="w-full  flex items-center px-8 justify-between">
+                <div className="w-full flex-col lg:flex-row pt-12 lg:pt-0 flex items-center px-8 justify-between">
                         {/* Left Content */}
                         
                         <div className='relative flex items-end  '>

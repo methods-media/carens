@@ -86,21 +86,21 @@ const Specs = () => {
     ];
 
     return (
-        <section className="h-screen bg-white flex items-center justify-center relative overflow-hidden">
-            <div className="max-w-[1200px] mx-auto px-6 w-full">
-                <div className="text-start mb-12">
-                    <h1 className="text-3xl font-[InterBold] text-[#06141F] mb-5">
+        <section className="h-screen bg-white w-full relative overflow-hidden  " >
+            <div className='max-w-[1400px] mx-auto'>
+                <div className="text-start mb-4 ">
+                    <h1 className="text-[40px] font-[InterBold] text-[#06141F] mb-5">
                         Find the perfect trim for you
                     </h1>
-                    <p className="text-xl text-[#06141F]  mx-auto text-start">
+                    <p className="text-lg text-[#06141F]  mx-auto text-start">
                         From rugged to refined, choose the Tasman trim that matches your drive and your style.
 
                     </p>
                 </div>
-               
+
 
                 {/* Main Content */}
-                <div className="flex gap-8 h-[500px] ">
+                <div className="flex gap-8  ">
                     <div className="w-1/4">
                         <div className="flex flex-col gap-3">
                             {trimLevels.map((trim) => (
@@ -120,7 +120,7 @@ const Specs = () => {
 
                     {/* Right Column - Feature Categories */}
                     <div className="w-3/4">
-                        <div className="grid grid-cols-4 gap-6 h-full">
+                        <div className="grid grid-cols-4 gap-6 ">
                             {featureCategories.map((category) => (
                                 <div key={category.title} className="flex flex-col">
                                     <h3 className="text-lg font-bold text-[#06141F] mb-4 pb-2 border-b-2 border-[#06141F]">
@@ -140,12 +140,29 @@ const Specs = () => {
                                 </div>
                             ))}
                         </div>
+                        <div className="grid grid-cols-2 gap-12  pt-4">
+                            <div >
+                                <p className='text-black text-xl w-full pb-4 border-b uppercase border-b-black'>Available Interior</p>
+                                <div className='flex items-start gap-4 pe-2 py-2'> 
+
+                                <img className=' w-[50%] h-[121px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-lx-black.jpg' />
+                                    <img className=' w-[50%]  h-[121px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-lx-green.jpg' />
+                                </div>
+                            </div>
+                            <div >
+                                <p className='text-black text-xl w-full pb-4 border-b uppercase border-b-black'>Available Wheels</p>
+                                <div className='flex items-start gap-4 pe-2 py-2'>
+
+                                    <img className=' w-[50%] h-[250px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-18alloy-btype.jpg' />
+                                    <img className=' w-[50%]  h-[250px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-18alloy-atype.jpg' />
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                {/* Call to Action */}
-               
-            </div>
+         </div>
+            {/* Call to Action */}
         </section>
     );
 };

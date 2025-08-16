@@ -66,7 +66,7 @@ const ParallaxSectionSecond = () => {
   height: 100vh;
   z-index: 2;
   color: white;
-  padding: 50px;
+ 
   font-size: 24px;
   display: flex;
   flex-direction: column;
@@ -104,12 +104,12 @@ const ParallaxSectionSecond = () => {
 
 
                 </div>
-                    <div className="content22 !w-full flex items-center justify-start font-[InterBold] !text-[62px] " style={{
-                        backgroundImage: `url(${'https://methods.ae/wp-content/uploads/696798.jpg'})`,
-                    }} ref={textRef}>
-                        Advanced Driver <br />
-                        Assistance System<br />
-                        (ADAS)
+                <div className="content22 "
+                    ref={textRef}>
+                    <video src='https://methods.ae/wp-content/uploads/ktk-safetycover.mp4' playsInline muted autoPlay  className='w-screen h-screen object-cover'/>
+                    <div className='absolute w-full bottom-0 start-0 p-10 bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
+                        <p className='text-[42px] text-black font-[InterBold]  text-center'> Advanced Driver Assistance System (ADAS) </p>
+                    </div>
                     </div>
                    
                

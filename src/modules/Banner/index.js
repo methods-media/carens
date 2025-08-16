@@ -23,7 +23,7 @@ const Banner = () => {
   };
 
   return (
-    <div id='bannerID' className="w-screen h-[55vh] md:h-screen z-[200]  bg-[url('/assets/ktk-test-cover2.jpg')] bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden">
+    <div id='bannerID' className="w-screen h-[90vh] md:h-screen z-[200]  bg-[url('/assets/ktk-test-cover2.jpg')] bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden">
       {!videoError && (
         <video
           ref={videoRef}
@@ -44,7 +44,7 @@ const Banner = () => {
       )}
 
       {(videoEnded || videoError) ? <>
-        <div className="absolute justify-center inset-0 z-40  text-white md:start-[70px]  start-5 top-[100px]">
+        <div className="absolute justify-center  inset-0 z-40  text-white md:start-[70px]  start-5 top-[100px]">
           <motion.h1
             className={`     sm:text-6xl text-2xl  ${locale == 'ar' ? "md:text-[52px] font-['GSSBold']" : " md:text-[72px] font-['InterBold']"}`}
             initial={{ opacity: 0, y: 20 }}
@@ -71,41 +71,42 @@ const Banner = () => {
       
       
       </> : null}
-      <div className='absolute bottom-0 left-0 w-full bg-gradient-to-b h-[90px] py-2.5 from-transparent to-[#06141F] flex items-center justify-center gap-[50px]'>
-        <div className='flex items-center justify-center gap-[10px]'>
-          <div className='w-[50px] h-[50px]'>
+      {/* bg-gradient-to-b from-transparent to-[#06141F] */}
+      <div className='absolute bottom-0 left-0 w-full flex-wrap md:flex-nowrap  h-auto md:h-[90px] py-2.5   flex items-center mb-5 md:mb-0 justify-around md:justify-center gap-5 md:gap-[50px]'>
+        <div className='flex items-center justify-center  gap-[10px]'>
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <Engine />
         </div>
          <div className='flex flex-col '>
-            <p className='text-white text-lg'>{'2.5L T-GDI'}</p>
-            <p className='text-[#A3A8AD] text-sm'>{`277HP / 8-Speed SBW`}</p>
+            <p className='text-white text-sm md:text-lg'>{'2.5L T-GDI'}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{`277HP / 8-Speed SBW`}</p>
          </div>
         </div>
         <div className='flex items-center justify-center gap-[10px]'>
-          <div className='w-[50px] h-[50px]'>
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <Treck />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-lg'>{`Desert Mode`}</p>
-            <p className='text-[#A3A8AD] text-sm'>{'32-degree Approach Angle'}</p>
+            <p className='text-white text-sm md:text-lg'>{`Desert Mode`}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{'32-degree Approach Angle'}</p>
           </div>
         </div>
         <div className='flex items-center justify-center gap-[10px]'>
-          <div className='w-[50px] h-[50px]'>
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <Terrain />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-lg'>{'Kia Connect'}</p>
-            <p className='text-[#A3A8AD] text-sm'>{'With Digital Key'}</p>
+            <p className='text-white text-sm md:text-lg'>{'Kia Connect'}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{'With Digital Key'}</p>
           </div>
         </div>
-        <div className='flex items-center justify-center gap-[10px]'>
-          <div className='w-[50px] h-[50px]'>
+        <div className='flex items-center justify-center  gap-1 md:gap-[10px]'>
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <WarrantySVG />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-lg'>{'5 Years Warranty'}</p>
-            <p className='text-[#A3A8AD] text-sm'>{'Or 100,000 Km W.C.F'}</p>
+            <p className='text-white text-sm md:text-lg'>{'5 Years Warranty'}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{'Or 100,000 Km W.C.F'}</p>
           </div>
         </div>
             </div>

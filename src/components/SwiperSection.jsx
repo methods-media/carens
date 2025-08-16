@@ -130,22 +130,22 @@ export const SwiperSection = ({ noBg, dark ,id=0,slideLength}) => {
     ]
     const swiper4Slides = [
         {
-            image: 'https://methods.ae/wp-content/uploads/ktk-framebody-768x492.jpg',
+            image: 'https://i.postimg.cc/yN6sLRrb/ktk-fca2.gif',
             featureTitle: 'Forward Collision-Avoidance Assist 2 (FCA2)',
             featureDescription: 'FCA 2 monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane. It also automatically assists steering when there is a risk of collision with an oncoming vehicle or a vehicle in the next lane while changing lanes, as well as with a vehicle or pedestrian on the edge of the lane.'
         },
         {
-            image: 'https://methods.ae/wp-content/uploads/ktk-xtrek-768x492.jpg',
+            image: 'https://i.postimg.cc/pyN2cT1C/ktk-lfa2.gif',
             featureTitle: 'Lane Following Assist 2 (LFA2)',
             featureDescription: 'LFA 2 helps center the vehicle in the lane. Steering control has been improved and a Hands-On Detection (HOD) sensor can determine whether the driver is holding the steering wheel for optimal system performance.'
         },
         {
-            image: 'https://methods.ae/wp-content/uploads/ktk-terrainmode-768x492.jpg',
+            image: 'https://iili.io/FQzNBb1.gif',
             featureTitle: 'Smart Cruise Control (SCC)',
             featureDescription: 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Tasman to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style. When inactive (Off/Standby), SCC makes note of your driving style (distance between vehicles, acceleration, and reaction speed). When equipped with the Emergency Stop function, the vehicle stops in the lane and emits a warning if the driver does not steer or look forward continuously.'
         },
         {
-            image: 'https://methods.ae/wp-content/uploads/ktk-wading-768x492.jpg',
+            image: 'https://i.postimg.cc/Jh7B56Xn/ktk-rspa.gif',
             featureTitle: 'Remote Smart Parking Assist (RSPA)',
             featureDescription: `RSPA lets you park in or exit a parking spot as you stand outside the vehicle. Using sensor technology, it automatically assists with steering, accelerating, decelerating and shifting, while also automatically braking if it senses an obstacle.`
         },
@@ -198,7 +198,7 @@ export const SwiperSection = ({ noBg, dark ,id=0,slideLength}) => {
 
     return (
         <div className={`w-full ${noBg ? '' : 'bg-[#06141F]'} min-h-screen py-10 gap-16 flex flex-col justify-center items-center`}>
-            <p className='text-white text-xl leading-[30px]   font-[InterRegular] text-center max-w-[1330px] mx-auto'>
+            <p className='text-white text-sm md:text-xl px-5 md:px-0 leading-[30px]   font-[InterRegular] text-center max-w-[1330px] mx-auto'>
                 {id == 1 ?`Rugged yet refined. Just as bold on the inside, the Kia Tasman’s interior offers enduring pickup truck quality. The outwardly simple design uses symmetry, pure forms, and a wealth of technology to strike a winning balance of spacious luxury and practicality.
 
 `:id==0?' The Kia Tasman applies the latest function-based pickup design language to the Kia family look. The tiger-face radiator grille is framed by bold, vertical lights, a strong front bumper, and a broad, high hood that hints at powerful machinery within. A confident side profile, with unique and practical geometric fender highlights, gives the vehicle a commanding stance.':''}
@@ -207,9 +207,9 @@ export const SwiperSection = ({ noBg, dark ,id=0,slideLength}) => {
 
  </p>
             <div className="w-full flex items-center justify-center max-w-7xl">
-                <div className="flex h-[600px]">
+                <div className="flex-col lg:flex-row flex h-[600px]">
                     {/* Left Section - Image with specific dimensions */}
-                    <div className="w-[750px] h-[600px] relative overflow-hidden">
+                    <div className="w-full md:w-[750px] h-[350px] md:h-[600px] relative overflow-hidden">
                         <div
                             style={{
                                 backgroundImage: `url(${slides?.[id][currentSlide].image})`,
@@ -224,32 +224,32 @@ export const SwiperSection = ({ noBg, dark ,id=0,slideLength}) => {
                         <button
                             onClick={prevSlide}
                             disabled={isAnimating}
-                            className="absolute top-1/2 left-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                            className="absolute top-1/2 left-8 md:left-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                         >
                             {"<"}
                         </button>
                         <button
                             onClick={nextSlide}
                             disabled={isAnimating}
-                            className="absolute top-1/2 right-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                            className="absolute top-1/2 right-8 md:right-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                         >
                             {">"}
                         </button>
                     </div>
 
                     {/* Right Section - Content */}
-                    <div className="flex-1 p-12 pe-0 flex flex-col justify-start  relative min-w-[500px]">
+                    <div className="flex-1 pt-6 md:py-12 p-12 pe-0 flex flex-col justify-start  relative min-w-[500px]">
                         <div className="text-white space-y-8">
                             {/* Main description */}
                             
 
                             {/* Feature section */}
-                            <div className="space-y-4 ">
-                                <h3 className={`text-2xl font-[InterBold] font-bold  ${dark ? 'text-[#06141F] text-start' : "text-white"} text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
+                            <div className="space-y-2 md:space-y-4 ">
+                                <h3 className={`text-base md:text-2xl font-[InterBold] font-bold  ${dark ? 'text-[#06141F] text-start' : "text-white"} text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
                                     {slides?.[id][currentSlide].featureTitle}
                                 </h3>
-                                <p className={`text-lg leading-relaxed ${dark ?'text-[#54595F] text-start':id==0?'text-[#A3A8AD]':'text-white'} text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
+                                <p className={`text-sm lg:text-lg leading-relaxed ${dark ?'text-[#54595F] text-start':id==0?'text-[#A3A8AD]':'text-white'} max-w-[89%] md:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
                                     {slides?.[id][currentSlide].featureDescription}
                                 </p>
@@ -257,13 +257,13 @@ export const SwiperSection = ({ noBg, dark ,id=0,slideLength}) => {
                         </div>
 
                         {/* Pagination */}
-                        <div className="absolute bottom-8 end-0 flex space-x-2">
+                        <div className="absolute bottom-0 md:bottom-8 end-0 justify-center md:justify-start w-full md:w-auto flex space-x-2">
                             {slides?.[id].map((_, index) => (
                                 <button
                                     key={index}
                                     onClick={() => goToSlide(index)}
                                     disabled={isAnimating}
-                                    className={`w-[40px] h-[40px] flex items-center justify-center cursor-pointer  text-xl  font-[InterBold] transition-all duration-300 ${index === currentSlide
+                                    className={`w-6 md:w-[40px] h-6 md:h-[40px] flex items-center justify-center cursor-pointer text-base md:text-xl  font-[InterBold] transition-all duration-300 ${index === currentSlide
                                         ? `${dark ? 'bg-[#06141F] text-white' :'bg-white text-blue-900'}`
                                         : `${dark ? 'text-black border-black ' : 'text-white border-white '} border-b-2 border-solid hover:bg-opacity-20`
                                         } ${isAnimating ? 'opacity-50' : ''}`}

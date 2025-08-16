@@ -13,6 +13,7 @@ module.exports = {
                 // "max-taplet-rotate": { max: "1180px" },
                 xs: "400px",
                 sm: "640px",
+                md: "820px",
                 lg: "1024px",
                 md: "1130px",
                 mini: "1200px",

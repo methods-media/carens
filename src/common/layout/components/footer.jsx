@@ -9,22 +9,37 @@ export default function Footer () {
           
 {pathname.includes('configurator')?null:
 <>
-                    <div className="w-screen bg-[url('https://methods.ae/wp-content/uploads/catalog_tasman_page15_image.png')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] md:h-screen bg-[#05141F]">
-                        <div className={`${locale == 'ar' ? 'min-h-[8vh] md:min-h-[25vh]' : 'min-h-[8vh] md:min-h-[40vh]'}  footer-img-text md:mt-0  ps-4 md:px-15 flex w-full flex-col justify-center `}
+                    <div className="w-screen bg-[url('https://methods.ae/wp-content/uploads/ktk-endingframe.jpg')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] md:h-screen bg-[#05141F]">
+                        <div className={`${locale == 'ar' ? 'min-h-[8vh] md:min-h-[25vh]' : 'min-h-[8vh] md:min-h-[40vh]'}  footer-img-text md:mt-0   flex w-full flex-col justify-center `}
                  dir="ltr" >
-                            <p className={`leading-[30px]  mt-[-70px]   md:mt-0  md:leading-[38px] text-base md:text-[28px]  text-black ${locale == 'ar' ? "font-['GSSMedium']" : ""}`}>
-                                This is the ending frame heading {t('kia_footer2')}
+                            <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-center  h-[40vh]">
+                                <div className="w-full px-12 flex flex-col gap-5 mx-auto">
+                                    <p className="text-xl lg:text-[40px] text-start font-[InterBold]">Wherever life takes you</p>
+                                    <p className="text-sm lg:text-lg text-black text-start">
+                                        Whether navigating city streets or conquering the toughest trails. Embrace the freedom <br/>
+                                        to go further and experience the perfect blend of capability and style<br />
+                                        that only Kia Tasman can deliver.
 
-                            </p>
+                                    </p>
+                                </div>
+                           </div>
                    
                          
 
                 </div>
                     </div>
-                    <div className='!bg-[#05141F] w-full  flex flex-row items-center h-20 justify-between  px-10 relative  '>
+                    <div className='!bg-[#05141F] w-full  flex  flex-col lg:flex-row  items-center h-[260px] py-10 lg:py-0 lg:h-[120px] justify-between  px-10 relative  '>
 
+                        <div className="flex flex-col gap-2 items-center">
+                            <img src='/assets/images/logoWhite.png' width={100} height={37} />
+                            <div className='flex justify-center gap-4  items-center   ' style={{ direction: 'ltr' }}>
 
-                        <div className=' flex flex-wrap justify-center gap-5 md:gap-[30px] items-center   '>
+                                <p><span style={{ fontSize: '11px', color: '#A3A8AD' }} className=" font-['InterRegular']">© 2025 All Right Reserved. Kia Middle East</span></p>
+
+                            </div>
+                        </div>
+
+                        <div className=' flex flex-wrap justify-center  gap-4 items-center   '>
                             <a href='https://worldwide.kia.com/int/kia-global-websites' target="_blank" rel="noopener">
                             <img src='/assets/world.png' className='w-[24px] h-[24px]' />
                             </a>
@@ -56,10 +71,13 @@ export default function Footer () {
 
                         </div>
 
-                        <div className='flex justify-center gap-4  items-center   ' style={{ direction: 'ltr' }}>
-                          
-                            <p><span style={{ fontSize: '11px', color: '#ffffff' }} className=" font-['InterRegular']">© 2025 All Right Reserved. Kia Middle East</span></p>
-                           
+                        <div className="opacity-0">
+                            <img src='/assets/images/logoWhite.png' width={100} height={37} />
+                            <div className='flex justify-center gap-4  items-center   ' style={{ direction: 'ltr' }}>
+
+                                <p><span style={{ fontSize: '11px', color: '#A3A8AD' }} className=" font-['InterRegular']">© 2025 All Right Reserved. Kia Middle East</span></p>
+
+                            </div>
                         </div>
 
                     </div></>
