@@ -48,31 +48,9 @@ export const EngineSection = () => {
         };
     }, []);
 
-    const textVariants = {
-        hidden: {
-            opacity: 0,
-            x: locale === 'ar' ? -100 : 100  // Start from left for Arabic, right for English
-        },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                duration: 0.8,
-                ease: "easeIn"
-            }
-        },
-        exit: {
-            opacity: 0,
-            x: locale === 'ar' ? 100 : -100,  // Exit to right for Arabic, left for English
-            transition: {
-                duration: 0.8,
-                ease: "easeOut"
-            }
-        }
-    };
 
     return (
-        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[20%] w-full h-[55vh] gap-10 md:gap-0  md:h-[100vh]'>
+        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[15%] w-full h-[55vh] gap-10 md:gap-0  md:h-[100vh]'>
             <motion.p
                 className='text-3xl md:text-[52px] font-[InterBold] text-white uppercase font-[900]'
                 style={{ scale, y, opacity }}

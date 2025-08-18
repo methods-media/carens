@@ -1,7 +1,9 @@
+import KiaConnectEnhanced from "./KiaConnectEnhanced";
+
 export default function KiaConnect () {
     return (
-        <div className='h-[160vh] bg-white'>
-            <div className='w-full max-w-[1100px] mx-auto flex items-center justify-center flex-col  gap-6 lg:gap-0 lg:flex-row h-[60vh]'>
+        <div className='h-[120vh] bg-white'>
+            <div className='w-full max-w-[1100px] mx-auto flex items-center justify-center flex-col  gap-6 lg:gap-0 lg:flex-row h-[50vh]'>
                 <div className='flex  items-center justify-center w-[40%] '>
                     <img src='https://methods.ae/wp-content/uploads/KIA_Connect_icon.png' className="rounded-lg" width={200} height={200} />
                 </div>
@@ -11,8 +13,8 @@ export default function KiaConnect () {
                     <button className='text-sm bg-[#06141F] py-3 px-6 text-white hover:text-[#06141F] hover:bg-white hover:border hover:border-[#06141F] rounded-[5px] w-fit '>Learn More</button>
                 </div>
             </div>
-            <div className=''></div>
-            <video src='https://methods.ae/wp-content/uploads/Main-1920x1080-2.mp4' autoPlay loop playsinline muted controls={false} height={'100vh'} width={'100vw'} className='w-screen h-screen object-cover' />
+           
+            <KiaConnectEnhanced/>
         </div>
     )
 }

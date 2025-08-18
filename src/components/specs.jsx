@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 const Specs = () => {
     const { t } = useTranslation('common');
-    const [selectedTrim, setSelectedTrim] = useState('LX');
+    const [openCategory, setOpenCategory] = useState(null);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const trimLevels = [
         { id: 'LX', name: 'LX' },
@@ -85,84 +86,129 @@ const Specs = () => {
         }
     ];
 
+    const toggleCategory = (index) => {
+        setOpenCategory(openCategory === index ? null : index);
+    };
+
+    const nextSlide = () => {
+        setCurrentSlide((prev) => (prev + 1) % Math.ceil(trimLevels.length / 3));
+    };
+
+    const prevSlide = () => {
+        setCurrentSlide((prev) => (prev - 1 + Math.ceil(trimLevels.length / 3)) % Math.ceil(trimLevels.length / 3));
+    };
+
+    const visibleTrims = trimLevels.slice(currentSlide * 3, (currentSlide * 3) + 3);
+
+    const TrimCard = ({ trim }) => (
+        <div className="bg-[#E7EBF0] rounded-[10px] p-6 h-full">
+            {/* Trim Name */}
+            <h2 className="text-6xl text-center font-bold text-[#06141F] mb-4">{trim.name}</h2>
+
+            {/* Technical Specifications Section */}
+            <div className="mb-6">
+                <h3 className="text-lg font-medium text-black mb-3">Technical Specifications</h3>
+                <div className="space-y-0">
+                    {featureCategories.map((category, index) => (
+                        <div key={category.title} className="w-full">
+                            <button
+                                onClick={() => toggleCategory(index)}
+                                className={`w-full flex justify-between items-center p-3 text-sm font-medium  cursor-pointer transition-all duration-300 ${openCategory === index
+                                    ? 'bg-[#06141F] text-white'
+                                    : 'bg-[#7b848c] text-white '
+                                    }`}
+                            >
+                                {category.title}
+                                <span className="text-lg">
+                                    {openCategory === index ? '−' : '+'}
+                                </span>
+                            </button>
+                            {openCategory === index && (
+                                <div className="mt-2 ml-3 space-y-1">
+                                    {category.features.map((feature, featureIndex) => (
+                                        <div key={featureIndex} className="text-xs text-gray-600 flex items-start">
+                                            <span className="text-[#06141F] mr-2 mt-1">•</span>
+                                            {feature}
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Available Interiors Section */}
+            <div className="mb-6">
+                <h3 className="text-lg font-medium text-black mb-3">Available Interiors</h3>
+                <div className="flex gap-2">
+                    <div className="w-16 h-8 bg-gray-300 rounded"></div>
+                    <div className="w-16 h-8 bg-gray-300 rounded"></div>
+                </div>
+            </div>
+
+            {/* Available Wheels Section */}
+            <div className="mb-6">
+                <h3 className="text-lg font-medium text-black mb-3">Available Wheels</h3>
+                <div className="flex gap-2">
+                    <div className="w-16 h-8 bg-gray-300 rounded"></div>
+                    <div className="w-16 h-8 bg-gray-300 rounded"></div>
+                </div>
+            </div>
+        </div>
+    );
+
     return (
-        <section className="h-screen bg-white w-full relative overflow-hidden  " >
-            <div className='max-w-[1400px] mx-auto'>
-                <div className="text-start mb-4 ">
+        <section className="min-h-screen bg-white w-full relative overflow-hidden">
+            <div className='max-w-[1400px] mx-auto px-4 py-8'>
+                {/* Header Section */}
+                <div className="text-start mb-8">
                     <h1 className="text-[40px] font-[InterBold] text-[#06141F] mb-5">
                         Find the perfect trim for you
                     </h1>
-                    <p className="text-lg text-[#06141F]  mx-auto text-start">
+                    <p className="text-lg text-[#06141F] text-start">
                         From rugged to refined, choose the Tasman trim that matches your drive and your style.
-
                     </p>
                 </div>
 
+                {/* Trim Cards Slider */}
+                <div className="relative">
+                    {/* Previous Button */}
+                    <button
+                        onClick={prevSlide}
+                        className="absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full bg-[#06141F] text-white flex items-center justify-center hover:bg-[#0a2a3a] transition-colors z-10"
+                    >
+                        ‹
+                    </button>
 
-                {/* Main Content */}
-                <div className="flex gap-8  ">
-                    <div className="w-1/4">
-                        <div className="flex flex-col gap-3">
-                            {trimLevels.map((trim) => (
-                                <button
-                                    key={trim.id}
-                                    onClick={() => setSelectedTrim(trim.id)}
-                                    className={`w-[200px] h-[55px] text-center  rounded-lg font-medium text-lg transition-all duration-300 ${selectedTrim === trim.id
-                                        ? 'bg-[#06141F] text-white shadow-lg'
-                                        : 'bg-gray-100 text-[#54595F] hover:bg-gray-200 hover:text-[#06141F]'
-                                        }`}
-                                >
-                                    {trim.name}
-                                </button>
-                            ))}
-                        </div>
+                    {/* Three Trim Cards */}
+                    <div className="grid grid-cols-3 gap-8">
+                        {visibleTrims.map((trim) => (
+                            <TrimCard key={trim.id} trim={trim} />
+                        ))}
                     </div>
 
-                    {/* Right Column - Feature Categories */}
-                    <div className="w-3/4">
-                        <div className="grid grid-cols-4 gap-6 ">
-                            {featureCategories.map((category) => (
-                                <div key={category.title} className="flex flex-col">
-                                    <h3 className="text-lg font-bold text-[#06141F] mb-4 pb-2 border-b-2 border-[#06141F]">
-                                        {category.title}
-                                    </h3>
-                                    <ul className="space-y-2 flex-1">
-                                        {category.features.map((feature, index) => (
-                                            <li
-                                                key={index}
-                                                className="text-sm text-[#54595F] flex items-start"
-                                            >
-                                                <span className="text-[#06141F] mr-2 mt-1">•</span>
-                                                {feature}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="grid grid-cols-2 gap-12  pt-4">
-                            <div >
-                                <p className='text-black text-xl w-full pb-4 border-b uppercase border-b-black'>Available Interior</p>
-                                <div className='flex items-start gap-4 pe-2 py-2'> 
-
-                                <img className=' w-[50%] h-[121px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-lx-black.jpg' />
-                                    <img className=' w-[50%]  h-[121px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-lx-green.jpg' />
-                                </div>
-                            </div>
-                            <div >
-                                <p className='text-black text-xl w-full pb-4 border-b uppercase border-b-black'>Available Wheels</p>
-                                <div className='flex items-start gap-4 pe-2 py-2'>
-
-                                    <img className=' w-[50%] h-[250px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-18alloy-btype.jpg' />
-                                    <img className=' w-[50%]  h-[250px] object-cover' src='https://methods.ae/wp-content/uploads/ktk-18alloy-atype.jpg' />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {/* Next Button */}
+                    <button
+                        onClick={nextSlide}
+                        className="absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full bg-[#06141F] text-white flex items-center justify-center hover:bg-[#0a2a3a] transition-colors z-10"
+                    >
+                        ›
+                    </button>
                 </div>
 
-         </div>
-            {/* Call to Action */}
+                {/* Dots indicator */}
+                <div className="flex justify-center gap-2 mt-8">
+                    {Array.from({ length: Math.ceil(trimLevels.length / 3) }).map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => setCurrentSlide(index)}
+                            className={`w-3 h-3 rounded-full transition-all ${currentSlide === index ? 'bg-[#06141F]' : 'bg-gray-300'
+                                }`}
+                        />
+                    ))}
+                </div>
+            </div>
         </section>
     );
 };

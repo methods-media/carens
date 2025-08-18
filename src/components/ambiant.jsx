@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { motion } from "framer-motion"
 
 export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
     const [isAmbiant, setIsAmbiant] = useState(false)
@@ -25,31 +26,88 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
             <img src='https://methods.ae/wp-content/uploads/ktk-dashboard.png' width={'100vw'} height={'100vh'} className=' h-[60vh] !w-[100vw] md:!h-[100vh] !object-cover' />
             <>
                 {isAmbiant ? null : <>
-                        <div onClick={() => {
-                           
+                        {/* First interactive point - largest circle */}
+                        <motion.div
+                            onClick={() => setIsModalOpen(1)}
+                            className='absolute top-1/2 left-[42%] z-[90] cursor-pointer'
+                            whileHover={{ scale: 1.2 }}
+                            animate={{
+                                scale: [1, 1.3, 1],
+                            }}
+                            transition={{
+                                duration: 1,
+                                repeat: Infinity,
+                                ease: "easeInOut"
+                            }}
+                        >
+                            <div className='w-8 h-8  rounded-full border-2 border-white/40'></div>
+                            <div className='w-6 h-6  rounded-full border-2 border-white/60 absolute top-1 left-1'></div>
+                            <div className='w-4 h-4  rounded-full border-2 border-white absolute top-2 left-2'></div>
+                            <div className='w-2 h-2  rounded-full absolute top-3 left-3'></div>
+                        </motion.div>
 
-                        setIsModalOpen(1)
-                    }} className=' absolute top-1/2 left-[42%] !w-5 bg-white z-[90] rounded-full !cursor-pointer !h-5'
-                    > </div>
-                        <div onClick={() => {
-                           
+                        {/* Second interactive point */}
+                        <motion.div
+                            onClick={() => setIsModalOpen(2)}
+                            className='absolute top-[67%] left-[43.5%] z-[90] cursor-pointer'
+                            whileHover={{ scale: 1.2 }}
+                            animate={{
+                                scale: [1, 1.3, 1],
+                            }}
+                            transition={{
+                                duration: 1,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: 0.5
+                            }}
+                        >
+                            <div className='w-8 h-8  rounded-full border-2 border-white/40'></div>
+                            <div className='w-6 h-6  rounded-full border-2 border-white/60 absolute top-1 left-1'></div>
+                            <div className='w-4 h-4  rounded-full border-2 border-white absolute top-2 left-2'></div>
+                            <div className='w-2 h-2  rounded-full absolute top-3 left-3'></div>
+                        </motion.div>
 
-                        setIsModalOpen(2)
-                    }} className=' absolute top-[64%] left-[44%] !w-5 bg-white z-[90] rounded-full cursor-pointer !h-5'
-                    > </div>
-                        <div onClick={() => {
-                           
+                        {/* Third interactive point */}
+                        <motion.div
+                            onClick={() => setIsModalOpen(3)}
+                            className='absolute top-[72%] left-[54%] z-[90] cursor-pointer'
+                            whileHover={{ scale: 1.2 }}
+                            animate={{
+                                scale: [1, 1.3, 1],
+                            }}
+                            transition={{
+                                duration: 1,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: 1
+                            }}
+                        >
+                            <div className='w-8 h-8  rounded-full border-2 border-white/40'></div>
+                            <div className='w-6 h-6  rounded-full border-2 border-white/60 absolute top-1 left-1'></div>
+                            <div className='w-4 h-4  rounded-full border-2 border-white absolute top-2 left-2'></div>
+                            <div className='w-2 h-2  rounded-full absolute top-3 left-3'></div>
+                        </motion.div>
 
-                        setIsModalOpen(3)
-                    }} className=' absolute top-[70%] left-[55%] !w-5 bg-white z-[90] rounded-full cursor-pointer !h-5'
-                    > </div>
-                  
-                        <div onClick={() => {
-                           
-
-                            setIsModalOpen(4)
-                        }} className=' absolute top-[70%] left-[65%] !w-5 bg-white z-[90] rounded-full cursor-pointer !h-5'
-                    > </div>
+                        {/* Fourth interactive point */}
+                        <motion.div
+                            onClick={() => setIsModalOpen(4)}
+                            className='absolute top-[73%] left-[65%] z-[90] cursor-pointer'
+                            whileHover={{ scale: 1.2 }}
+                            animate={{
+                                scale: [1, 1.3, 1],
+                            }}
+                            transition={{
+                                duration: 1,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                                delay: 1.5
+                            }}
+                        >
+                            <div className='w-8 h-8  rounded-full border-2 border-white/40'></div>
+                            <div className='w-6 h-6  rounded-full border-2 border-white/60 absolute top-1 left-1'></div>
+                            <div className='w-4 h-4  rounded-full border-2 border-white absolute top-2 left-2'></div>
+                            <div className='w-2 h-2  rounded-full absolute top-3 left-3'></div>
+                        </motion.div>
                 </>}
             </>
 

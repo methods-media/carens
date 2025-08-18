@@ -9,7 +9,7 @@ export default function Footer () {
           
 {pathname.includes('configurator')?null:
 <>
-                    <div className="w-screen bg-[url('https://methods.ae/wp-content/uploads/ktk-endingframe.jpg')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] md:h-screen bg-[#05141F]">
+                    <div className="w-screen bg-[url('https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ff405cbc-5555-4b50-4e1d-1ba45e99d800/public')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] md:h-screen bg-[#05141F]">
                         <div className={`${locale == 'ar' ? 'min-h-[8vh] md:min-h-[25vh]' : 'min-h-[8vh] md:min-h-[40vh]'}  footer-img-text md:mt-0   flex w-full flex-col justify-center `}
                  dir="ltr" >
                             <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-center  h-[40vh]">

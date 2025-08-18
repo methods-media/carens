@@ -16,6 +16,8 @@ import VRShowroom from '@src/modules/VRShowroom';
 import Dimensions from '@src/components/dimensions';
 import KiaConnect from '@src/components/kiaConnect';
 import Specs from '@src/components/specs';
+import { FloatingText } from '@src/components/floatingText';
+import { FloatingText2 } from '@src/components/floatingText2';
 
 export default function Home() {
   const { t } = useTranslation('common');
@@ -23,6 +25,8 @@ export default function Home() {
   const isArabic = false; // Replace with your actual language detection logic
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+
 
   const router = useRouter();
   const { locale, query } = useRouter();
@@ -46,50 +50,35 @@ export default function Home() {
       </Head>
       <Banner />
       <EngineSection />
+      <FloatingText desc={`The Kia Tasman applies the latest function-based pickup design language to the Kia family look. The tiger-face radiator grille is framed by bold, vertical lights, a strong front bumper, and a broad, high hood that hints at powerful machinery within. A confident side profile, with unique and practical geometric fender highlights, gives the vehicle a commanding stance.`}/>
       <div className="relative" style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
           imagesUrl={exterior1}
           totalFrames={exterior1?.length}
-          text={t('led_rear_lamps')}
-          description={t('led_rear_lamps_description')}
-          endTextFrame={100}
-          text2={t('fastback_design')}
-          description2={t('fastback_description')}
-          startTextFrame={30}
-
-          startTextFrame2={120}
-          endTextFrame2={exterior1?.length}
+         
         />
       </div>
-      <SwiperSection id={0} />
+      <SwiperSection height={'min-h-[40vh]'} id={0} />
+      <VRShowroom />
+      <FloatingText2 head={`RUGGED YETREFINED`} desc={`Just as bold on the inside, the Kia Tasman’s interior offers enduring pickup truck quality. The outwardly simple design uses symmetry, pure forms, and a wealth of technology to strike a winning balance of spacious luxury and practicality.`} />
 
       <div className="relative" style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
           imagesUrl={exterior1}
           totalFrames={exterior1?.length}
-          text={t('led_rear_lamps')}
-          description={t('led_rear_lamps_description')}
-          endTextFrame={100}
-          text2={t('fastback_design')}
-          description2={t('fastback_description')}
-          startTextFrame={30}
-
-          startTextFrame2={120}
-          endTextFrame2={exterior1?.length}
+         
         />
       </div>
       <AmbiantLight isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
-
-      <SwiperSection id={1} />
-      <VRShowroom />
+      <SwiperSection height={'min-h-[40vh]'} id={1} />
       <ParallaxSection />
       <EngineTypesSection />
 
       <ParallaxSectionSecond />
       <div className=' bg-white '>
-        <SwiperSection id={3} noBg dark={true} />
+        <SwiperSection height={'min-h-[65vh]'} id={3} noBg dark={true} />
       </div>
       <KiaConnect/>
       <Dimensions />
@@ -100,9 +89,9 @@ export default function Home() {
             <button onClick={() => {
               document.body.style.overflow = 'auto'
               setIsModalOpen(false)
-            }} className="text-black text-3xl rounded-full w-10 h-10 bg-white absolute end-4 top-4 ">×</button>
+            }} className="text-black text-3xl cursor-pointer rounded-full w-10 h-10 bg-white absolute end-4 top-4 ">×</button>
             <div className='flex flex-col items-center  w-full'>
-              <img src={isModalOpen == 1 ? 'https://methods.ae/wp-content/uploads/ktk-panoramicdisplay.jpg' : isModalOpen == 2 ? 'https://methods.ae/wp-content/uploads/ktk-dualwirelesscharger.jpg' : isModalOpen == 3 ? 'https://methods.ae/wp-content/uploads/ktk-consoletable.jpg' : 'https://methods.ae/wp-content/uploads/ktk-walkinswitch.jpg'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" />
+              <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9103fa63-4b86-45ef-e14a-c0bba7424000/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/310ca7e9-3708-4516-35a0-d81e50342100/public' : isModalOpen == 3 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7ce5f2db-cd28-475f-2909-5ed588c6a100/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ebfb9ad5-4957-46f6-6c96-b3cc3bdd0c00/public'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" />
               <div className="p-6 flex flex-col gap-3 ">
                 <div className="text-[#333] text-center font-[InterBold] text-[20px]">{isModalOpen == 1 ? 'Panoramic Integrated Display' : isModalOpen == 2 ? 'Dual Wireless Charger' : isModalOpen == 3 ? 'Console Table' : 'Passenger Walk-in Switch'}</div>
                 <div className="text-[#666]  text-center font-[InterRegular] text-sm">{
