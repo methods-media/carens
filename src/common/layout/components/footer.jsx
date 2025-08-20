@@ -3,7 +3,8 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 export default function Footer () {
     const { locale, pathname } = useRouter()
-    const { t } = useTranslation('common')
+    const { t, i18n } = useTranslation('common')
+    const isArabic=i18n?.language=='ar'
     return (
         <>
           
@@ -12,13 +13,16 @@ export default function Footer () {
                     <div className="w-screen bg-[url('https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ff405cbc-5555-4b50-4e1d-1ba45e99d800/public')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] md:h-screen bg-[#05141F]">
                         <div className={`${locale == 'ar' ? 'min-h-[8vh] md:min-h-[25vh]' : 'min-h-[8vh] md:min-h-[40vh]'}  footer-img-text md:mt-0   flex w-full flex-col justify-center `}
                  dir="ltr" >
-                            <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-center  h-[40vh]">
-                                <div className="w-full px-12 flex flex-col gap-5 mx-auto">
-                                    <p className="text-xl lg:text-[40px] text-start font-[InterBold]">Wherever life takes you</p>
+                            <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-center   h-[40vh]">
+                                <div className={`w-full px-12 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
+                                    <p className="text-xl lg:text-[40px] text-start font-[InterBold]">{isArabic ?`أينما تأخذك الحياة`:`Wherever life takes you`}</p>
                                     <p className="text-sm lg:text-lg text-black text-start">
-                                        Whether navigating city streets or conquering the toughest trails. Embrace the freedom <br/>
-                                        to go further and experience the perfect blend of capability and style<br />
-                                        that only Kia Tasman can deliver.
+                                        {isArabic ? `سواء كنت تتجول في شوارع المدينة أو تتحدى أصعب الطرق. عِش الحرية الحقيقية وجرّب مزيج القوة والأناقة الذي لا تقدمه سوى كيا تاسمان.` : <>
+                                        
+                                            Whether navigating city streets or conquering the toughest trails. Embrace the freedom <br />
+                                            to go further and experience the perfect blend of capability and style<br />
+                                            that only Kia Tasman can deliver.</>}
+                                      
 
                                     </p>
                                 </div>

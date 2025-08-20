@@ -7,7 +7,7 @@ import { Treck } from 'public/assets/svg/treck';
 import { WarrantySVG } from 'public/assets/svg/warranty';
 import { useRef, useState } from 'react';
 const Banner = () => {
-  const { t } = useTranslation('common');
+  const { t ,i18n} = useTranslation('common');
   const { locale, query } = useRouter();
   const [videoEnded, setVideoEnded] = useState(false);
   const [videoError, setVideoError] = useState(false);
@@ -38,7 +38,7 @@ const Banner = () => {
           muted
           className='w-full h-full object-cover'
         >
-          <source src="https://methods.ae/wp-content/uploads/ktk-cover.mp4" type="video/mp4" />
+          <source src="/assets/videos/ktk-cover.webm" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}
@@ -72,14 +72,14 @@ const Banner = () => {
       
       </> : null}
       {/* bg-gradient-to-b from-transparent to-[#06141F] */}
-      <div className='absolute bottom-0 left-0 w-full flex-wrap md:flex-nowrap  h-auto md:h-[90px] py-2.5   flex items-center mb-5 md:mb-0 justify-around md:justify-center gap-5 md:gap-[50px]'>
+      {(videoEnded || videoError) ? <div className='absolute bottom-0 left-0 w-full bg-gradient-to-b from-[#06141f80] to-[#06141F] from-0% to-100% flex-wrap md:flex-nowrap  h-auto md:h-[90px] py-2.5   flex items-center mb-5 md:mb-0 justify-around md:justify-center gap-5 md:gap-[50px]'>
         <div className='flex items-center justify-center  gap-[10px]'>
           <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <Engine />
         </div>
          <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{'2.5L T-GDI'}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{`277HP / 8-Speed SBW`}</p>
+            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? "محرك 2.5 لتر تيربو":'2.5L T-GDI'}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `277 حصان \ ناقل حركة 8 سرعات`:`277HP / 8-Speed SBW`}</p>
          </div>
         </div>
         <div className='flex items-center justify-center gap-[10px]'>
@@ -87,8 +87,8 @@ const Banner = () => {
             <Treck />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{`Desert Mode`}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{'32-degree Approach Angle'}</p>
+            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? `نظام قيادة الصحراء`:`Desert Mode`}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `32.2° Approach Angle`:'32-degree Approach Angle'}</p>
           </div>
         </div>
         <div className='flex items-center justify-center gap-[10px]'>
@@ -97,7 +97,7 @@ const Banner = () => {
           </div>
           <div className='flex flex-col '>
             <p className='text-white text-sm md:text-lg'>{'Kia Connect'}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{'With Digital Key'}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ?`مع مفتاح الرقمي`:'With Digital Key'}</p>
           </div>
         </div>
         <div className='flex items-center justify-center  gap-1 md:gap-[10px]'>
@@ -105,11 +105,12 @@ const Banner = () => {
             <WarrantySVG />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{'5 Years Warranty'}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{'Or 100,000 Km W.C.F'}</p>
+            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? `ضمان 5 سنوات`:'5 Years Warranty'}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ?`أو 100 ألف كيلومتر (أيهما أقرب)` :'Or 100,000 Km W.C.F'}</p>
           </div>
         </div>
-            </div>
+            </div>:null}
+     
     </div>
   );
 };

@@ -7,7 +7,7 @@ export const EngineSection = () => {
     const [isVisible, setIsVisible] = useState(false);
     const sectionRef = useRef(null);
     const { locale } = useRouter()
-    const { t } = useTranslation('common');
+    const { t ,i18n} = useTranslation('common');
     const { scrollYProgress } = useScroll({
         target: sectionRef,
         offset: ["start end", "end start"]
@@ -50,25 +50,25 @@ export const EngineSection = () => {
 
 
     return (
-        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[15%] w-full h-[55vh] gap-10 md:gap-0  md:h-[100vh]'>
+        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[15%] w-full h-[55vh] gap-10 rtl:gap-10 md:h-[100vh]'>
             <motion.p
                 className='text-3xl md:text-[52px] font-[InterBold] text-white uppercase font-[900]'
                 style={{ scale, y, opacity }}
             >
-                Where your bold spirit and true practicality
+                {i18n?.language == 'ar' ?`حينما تلتقي الجرأة  `:` Where your bold spirit and true practicality`}
             </motion.p>
-            <div className='flex'>
+            <div className={`flex ${i18n?.language=='ar'?'gap-2':''}`}>
                 <motion.p 
                     className='text-4xl md:text-[84px] font-[InterBold] text-white uppercase font-[900]'
-                    style={{ x: comeX, opacity: textOpacity }}
+                    style={{ x: i18n?.language?togetherX:comeX, opacity: textOpacity }}
                 >
-                    COME
+                    {i18n?.language == 'ar' ?` مع `:`COME`}
                 </motion.p>
                 <motion.p
                     className='text-4xl md:text-[84px] text-white uppercase font-[900]'
-                    style={{ x: togetherX, opacity: textOpacity }}
+                    style={{ x: i18n?.language ?comeX: togetherX, opacity: textOpacity }}
                 >
-                    &nbsp;TOGETHER
+                    {i18n?.language == 'ar' ?`العملية` :`&nbsp;TOGETHER`}
                 </motion.p>
             </div>
             <motion.p
@@ -79,7 +79,7 @@ export const EngineSection = () => {
                     filter: blurFilter
                 }}
             >
-                A NEW DIMENSSION UNFOLDS
+                {i18n?.language == 'ar' ?` يبدأ بُعدٌ جديد`:`A NEW DIMENSSION UNFOLDS`}
             </motion.p>
         </div>
     )

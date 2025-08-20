@@ -4,7 +4,7 @@ import VRControls from './VRControls';
 import { useTranslation } from 'next-i18next';
 import PanoramaViewer from '@src/components/ImageViewer360';
 import { useRouter } from 'next/router';
-import { CDN_BEIGE_FENDER, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER } from '@src/constants/imageSequence';
+import { CDN_BEIGE_FENDER, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER, FRAME_COUNT } from '@src/constants/imageSequence';
 const VRShowroom = ({ height }) => {
   const containerRef = useRef(null);
   const [view, setView] = useState('exterior')
@@ -16,21 +16,21 @@ const VRShowroom = ({ height }) => {
   const startX = useRef(0);
   const autoRotateRef = useRef(null);
   const lastTimeRef = useRef(0);
-  const [currentColor, setCurrentColor] = useState('white');
+  const [currentColor, setCurrentColor] = useState('beige');
   const framePositionRef = useRef(0);
-  const { t } = useTranslation('common');
+  const { t ,i18n} = useTranslation('common');
   const { locale } = useRouter();
   const COLORS = [
-    { id: 'snow', name: t('colors.snow_white_pearl'), hex: '#f6f6f6', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ad847c7a-3269-443f-42f4-db56d986c600/public" },
+    { id: 'beige', name: t('colors.beigeFender'), hex: '#939393', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
+    { id: 'tan', name: t('colors.beige'), hex: '#000000', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d53c6dbf-f7c7-490f-c1d4-d60f3eb44900/public" },
     { id: 'white', name: t('colors.clear_white'), hex: '#FFFFFF', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4952bc85-a2df-46ab-081d-d25f6177ce00/public"},
     { id: 'whiteFender', name: t('colors.clear_white_fender'), hex: '#909598', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4a912299-4456-49f6-05a4-321c33d18e00/public" },
-    { id: 'tan', name: t('colors.beige'), hex: '#000000', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
-    { id: 'beige', name: t('colors.beigeFender'), hex: '#939393', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d53c6dbf-f7c7-490f-c1d4-d60f3eb44900/public" },
+    { id: 'green', name: t('colors.green'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/00e9b9b6-6c5e-446f-6b7a-d9bc41e71a00/public" },
     { id: 'blue', name: t('colors.wave_blue'), hex: '#344f7e', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a8f7b28b-ff09-42b2-b0ab-3eccbed81500/public" },
     { id: 'red', name: t('colors.fiery_red'), hex: '#ae2736', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/15311daf-6c93-409c-f457-e8c1867d7600/public" },
-    { id: 'steel', name: t('colors.steel_gray'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/34c49397-583e-4209-7ef7-06d6e17d4b00/public" },
     { id: 'gray', name: t('colors.gray'), hex: "#565656", chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2ec05ee8-5a4d-4bcd-0aa7-1d0308c8e300/public" },
-    { id: 'green', name: t('colors.green'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/00e9b9b6-6c5e-446f-6b7a-d9bc41e71a00/public" },
+    { id: 'snow', name: t('colors.snow_white_pearl'), hex: '#f6f6f6', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ad847c7a-3269-443f-42f4-db56d986c600/public" },
+    { id: 'steel', name: t('colors.steel_gray'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/34c49397-583e-4209-7ef7-06d6e17d4b00/public" },
     { id: 'black', name: t('colors.black'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b969f132-bf2b-4e32-1373-f54363d4ed00/public" },
   ];
 
@@ -218,7 +218,7 @@ const VRShowroom = ({ height }) => {
       }}
     >
       <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] !absolute start-0 text-center lg:text-start lg:start-10 !top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-        {'The Tasman Meets All Tastes'}
+        {i18n?.language == 'ar' ?` تسمان تلبي جميع الأذواق`:'The Tasman Meets All Tastes'}
 
 
 

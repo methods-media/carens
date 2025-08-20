@@ -1,11 +1,12 @@
 import { useTranslation } from 'next-i18next';
 import { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Specs = () => {
-    const { t } = useTranslation('common');
+    const { t ,i18n} = useTranslation('common');
     const [openCategory, setOpenCategory] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(0);
-
+    const isArabic=i18n?.language=='ar'
     const trimLevels = [
         { id: 'LX', name: 'LX' },
         { id: 'EX', name: 'EX' },
@@ -91,14 +92,14 @@ const Specs = () => {
     };
 
     const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % Math.ceil(trimLevels.length / 3));
+        setCurrentSlide((prev) => (prev + 1) % trimLevels.length);
     };
 
     const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + Math.ceil(trimLevels.length / 3)) % Math.ceil(trimLevels.length / 3));
+        setCurrentSlide((prev) => (prev - 1 + trimLevels.length) % trimLevels.length);
     };
 
-    const visibleTrims = trimLevels.slice(currentSlide * 3, (currentSlide * 3) + 3);
+    const currentTrim = trimLevels[currentSlide];
 
     const TrimCard = ({ trim }) => (
         <div className="bg-[#E7EBF0] rounded-[10px] p-6 h-full">
@@ -164,10 +165,10 @@ const Specs = () => {
                 {/* Header Section */}
                 <div className="text-start mb-8">
                     <h1 className="text-[40px] font-[InterBold] text-[#06141F] mb-5">
-                        Find the perfect trim for you
+                        {isArabic ?`أختر الفئة التي تناسبك`:`  Find the perfect trim for you`}
                     </h1>
                     <p className="text-lg text-[#06141F] text-start">
-                        From rugged to refined, choose the Tasman trim that matches your drive and your style.
+                        {isArabic ?`من الأداء القوي إلى التفاصيل الفاخرة، توفر لك تاسمان الخيار الذي يعكس شخصيتك ويُعبّر عن أسلوب قيادتك`:`  From rugged to refined, choose the Tasman trim that matches your drive and your style.`}
                     </p>
                 </div>
 
@@ -176,30 +177,31 @@ const Specs = () => {
                     {/* Previous Button */}
                     <button
                         onClick={prevSlide}
-                        className="absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full bg-[#06141F] text-white flex items-center justify-center hover:bg-[#0a2a3a] transition-colors z-10"
+                        className="absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full  text-[#06141F] flex items-center justify-center  transition-colors z-10"
                     >
-                        ‹
+                        <ChevronLeft className="w-10 h-10 text-[#06141F]" />
                     </button>
 
-                    {/* Three Trim Cards */}
-                    <div className="grid grid-cols-3 gap-8">
-                        {visibleTrims.map((trim) => (
-                            <TrimCard key={trim.id} trim={trim} />
-                        ))}
+                    {/* Single Trim Card - Centered with one-third width */}
+                    <div className="flex justify-center">
+                        <div className="w-[40%]">
+                            <TrimCard trim={currentTrim} />
+                        </div>
                     </div>
 
                     {/* Next Button */}
                     <button
                         onClick={nextSlide}
-                        className="absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full bg-[#06141F] text-white flex items-center justify-center hover:bg-[#0a2a3a] transition-colors z-10"
+                        className="absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full  text-[#06141F] flex items-center justify-center  transition-colors z-10"
                     >
-                        ›
+                        <ChevronRight className="w-10 h-10 text-[#06141F]" />
+
                     </button>
                 </div>
 
                 {/* Dots indicator */}
                 <div className="flex justify-center gap-2 mt-8">
-                    {Array.from({ length: Math.ceil(trimLevels.length / 3) }).map((_, index) => (
+                    {trimLevels.map((_, index) => (
                         <button
                             key={index}
                             onClick={() => setCurrentSlide(index)}

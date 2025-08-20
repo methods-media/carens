@@ -3,13 +3,14 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { SwiperSection } from './SwiperSection';
+import { useTranslation } from 'react-i18next';
 
 const ParallaxSectionSecond = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isInView, setIsInView] = useState(false);
     const textRef = useRef(null);
     const sectionRef = useRef(null);
-
+    const {i18n}=useTranslation()
     const { scrollYProgress } = useScroll({
         target: textRef,
         offset: ["start end", "end start"]
@@ -52,6 +53,7 @@ const ParallaxSectionSecond = () => {
   height: 100vh;
   object-fit: cover;
   z-index: ${isInView ? '-1' : '-10'};
+  opacity:${isInView?'1':'0'}
   transition: z-index 0.3s ease;
 }
 
@@ -91,9 +93,9 @@ const ParallaxSectionSecond = () => {
                 `}
             </style>
 
-            <div className="parallax-container1" ref={sectionRef}>
-                <div className="parallax-video1">
-                    <img src='https://methods.ae/wp-content/uploads/KTK-Towing.jpg' className="image-element ">
+            <div className="parallax-container1" ref={sectionRef} >
+                <div className={`parallax-video1 ${isInView?'':'opacity-0'}`}>
+                    <img src='https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1325890b-0848-4f9a-2ada-e5a7d7e6fa00/public' className="image-element ">
 
                     </img>
                 </div>
@@ -108,7 +110,7 @@ const ParallaxSectionSecond = () => {
                     ref={textRef}>
                     <video src='/assets/videos/ktk-safetycover.webm' playsInline muted autoPlay  className='w-screen h-screen object-cover'/>
                     <div className='absolute w-full bottom-0 start-0 p-10 bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
-                        <p className='text-[42px] text-black font-[InterBold]  text-center'> Advanced Driver Assistance System (ADAS) </p>
+                        <p className='text-[42px] text-black font-[InterBold]  text-center'> {i18n?.language == 'ar' ?`أنظمة مساعدة السائق (ADAS)`:`Advanced Driver Assistance System (ADAS)`} </p>
                     </div>
                     </div>
                    

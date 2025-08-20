@@ -3,7 +3,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
 import Banner from '../src/modules/Banner';
 import ScrollSequence from '../src/modules/ImageSequence';
-import { exterior1 } from 'public/assets/seq/seq';
+import { exterior1, interior } from 'public/assets/seq/seq';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { EngineSection } from '@src/components/EngineSection';
@@ -20,9 +20,9 @@ import { FloatingText } from '@src/components/floatingText';
 import { FloatingText2 } from '@src/components/floatingText2';
 
 export default function Home() {
-  const { t } = useTranslation('common');
+  const { t, i18n } = useTranslation('common');
   const [selectedFeature, setSelectedFeature] = useState(0);
-  const isArabic = false; // Replace with your actual language detection logic
+  const isArabic = i18n?.language == 'ar'; // Replace with your actual language detection logic
   const [mounted, setMounted] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -50,7 +50,9 @@ export default function Home() {
       </Head>
       <Banner />
       <EngineSection />
-      <FloatingText desc={`The Kia Tasman applies the latest function-based pickup design language to the Kia family look. The tiger-face radiator grille is framed by bold, vertical lights, a strong front bumper, and a broad, high hood that hints at powerful machinery within. A confident side profile, with unique and practical geometric fender highlights, gives the vehicle a commanding stance.`}/>
+      <FloatingText desc={i18n?.language == 'ar' ? `تقدم كيا تاسمان لغة تصميم حديثة مستندة إلى الوظائف، منسجمة مع هوية عائلة كيا.
+تتميز الشبكة الأمامية المستوحاة من "وجه النمر" بأضواء رأسية جريئة وصدام أمامي قوي وغطاء محرك عريض ومرتفع، يُشير إلى قوة الأداء الكامنة.
+ويبرز المظهر الجانبي الواثق مع لمسات رفارف هندسية فريدة وعملية، ليمنح المركبة حضورًا طاغيًا على الطريق.`: `The Kia Tasman applies the latest function-based pickup design language to the Kia family look. The tiger-face radiator grille is framed by bold, vertical lights, a strong front bumper, and a broad, high hood that hints at powerful machinery within. A confident side profile, with unique and practical geometric fender highlights, gives the vehicle a commanding stance.`} />
       <div className="relative" style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
@@ -61,13 +63,13 @@ export default function Home() {
       </div>
       <SwiperSection height={'min-h-[40vh]'} id={0} />
       <VRShowroom />
-      <FloatingText2 head={`RUGGED YETREFINED`} desc={`Just as bold on the inside, the Kia Tasman’s interior offers enduring pickup truck quality. The outwardly simple design uses symmetry, pure forms, and a wealth of technology to strike a winning balance of spacious luxury and practicality.`} />
+      <FloatingText2 head={i18n?.language == 'ar' ? `قوةٌ صلبة وأناقة متقنة` : `RUGGED YET REFINED`} desc={i18n?.language == 'ar' ? `مثل قوتها الخارجية، تتميز تاسمان بجودة المقصورة الداخلية التي تجمع المتانة مع الرفاهية العملية. يعتمد التصميم الداخلي على البساطة والتماثل، مع تفاصيل تقنية متقدمة توازن بين رحابة المساحة وفخامة الأداء.` : `Just as bold on the inside, the Kia Tasman’s interior offers enduring pickup truck quality. The outwardly simple design uses symmetry, pure forms, and a wealth of technology to strike a winning balance of spacious luxury and practicality.`} />
 
       <div className="relative" style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
-          imagesUrl={exterior1}
-          totalFrames={exterior1?.length}
+          imagesUrl={interior}
+          totalFrames={interior?.length}
          
         />
       </div>
@@ -85,7 +87,7 @@ export default function Home() {
       <Specs/>
       {isModalOpen ?
         <div className='fixed w-screen h-screen bg-black/90 z-[10000] flex flex-col items-center justify-center  left-0 top-0'>
-          <div className="bg-white rounded-xl flex flex-col  items-end w-[500px]  relative" >
+          <div className="bg-white rounded-xl flex flex-col  items-end w-[650px]  relative" >
             <button onClick={() => {
               document.body.style.overflow = 'auto'
               setIsModalOpen(false)
@@ -93,10 +95,25 @@ export default function Home() {
             <div className='flex flex-col items-center  w-full'>
               <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9103fa63-4b86-45ef-e14a-c0bba7424000/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/310ca7e9-3708-4516-35a0-d81e50342100/public' : isModalOpen == 3 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7ce5f2db-cd28-475f-2909-5ed588c6a100/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ebfb9ad5-4957-46f6-6c96-b3cc3bdd0c00/public'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" />
               <div className="p-6 flex flex-col gap-3 ">
-                <div className="text-[#333] text-center font-[InterBold] text-[20px]">{isModalOpen == 1 ? 'Panoramic Integrated Display' : isModalOpen == 2 ? 'Dual Wireless Charger' : isModalOpen == 3 ? 'Console Table' : 'Passenger Walk-in Switch'}</div>
-                <div className="text-[#666]  text-center font-[InterRegular] text-sm">{
-                  isModalOpen == 1 ? `Enjoy the brand's state-of-the-art infotainment system with the widest display in its class. You can also maintain your vehicle to the latest through OTA Update.` : isModalOpen == 2 ? `Comprehensive user management system with role-based access control and activity tracking across your platform.` : isModalOpen == 3 ? `An expandable console table turns the Kia Tasman into a private mobile office. Unfold the upper part of the console armrest to create a wide table you can use for checking your laptop or documents—or enjoying a simple meal.` : `This function allows you to adjust the forward/backward position and angle of the passenger seat from the driver's seat or the rear seat to improve the convenience of getting in and out of the vehicle and living in the rear seat.`
-                }</div>
+                <div className="text-[#333] text-center font-[InterBold] text-[20px]">{isModalOpen == 1 ? isArabic ? `شاشة بانورامية مدمجة` : 'Panoramic Integrated Display' : isModalOpen == 2 ? isArabic ? `شاحن هاتف لاسلكي مزدوج` : 'Dual Wireless Charger' : isModalOpen == 3 ? isArabic ? `طاولة مركزية` : 'Console Table' : isArabic ? `مفتاح تحكم بمقعد الراكب` : 'Passenger Walk-in Switch'}</div>
+                <div className="text-[#666]  text-center font-[InterRegular] text-sm">
+                  {isModalOpen == 1 ?
+                    (isArabic ?
+                      `استمتع بنظام المعلومات والترفيه الأحدث مع أكبر شاشة في فئتها. كما يمكنك تحديث سيارتك بسهولة عن طريق التحديثات الهوائية (OTA).`
+                      : `Enjoy the brand's state-of-the-art infotainment system with the widest display in its class. You can also maintain your vehicle to the latest through OTA Update.`)
+                    : isModalOpen == 2 ?
+                      (isArabic ?
+                        `ابقَ في حالة تواصل وشحن دائم للأجهزة عن طريق شاحنين لاسلكيين وتوصيلات USB Type-C متعددة.`
+                        : `Keep your phone & devices charged on the go with available wireless charging trays & multiple USB Type-C chargers.`)
+                      : isModalOpen == 3 ?
+                        (isArabic ?
+                          `تحوّل الطاولة القابلة للتمدد في الكونسول سيارتك إلى مكتبٍ متنقل، حيث يمكنك فتح جزء من مسند الذراع لتكوين طاولة عريضة مناسبة للحاسوب أو المستندات ، أو حتى لتناول وجبة خفيفة.`
+                          : `An expandable console table turns the Kia Tasman into a private mobile office. Unfold the upper part of the console armrest to create a wide table you can use for checking your laptop or documents—or enjoying a simple meal.`)
+                        : (isArabic ?
+                          `يمكنك تعديل وضع مقعد الراكب الأمامي للأمام أو الخلف أو تعديل الزاوية بكل سهولة من كرسي السائق أو المقاعد الخلفية، مما يعزز سهولة الدخول والخروج وراحة ركاب المقاعد الخلفية.`
+                          : `This function allows you to adjust the forward/backward position and angle of the passenger seat from the driver's seat or the rear seat to improve the convenience of getting in and out of the vehicle and living in the rear seat.`)
+                  }
+                </div>
               </div>
             </div>
           </div>

@@ -2,20 +2,27 @@ import { useTranslation } from 'next-i18next';
 import { useEffect, useRef, useState } from 'react';
 
 const Dimensions = () => {
-    const { t } = useTranslation('common');
+    const { t ,i18n} = useTranslation('common');
     const [selectedSpec, setSelectedSpec] = useState('length');
     const [isInView, setIsInView] = useState(false)
     const sectionRef = useRef(null)
     const [animationKey, setAnimationKey] = useState(0)
-
+const isArabic=i18n?.language=='ar'
     const specifications = [
-        { key: 'length', label: 'Length', value: '5,410MM', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/85d55440-c821-4ec1-aee1-a00c4ca79100/public` },
-        { key: 'width', label: 'Width', value: '1,930 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/04486424-3e73-455f-36f6-8ad07a97a100/public`},
-        { key: 'height', label: 'Height', value: '1,920 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6c94dd75-4aec-4418-5880-733c43c1e500/public`},
-        { key: 'Ground Clearance', label: 'Ground Clearance', value: '252 mm', icon: `https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b487a28a-c69d-45fa-8979-f85450c4dc00/public` },
-        { key: 'wheelbase', label: 'Wheelbase', value: '3,270 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b487a28a-c69d-45fa-8979-f85450c4dc00/public`},
-        { key: 'Cargo (SAE)', label: 'Trunk', value: '1,336 L', desc: "(SAE capacity without bedliner)", icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/79dcebe4-368a-4e2a-b8b3-1dc230523b00/public` },
-        { key: 'weight', label: 'Weight (GVM)', value: '3,250 kg', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8f526431-4b6f-44fa-5a58-15025f1db600/public`}
+        {
+            key: 'length', label: isArabic ? `الطول` : 'Length', value: isArabic ?`5,410 مم`: '5,410MM', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/85d55440-c821-4ec1-aee1-a00c4ca79100/public` },
+        {
+            key: 'width', label: isArabic ? `العرض` : 'Width', value: isArabic ?`1,930 مم`: '1,930 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/04486424-3e73-455f-36f6-8ad07a97a100/public`},
+        {
+            key: 'height', label: isArabic ? `الارتفاع` : 'Height', value: isArabic ?`1,920 مم`:'1,920 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6c94dd75-4aec-4418-5880-733c43c1e500/public`},
+        {
+            key: 'Ground Clearance', label: isArabic ? `الخلوص الارضي` : 'Ground Clearance', value: isArabic ?`252 مم`: '252 mm', icon: `https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3df2aea7-2ff2-4355-d442-b68b8d3b4000/tv` },
+        {
+            key: 'wheelbase', label: isArabic ? `قاعدة العجلات` : 'Wheelbase', value: isArabic ?`3,270 مم`: '3,270 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b487a28a-c69d-45fa-8979-f85450c4dc00/public`},
+        {
+            key: 'Cargo (SAE)', label: isArabic ? `المساحة التخزينية` : 'Trunk', value: isArabic ?`1,336 لتر`: '1,336 L', desc: "(SAE capacity without bedliner)", icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/79dcebe4-368a-4e2a-b8b3-1dc230523b00/public` },
+        {
+            key: 'weight', label: isArabic ? `الوزن` : 'Weight (GVM)', value: isArabic ?`3,250 كج`:'3,250 kg', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8f526431-4b6f-44fa-5a58-15025f1db600/public`}
     ];
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -54,11 +61,11 @@ const Dimensions = () => {
         <>
 
         
-            <section ref={sectionRef} className="h-screen bg-white flex flex-col  gap-5 justify-start  relative overflow-hidden">
+            <section ref={sectionRef} className="min-h-[80vh] bg-white flex flex-col  gap-5 justify-start  relative overflow-hidden">
                 <div className='h-full py-10 w-[1350px] mx-auto flex flex-col justify-start '>
 
                 <h2 className="text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8">
-                                Tasman in Numbers
+                        {isArabic ?`تاسمان في أرقام`:`Tasman in Numbers`}
                 </h2>
                     <div className="flex flex-wrap space-y-3   items-start  justify-center lg:justify-between w-full">
                     {specifications.map((spec) => (

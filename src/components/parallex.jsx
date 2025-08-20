@@ -3,13 +3,14 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { SwiperSection } from './SwiperSection';
+import { useTranslation } from 'react-i18next';
 
 const ParallaxSection = () => {
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isInView, setIsInView] = useState(false);
     const textRef = useRef(null);
     const sectionRef = useRef(null);
-
+    const {i18n}=useTranslation('common')
     const { scrollYProgress } = useScroll({
         target: textRef,
         offset: ["start end", "end start"]
@@ -93,10 +94,10 @@ const ParallaxSection = () => {
             </style>
 
             <div className="parallax-container" ref={sectionRef}>
-                <div className="parallax-video">
+                <div className={`parallax-video ${isInView ? '' : 'opacity-0'}`}>
                     <video autoPlay muted loop className="video-element">
                         <source
-                            src="https://methods.ae/wp-content/uploads/TK_Drive_Manifesto_USP-2.mp4"
+                            src="/assets/videos/ktk-performance.webm"
                             type="video/mp4"
                         />
                     </video>
@@ -134,18 +135,25 @@ const ParallaxSection = () => {
                         className='text-[40px] font-[InterBold] font-extrabold  uppercase'
                         
                     >
-                        {`It's for those who aren't afraid to get`}
+                        {i18n?.language == 'ar' ?`للذين لا يخشون الطرق الوعرة`:`It's for those who aren't afraid to get`}
                         <br/>
-                        <span className='ms-3'>
+                        <span className={`ms-3 ${i18n?.language=='ar'?'hidden':''}`}>
                             {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
-                                <span
+                                <motion.span
                                     key={index}
-                                    className='text-[50px] lg:text-[100px] font-[InterBold] font-extrabold uppercase inline-block'
-                                   
-                                   
+                                    className='text-[56px] font-[InterBold] font-extrabold uppercase inline-block'
+                                    animate={{
+                                        y: [0, -20, 0],
+                                    }}
+                                    transition={{
+                                        duration: 1.5,
+                                        repeat: Infinity,
+                                        delay: index * 0.2,
+                                        ease: "easeInOut"
+                                    }}
                                 >
                                     {item}
-                                </span>
+                                </motion.span>
                             ))}
                         </span>
 

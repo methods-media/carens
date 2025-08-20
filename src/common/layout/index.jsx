@@ -9,7 +9,7 @@ import { useTranslation } from 'next-i18next';
 const Layout = ({ children }) => {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const { locale, pathname ,query} = useRouter()
-  const { t } = useTranslation('common');
+  const { t ,i18n} = useTranslation('common');
   useEffect(() => {
     const handleScroll = () => {
       // Show button when user scrolls 80% of the way down
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
       <Footer />
 
       {pathname.includes('configurator') ? null :
-        <div dir='ltr ' className={`fixed bottom-[1%] flex flex-col items-end gap-4 end-[1%] z-[50000] ${showScrollTop
+        <div dir='ltr ' className={`fixed bottom-[1%] flex flex-col  ${i18n?.language == 'ar' ?'items-start':'items-end'} gap-4 right-[1%] z-[50000] ${showScrollTop
           ? 'opacity-100 translate-y-0'
           : 'opacity-0 translate-y-16'
               }`}>
@@ -75,7 +75,7 @@ const Layout = ({ children }) => {
           <button id='bookNowBtn' onClick={() => { onClickBookNow() }} className={` group py-3 px-6 cursor-pointer  z-[1100]  bg-white hover:bg-[#05141F] hover:text-white flex items-center gap-3 justify-center rounded-[4px] `}>
             <img src='/assets/puzzleBlack.svg' className='group-hover:hidden' height={16} width={16} />
             <img src='/assets/puzzle.svg' height={16} width={16} className='hidden group-hover:flex' />
-          <p className={`text-[14px] ${locale == 'ar' ? "font-['GSSBold']" : "font-['InterBold']"}`}> {'Build Yours Now'} </p>
+          <p className={`text-[14px] ${locale == 'ar' ? "font-['GSSBold']" : "font-['InterBold']"}`}> {i18n?.language=='ar'?`خصص سيارتك الان`:'Build Yours Now'} </p>
         </button>
           <button
             onClick={scrollToTop}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function KiaConnectEnhanced () {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -8,42 +9,44 @@ export default function KiaConnectEnhanced () {
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
     const carouselRef = useRef(null);
-
+    const { i18n } = useTranslation('common')
+    const isArabic = i18n?.language == 'ar'
     const slides = [
         {
-            title: "Remote Engine Start/Stop",
-            description: "Using the Kia Connect App, you have the ability to remotely start or turn off your Kia from outside the vehicle.",
+            title: isArabic ? "تشغيل/إيقاف المحرك عن بُعد" : "Remote Engine Start/Stop",
+            description: isArabic ?`من خلال تطبيق Kia Connect ، يمكنك تشغيل أو إيقاف محرك سيارتك عن بُعد وأنت خارج المركبة`: "Using the Kia Connect App, you have the ability to remotely start or turn off your Kia from outside the vehicle.",
 
         },
         {
-            title: "Remote Climate Control",
-            description: "Control your Kia's temperature from your home or office. With the Kia Connect App, you can set the desired temperature in advance and your Kia's air conditioner or heater will adjust accordingly.",
+            title: isArabic ?`التحكم في المناخ عن بُعد`: "Remote Climate Control",
+            description: isArabic ?`تحكم في درجة حرارة سيارتك من المنزل أو المكتب. من خلال تطبيق Kia Connect.
+يمكنك ضبط درجة الحرارة المطلوبة مسبقًا، وسيقوم نظام التكييف أو التدفئة في سيارتك بضبط درجة الحرارة تلقائيًا.`: "Control your Kia's temperature from your home or office. With the Kia Connect App, you can set the desired temperature in advance and your Kia's air conditioner or heater will adjust accordingly.",
 
         },
         {
-            title: "Vehicle Diagnostics",
-            description: "Kia Connect provides a diagnosis of your vehicle for your safety.",
+            title: isArabic ?`تشخيص السيارة`: "Vehicle Diagnostics",
+            description: isArabic ?`يقدم تطبيق Kia Connect تشخيصًا لحالة سيارتك لضمان سلامتك.`: "Kia Connect provides a diagnosis of your vehicle for your safety.",
 
         },
 
         {
-            title: "Maintenance Notification",
-            description: "Kia Connect notifies you if any major components malfunction is detected.",
+            title: isArabic ?`إشعارات الصيانة`: "Maintenance Notification",
+            description: isArabic ?`يقوم تطبيق Kia Connect بإشعارك عند اكتشاف أي خلل في المكونات الرئيسية.`: "Kia Connect notifies you if any major components malfunction is detected.",
 
         },
         {
-            title: "OTA Navigation Updates",
-            description: "Get automatic wireless software updates to keep your navigation up to date.",
+            title: isArabic ?`تحديثات الملاحة عبر الهواء (OTA)`: "OTA Navigation Updates",
+            description: isArabic ?`احصل على تحديثات تلقائية لاسلكية للبرمجيات للحفاظ على نظام الملاحة محدثًا دائمًا.`: "Get automatic wireless software updates to keep your navigation up to date.",
 
         },
         {
-            title: "Find My Vehicle",
-            description: "Are you having trouble finding your Kia in a large parking lot? Kia Connect can help you easily locate your parked vehicle.",
+            title: isArabic ?`تحديد موقع سيارتي`: "Find My Vehicle",
+            description: isArabic ?`هل تواجه صعوبة في العثور على سيارتك Kia في موقف سيارات كبير؟ يمكن لـ Kia Connect مساعدتك في تحديد موقع سيارتك بسهولة.`: "Are you having trouble finding your Kia in a large parking lot? Kia Connect can help you easily locate your parked vehicle.",
 
         },
         {
-            title: "Remote Engine Start/Stop",
-            description: "Using the Kia Connect App, you have the ability to remotely start or turn off your Kia from outside the vehicle.",
+            title: isArabic ?`تشغيل/إيقاف المحرك عن بُعد`: "Remote Engine Start/Stop",
+            description: isArabic ?`من خلال تطبيق Kia Connect ، يمكنك تشغيل أو إيقاف محرك سيارتك عن بُعد وأنت خارج المركبة`: "Using the Kia Connect App, you have the ability to remotely start or turn off your Kia from outside the vehicle.",
 
         },
 
@@ -92,12 +95,7 @@ export default function KiaConnectEnhanced () {
         }
     };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            nextSlide();
-        }, 5000);
-        return () => clearInterval(interval);
-    }, []);
+
 
     // Get the two slides to display
     const getVisibleSlides = () => {
@@ -120,11 +118,8 @@ export default function KiaConnectEnhanced () {
             <div className="container px-10  relative z-10">
                 <div className="grid lg:grid-cols-2 gap-6 items-center h-[70vh]">
 
-
-                    <div >
-
-
-
+                    {/* First Column - Carousel */}
+                    <div className={isArabic ? 'lg:order-2' : 'lg:order-1'}>
                         <div
                             className="relative px-8 flex flex-col justify-center h-[70vh]"
                             ref={carouselRef}
@@ -153,20 +148,19 @@ export default function KiaConnectEnhanced () {
                             {/* Navigation Arrows */}
                             <button
                                 onClick={prevSlide}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
                             >
                                 <ChevronLeft className="w-6 h-6 text-white" />
                             </button>
                             <button
                                 onClick={nextSlide}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+                                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
                             >
                                 <ChevronRight className="w-6 h-6 text-white/70 hover:text-white" />
                             </button>
 
                             {/* Pagination Dots */}
-
-                            <div className=" absolute bottom-16 w-full justify-center flex ">
+                            <div className=" absolute bottom-30 w-full justify-center flex ">
                                 <div className='flex  justify-center space-x-2 '>
                                     {slides.map((_, index) => (
                                         <button
@@ -181,7 +175,13 @@ export default function KiaConnectEnhanced () {
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                    {/* Second Column - Content */}
+                    <div className={isArabic ? 'lg:order-1' : 'hidden lg:order-2'}>
+                        <div className="flex flex-col justify-center h-[70vh] px-8">
+                           
+                        </div>
                     </div>
 
                 </div>

@@ -26,8 +26,9 @@
   "loading_images": "جارٍ تحميل الصور...",
   "sequence_complete": "اكتمل التسلسل",
   "kia_k4": "كيا K4 الجديدة",
-  "push_beyond_ordinary": "جرأة التطور",
-  "notify":"تنويه: قد تختلف المواصفات والميزات حسب المنطقة أو السوق.",
+  "kia_Tasman": "كيا تاسمان",
+  "push_beyond_ordinary": "من عالم آخر",
+  "notify": "تنويه: قد تختلف المواصفات والميزات حسب المنطقة أو السوق.",
   "head_turning_design": "تصميم لافت للنظر لانطباع جريء",
   "led_headlights": "مصابيح أمامية LED على شكل خريطة نجمية",
   "led_headlights_description": "السيارة مجهزة بمصابيح أمامية LED مكعبة مميزة وأضواء نهارية (DRLs) على شكل خريطة نجمية. توفر هذه المصابيح وقفة عريضة وحضوراً فاخراً، مما يجعل K4 تبرز نهاراً وليلاً",
@@ -152,18 +153,21 @@
 
   "enginePerformance": "المحرك والأداء",
   "colors": {
+    "wave_blue": "أزرق",
+    "fiery_red": " أحمر",
+    "green": "أخضر",
+    "black": "الأسود",
     "clear_white": "أبيض",
+    "clear_white_fender": "أبيض / واقيات الطين بلون الهيكل",
     "snow_white_pearl": "أبيض لؤلؤي",
-    "steel_gray": "رمادي معدني",
-    "aurora_black_pearl": "أسود",
-    "azure_blue": "أزرق",
-    "fiery_red": "أحمر",
-    "wave_blue": "أزرق بحري",
-    "morning_haze": "أخضر",
-    "interstellar_gray": "رمادي نجمي",
-    "sparkling_yellow": "أصفر",
+    "beigeFender": "بيج / واقيات الطين بلون الهيكل",
+    "beige": "بيج ",
+    "gray": "رمادي نجمي",
+    "steel_gray": "رمادي",
+
     "onyx_black": "مزيج من الأسود والأبيض"
   },
+  
   "explore_more": "استكشف المزيد",
   "specTrimsSpecs": {
     "00": {
@@ -223,7 +227,7 @@
         "mirrors": "مرايات جانبية طي كهربائي"
       }
     },
-    "10":{
+    "10": {
       "exterior": {
         "steelWheels": "عجلات  مقاس 16 بوصة",
         "headlamps": "مصابيح أمامية مع رؤية نهارية LED",
@@ -249,7 +253,7 @@
         "armrest": "مسند ذراع بوظيفة الرفع والخفض"
       }
     },
-    "11":{
+    "11": {
       "exterior": {
         "alloyWheels": "عجلات مقاس 17 بوصة",
         "headlamps": "مصابيح أمامية مع رؤية نهارية LED",
@@ -278,7 +282,7 @@
         "parkingBrake": "فرامل توقف كهربائية"
       }
     },
-    "12":{
+    "12": {
       "exterior_features": {
         "alloy_wheels": "عجلات مقاس 17 بوصة",
         "headlamp": "مصابيح أمامية مع رؤية نهارية LED",
@@ -311,7 +315,7 @@
         "ecm": "مرآة تعتيم إلكترونية (ECM)"
       }
     },
-    "13":{
+    "13": {
       "exterior": {
         "alloyWheels": "عجلات مقاس 17 بوصة",
         "headlamps": "مصابيح أمامية مع رؤية نهارية LED",
@@ -351,7 +355,7 @@
         "tailgate": "شنطة خلفية كهربائية"
       }
     },
-    "20":{
+    "20": {
       "exterior": {
         "gtLineDesign": "حزمة كماليات GT-Line",
         "alloyWheels": "جنوط مقاس 18 بوصة",
@@ -386,7 +390,7 @@
         "tailgate": "شنطة خلفية كهربائية"
       }
     },
-    "21":{
+    "21": {
       "exterior": {
         "gtLineDesign": "حزمة كماليات GT-Line",
         "alloyWheels": "جنوط مقاس 18 بوصة",
@@ -429,10 +433,5 @@
         "tailgate": "شنطة خلفية كهربائية"
       }
     }
-
-
-
-
-
   }
 }

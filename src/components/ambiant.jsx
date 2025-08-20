@@ -1,14 +1,16 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
+import { useTranslation } from "react-i18next";
 
 export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
     const [isAmbiant, setIsAmbiant] = useState(false)
-  
+    const { t, i18n } = useTranslation('common');
+
     return (
         <>
         <div className='relative'>
             <div className="absolute z-[90] left-0 w-full justify-center items-center bottom-6 gap-2  flex flex-col">
-                <p className="text-sm font-[InterBold] text-white">Switch Ambient Light</p>
+                    <p className="text-sm font-[InterBold] text-white">{i18n?.language == 'ar' ? `إضاءة داخلية متغيرة`:'Switch Ambient Light'}</p>
                 <div className="flex items-center gap-2">
                     <p className="text-xs font-[InterBold] text-white">Off</p>
                     <label className="inline-flex items-center cursor-pointer">
@@ -23,7 +25,7 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                     <p className="text-xs font-[InterBold] text-white">On</p>
                 </div>
             </div>
-            <img src='https://methods.ae/wp-content/uploads/ktk-dashboard.png' width={'100vw'} height={'100vh'} className=' h-[60vh] !w-[100vw] md:!h-[100vh] !object-cover' />
+                <img src={isAmbiant ? '/assets/images/ambientOn.webp' : '/assets/images/ambientOff.webp'} width={'100vw'} height={'100vh'} className=' h-[60vh] !w-[100vw] md:!h-[100vh] !object-cover' />
             <>
                 {isAmbiant ? null : <>
                         {/* First interactive point - largest circle */}

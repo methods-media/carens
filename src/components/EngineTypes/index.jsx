@@ -1,14 +1,16 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslation } from "react-i18next";
 
 export const EngineTypesSection = () => {
 
 
-    const [selectedEngine, setSelectedEngine] = useState(0)
+    const [selectedEngine, setSelectedEngine] = useState(1)
     const [isInView, setIsInView] = useState(false)
     const [animationKey, setAnimationKey] = useState(0)
     const sectionRef = useRef(null)
-
+    const { i18n } = useTranslation('common')
+    const isArabic=i18n?.language=='ar'
     // Framer motion scroll animations
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -49,104 +51,77 @@ export const EngineTypesSection = () => {
     }, [selectedEngine, isInView])
 
     return (
-        <div ref={sectionRef} className='w-screen min-h-screen bg-[#06141F]  flex flex-col items-center justify-start '>
-            <style >{`
+        <div ref={sectionRef} className='w-screen min-h-screen bg-[#06141F] min-w-[1400px]  flex flex-col items-center justify-start '>
            
-                .animate-bg-wipe1 {
-                    position: relative;
-                    overflow: hidden;
-                }
-                
-                .animate-bg-wipe1.in-view::before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    right: 0;
-                    bottom: 0;
-                    background: white;
-                    animation: wipeRight 2s ease-in-out forwards;
-                    animation-delay: 0.5s;
-                }
-                
-                @keyframes wipeRight {
-                    0% {
-                        transform: translateX(0%);
-                    }
-                    100% {
-                        transform: translateX(101%);
-                    }
-                }
-            `}</style>
 
-            <div className='w-full flex-col lg:flex-row flex items-center justify-center gap-20 '>
+            <div className='w-full  flex-col lg:flex-row flex items-center  justify-center gap-20 '>
 
-                <div className='flex items-center lg:items-start flex-col gap-5  max-w-full'>
-                    <p class="text-4xl mt-5 lg:mt-0 lg:!text-[62px] !font-[InterBold] !text-white">Powertrain</p>
+                <div className='flex  flex-1 items-center lg:items-start ps-[10%] flex-col gap-5  max-w-full'>
+                    <p class="text-4xl mt-5 lg:mt-0 lg:!text-[62px]  !font-[InterBold] !text-white">{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
 
                     <div className='flex items-start gap-5 mb-7'>
                         <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom font-["InterRegular"] cursor-pointer `} onClick={() => setSelectedEngine(1)}
                         >
 
-                            Petrol Engine
+                            {isArabic?`محرك بنزين`:`Petrol Engine`}
 
                         </button>
                         <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px] ${selectedEngine == 0 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm  btn-showRoom font-["InterRegular"] cursor-pointer `} onClick={() => setSelectedEngine(0)}
-                        >           Diesel Engine
+                        >           {isArabic?`محرك ديزل`:`Diesel Engine`}
                         </button>
 
 
 
                     </div>
-                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
-                        <p className={`lg:absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
-                            ENGINE
+                    <div className='relative flex-col  items-start flex min-h-[120px] '>
+                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                           {isArabic?`المحرك`:` ENGINE`}
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`engine-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '2.5L' : '2.2L'}</p>
-                            <p key={`engine-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'T-GDI' : 'Turbocharged'}</p>
+                            <p key={`engine-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `2.5 لتر ` : '2.5L' : isArabic ?`2.2 لتر `: '2.2L'}</p>
+                            <p key={`engine-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `تيربو` : 'T-GDI' : isArabic ? `تيربو`: 'Turbocharged'}</p>
                         </div>
                     </div>
 
-                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
-                        <p className={`lg:absolute top-[-0px]   font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
-                            HORSEPOWER
+                    <div className='relative flex-col  items-start flex min-h-[120px] '>
+                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                            {isArabic ?`القدرة الحصانية`:`HORSEPOWER`}
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`hp-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '277'}</p>
-                            <p key={`hp-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'HP' : 'HP'}</p>
+                            <p key={`hp-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '207'}</p>
+                            <p key={`hp-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic?`حصان`:'HP' : isArabic?`حصان`:'HP'}</p>
                         </div>
                     </div>
-                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
-                        <p className={`lg:absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
-                            TORQUE
+                    <div className='relative flex-col  items-start flex min-h-[120px] '>
+                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                            {isArabic ?`عزم الدوران`:`TORQUE`}
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
                             <p key={`torque-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
-                            <p key={`torque-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'Nm' : 'Nm'}</p>
+                            <p key={`torque-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `نيوتن/متر` :`'Nm'`}</p>
                         </div>
                     </div>
-                    <div className='relative flex-col lg:flex-row items-center flex lg:items-end min-h-[120px] '>
-                        <p className={`lg:absolute top-[-0px]  font-[InterRegular]  justify-center  text-[#2A4152] text-5xl lg:text-[70px]`}>
-                            TRANSMISSION
+                    <div className='relative flex-col  items-start flex min-h-[120px] '>
+                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                            {isArabic ? `ناقل السرعات` :`TRANSMISSION`}
                         </p>
-                        <div className='flex items-center gap-1 h-full text-white ps-5 lg:ps-20 min-w-[600px]  justify-center text-center'>
+                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`trans-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '8-Speed' : '8-Speed'}</p>
-                            <p key={`trans-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? 'SBW' : 'SBW'}</p>
+                            <p key={`trans-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ?`8 سرعات`:`'8-Speed'` }</p>
+                            <p key={`trans-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ?isArabic?'': 'SBW' :isArabic?'': 'SBW'}</p>
                         </div>
                     </div>
                 </div>
-                <div className='py-10'>
+                <div className='py-10 pt-20 flex-1 flex justify-start'>
 
                     <img
-                        src='https://methods.ae/wp-content/uploads/tk-engine.png'
-                        height={450}
-                        width={550}
-                        className="animate-bounce w-[250px] h-[250px] lg:w-[550px] lg:h-[450px]"
+                        src={selectedEngine == 1 ? 'https://methods.ae/wp-content/uploads/tk-engine.png' :'https://methods.ae/wp-content/uploads/ktk-crdi-engine.png'}
+                        height={550}
+                        width={450}
+                        className="animate-bounce w-[350px] h-[450px] lg:w-[550px] lg:h-[650px]"
                         style={{
                             animation: 'float 2.5s ease-in-out infinite'
 
@@ -154,12 +129,12 @@ export const EngineTypesSection = () => {
                     />
                 </div>
             </div>
-            <div className="flex flex-col gap-5 py-10">
+            <div className="flex  flex-col items-center gap-5 py-10">
                 <h3
                     className="text-base text-center lg:text-start lg:text-[40px] text-white font-[InterBold]"
 
                 >
-                    With such power, the Tasman can tow
+                    {isArabic ?`قوة تجعلك تسحب `:` With such power, the Tasman can tow`}
                 </h3>
                 <motion.h3
                     className="text-xl lg:text-[64px] text-center lg:text-start text-white font-[InterBold] uppercase"
@@ -167,7 +142,7 @@ export const EngineTypesSection = () => {
                         scale: anythingScale
                     }}
                 >
-                    ANYTHING - ANYWHERE
+                    {isArabic ?`أي شيء - إلى أي مكان`:` ANYTHING - ANYWHERE`}
                 </motion.h3>
             </div>
         </div>
