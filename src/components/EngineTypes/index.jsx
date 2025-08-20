@@ -79,7 +79,7 @@ export const EngineTypesSection = () => {
                         </p>
                         <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`engine-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `2.5` : '2.5L' : isArabic ?`2.2 لتر `: '2.2L'}</p>
+                            <p key={`engine-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `2.5` : '2.5L' : isArabic ?`2.2`: '2.2L'}</p>
                             <p key={`engine-2-${animationKey}`} className={`text-3xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `لتر تيربو` : 'T-GDI' : isArabic ? `لتر تيربو` : 'Turbocharged'}</p>
                         </div>
                     </div>

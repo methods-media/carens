@@ -27,7 +27,7 @@ export default function Header() {
   return (
     <>
       {router.pathname.includes('configurator') ? null : (
-        <header className="top-0 fixed z-[1000] left-0 w-full shadow-md  p-4 flex items-center justify-between border-y h-[58px] border--solid border-[#FFFFFF42] !bg-black/20" dir='ltr'>
+        <header className="top-0 fixed z-[20000] left-0 w-full shadow-md  p-4 flex items-center justify-between border-y h-[58px] border--solid border-[#FFFFFF42] !bg-black/20" dir='ltr'>
           <div className="w-full  items-center hidden md:flex justify-between px-5">
             <img
               src="/assets/images/logoWhite.png"
@@ -36,27 +36,25 @@ export default function Header() {
               alt="Logo"
               className="h-[20px]"
             />
-            <div className='flex gap-4 items-center ' dir={locale == 'ar' ? 'rtl' : 'ltr'}>
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#design')}>{'Highlights'}</p>
+            <div className='flex gap-2 items-center ' dir={locale == 'ar' ? 'rtl' : 'ltr'}>
+              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#highlights')}>{t('Highlights')}</p>
               <p className='text-white'>|</p>
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#styling')}>{'Exterior'} </p>
-              <p className='text-white'>|</p>
-
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#technology')}>{'Interior'} </p>
+              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#exterior')}>{locale == 'ar'?'التصميم الخارجي': 'Exterior'} </p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#comfort')}>{'Colors'}</p>
+              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#interior')}>{locale == 'ar' ?'التصميم الداخلي': 'Interior'} </p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#safety')}>{'Capabilities'}</p>
+              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#performance')}>{locale == 'ar' ? 'الأداء':'Performance'}</p>
+              <p className='text-white'>|</p>
+              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#safety')}>{t('Safety')}</p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#safety')}>{'Powertrain'}</p>
+              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white  !font-["InterRegular"]  text-lg  font-semibold `} onClick={() => router.push('/#kiaConnect')}>{ 'Kia Connect'}</p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#safety')}>{'Safety'}</p>
-              <p className='text-white'>|</p>
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center  hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg`} onClick={() => router.push('/#specs')}>{t('specso')}</p>
+              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#specs')}>{t('specso')}</p>
+
             </div>
             <a href={`/${locale == 'en' ? 'ar' : ''}${router.asPath.replace('/', '')}`} className={`!text-[#FFFFFFAD] text-[17px] font-semibold ${locale == 'ar' ? 'font-["InterBold"]' : 'font-["GSSMedium"]'} `}> {locale=='en'?"العربية":"English"}</a>
           </div>
@@ -78,7 +76,7 @@ export default function Header() {
      
 
       {/* Always render SideMenu but control visibility with isOpen prop */}
-      <SideMenu toggleMenu={toggleMenu} isOpen={isOpen} />
+      {/* <SideMenu toggleMenu={toggleMenu} isOpen={isOpen} /> */}
     </>
   );
 }

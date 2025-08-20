@@ -15,7 +15,7 @@ export default function Footer () {
                  dir="ltr" >
                             <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-center   h-[40vh]">
                                 <div className={`w-full px-12 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
-                                    <p className="text-xl lg:text-[40px] text-start font-[InterBold]">{isArabic ?`أينما تأخذك الحياة`:`Wherever life takes you`}</p>
+                                    <p className={`text-xl lg:text-[40px] text-start ${isArabic ?'font-[GSSMedium]':'font-[InterBold]'}`}>{isArabic ?`أينما تأخذك الحياة`:`Wherever life takes you`}</p>
                                     <p className="text-sm lg:text-lg text-black text-start">
                                         {isArabic ? `سواء كنت تتجول في شوارع المدينة أو تتحدى أصعب الطرق. عِش الحرية الحقيقية وجرّب مزيج القوة والأناقة الذي لا تقدمه سوى كيا تاسمان.` : <>
                                         
@@ -32,11 +32,11 @@ export default function Footer () {
 
                 </div>
                     </div>
-                    <div className='!bg-[#05141F] w-full  flex  flex-col lg:flex-row  items-center h-[260px] py-10 lg:py-0 lg:h-[120px] justify-between  px-10 relative  '>
+                    <div dir={'ltr'} className='!bg-[#05141F] w-full  flex  flex-col lg:flex-row  items-center h-[260px] py-10 lg:py-0 lg:h-[120px] justify-between  px-10 relative  '>
 
-                        <div className="flex flex-col gap-2 items-center">
+                        <div className="flex flex-col gap-2 items-start">
                             <img src='/assets/images/logoWhite.png' width={100} height={37} />
-                            <div className='flex justify-center gap-4  items-center   ' style={{ direction: 'ltr' }}>
+                            <div className='flex justify-center gap-4  items-start   ' style={{ direction: 'ltr' }}>
 
                                 <p><span style={{ fontSize: '11px', color: '#A3A8AD' }} className=" font-['InterRegular']">© 2025 All Right Reserved. Kia Middle East</span></p>
 

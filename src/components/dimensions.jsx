@@ -64,7 +64,7 @@ const isArabic=i18n?.language=='ar'
             <section ref={sectionRef} className="min-h-[80vh] bg-white flex flex-col  gap-5 justify-start  relative overflow-hidden" id='specs'>
                 <div className='h-full py-10 w-[1350px] mx-auto flex flex-col justify-start '>
 
-                <h2 className="text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8">
+                <h2 className={`text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8 ${isArabic ? 'font-[GSSMedium]' :''}`}>
                         {isArabic ?`تاسمان في أرقام`:`Tasman in Numbers`}
                 </h2>
                     <div className="flex flex-wrap space-y-3   items-start  justify-center lg:justify-between w-full">
