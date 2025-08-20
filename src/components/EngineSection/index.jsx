@@ -19,8 +19,8 @@ export const EngineSection = () => {
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
     // Transform scroll progress for "COME TOGETHER" animation
-    const comeX = useTransform(scrollYProgress, [0, 0.5], [-500, 0]);
-    const togetherX = useTransform(scrollYProgress, [0, 0.5], [500, 0]);
+    const comeX = useTransform(scrollYProgress, [0, 0.5], [-500, 10]);
+    const togetherX = useTransform(scrollYProgress, [0, 0.5], [500, 10]);
     const textOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
     // Transform scroll progress for "A NEW DIMENSION UNFOLDS" animation
@@ -52,27 +52,27 @@ export const EngineSection = () => {
     return (
         <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[15%] w-full h-[55vh] gap-10 rtl:gap-10 md:h-[100vh]'>
             <motion.p
-                className='text-3xl md:text-[52px] font-[InterBold] text-white uppercase font-[900]'
+                className={`text-3xl md:text-[52px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
                 style={{ scale, y, opacity }}
             >
-                {i18n?.language == 'ar' ?`حينما تلتقي الجرأة  `:` Where your bold spirit and true practicality`}
+                {i18n?.language == 'ar' ? `حينما تلتقي   ` : ` Where your bold spirit and true practicality`}
             </motion.p>
-            <div className={`flex ${i18n?.language=='ar'?'gap-2':''}`}>
+            <div className={`flex gap-2 ${i18n?.language == 'ar' ? '' : 'gap-2'}`}>
                 <motion.p 
                     className='text-4xl md:text-[84px] font-[InterBold] text-white uppercase font-[900]'
-                    style={{ x: i18n?.language?togetherX:comeX, opacity: textOpacity }}
+                    style={{ x: i18n?.language == 'ar' ? togetherX : comeX, opacity: textOpacity }}
                 >
-                    {i18n?.language == 'ar' ?` مع `:`COME`}
+                    {i18n?.language == 'ar' ? `  الجرأة` : `COME `}
                 </motion.p>
                 <motion.p
-                    className='text-4xl md:text-[84px] text-white uppercase font-[900]'
-                    style={{ x: i18n?.language ?comeX: togetherX, opacity: textOpacity }}
+                    className='text-4xl md:text-[84px] text-white uppercase font-[900] ps-8'
+                    style={{ x: i18n?.language == 'ar' ? comeX : togetherX, opacity: textOpacity }}
                 >
-                    {i18n?.language == 'ar' ?`العملية` :`&nbsp;TOGETHER`}
+                    {i18n?.language == 'ar' ? `مع العملية` : ` TOGETHER`}
                 </motion.p>
             </div>
             <motion.p
-                className='text-3xl md:text-[62px] font-[InterBold] text-white text-center   uppercase font-[900]'
+                className={`text-3xl md:text-[62px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white text-center   uppercase font-[900]`}
                 style={{
                     y: dimensionY,
                     scale: dimensionScale,

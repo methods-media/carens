@@ -93,7 +93,7 @@ const ParallaxSection = () => {
                 `}
             </style>
 
-            <div className="parallax-container" ref={sectionRef}>
+            <div className="parallax-container" ref={sectionRef} id='performance'>
                 <div className={`parallax-video ${isInView ? '' : 'opacity-0'}`}>
                     <video autoPlay muted loop className="video-element">
                         <source
@@ -132,16 +132,18 @@ const ParallaxSection = () => {
 
                     </motion.span> */}
                     <span
-                        className='text-[40px] font-[InterBold] font-extrabold  uppercase'
+                        className={` ${i18n?.language == 'ar' ? 'font-[GSSMedium] text-[100px]' :'font-[InterBold] text-[40px]'} font-extrabold  uppercase`}
                         
                     >
-                        {i18n?.language == 'ar' ?`للذين لا يخشون الطرق الوعرة`:`It's for those who aren't afraid to get`}
+                        {i18n?.language == 'ar' ? `للذين لا يخشون ` : `It's for those who aren't afraid to get`}
+                        <br/>
+                        {i18n?.language == 'ar' ?`الطرق الوعرة`:''}
                         <br/>
                         <span className={`ms-3 ${i18n?.language=='ar'?'hidden':''}`}>
                             {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
                                 <motion.span
                                     key={index}
-                                    className='text-[56px] font-[InterBold] font-extrabold uppercase inline-block'
+                                    className={`text-[56px] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
                                     animate={{
                                         y: [0, -20, 0],
                                     }}

@@ -4,7 +4,7 @@ import VRControls from './VRControls';
 import { useTranslation } from 'next-i18next';
 import PanoramaViewer from '@src/components/ImageViewer360';
 import { useRouter } from 'next/router';
-import { CDN_BEIGE_FENDER, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER, FRAME_COUNT } from '@src/constants/imageSequence';
+import { CDN_BEIGE_FENDER, CDN_BEIGE_STATIC, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER, FRAME_COUNT } from '@src/constants/imageSequence';
 const VRShowroom = ({ height }) => {
   const containerRef = useRef(null);
   const [view, setView] = useState('exterior')
@@ -17,11 +17,17 @@ const VRShowroom = ({ height }) => {
   const autoRotateRef = useRef(null);
   const lastTimeRef = useRef(0);
   const [currentColor, setCurrentColor] = useState('beige');
+  const [isOn,setIsOn]=useState(false)
   const framePositionRef = useRef(0);
   const { t ,i18n} = useTranslation('common');
   const { locale } = useRouter();
+
+  const onChange = () => {
+    setIsOn((prev) => !prev)
+    setCurrentFrame(0)
+  }
   const COLORS = [
-    { id: 'beige', name: t('colors.beigeFender'), hex: '#939393', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
+    { id: 'beige', name: t('colors.beigeFender'), hex: '#939393', chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
     { id: 'tan', name: t('colors.beige'), hex: '#000000', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d53c6dbf-f7c7-490f-c1d4-d60f3eb44900/public" },
     { id: 'white', name: t('colors.clear_white'), hex: '#FFFFFF', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4952bc85-a2df-46ab-081d-d25f6177ce00/public"},
     { id: 'whiteFender', name: t('colors.clear_white_fender'), hex: '#909598', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4a912299-4456-49f6-05a4-321c33d18e00/public" },
@@ -40,7 +46,7 @@ const VRShowroom = ({ height }) => {
         CDN_WHITE : colorId === 'whiteFender' ?
           CDN_WHITE_FENDER : colorId === 'tan' ?
             CDN_TAN_BEIGE : colorId === 'beige' ?
-              CDN_BEIGE_FENDER : colorId === 'blue' ?
+              CDN_BEIGE_STATIC : colorId === 'blue' ?
                 CDN_BLUE : colorId === 'red' ?
                   CDN_RED : colorId === 'steel' ?
                     CDN_STEEL_GRAY : colorId === 'gray' ? CDN_INTERSTELLAR : colorId =='green'?CDN_GREEN: CDN_BLACK;
@@ -103,16 +109,7 @@ const VRShowroom = ({ height }) => {
     loadImages();
   }, []);
 
-  const startAutoRotate = () => {
-    if (autoRotateRef.current) return;
 
-    const animate = () => {
-      setCurrentFrame(prev => (prev + 1) % FRAME_COUNT);
-      autoRotateRef.current = setTimeout(animate, 50);
-    };
-
-    autoRotateRef.current = setTimeout(animate, 50);
-  };
 
   const stopAutoRotate = () => {
     if (autoRotateRef.current) {
@@ -171,6 +168,8 @@ const VRShowroom = ({ height }) => {
   };
 
   const handleColorChange = async colorId => {
+    setCurrentFrame(0)
+    setIsOn(false)
     if (!loadedImages[colorId]) {
       stopAutoRotate();
       await preloadColorImages(colorId);
@@ -218,7 +217,7 @@ const VRShowroom = ({ height }) => {
       }}
     >
       <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] !absolute start-0 text-center lg:text-start lg:start-10 !top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-        {i18n?.language == 'ar' ?` تسمان تلبي جميع الأذواق`:'The Tasman Meets All Tastes'}
+        {i18n?.language == 'ar' ?`كيا تاسمان تلبي جميع الأذواق`:'The Tasman Meets All Tastes'}
 
 
 
@@ -268,7 +267,12 @@ const VRShowroom = ({ height }) => {
 
         />
       </div>
-
+      {(currentColor == 'beige' && view == 'exterior') ? <div className='absolute left-10 bottom-10 cursor-pointer z-[200]' onClick={() => {
+        setIsOn(true)
+      }}>
+        <img src='/assets/360.png' width={100} height={50} />
+      </div>:null}
+     
       <div
         ref={containerRef}
         style={{
@@ -276,22 +280,22 @@ const VRShowroom = ({ height }) => {
           height: '100%',
           position: 'relative',
           overflow: 'hidden',
-          cursor: isDragging.current ? 'grabbing' : 'grab',
+          cursor:isOn? isDragging.current ? 'grabbing' : 'grab':'',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleMouseUp}
+        onMouseDown={isOn?handleMouseDown:null}
+        onMouseMove={isOn?handleMouseMove:null}
+        onMouseUp={isOn?handleMouseUp:null}
+        onMouseLeave={isOn?handleMouseUp:null}
+        onTouchStart={isOn?handleTouchStart:null}
+        onTouchMove={isOn?handleTouchMove:null}
+        onTouchEnd={isOn?handleMouseUp:null}
       >
         
         {view == 'exterior' ? <img
-          src={loadedImages[currentColor][currentFrame]}
+          src={isOn ? CDN_BEIGE_FENDER?.[currentFrame] :loadedImages[currentColor][currentFrame]}
           alt={`360° View Frame ${currentFrame + 1}`}
           onError={handleImageError}
           style={{
@@ -307,7 +311,7 @@ const VRShowroom = ({ height }) => {
           draggable={false}
         /> :
           <PanoramaViewer
-            imageUrl="/assets/new/KCL4-INT360v3AL.jpg"
+            imageUrl="/assets/ktk-int360.jpg"
 
           />
          

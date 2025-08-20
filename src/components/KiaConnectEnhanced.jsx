@@ -105,21 +105,23 @@ export default function KiaConnectEnhanced () {
     };
 
     return (
-        <div className="min-h-[70vh] relative overflow-hidden flex flex-col justify-center"
+        <div className="min-h-[70vh] w-screen relative overflow-hidden flex flex-col justify-center"
             style={{
                 backgroundImage: `url('https://methods.ae/wp-content/uploads/connect-remote-control-pt.jpg')`,
                 backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: 'no-repeat',
+                
             }}
+            dir='ltr'
         >
             {/* Background decorative elements */}
 
 
-            <div className="container px-10  relative z-10">
-                <div className="grid lg:grid-cols-2 gap-6 items-center h-[70vh]">
+            <div className="container px-20  min-w-screen relative z-10">
+                <div className="grid lg:grid-cols-2 min-w-screen  gap-6 items-center h-[70vh]">
 
                     {/* First Column - Carousel */}
-                    <div className={isArabic ? 'lg:order-2' : 'lg:order-1'}>
+                    <div className={`w-[50vw]`}>
                         <div
                             className="relative px-8 flex flex-col justify-center h-[70vh]"
                             ref={carouselRef}
@@ -137,9 +139,9 @@ export default function KiaConnectEnhanced () {
                                     className='flex items-start justify-center gap-16'
                                 >
                                     {getVisibleSlides().map((slide, index) => (
-                                        <div key={index} className='flex-1 max-w-[220px]'>
-                                            <p className='text-white text-[22px] font-[InterRegular]'>{slide?.title}</p>
-                                            <p className='text-white text-lg font-[InterRegular] mt-5'>{slide?.description}</p>
+                                        <div key={index} className='flex-1 max-w-[22vw]'>
+                                            <p className={`text-white text-[22px] font-[InterRegular] ${isArabic?'text-end':'text-start'}`}>{slide?.title}</p>
+                                            <p className={`text-white text-lg font-[InterRegular] mt-5 ${isArabic ? 'text-end' : 'text-start'}`}>{slide?.description}</p>
                                         </div>
                                     ))}
                                 </motion.div>
@@ -148,13 +150,13 @@ export default function KiaConnectEnhanced () {
                             {/* Navigation Arrows */}
                             <button
                                 onClick={prevSlide}
-                                className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
+                                className="absolute -left-7 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
                             >
                                 <ChevronLeft className="w-6 h-6 text-white" />
                             </button>
                             <button
                                 onClick={nextSlide}
-                                className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
+                                className="absolute -right-7 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
                             >
                                 <ChevronRight className="w-6 h-6 text-white/70 hover:text-white" />
                             </button>
@@ -177,12 +179,7 @@ export default function KiaConnectEnhanced () {
                         </div>
                     </div>
 
-                    {/* Second Column - Content */}
-                    <div className={isArabic ? 'lg:order-1' : 'hidden lg:order-2'}>
-                        <div className="flex flex-col justify-center h-[70vh] px-8">
-                           
-                        </div>
-                    </div>
+                  
 
                 </div>
 

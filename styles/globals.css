@@ -6,6 +6,7 @@ body {
   overflow-x: hidden;
   font-family: 'InterRegular';
   overflow-x: hidden;
+  max-width: 100vw;
 
         /* Firefox */
 }
@@ -22,7 +23,8 @@ a {
 html[lang='ar'] {
   direction: rtl;
   body {
-      font-family: 'GESSTwoMedium' !important;
+      font-family: 'GESSTwoMedium', 'InterRegular', sans-serif !important;
+        font-feature-settings: "locl" 1;
     }
 }
 

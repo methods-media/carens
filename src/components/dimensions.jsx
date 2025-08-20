@@ -61,7 +61,7 @@ const isArabic=i18n?.language=='ar'
         <>
 
         
-            <section ref={sectionRef} className="min-h-[80vh] bg-white flex flex-col  gap-5 justify-start  relative overflow-hidden">
+            <section ref={sectionRef} className="min-h-[80vh] bg-white flex flex-col  gap-5 justify-start  relative overflow-hidden" id='specs'>
                 <div className='h-full py-10 w-[1350px] mx-auto flex flex-col justify-start '>
 
                 <h2 className="text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8">
@@ -84,13 +84,93 @@ const isArabic=i18n?.language=='ar'
                 <div className="w-full flex-col lg:flex-row pt-12 lg:pt-0 flex items-center px-8 justify-between">
                         {/* Left Content */}
                         
-                        <div className='relative flex flex-col gap-0 items-start  w-[40%]'>
-                            <p className={`  font-[InterRegular]   justify-center leading-normal  text-[#DADADA] text-[45px]`}>
+                        <div className={`relative flex flex-col ${isArabic?'gap-2':'gap-0'}  items-start  w-[40%]`}>
+                            <p className={` ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular] '}   justify-center leading-normal  text-[#DADADA] text-[45px]`}>
                                 {getCurrentSpec()?.label.toUpperCase()}
                             </p>
                             <div className='flex items-center gap-1 h-full text-white  leading-normal    justify-center text-center' style={{marginTop:'-28px'}}>
 
-                                <p key={`engine-1-${animationKey}`} className={`text-[52px]  font-[InterBold] text-[#06141F]  ${isInView ? 'in-view' : ''}`}>{getCurrentSpec()?.value}</p>
+                                <p key={`engine-1-${animationKey}`} className={`text-[52px]  ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F]  ${isInView ? 'in-view' : ''}`}>{getCurrentSpec()?.value?.includes('5,410')?
+                             
+                             <>
+                                {getCurrentSpec()?.value?.split('5,410')?.[0]}
+                                <span className={'font-[InterBold]'}>5,410</span>
+                                  {getCurrentSpec()?.value?.split('5,410')?.[1]}
+                                </>
+                                
+                                :
+                                
+                                
+                                
+                                getCurrentSpec()?.value?.includes('1,930')?
+                             
+                             <>
+                                {getCurrentSpec()?.value?.split('1,930')?.[0]}
+                                <span className={'font-[InterBold]'}>1,930</span>
+                                  {getCurrentSpec()?.value?.split('1,930')?.[1]}
+                                </>
+                                
+                                :
+                                
+
+
+
+                                 getCurrentSpec()?.value?.includes('1,920')?
+                             
+                             <>
+                                {getCurrentSpec()?.value?.split('1,920')?.[0]}
+                                <span className={'font-[InterBold]'}>1,920</span>
+                                  {getCurrentSpec()?.value?.split('1,920')?.[1]}
+                                </>
+                                
+                                :
+
+
+    getCurrentSpec()?.value?.includes('252')?
+                             
+                             <>
+                                {getCurrentSpec()?.value?.split('252')?.[0]}
+                                <span className={'font-[InterBold]'}>252</span>
+                                  {getCurrentSpec()?.value?.split('252')?.[1]}
+                                </>
+                                
+                                :
+
+
+
+                                  getCurrentSpec()?.value?.includes('3,270')?
+                             
+                             <>
+                                {getCurrentSpec()?.value?.split('3,270')?.[0]}
+                                <span className={'font-[InterBold]'}>3,270</span>
+                                  {getCurrentSpec()?.value?.split('3,270')?.[1]}
+                                </>
+                                
+                                :
+
+
+
+                                  getCurrentSpec()?.value?.includes('1,336')?
+                             
+                             <>
+                                {getCurrentSpec()?.value?.split('1,336')?.[0]}
+                                <span className={'font-[InterBold]'}>1,336</span>
+                                  {getCurrentSpec()?.value?.split('1,336')?.[1]}
+                                </>
+                                
+                                :
+
+                                   getCurrentSpec()?.value?.includes('3,250')?
+                             
+                             <>
+                                {getCurrentSpec()?.value?.split('3,250')?.[0]}
+                                <span className={'font-[InterBold]'}>3,250</span>
+                                  {getCurrentSpec()?.value?.split('3,250')?.[1]}
+                                </>
+                                
+                                :
+
+                                getCurrentSpec()?.value}</p>
                             </div>
                             {getCurrentSpec()?.desc ? <span className='text-xs mt-5 text-[#DADADA]'>{getCurrentSpec()?.desc}</span> : null}
 

@@ -142,7 +142,7 @@ const isArabic=i18n?.language=='ar'
     const swiper4Slides = [
         {
             video: '/assets/videos/ktk-fca2.webm',
-            featureTitle: isArabic ?`نظام مساعد لتجنب الاصطدام الأمامي 2 (FCA 2)`: 'Forward Collision-Avoidance Assist 2 (FCA2)',
+            featureTitle: isArabic ?`نظام مساعد لتجنب الاصطدام الأمامي  (FCA 2)`: 'Forward Collision-Avoidance Assist 2 (FCA2)',
             featureDescription: isArabic ?`يراقب هذا النظام محيطك ويقوم بتحذيرك في حال تحديد خطر اصطدام بمركبة أخرى أو بأحد المشاة أو راكب دراجة أمامك. يقوم نظام FCA 2 بتوقيف السيارة تلقائياً، كما يساعد في توجيه عجلة القيادة في حال قام بتحديد خطر الاصطدام بمركبة أو أحد المشاة أو راكب دراجة، بالقرب من الجهة الأمامية للسيارة.`: 'FCA 2 monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane. It also automatically assists steering when there is a risk of collision with an oncoming vehicle or a vehicle in the next lane while changing lanes, as well as with a vehicle or pedestrian on the edge of the lane.'
         },
         {
@@ -271,9 +271,70 @@ const isArabic=i18n?.language=='ar'
 
                             {/* Feature section */}
                             <div className="space-y-2 md:space-y-4 ">
-                                <h3 className={`text-base md:text-2xl font-[InterBold] font-bold  ${dark ? 'text-[#06141F] text-start' : "text-white"} text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
+                                <h3 className={`text-base md:text-2xl ${isArabic? "font-['GSSMedium']" : "font-[InterBold]"} font-bold  ${dark ? 'text-[#06141F] text-start' : "text-white"} text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
-                                    {slides?.[id][currentSlide].featureTitle}
+                                    {slides?.[id][currentSlide].featureTitle?.includes('17') ? <>
+                                        {slides?.[id][currentSlide].featureTitle?.split('17')?.[0]}
+                                        <span className='font-[InterBold]'>17</span>
+                                        {slides?.[id][currentSlide].featureTitle?.split('17')?.[1]}
+                                    </> : slides?.[id][currentSlide].featureTitle?.includes('LED') ? <>
+                                        {slides?.[id][currentSlide].featureTitle?.split('LED')?.[0]}
+                                        <span className='font-[InterBold]'>LED</span>
+                                        {slides?.[id][currentSlide].featureTitle?.split('LED')?.[1]}
+                                        </> : slides?.[id][currentSlide].featureTitle?.includes('Harman Kardon') ? <>
+                                            {slides?.[id][currentSlide].featureTitle?.split('Harman Kardon')?.[0]}
+                                            <span className='font-[InterBold]'>Harman Kardon</span>
+                                            {slides?.[id][currentSlide].featureTitle?.split('Harman Kardon')?.[1]}
+                                            </> : slides?.[id][currentSlide].featureTitle?.includes('X-Trek') ? <>
+                                                {slides?.[id][currentSlide].featureTitle?.split('X-Trek')?.[0]}
+                                                <span className='font-[InterBold]'>X-Trek</span>
+                                                {slides?.[id][currentSlide].featureTitle?.split('X-Trek')?.[1]}
+                                                </> : slides?.[id][currentSlide].featureTitle?.includes('(GVM)') ? <>
+                                                    {slides?.[id][currentSlide].featureTitle?.split('(GVM)')?.[0]}
+                                                    <span className='font-[InterBold]'>(GVM)</span>
+                                                    {slides?.[id][currentSlide].featureTitle?.split('(GVM)')?.[1]}
+                                    </> : slides?.[id][currentSlide].featureTitle?.includes('e-LD') ? <>
+                                        {slides?.[id][currentSlide].featureTitle?.split('e-LD')?.[0]}
+                                        <span className='font-[InterBold]'>e-LD</span>
+                                        {slides?.[id][currentSlide].featureTitle?.split('e-LD')?.[1]}
+                                                        </> : slides?.[id][currentSlide].featureTitle?.includes('ITBC') ? <>
+                                                            {slides?.[id][currentSlide].featureTitle?.split('ITBC')?.[0]}
+                                                            <span className='font-[InterBold]'>ITBC</span>
+                                                            {slides?.[id][currentSlide].featureTitle?.split('ITBC')?.[1]}
+                                                            </> : slides?.[id][currentSlide].featureTitle?.includes('FCA 2') ? <>
+                                                                {slides?.[id][currentSlide].featureTitle?.split('FCA 2')?.[0]}
+                                                                <span className='font-[InterBold]'>FCA 2</span>
+                                                                {slides?.[id][currentSlide].featureTitle?.split('FCA 2')?.[1]}
+                                                                </> : slides?.[id][currentSlide].featureTitle?.includes('LFA') ? <>
+                                                                    {slides?.[id][currentSlide].featureTitle?.split('LFA')?.[0]}
+                                                                    <span className='font-[InterBold]'>LFA</span>
+                                                                    {slides?.[id][currentSlide].featureTitle?.split('LFA')?.[1]}
+                                                                    </> : slides?.[id][currentSlide].featureTitle?.includes('SCC') ? <>
+                                                                        {slides?.[id][currentSlide].featureTitle?.split('SCC')?.[0]}
+                                                                        <span className='font-[InterBold]'>SCC</span>
+                                                                        {slides?.[id][currentSlide].featureTitle?.split('SCC')?.[1]}
+                                    </> : slides?.[id][currentSlide].featureTitle?.includes('RSPA') ? <>
+                                        {slides?.[id][currentSlide].featureTitle?.split('RSPA')?.[0]}
+                                        <span className='font-[InterBold]'>RSPA</span>
+                                        {slides?.[id][currentSlide].featureTitle?.split('RSPA')?.[1]}
+                                    </> :
+                                                                                slides?.[id][currentSlide].featureTitle?.includes('RCTA') ? <>
+                                                                                    {slides?.[id][currentSlide].featureTitle?.split('RCTA')?.[0]}
+                                                                                    <span className='font-[InterBold]'>RCTA</span>
+                                                                                    {slides?.[id][currentSlide].featureTitle?.split('RCTA')?.[1]}
+                                                                                </> 
+                                            : slides?.[id][currentSlide].featureTitle?.includes('BVM') ? <>
+                                                {slides?.[id][currentSlide].featureTitle?.split('BVM')?.[0]}
+                                                <span className='font-[InterBold]'>BVM</span>
+                                                {slides?.[id][currentSlide].featureTitle?.split('BVM')?.[1]}
+                                                                                    </> :
+                                                slides?.[id][currentSlide].featureTitle?.includes('SVM') ? <>
+                                                    {slides?.[id][currentSlide].featureTitle?.split('SVM')?.[0]}
+                                                    <span className='font-[InterBold]'>SVM</span>
+                                                    {slides?.[id][currentSlide].featureTitle?.split('SVM')?.[1]}
+                                                </> :
+                                        
+                                        slides?.[id][currentSlide].featureTitle}
                                 </h3>
                                 <p className={`text-sm lg:text-lg leading-relaxed ${dark ?'text-[#54595F] text-start':id==0?'text-[#A3A8AD]':'text-white'} max-w-[89%] md:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
@@ -289,7 +350,7 @@ const isArabic=i18n?.language=='ar'
                                     key={index}
                                     onClick={() => goToSlide(index)}
                                     disabled={isAnimating}
-                                    className={`w-6 md:w-[40px] h-6 md:h-[40px] flex items-center justify-center cursor-pointer text-base md:text-xl  font-[InterBold] transition-all duration-300 ${index === currentSlide
+                                    className={`w-6 md:w-[40px] h-6 md:h-[40px] !font-[InterBold] flex items-center justify-center cursor-pointer text-base md:text-xl  ${isArabic ? "font-['GSSMedium']" : "font-[InterBold]"} transition-all duration-300 ${index === currentSlide
                                         ? `${dark ? 'bg-[#06141F] text-white' :'bg-white text-blue-900'}`
                                         : `${dark ? 'text-black border-black ' : 'text-white border-white '} border-b-2 border-solid hover:bg-opacity-20`
                                         } ${isAnimating ? 'opacity-50' : ''}`}

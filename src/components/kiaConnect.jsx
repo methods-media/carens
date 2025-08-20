@@ -5,7 +5,7 @@ export default function KiaConnect () {
 const {i18n}=useTranslation('common')
     const isArabic=i18n?.language=='ar'
     return (
-        <div className='h-[120vh] bg-white'>
+        <div className='h-[120vh] bg-white' id="kiaConnect">
             <div className='w-full max-w-[80%] mx-auto flex items-center justify-center flex-col  gap-6 lg:gap-0 lg:flex-row h-[50vh]'>
                 <div className='flex  items-center justify-center w-[40%] '>
                     <img src='https://methods.ae/wp-content/uploads/KIA_Connect_icon.png' className="rounded-lg" width={200} height={200} />

@@ -1,12 +1,15 @@
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Specs = () => {
     const { t ,i18n} = useTranslation('common');
     const [openCategory, setOpenCategory] = useState(null);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [isAnimating, setIsAnimating] = useState(false);
+    const [slideDirection, setSlideDirection] = useState('next'); // 'next' or 'prev'
     const isArabic=i18n?.language=='ar'
+
     const trimLevels = [
         { id: 'LX', name: 'LX' },
         { id: 'EX', name: 'EX' },
@@ -92,17 +95,59 @@ const Specs = () => {
     };
 
     const nextSlide = () => {
-        setCurrentSlide((prev) => (prev + 1) % trimLevels.length);
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setSlideDirection('next');
+        setCurrentSlide((prev) => {
+            const next = prev + 1;
+            return next >= trimLevels.length - 2 ? trimLevels.length - 3 : next;
+        });
+        setTimeout(() => setIsAnimating(false), 300);
     };
 
     const prevSlide = () => {
-        setCurrentSlide((prev) => (prev - 1 + trimLevels.length) % trimLevels.length);
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setSlideDirection('prev');
+        setCurrentSlide((prev) => {
+            const next = prev - 1;
+            return next < 0 ? 0 : next;
+        });
+        setTimeout(() => setIsAnimating(false), 300);
     };
 
-    const currentTrim = trimLevels[currentSlide];
+    const goToSlide = (index) => {
+        if (isAnimating) return;
+        setIsAnimating(true);
+        setSlideDirection(index > currentSlide ? 'next' : 'prev');
+        setCurrentSlide(index);
+        setTimeout(() => setIsAnimating(false), 300);
+    };
 
-    const TrimCard = ({ trim }) => (
-        <div className="bg-[#E7EBF0] rounded-[10px] p-6 h-full">
+    // Get the 3 visible trim cards
+    const getVisibleTrims = () => {
+        const visibleTrims = [];
+        for (let i = 0; i < 3; i++) {
+            const index = currentSlide + i;
+            if (index < trimLevels.length) {
+                visibleTrims.push(trimLevels[index] );
+            }
+        }
+        return visibleTrims;
+    };
+
+    const visibleTrims = getVisibleTrims();
+
+    const TrimCard = ({ trim, index, isEntering }) => (
+        <div
+            className={`bg-[#E7EBF0] rounded-[10px] p-6 h-full transition-all duration-300 transform ${isEntering
+                ? 'animate-bounce scale-105 shadow-lg'
+                : 'scale-100'
+                }`}
+            style={{
+                animation: isEntering ? 'bounce 0.6s ease-in-out' : 'none'
+            }}
+        >
             {/* Trim Name */}
             <h2 className="text-6xl text-center font-bold text-[#06141F] mb-4">{trim.name}</h2>
 
@@ -110,21 +155,21 @@ const Specs = () => {
             <div className="mb-6">
                 <h3 className="text-lg font-medium text-black mb-3">Technical Specifications</h3>
                 <div className="space-y-0">
-                    {featureCategories.map((category, index) => (
+                    {featureCategories.map((category, catIndex) => (
                         <div key={category.title} className="w-full">
                             <button
-                                onClick={() => toggleCategory(index)}
-                                className={`w-full flex justify-between items-center p-3 text-sm font-medium  cursor-pointer transition-all duration-300 ${openCategory === index
+                                onClick={() => toggleCategory(catIndex)}
+                                className={`w-full flex justify-between items-center p-3 text-sm font-medium  cursor-pointer transition-all duration-300 ${openCategory === catIndex
                                     ? 'bg-[#06141F] text-white'
                                     : 'bg-[#7b848c] text-white '
                                     }`}
                             >
                                 {category.title}
                                 <span className="text-lg">
-                                    {openCategory === index ? '−' : '+'}
+                                    {openCategory === catIndex ? '−' : '+'}
                                 </span>
                             </button>
-                            {openCategory === index && (
+                            {openCategory === catIndex && (
                                 <div className="mt-2 ml-3 space-y-1">
                                     {category.features.map((feature, featureIndex) => (
                                         <div key={featureIndex} className="text-xs text-gray-600 flex items-start">
@@ -164,7 +209,7 @@ const Specs = () => {
             <div className='max-w-[1400px] mx-auto px-4 py-8'>
                 {/* Header Section */}
                 <div className="text-start mb-8">
-                    <h1 className="text-[40px] font-[InterBold] text-[#06141F] mb-5">
+                    <h1 className={`text-[40px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F] mb-5`}>
                         {isArabic ?`أختر الفئة التي تناسبك`:`  Find the perfect trim for you`}
                     </h1>
                     <p className="text-lg text-[#06141F] text-start">
@@ -172,45 +217,77 @@ const Specs = () => {
                     </p>
                 </div>
 
-                {/* Trim Cards Slider */}
+                {/* Trim Cards Slider - Show 3 cards at once */}
                 <div className="relative">
                     {/* Previous Button */}
                     <button
                         onClick={prevSlide}
-                        className="absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full  text-[#06141F] flex items-center justify-center  transition-colors z-10"
+                        disabled={currentSlide === 0 || isAnimating}
+                        className={`absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${currentSlide === 0 || isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+                            }`}
                     >
                         <ChevronLeft className="w-10 h-10 text-[#06141F]" />
                     </button>
 
-                    {/* Single Trim Card - Centered with one-third width */}
-                    <div className="flex justify-center">
-                        <div className="w-[40%]">
-                            <TrimCard trim={currentTrim} />
-                        </div>
+                    {/* Three Trim Cards Container */}
+                    <div className="flex justify-center gap-6 " dir='ltr'
+>
+                        {visibleTrims.map((trim, index) => (
+                            <div key={trim.id} className="w-[30%]">
+                                <TrimCard
+                                    trim={trim}
+                                    index={index}
+                                    isEntering={
+                                        (slideDirection === 'next' &&index === 2 && isAnimating) || // Next: animate rightmost card
+                                        (slideDirection === 'prev' && index === 0 && isAnimating)    // Prev: animate leftmost card
+                                    }
+                                />
+                            </div>
+                        ))}
                     </div>
 
                     {/* Next Button */}
                     <button
                         onClick={nextSlide}
-                        className="absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full  text-[#06141F] flex items-center justify-center  transition-colors z-10"
+                        disabled={currentSlide >= trimLevels.length - 3 || isAnimating}
+                        className={`absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${currentSlide >= trimLevels.length - 3 || isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+                            }`}
                     >
                         <ChevronRight className="w-10 h-10 text-[#06141F]" />
-
                     </button>
                 </div>
 
                 {/* Dots indicator */}
-                <div className="flex justify-center gap-2 mt-8">
-                    {trimLevels.map((_, index) => (
+                <div className="flex justify-center gap-2 mt-8" dir={'ltr'}>
+                    {Array.from({ length: Math.max(1, trimLevels.length - 2) }).map((_, index) => (
                         <button
                             key={index}
-                            onClick={() => setCurrentSlide(index)}
+                            onClick={() => goToSlide(index)}
+                            disabled={isAnimating}
                             className={`w-3 h-3 rounded-full transition-all ${currentSlide === index ? 'bg-[#06141F]' : 'bg-gray-300'
-                                }`}
+                                } ${isAnimating ? 'cursor-not-allowed' : 'cursor-pointer hover:bg-gray-400'}`}
                         />
                     ))}
                 </div>
             </div>
+
+            {/* Custom CSS for bounce animation */}
+            <style jsx>{`
+                @keyframes bounce {
+                    0%, 20%, 53%, 80%, 100% {
+                        transform: translate3d(0,0,0);
+                    }
+                    40%, 43% {
+                        transform: translate3d(0,-8px,0);
+                    }
+                    70% {
+                        transform: translate3d(0,-4px,0);
+                    }
+                    90% {
+                        transform: translate3d(0,-2px,0);
+                    }
+                }
+            `}</style>
         </section>
     );
 };

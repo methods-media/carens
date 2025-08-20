@@ -23,7 +23,7 @@ const Banner = () => {
   };
 
   return (
-    <div id='bannerID' className="w-screen h-[90vh] md:h-screen z-[200]  bg-[url('/assets/ktk-test-cover2.jpg')] bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden">
+    <div id='bannerID' className={`w-screen h-[90vh] md:h-screen ${videoEnded ? ' z-[200]' :' z-[200000]'}  bg-black bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden`}>
       {!videoError && (
         <video
           ref={videoRef}
@@ -72,7 +72,12 @@ const Banner = () => {
       
       </> : null}
       {/* bg-gradient-to-b from-transparent to-[#06141F] */}
-      {(videoEnded || videoError) ? <div className='absolute bottom-0 left-0 w-full bg-gradient-to-b from-[#06141f80] to-[#06141F] from-0% to-100% flex-wrap md:flex-nowrap  h-auto md:h-[90px] py-2.5   flex items-center mb-5 md:mb-0 justify-around md:justify-center gap-5 md:gap-[50px]'>
+      {(videoEnded || videoError) ? <motion.div
+        className='absolute bottom-0 left-0 w-full bg-gradient-to-b from-transparent to-[#06141F] from-0% to-100% flex-wrap md:flex-nowrap  h-auto md:h-[90px] py-2.5   flex items-center mb-5 md:mb-0 justify-around md:justify-center gap-5 md:gap-[50px]'
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className='flex items-center justify-center  gap-[10px]'>
           <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <Engine />
@@ -109,7 +114,7 @@ const Banner = () => {
             <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ?`أو 100 ألف كيلومتر (أيهما أقرب)` :'Or 100,000 Km W.C.F'}</p>
           </div>
         </div>
-            </div>:null}
+      </motion.div> : null}
      
     </div>
   );

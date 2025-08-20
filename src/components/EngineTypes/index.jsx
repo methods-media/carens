@@ -57,7 +57,7 @@ export const EngineTypesSection = () => {
             <div className='w-full  flex-col lg:flex-row flex items-center  justify-center gap-20 '>
 
                 <div className='flex  flex-1 items-center lg:items-start ps-[10%] flex-col gap-5  max-w-full'>
-                    <p class="text-4xl mt-5 lg:mt-0 lg:!text-[62px]  !font-[InterBold] !text-white">{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
+                    <p class={`text-4xl mt-5 lg:mt-0 lg:!text-[62px]  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} !text-white`}>{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
 
                     <div className='flex items-start gap-5 mb-7'>
                         <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom font-["InterRegular"] cursor-pointer `} onClick={() => setSelectedEngine(1)}
@@ -74,44 +74,44 @@ export const EngineTypesSection = () => {
 
                     </div>
                     <div className='relative flex-col  items-start flex min-h-[120px] '>
-                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
                            {isArabic?`المحرك`:` ENGINE`}
                         </p>
                         <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`engine-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `2.5 لتر ` : '2.5L' : isArabic ?`2.2 لتر `: '2.2L'}</p>
-                            <p key={`engine-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `تيربو` : 'T-GDI' : isArabic ? `تيربو`: 'Turbocharged'}</p>
+                            <p key={`engine-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `2.5` : '2.5L' : isArabic ?`2.2 لتر `: '2.2L'}</p>
+                            <p key={`engine-2-${animationKey}`} className={`text-3xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `لتر تيربو` : 'T-GDI' : isArabic ? `لتر تيربو` : 'Turbocharged'}</p>
                         </div>
                     </div>
 
                     <div className='relative flex-col  items-start flex min-h-[120px] '>
-                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
                             {isArabic ?`القدرة الحصانية`:`HORSEPOWER`}
                         </p>
                         <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`hp-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '207'}</p>
-                            <p key={`hp-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic?`حصان`:'HP' : isArabic?`حصان`:'HP'}</p>
+                            <p key={`hp-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '207'}</p>
+                            <p key={`hp-2-${animationKey}`} className={`text-3xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic?`حصان`:'HP' : isArabic?`حصان`:'HP'}</p>
                         </div>
                     </div>
                     <div className='relative flex-col  items-start flex min-h-[120px] '>
-                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
                             {isArabic ?`عزم الدوران`:`TORQUE`}
                         </p>
                         <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`torque-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
-                            <p key={`torque-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `نيوتن/متر` :`'Nm'`}</p>
+                            <p key={`torque-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
+                            <p key={`torque-2-${animationKey}`} className={`text-3xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `نيوتن/متر` :`Nm`}</p>
                         </div>
                     </div>
                     <div className='relative flex-col  items-start flex min-h-[120px] '>
-                        <p className={`  font-[InterRegular]  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
+                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-5xl lg:text-[42px]`}>
                             {isArabic ? `ناقل السرعات` :`TRANSMISSION`}
                         </p>
                         <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`trans-1-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ?`8 سرعات`:`'8-Speed'` }</p>
-                            <p key={`trans-2-${animationKey}`} className={`text-3xl lg:text-[50px] font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ?isArabic?'': 'SBW' :isArabic?'': 'SBW'}</p>
+                            <p key={`trans-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ?`8`:`'8-Speed'` }</p>
+                            <p key={`trans-2-${animationKey}`} className={`text-3xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? 'سرعات' : 'SBW' : isArabic ?'سرعات': 'SBW'}</p>
                         </div>
                     </div>
                 </div>
@@ -129,15 +129,15 @@ export const EngineTypesSection = () => {
                     />
                 </div>
             </div>
-            <div className="flex  flex-col items-center gap-5 py-10">
+            <div className="flex  flex-col items-center  gap-5 py-10">
                 <h3
-                    className="text-base text-center lg:text-start lg:text-[40px] text-white font-[InterBold]"
+                    className={`text-base text-center lg:text-start lg:text-[40px] text-white  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"}`}
 
                 >
                     {isArabic ?`قوة تجعلك تسحب `:` With such power, the Tasman can tow`}
                 </h3>
                 <motion.h3
-                    className="text-xl lg:text-[64px] text-center lg:text-start text-white font-[InterBold] uppercase"
+                    className={`text-xl py-12 lg:text-[64px] text-center lg:text-start text-white ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} uppercase`}
                     style={{
                         scale: anythingScale
                     }}
