@@ -100,7 +100,8 @@ const Specs = () => {
         setSlideDirection('next');
         setCurrentSlide((prev) => {
             const next = prev + 1;
-            return next >= trimLevels.length - 2 ? trimLevels.length - 3 : next;
+            // Loop back to the beginning when reaching the end
+            return next >= trimLevels.length - 2 ? 0 : next;
         });
         setTimeout(() => setIsAnimating(false), 300);
     };
@@ -111,7 +112,8 @@ const Specs = () => {
         setSlideDirection('prev');
         setCurrentSlide((prev) => {
             const next = prev - 1;
-            return next < 0 ? 0 : next;
+            // Loop to the end when going before the beginning
+            return next < 0 ? trimLevels.length - 3 : next;
         });
         setTimeout(() => setIsAnimating(false), 300);
     };
@@ -140,13 +142,8 @@ const Specs = () => {
 
     const TrimCard = ({ trim, index, isEntering }) => (
         <div
-            className={`bg-[#E7EBF0] rounded-[10px] p-6 h-full transition-all duration-300 transform ${isEntering
-                ? 'animate-bounce scale-105 shadow-lg'
-                : 'scale-100'
-                }`}
-            style={{
-                animation: isEntering ? 'bounce 0.6s ease-in-out' : 'none'
-            }}
+            className={`bg-[#E7EBF0] rounded-[10px] p-6 h-full transition-all duration-300 transform `}
+
         >
             {/* Trim Name */}
             <h2 className="text-6xl text-center font-bold text-[#06141F] mb-4">{trim.name}</h2>
@@ -212,7 +209,7 @@ const Specs = () => {
                     <h1 className={`text-[40px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F] mb-5`}>
                         {isArabic ?`أختر الفئة التي تناسبك`:`  Find the perfect trim for you`}
                     </h1>
-                    <p className="text-lg text-[#06141F] text-start">
+                    <p className={`text-lg text-[#06141F] text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
                         {isArabic ?`من الأداء القوي إلى التفاصيل الفاخرة، توفر لك تاسمان الخيار الذي يعكس شخصيتك ويُعبّر عن أسلوب قيادتك`:`  From rugged to refined, choose the Tasman trim that matches your drive and your style.`}
                     </p>
                 </div>
@@ -222,8 +219,8 @@ const Specs = () => {
                     {/* Previous Button */}
                     <button
                         onClick={prevSlide}
-                        disabled={currentSlide === 0 || isAnimating}
-                        className={`absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${currentSlide === 0 || isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+                        disabled={isAnimating}
+                        className={`absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
                             }`}
                     >
                         <ChevronLeft className="w-10 h-10 text-[#06141F]" />
@@ -249,8 +246,8 @@ const Specs = () => {
                     {/* Next Button */}
                     <button
                         onClick={nextSlide}
-                        disabled={currentSlide >= trimLevels.length - 3 || isAnimating}
-                        className={`absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${currentSlide >= trimLevels.length - 3 || isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+                        disabled={isAnimating}
+                        className={`absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
                             }`}
                     >
                         <ChevronRight className="w-10 h-10 text-[#06141F]" />

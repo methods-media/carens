@@ -311,7 +311,7 @@ const VRShowroom = ({ height }) => {
           draggable={false}
         /> :
           <PanoramaViewer
-            imageUrl="/assets/ktk-int360.jpg"
+            imageUrl="/assets/ktk-int360-v2.png"
 
           />
          

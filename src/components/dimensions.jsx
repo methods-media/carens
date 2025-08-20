@@ -72,7 +72,7 @@ const isArabic=i18n?.language=='ar'
                         <button
                             key={spec.key}
                             onClick={() => setSelectedSpec(spec.key)}
-                            className={`text-sm lg:text-[22px] cursor-pointer font-medium transition-colors pb-3 px-1 lg:px-2 duration-300 ${selectedSpec === spec.key
+                            className={`text-sm lg:text-[22px] cursor-pointer font-medium transition-colors pb-3 px-1 lg:px-2 duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} ${selectedSpec === spec.key
                                 ? 'text-[#06141F]  border-b-1 lg:border-b-3 border-b-[#06141F]  underline-offset-4'
                                 : 'text-[#54595F] hover:text-[#06141F] hover:border-b-1 lg:hover:border-b-3 hover:border-b-[#06141F]'
                                 }`}

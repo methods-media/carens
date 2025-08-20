@@ -12,8 +12,14 @@ const {i18n}=useTranslation('common')
                 </div>
                 <div className='flex flex-col w-[70%] gap-5 items-center lg:items-start'>
                     <p className='text-[#06141F] text-3xl lg:text-[40px] font-[InterRegular]'>Kia Connect</p>
-                    <p className='text-[#54595F] text-base text-center lg:text-start lg:text-[20px] font-[InterRegular]'>{isArabic ?`Kia Connect بوابتك لرحلة أذكى وأكثر اتصالاً، تربط سيارتك كيا بهاتفك الذكي بكل سلاسة`:`Kia Connect is your gateway to a smarter, more connected drive, seamlessly linking your Kia to your smartphone`}.</p>
-                    <button className='text-sm bg-[#06141F] py-3 px-6 text-white hover:text-[#06141F] hover:bg-white hover:border hover:border-[#06141F] rounded-[5px] w-fit '>{isArabic ? `إعرف المزيد` :`Learn More`}</button>
+                    <p className={`text-[#54595F] text-base text-center lg:text-start lg:text-[20px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>{isArabic ?
+                        <>
+                            <span className="font-[InterRegular]">Kia Connect</span>
+                            {` بوابتك لرحلة أذكى وأكثر اتصالاً، تربط سيارتك كيا بهاتفك الذكي بكل سلاسة`}
+                        </>
+                    
+                    : `Kia Connect is your gateway to a smarter, more connected drive, seamlessly linking your Kia to your smartphone`}.</p>
+                    <button className={`text-sm bg-[#06141F] py-3 px-6 text-white hover:text-[#06141F] hover:bg-white hover:border hover:border-[#06141F] rounded-[5px] w-fit ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>{isArabic ? `إعرف المزيد` :`Learn More`}</button>
                 </div>
             </div>
            

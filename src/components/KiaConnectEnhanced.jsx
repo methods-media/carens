@@ -140,8 +140,8 @@ export default function KiaConnectEnhanced () {
                                 >
                                     {getVisibleSlides().map((slide, index) => (
                                         <div key={index} className='flex-1 max-w-[22vw]'>
-                                            <p className={`text-white text-[22px] font-[InterRegular] ${isArabic?'text-end':'text-start'}`}>{slide?.title}</p>
-                                            <p className={`text-white text-lg font-[InterRegular] mt-5 ${isArabic ? 'text-end' : 'text-start'}`}>{slide?.description}</p>
+                                            <p className={`text-white text-[22px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} ${isArabic?'text-end':'text-start'}`}>{slide?.title}</p>
+                                            <p className={`text-white text-lg ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} mt-5 ${isArabic ? 'text-end' : 'text-start'}`}>{slide?.description}</p>
                                         </div>
                                     ))}
                                 </motion.div>

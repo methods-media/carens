@@ -32,14 +32,14 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                 <AnimatePresence mode="wait">
                     <motion.img
                         key={isAmbiant ? 'ambientOn' : 'ambientOff'}
-                        src={isAmbiant ? '/assets/images/ambientOn.webp' : '/assets/images/ambientOff.webp'}
+                        src={isAmbiant ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/73ff05f1-c26a-45bb-8047-306119bb3f00/tv' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/27149298-f163-4478-c461-b7c77fd23e00/tv'}
                         width={'100vw'}
                         height={'100vh'}
                         className='h-[60vh] !w-[100vw] md:!h-[100vh] !object-cover'
-                        initial={{ opacity: 0.5 }}
+                        initial={{ opacity: 0.9 }}
                         animate={{ opacity: 1 }}
-                        exit={{ opacity: 0.5 }}
-                        transition={{ duration: 0.5, ease: "easeInOut" }}
+                        exit={{ opacity: 1 }}
+                        transition={{ duration: 0.5, ease: "linear" }}
                     />
                 </AnimatePresence>
             <>

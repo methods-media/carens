@@ -96,7 +96,7 @@ const ParallaxSectionSecond = () => {
                 `}
             </style>
 
-            <div className="parallax-container1" ref={sectionRef} id='safety' >
+            <div className="parallax-container1" ref={sectionRef}  >
                 <div className={`parallax-video1 ${isInView?'':'opacity-0'}`}>
                     <img src='https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1325890b-0848-4f9a-2ada-e5a7d7e6fa00/public' className="image-element ">
 
@@ -110,8 +110,9 @@ const ParallaxSectionSecond = () => {
 
                 </div>
                 <div className="content22 "
+                    id='safety'
                     ref={textRef}>
-                    <video src='/assets/videos/ktk-safetycover.webm' playsInline muted autoPlay  className='w-screen h-screen object-cover'/>
+                    <video src='/assets/videos/ktk-safetycover.webm' playsInline muted autoPlay loop  className='w-screen h-screen object-cover'/>
                     <div className='absolute w-full bottom-0 start-0 p-10 bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
                         <p className={`text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
                             <>

@@ -243,7 +243,7 @@ const isArabic=i18n?.language=='ar'
                             </button>
                         </div>
                     : <div className='relative'>
-                            <video src={slides?.[id]?.[currentSlide]?.video} className='w-full rounded-2xl object-cover md:w-[750px] h-[350px] md:h-[600px]' muted playsInline autoPlay />
+                            <video src={slides?.[id]?.[currentSlide]?.video} className='w-full rounded-2xl object-cover md:w-[750px] h-[350px] md:h-[600px]' muted playsInline autoPlay loop />
                             <button
                                 onClick={prevSlide}
                                 disabled={isAnimating}
@@ -264,7 +264,7 @@ const isArabic=i18n?.language=='ar'
                   
 
                     {/* Right Section - Content */}
-                    <div className="flex-1 pt-6 md:py-12 p-12 pe-0 flex flex-col justify-start  relative min-w-[500px]">
+                    <div className="flex-1 pt-6 md:py-12 p-12 pe-0 flex flex-col justify-start  relative min-w-[550px]">
                         <div className="text-white space-y-8">
                             {/* Main description */}
                             
@@ -351,7 +351,7 @@ const isArabic=i18n?.language=='ar'
                                     onClick={() => goToSlide(index)}
                                     disabled={isAnimating}
                                     className={`w-6 md:w-[40px] h-6 md:h-[40px] !font-[InterBold] flex items-center justify-center cursor-pointer text-base md:text-xl  ${isArabic ? "font-['GSSMedium']" : "font-[InterBold]"} transition-all duration-300 ${index === currentSlide
-                                        ? `${dark ? 'bg-[#06141F] text-white' :'bg-white text-blue-900'}`
+                                        ? `${dark ? 'bg-[#06141F] text-white' :'bg-white text-[#06141F]'}`
                                         : `${dark ? 'text-black border-black ' : 'text-white border-white '} border-b-2 border-solid hover:bg-opacity-20`
                                         } ${isAnimating ? 'opacity-50' : ''}`}
                                 >

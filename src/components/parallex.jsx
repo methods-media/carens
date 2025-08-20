@@ -143,7 +143,7 @@ const ParallaxSection = () => {
                             {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
                                 <motion.span
                                     key={index}
-                                    className={`text-[56px] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
+                                    className={`text-[120px] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
                                     animate={{
                                         y: [0, -20, 0],
                                     }}
