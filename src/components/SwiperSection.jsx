@@ -21,7 +21,7 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2dc0d5c1-4ee1-496b-ffff-d0f1c1e16400/public',
             featureTitle: isArabic ?`مصابيح خلفية LED`: 'LED Rear Lights',
-            featureDescription: isArabic ?`تأتي كيا تاسمان بمصابيح خلفية مزدوجة LED تنتج إضاءة ساطعة وواضحة لرؤية وأمان أفضل. هذه المصابيح تعزز من الشكل العصري للسيارة وتجعلك مرئيًا بوضوح أمام جميع مستخدمي الطريق في شتى الظروف.`: 'Find all the tools you’ll need to create advanced websites in one place. Stop waisting time searching for solutions.'
+            featureDescription: isArabic ? `تأتي كيا تاسمان بمصابيح خلفية مزدوجة LED تنتج إضاءة ساطعة وواضحة لرؤية وأمان أفضل. هذه المصابيح تعزز من الشكل العصري للسيارة وتجعلك مرئيًا بوضوح أمام جميع مستخدمي الطريق في شتى الظروف.` : "The Kia Tasman is equipped with distinctive full LED rear combination lamps that provide bright, clear illumination for enhanced visibility and safety. These LED rear lights contribute to the vehicle's modern, confident design while ensuring you are clearly seen by other road users in all conditions."
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/275d62e7-19c7-41b1-eb22-f88ea4a7ab00/public',
@@ -46,7 +46,7 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c92d72f0-d329-4ff2-e090-fc98f0bafd00/public',
             featureTitle: isArabic ?`درع حماية سفلي`: 'Underbody Skid Plate',
-            featureDescription: isArabic ?`لحماية أثناء مغامرات الطرق الوعرة، تأتي تاسمان مزودة بدرع حماية سفلي صُلب يحمي الهيكل السفلي من الصخور والرواسب، ليحافظ على سلامة المكونات المهمة ويُعزّز صلابة المركبة واستعدادها لأقسى البيئات.`: 'Find all the tools you’ll need to create advanced websites in one place. Stop waisting time searching for solutions.'
+            featureDescription: isArabic ? `لحماية أثناء مغامرات الطرق الوعرة، تأتي تاسمان مزودة بدرع حماية سفلي صُلب يحمي الهيكل السفلي من الصخور والرواسب، ليحافظ على سلامة المكونات المهمة ويُعزّز صلابة المركبة واستعدادها لأقسى البيئات.` : "For serious off-road protection, the Tasman comes with underbody skid plates. These robust plates shield the vehicle's undercarriage from rocks, debris, and rough terrain, helping to maintain critical component integrity when venturing off the beaten path. This feature reinforces the Tasman's ruggedness and readiness for demanding environments.."
         }
     ];
    
@@ -54,7 +54,7 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d48b7706-7ab0-4d15-c40e-bb557f277b00/public',
             featureTitle: isArabic ?`مصباح باب جانبي`: 'Door Spot Lamp',
-            featureDescription: isArabic ?`مصابيح الباب تضيء الأرضية والمحيط عند الدخول أو الخروج. تمنحك رؤية أفضل وأمان أعلى في الظلام، كما تنبّه المارة والمركبات الأخرى.`: 'Find all the tools you’ll need to create advanced websites in one place. Stop waisting time searching for solutions.'
+            featureDescription: isArabic ?`مصابيح الباب تضيء الأرضية والمحيط عند الدخول أو الخروج. تمنحك رؤية أفضل وأمان أعلى في الظلام، كما تنبّه المارة والمركبات الأخرى.`: "The door spot lamps are cleverly integrated on the front doors to illuminate the ground and surroundings when entering or exiting the vehicle. This feature enhances convenience and safety, especially in dark or low-light environments, by lighting your path and alerting nearby pedestrians or vehicles."
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6647ac8c-52b0-4b1a-b195-b22f35d35d00/public',
@@ -72,7 +72,7 @@ const isArabic=i18n?.language=='ar'
             featureDescription: isArabic ?`تمدد أو استرخِ كما تشاء، حيث تنزلق المقاعد الخلفية وتتحرك لتضمن أقصى درجات الراحة، سواء كنت تحمل أغراضك أو تحتاج إلى قسط من الراحة بعد يوم طويل.`: `Stretch out or settle in. The rear seats slide and recline for maximum comfort – whether you're loading up gear or lounging after a long day outdoors.`
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ad39654d-7fae-4ede-3d9e-602755381700/public',
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/69164a9b-4ac3-414e-299e-c500dcc24000/tv',
             featureTitle: isArabic ?`تخزين أسفل المقعد`: 'Under-Seat Storage',
             featureDescription: isArabic ?`تصميم ذكي لراحتك اليومية. يحتوي الصف الثاني على مساحة تخزين خفية بسعة 33 لترًا، مثالية للحفاظ على مقتنياتك آمنة ومنظمة وسهلة الوصول.`: `Smart design meets everyday convenience. The second-row packs 33 liters of hidden storage – perfect for keeping things tidy, secure, and easily accessible.`
         },
@@ -89,7 +89,7 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b2d8b0b8-72a6-4257-4c45-2efd511afa00/public',
             featureTitle: isArabic ?`دواسات أرضية لجميع الفصول`: 'All-Weather Matt',
-            featureDescription: isArabic ?`احمِ سيارتك من الداخل مع دواسات كيا الأصلية، والمصنوعة من خامات TPO عالية التحمل ومصممة بحواف مرتفعة لمنع دخول الأوساخ والسوائل، وتمنح سيارتك مظهرًا متجددًا في كل المواسم.`: 'Find all the tools you’ll need to create advanced websites in one place. Stop waisting time searching for solutions.'
+            featureDescription: isArabic ?`احمِ سيارتك من الداخل مع دواسات كيا الأصلية، والمصنوعة من خامات TPO عالية التحمل ومصممة بحواف مرتفعة لمنع دخول الأوساخ والسوائل، وتمنح سيارتك مظهرًا متجددًا في كل المواسم.`: "Keep your car clean and protected with Kia Genuine All Weather Mats. Crafted from durable TPO material and designed with raised sides, they effectively shield your vehicle's lower footwell from dirt, spills, and debris. Perfect for all seasons, these mats offer a custom fit for your Kia, enhancing both style and functionality."
         }
     ]
   
@@ -107,12 +107,12 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/114011a9-a6c3-45e9-ada0-5f80bbad1b00/public',
             featureTitle: isArabic ?`وضعية القيادة / التضاريس`: 'Drive / Terrain Mode',
-            featureDescription: isArabic ?`أنماط متعددة للأداء الأمثل والسلامة في ظروف مثل الثلج، والطين، والرمال، والصحراء. فعّل وضعية X-Trek للسيطرة الكاملة بسرعة منخفضة في التضاريس الأصعب.`: 'Find all the tools you’ll need to create advanced websites in one place. Stop waisting time searching for solutions.'
+            featureDescription: isArabic ?`أنماط متعددة للأداء الأمثل والسلامة في ظروف مثل الثلج، والطين، والرمال، والصحراء. فعّل وضعية X-Trek للسيطرة الكاملة بسرعة منخفضة في التضاريس الأصعب.`: "Terrain modes optimizes performance & safety across various conditions such as Snow, Mud, Sand & Desert. Activate the X-Trek mode (low speed cruise control) for driving on especially difficult terrain at low speeds."
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/bf199f41-1282-40b3-17e6-260397980800/public',
             featureTitle: isArabic ?`قدرة اجتياز المياه`: 'Wading',
-            featureDescription: isArabic ?`مصممة لتخطي أصعب التضاريس وعبور المياه بقدرة غمر تصل إلى 800 مم بسرعة أقل من 7 كم/س. مع مدخل هواء عالي داخل الرفرف الأمامي لمنع تسرب الماء، وتوصيلات كهربائية مقاومة للماء لضمان القوة والاعتمادية في مغامراتك.`: `Find all the tools you’ll need to create advanced websites in one place. Stop waisting time searching for solutions.`
+            featureDescription: isArabic ? `مصممة لتخطي أصعب التضاريس وعبور المياه بقدرة غمر تصل إلى 800 مم بسرعة أقل من 7 كم/س. مع مدخل هواء عالي داخل الرفرف الأمامي لمنع تسرب الماء، وتوصيلات كهربائية مقاومة للماء لضمان القوة والاعتمادية في مغامراتك.` : "Designed to tackle challenging terrain and water crossings, the Kia Tasman offers a confident wading capability of up to 800mm depth at speeds under 7 km/h. The engineering includes a high air intake positioned inside the front fender to prevent water ingress, along with waterproof connectors for critical components, ensuring durability and reliability during off-road adventures."
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/87dcae85-2e22-40e0-abc9-eafceb0e2500/public',

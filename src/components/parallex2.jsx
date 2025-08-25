@@ -102,7 +102,7 @@ const ParallaxSectionSecond = () => {
 
                     </img>
                 </div>
-                <div class="bg-gradient-to-b from-0% h-screen w-screen from-[#06141F] to-100% to-[#00000000]" id="bg-section">
+                <div class="bg-gradient-to-b from-0% h-screen w-screen from-[#06141F]/50 to-100% to-[#00000000]" id="bg-section">
                     
                    
                   
