@@ -19,6 +19,7 @@ const VRShowroom = ({ height }) => {
   const [currentColor, setCurrentColor] = useState('beige');
   const [isOn,setIsOn]=useState(false)
   const framePositionRef = useRef(0);
+  const [colorTextKey, setColorTextKey] = useState(0);
   const { t ,i18n} = useTranslation('common');
   const { locale } = useRouter();
 
@@ -177,6 +178,7 @@ const VRShowroom = ({ height }) => {
 
     const currentPosition = framePositionRef.current;
     setCurrentColor(colorId);
+    setColorTextKey(prev => prev + 1);
     framePositionRef.current = currentPosition;
   };
 
@@ -216,11 +218,8 @@ const VRShowroom = ({ height }) => {
         transform: 'translateZ(0)',
       }}
     >
-      <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] !absolute start-0 text-center lg:text-start lg:start-10 !top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-        {i18n?.language == 'ar' ?`كيا تاسمان تلبي جميع الأذواق`:'The Tasman Meets All Tastes'}
-
-
-
+      <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] drop-shadow-2xl [text-shadow:_2px_2px_2px_rgba(0,0,0,0.4)] !absolute start-0 text-center lg:text-start lg:start-10 !top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
+        {i18n?.language == 'ar' ? `كيا تاسمان تلبي جميع الأذواق` : 'The Tasman Meets All Tastes'}
       </p>
       <div
           className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-12.5 w-full text-white text-sm z-50 flex flex-col justify-end ps-0 lg:ps-[70px] gap-2 lg:gap-4 items-center'
@@ -233,7 +232,12 @@ const VRShowroom = ({ height }) => {
           <div className='flex items-center flex-row-reverse gap-2'>
 
             <div className='flex flex-col items-center gap-2 lg:gap-4'>
-              <p className='text-white text-base lg:text-2xl'>{COLORS?.filter?.((item) => item?.id == currentColor)?.[0]?.name}</p>
+              <p
+                key={colorTextKey}
+                className={`text-white text-base lg:text-2xl animate-fadeInUp ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}
+              >
+                {COLORS?.filter?.((item) => item?.id == currentColor)?.[0]?.name}
+              </p>
               <div className='flex  gap-1.5 lg:gap-3' dir='ltr' >
                 {COLORS.map(color => (
                   <div
@@ -267,10 +271,18 @@ const VRShowroom = ({ height }) => {
 
         />
       </div>
-      {(currentColor == 'beige' && view == 'exterior') ? <div className='absolute left-10 bottom-10 cursor-pointer z-[200]' onClick={() => {
+      {(currentColor == 'beige' && view == 'exterior') ?
+        <div className='absolute left-10 group bottom-[112px] cursor-pointer z-[200]' onClick={() => {
         setIsOn(true)
-      }}>
-        <img src='/assets/360.png' width={100} height={50} />
+        }}>
+          <button
+            className={` px-6 py-0 cursor-pointer h-[45px] gap-3   text-[#05141F] bg-white hover:bg-[#05141F] hover:text-white flex items-center justify-center rounded-lg shadow-[5px] font-semibold    transition-all duration-1000 ease-out`}
+            style={{ zIndex: 1000 }}
+          >
+            <img src='/assets/360Black.png' className='group-hover:hidden' width={25} height={25} />
+            <img src='/assets/360White.png' className='hidden group-hover:block' width={25} height={25} />
+            <p>{i18n?.language == 'ar' ? 'عرض 360 درجة':'360 view'}</p>
+          </button>
       </div>:null}
      
       <div

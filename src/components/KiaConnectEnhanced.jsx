@@ -95,95 +95,79 @@ export default function KiaConnectEnhanced () {
         }
     };
 
-
-
-    // Get the two slides to display
-    const getVisibleSlides = () => {
-        const slide1 = slides[currentSlide];
-        const slide2 = slides[(currentSlide + 1) % slides.length];
-        return [slide1, slide2];
-    };
-
     return (
-        <div className="min-h-[70vh] w-screen relative overflow-hidden flex flex-col justify-center"
-            style={{
-                backgroundImage: `url('https://methods.ae/wp-content/uploads/connect-remote-control-pt.jpg')`,
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-                
-            }}
-            dir='ltr'
-        >
-            {/* Background decorative elements */}
+        <div className="container   relative z-10">
+            <div className="grid grid-cols-1  gap-6 items-start ">
 
-
-            <div className="container px-20  min-w-screen relative z-10">
-                <div className="grid lg:grid-cols-2 min-w-screen  gap-6 items-center h-[70vh]">
-
-                    {/* First Column - Carousel */}
-                    <div className={`w-[50vw]`}>
-                        <div
-                            className="relative px-8 flex flex-col justify-center h-[70vh]"
-                            ref={carouselRef}
-                            onTouchStart={onTouchStart}
-                            onTouchMove={onTouchMove}
-                            onTouchEnd={onTouchEnd}
-                        >
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={currentSlide}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: -20 }}
-                                    transition={{ duration: 0.3 }}
-                                    className='flex items-start justify-center gap-16'
-                                >
-                                    {getVisibleSlides().map((slide, index) => (
-                                        <div key={index} className='flex-1 max-w-[22vw]'>
-                                            <p className={`text-white text-[22px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} ${isArabic?'text-end':'text-start'}`}>{slide?.title}</p>
-                                            <p className={`text-white text-lg ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} mt-5 ${isArabic ? 'text-end' : 'text-start'}`}>{slide?.description}</p>
-                                        </div>
-                                    ))}
-                                </motion.div>
-                            </AnimatePresence>
-
-                            {/* Navigation Arrows */}
-                            <button
-                                onClick={prevSlide}
-                                className="absolute -left-7 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
+                {/* First Column - Carousel */}
+                <div className={` w-full h-[25vh]`}>
+                    <div
+                        className="relative h-[25vh] flex items-start flex-row  justify-start"
+                        ref={carouselRef}
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                    >
+                       
+                        <AnimatePresence  mode="wait">
+                            <div
+                                
+                                className='flex items-start justify-center w-[100%]'
                             >
-                                <ChevronLeft className="w-6 h-6 text-white" />
-                            </button>
-                            <button
-                                onClick={nextSlide}
-                                className="absolute -right-7 top-1/2 -translate-y-1/2 p-2 rounded-full  cursor-pointer transition-colors"
-                            >
-                                <ChevronRight className="w-6 h-6 text-white/70 hover:text-white" />
-                            </button>
-
-                            {/* Pagination Dots */}
-                            <div className=" absolute bottom-30 w-full justify-center flex ">
-                                <div className='flex  justify-center space-x-2 '>
-                                    {slides.map((_, index) => (
+                                <div className='flex-1  flex-col items-start justify-center'>
+                                    <motion.p
+                                        key={currentSlide}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        transition={{ duration: 0.3 }}
+                                        className={`text-white text-[22px] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} `}>{slides[currentSlide]?.title}</motion.p>
+                                    <div className='w-full flex items-center mt-5 '>
                                         <button
-                                            key={index}
-                                            onClick={() => setCurrentSlide(index)}
-                                            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
-                                                ? 'bg-white '
-                                                : 'bg-gray-500 hover:bg-gray-400'
-                                                }`}
-                                        />
-                                    ))}
-                                </div>
+                                            onClick={prevSlide}
+                                            className="w-[7%]  p-2 rounded-full cursor-pointer "
+                                        >
+                                            <ChevronLeft className="w-10 h-10 text-2xl text-[#FFFFFF4A] hover:text-white"  />
+                                        </button>
+                                        <motion.p
+                                            key={currentSlide}
+                                            initial={{ opacity: 0, x: 20 }}
+                                            animate={{ opacity: 1, x: 0 }}
+                                            exit={{ opacity: 0, x: -20 }}
+                                            transition={{ duration: 0.3 }}
+                                            className={`text-white text-base ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}  w-[86%] min-w-[86%] max-w-[86%]  text-center`}>{slides[currentSlide]?.description}</motion.p>
+                                        <button
+                                            onClick={nextSlide}
+                                            className=" w-[7%] p-2 rounded-full cursor-pointer "
+                                        >
+                                            <ChevronRight className="w-10 h-10 text-2xl text-[#FFFFFF4A] hover:text-white"  />
+                                        </button>
+                                    </div>
+                                    </div>
+                            </div>
+                        </AnimatePresence>
+
+                        {/* Navigation Arrows */}
+                      
+                      
+
+                        {/* Pagination Dots */}
+                        <div className=" w-full absolute bottom-10 justify-center flex">
+                            <div className='flex justify-center space-x-2'>
+                                {slides.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        onClick={() => setCurrentSlide(index)}
+                                        className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide
+                                            ? 'bg-white'
+                                            : 'bg-[#FFFFFF38] hover:bg-white'
+                                            }`}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
-
-                  
-
                 </div>
-
-                {/* Bottom CTA */}
 
             </div>
         </div>

@@ -88,7 +88,9 @@ export default function Home() {
       <div className=' bg-white '>
         <SwiperSection height={'min-h-[65vh]'} id={3} noBg dark={true} />
       </div>
-      <KiaConnect/>
+      <div className='h-[100vh]'>
+        <KiaConnect />
+     </div>
       <Dimensions />
       <Specs/>
       {isModalOpen ?
