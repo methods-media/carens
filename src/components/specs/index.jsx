@@ -190,11 +190,11 @@ const Specs = () => {
                                                                     </>:
                                                             
                                             
-                                                            feature?.includes('4 "') ?
+                                                                                            feature?.includes(`4 &quot;`) ?
                                                                 <>
-                                                                    {feature?.split('4 "')?.[0]}
-                                                                    <span className='font-[InterBold] mx-0.5'>4 "</span>
-                                                                    {feature?.split('4 "')?.[1]}
+                                                                                                    {feature?.split(`4 &quot;`)?.[0]}
+                                                                                                    <span className='font-[InterBold] mx-0.5'>4 &quot;</span>
+                                                                                                    {feature?.split(`4 &quot;`)?.[1]}
                                                                 </>
                                             :
                                             feature?.includes('twlevee') ?
