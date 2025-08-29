@@ -336,7 +336,7 @@ const isArabic=i18n?.language=='ar'
                                         
                                         slides?.[id][currentSlide].featureTitle}
                                 </h3>
-                                <p className={`text-sm lg:text-lg leading-relaxed ${dark ?'text-[#54595F] text-start':id==0?'text-[#A3A8AD]':'text-white'} max-w-[89%] md:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
+                                <p className={`text-sm lg:text-lg leading-relaxed ${dark ? 'text-[#54595F] text-start' : id == 0 ? 'text-[#A3A8AD]' : 'text-white'} ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"} max-w-[89%] md:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
                                     {slides?.[id][currentSlide].featureDescription}
                                 </p>

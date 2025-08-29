@@ -1,8 +1,10 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export const FloatingText = ({ head, desc }) => {
     const sectionRef = useRef(null);
+    const { t, i18n } = useTranslation('common');
 
     const { scrollYProgress } = useScroll({
         target: sectionRef,
@@ -33,7 +35,7 @@ export const FloatingText = ({ head, desc }) => {
             {head ? <p className='text-[62px] font-[InterBold] text-white text-center w-full'>{head}</p> : ''}
             <motion.p
                 style={{ y, opacity }}
-                className='text-white text-sm md:text-xl px-5 md:px-0 leading-[30px] font-[InterRegular] text-center max-w-[1330px] mx-auto'>
+                className={`text-white text-sm md:text-xl px-5 md:px-0 leading-[30px] ${i18n?.language=='ar'? "font-['GSSMedium']" :"font-[InterRegular]"} text-center max-w-[1330px] mx-auto`}>
                 {desc}
             </motion.p>
         </div>

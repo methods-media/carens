@@ -59,13 +59,13 @@ export const EngineSection = () => {
             </motion.p>
             <div className={`flex gap-2 ${i18n?.language == 'ar' ? '' : 'gap-2'}`}>
                 <motion.p 
-                    className='text-4xl md:text-[84px] font-[InterBold] text-white uppercase font-[900]'
+                    className={`text-4xl md:text-[84px]  ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'} text-white uppercase font-[900]`}
                     style={{ x: i18n?.language == 'ar' ? togetherX : comeX, opacity: textOpacity }}
                 >
                     {i18n?.language == 'ar' ? `  الجرأة` : `COME `}
                 </motion.p>
                 <motion.p
-                    className='text-4xl md:text-[84px] text-white uppercase font-[900] ps-8'
+                    className={`text-4xl md:text-[84px] text-white uppercase font-[900] ps-8 ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'}`}
                     style={{ x: i18n?.language == 'ar' ? comeX : togetherX, opacity: textOpacity }}
                 >
                     {i18n?.language == 'ar' ? `مع العملية` : ` TOGETHER`}

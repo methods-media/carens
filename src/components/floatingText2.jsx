@@ -31,44 +31,58 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
     }, []);
     return (
         <div ref={sectionRef} className='h-[50vh] w-screen bg-[#06141F] flex items-center flex-col justify-center'>
-            {/* {head ? <p className={`text-[62px] ${i18n?.language == ' ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-white text-center w-full`}>{head}</p> : ''} */}
-            <div className='relative flex items-center justify-center h-20' >
+            <div className={`relative flex items-center justify-center h-20 ${i18n?.language == 'ar' ? 'font-[GSSMedium]' :'font-[InterBold]'}`} >
                 <motion.p
                     initial={{ x: 0, opacity: 0, scale: 0.8 }}
                     whileInView={{ x: i18n?.language=='ar'?200: -200, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className="absolute text-white text-4xl md:text-6xl font-bold  whitespace-nowrap overflow-ellipsis"
+                    className={`absolute text-white text-4xl md:text-6xl whitespace-nowrap overflow-ellipsis `}
+                    style={{
+                        fontFamily: i18n?.language == ' ar' ? 'font-[GSSBold] !important' : 'font-[InterBold]'
+                    }}
                 >
                     {head1}
                 </motion.p>
                 <motion.p
                     initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? -25:'', opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="absolute text-white text-4xl md:text-6xl font-bold"
+                    className={`absolute text-white text-4xl md:text-6xl   `}
+
+                    style={{
+                        fontFamily: i18n?.language == ' ar' ? 'font-[GSSBold] !important' : 'font-[InterBold]'
+                    }}
                 >
                    {head2}
                 </motion.p>
                 <motion.p
                     initial={{ x: 0, opacity: 0, scale: 0.8 }}
-                    whileInView={{ x: i18n?.language == 'ar' ? -150: 200, opacity: 1, scale: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? -195: 200, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                     viewport={{ once: true }}
-                    className="absolute text-white text-4xl md:text-6xl font-bold"
+                    className={`absolute text-white text-4xl md:text-6xl  `}
+                    style={{
+                        fontFamily: i18n?.language == ' ar' ? 'font-[GSSBold] !important' : 'font-[InterBold]'
+                    }}
                 >
                     {head3}
                 </motion.p>
             </div>
+            <div className={`w-full ${i18n?.language == ' ar' ? 'font-[InterRegular] !important' : 'font-[GSSMedium] !important'}`}
+                style={{
+                    fontFamily: i18n?.language == ' ar' ? 'font-[InterRegular] !important' : 'font-[GSSMedium] !important'
+
+            }}>
+                
             <motion.p
-                style={{ y, opacity }}
-                className='text-white text-sm md:text-xl px-5 md:px-0 leading-[30px]   font-[InterRegular] text-center max-w-[1330px] mx-auto'>
+                style={{  y, opacity, }}
+                className={`text-white text-sm md:text-xl px-5 md:px-0 leading-[30px] text-center max-w-[1330px] mx-auto`}>
                 {desc}
 
-
-
             </motion.p>
+         </div>
         </div>
     )
 }

@@ -11,7 +11,6 @@ export default function Header() {
   const { t } = useTranslation();
   const router = useRouter();
   const locale = router.locale;
-console.log("ROUT",router.asPath)
   useEffect(() => {
     setMounted(true);
   }, []);

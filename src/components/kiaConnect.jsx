@@ -5,7 +5,7 @@ export default function KiaConnect () {
 const {i18n}=useTranslation('common')
     const isArabic=i18n?.language=='ar'
     return (
-        <div className="min-h-screen min-w-screen">
+        <div className="min-h-screen min-w-screen" dir="ltr">
 
         <div className='min-h-[73vh] w-screen relative bg-white' style={{
             backgroundImage: `url('https://methods.ae/wp-content/uploads/connect-remote-control-pt.jpg')`,
@@ -28,15 +28,12 @@ const {i18n}=useTranslation('common')
 
                 <div className="h-[25vh] max-w-[80%] mx-auto flex items-start   ">
                 <div className="flex-1">
-                    <div className='flex flex-col w-[90%] gap-5 items-center lg:items-start '>
+                    <div className='flex flex-col w-[100%] gap-5 items-center lg:items-start '>
                         <p className='text-white text-3xl lg:text-[40px] font-[InterBold]'>Kia Connect</p>
-                        <p className={`text-white text-base text-center lg:text-start leading-[25px] lg:text-[20px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>{isArabic ?
+                            <p className={`text-white text-base text-center lg:text-start leading-[25px] lg:text-[20px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>{isArabic ?
                             <>
-                                <span className="font-[InterRegular]">Kia Connect</span>
-                                {` بوابتك لرحلة أذكى وأكثر اتصالاً، تربط سيارتك كيا بهاتفك الذكي بكل سلاسة`}
-                            </>
-
-                            : `Kia Connect is your gateway to a smarter, more connected drive, seamlessly linking your Kia to your smartphone`}.</p>
+                                {`بوابتك لرحلة أذكى وأكثر اتصالاً، تربط سيارتك كيا بهاتفك الذكي بكل سلاسة`}
+                            </> : `Kia Connect is your gateway to a smarter, more connected drive, seamlessly linking your Kia to your smartphone.`}</p>
                             <button className={`text-sm hover:bg-[#06141F] cursor-pointer py-3 px-6 hover:text-white text-[#06141F] bg-white hover:border hover:border-[#06141F] rounded-[5px] w-fit ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>{isArabic ? `إعرف المزيد` : `Learn More`}</button>
                     </div>
                 </div>

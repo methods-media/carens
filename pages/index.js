@@ -16,7 +16,6 @@ import VRShowroom from '@src/modules/VRShowroom';
 import Dimensions from '@src/components/dimensions';
 import KiaConnect from '@src/components/kiaConnect';
 import Specs from '@src/components/specs';
-import { FloatingText2 } from '@src/components/floatingText2';
 import { FloatingTextThree } from '@src/components/floatingText3';
 import { Exterior } from '@src/components/exterior';
 import { Interior } from '@src/components/interior';
@@ -103,7 +102,11 @@ export default function Home() {
               <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9103fa63-4b86-45ef-e14a-c0bba7424000/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/310ca7e9-3708-4516-35a0-d81e50342100/public' : isModalOpen == 3 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7ce5f2db-cd28-475f-2909-5ed588c6a100/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ebfb9ad5-4957-46f6-6c96-b3cc3bdd0c00/public'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" />
               <div className="p-6 flex flex-col gap-3 ">
                 <div className={`text-[#333] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[20px]`}>{isModalOpen == 1 ? isArabic ? `شاشة بانورامية مدمجة` : 'Panoramic Integrated Display' : isModalOpen == 2 ? isArabic ? `شاحن هاتف لاسلكي مزدوج` : 'Dual Wireless Charger' : isModalOpen == 3 ? isArabic ? `طاولة مركزية` : 'Console Table' : isArabic ? `مفتاح تحكم بمقعد الراكب` : 'Passenger Walk-in Switch'}</div>
-                <div className="text-[#666]  text-center font-[InterRegular] text-sm">
+                <div className={`text-[#666]  text-center ${i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'} text-sm`}
+                  style={{
+                    fontFamily: i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'
+                }}
+                >
                   {isModalOpen == 1 ?
                     (isArabic ?
                       `استمتع بنظام المعلومات والترفيه الأحدث مع أكبر شاشة في فئتها. كما يمكنك تحديث سيارتك بسهولة عن طريق التحديثات الهوائية (OTA).`
@@ -121,7 +124,14 @@ export default function Home() {
                           : `This function allows you to adjust the forward/backward position and angle of the passenger seat from the driver's seat or the rear seat to improve the convenience of getting in and out of the vehicle and living in the rear seat.`)
                   }
                 </div>
-                <p className='text-[#1a1a1a] text-center font-[InterRegular] text-xs'>({isArabic ?'بعض المزايا قد يختلف توفرها حسب البلد':'Some features may vary based on the market'})</p>
+                {isModalOpen == 1 ?
+                  <p
+                    
+                    style={{
+                      fontFamily: i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'
+                    }}
+                    className={`text-[#1a1a1a] text-center ${i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'} text-xs`}>({isArabic ? 'بعض المزايا قد يختلف توفرها حسب البلد' : 'Some features may vary based on the market'})</p>
+               : null}
               </div>
             </div>
           </div>

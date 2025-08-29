@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
       <Footer />
 
       {pathname.includes('configurator') ? null :
-        <div dir='ltr' className={`fixed bottom-[1%] flex flex-col  ${i18n?.language == 'ar' ? 'items-start' : 'items-end'} gap-4 right-[1%] z-[50000] `}>
+        <div dir='ltr' className={`fixed bottom-[1%] flex flex-col  items-end gap-4 right-[1%] z-[50000] `}>
       
           <button id='bookNowBtn' onClick={() => { onClickBookNow() }} className={` group py-3 px-6 cursor-pointer  z-[1100]  bg-white hover:bg-[#05141F] hover:text-white flex items-center gap-3 justify-center rounded-[4px]  ${showScrollTop
             ? 'opacity-100  translate-x-0'

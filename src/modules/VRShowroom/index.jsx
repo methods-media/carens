@@ -28,8 +28,8 @@ const VRShowroom = ({ showControl=false }) => {
     setCurrentFrame(0)
   }
   const COLORS = [
-    { id: 'beige', name: t('colors.beigeFender'), hex: '#939393', chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
-    { id: 'tan', name: t('colors.beige'), hex: '#000000', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d53c6dbf-f7c7-490f-c1d4-d60f3eb44900/public" },
+    { id: 'beige', name: t('colors.beige'), hex: '#939393', chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
+    { id: 'tan', name: t('colors.beigeFender'), hex: '#000000', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d53c6dbf-f7c7-490f-c1d4-d60f3eb44900/public" },
     { id: 'white', name: t('colors.clear_white'), hex: '#FFFFFF', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4952bc85-a2df-46ab-081d-d25f6177ce00/public"},
     { id: 'whiteFender', name: t('colors.clear_white_fender'), hex: '#909598', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4a912299-4456-49f6-05a4-321c33d18e00/public" },
     { id: 'green', name: t('colors.green'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/00e9b9b6-6c5e-446f-6b7a-d9bc41e71a00/public" },
