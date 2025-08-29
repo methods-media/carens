@@ -6,7 +6,7 @@ import { useSpecs } from './useSpecs';
 const Specs = () => {
     const { t ,i18n} = useTranslation('common');
     const isArabic=i18n?.language=='ar'
-    const [openCategory, setOpenCategory] = useState(null);
+    const [openCategories, setOpenCategories] = useState({});
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [slideDirection, setSlideDirection] = useState('next'); // 'next' or 'prev'
@@ -29,8 +29,11 @@ const Specs = () => {
         { id: 'X-Pro', name: 'X-Pro', features: featureCategories4 },
         { id: 'X-Pro+', name: 'X-Pro+', features: featureCategories5 }
     ];
-    const toggleCategory = (index) => {
-        setOpenCategory(openCategory === index ? null : index);
+    const toggleCategory = (categoryKey) => {
+        setOpenCategories(prev => ({
+            ...prev,
+            [categoryKey]: !prev[categoryKey]
+        }));
     };
 
     const nextSlide = () => {
@@ -95,17 +98,17 @@ const Specs = () => {
                         <div key={category.title} className="w-full">
                             <button
                                 onClick={() => toggleCategory(`${trim.id}${category?.title}`)}
-                                className={`w-full flex justify-between items-center p-3 text-sm font-medium  cursor-pointer transition-all duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} ${openCategory === `${trim.id}${category?.title}`
+                                className={`w-full flex justify-between items-center p-3 text-sm font-medium  cursor-pointer transition-all duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} ${openCategories[`${trim.id}${category?.title}`]
                                     ? 'bg-[#06141F] text-white'
                                     : 'bg-[#7b848c] text-white '
                                     }`}
                             >
                                 {category.title}
                                 <span className="text-lg">
-                                    {openCategory === `${trim.id}${category?.title}` ? '−' : '+'}
+                                    {openCategories[`${trim.id}${category?.title}`] ? '−' : '+'}
                                 </span>
                             </button>
-                            {openCategory === `${trim.id}${category?.title}` && (
+                            {openCategories[`${trim.id}${category?.title}`] && (
                                 <div className="mt-2 ml-3 space-y-1" dir={isArabic?'rtl':'ltr'}>
                                     {category.features.map((feature, featureIndex) => (
                                         <div key={featureIndex} className={`text-sm flex-wrap text-gray-600 flex items-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
@@ -190,11 +193,11 @@ const Specs = () => {
                                                                     </>:
                                                             
                                             
-                                                                                            feature?.includes(`4 &quot;`) ?
+                                                                                            feature?.includes(`fours`) ?
                                                                 <>
-                                                                                                    {feature?.split(`4 &quot;`)?.[0]}
-                                                                                                    <span className='font-[InterBold] mx-0.5'>4 &quot;</span>
-                                                                                                    {feature?.split(`4 &quot;`)?.[1]}
+                                                                                                    {feature?.split(`fours`)?.[0]}
+                                                                                                    <span className='font-[InterBold] mx-0.5'>4</span>
+                                                                                                    {feature?.split(`fours`)?.[1]}
                                                                 </>
                                             :
                                             feature?.includes('twlevee') ?
