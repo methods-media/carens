@@ -12,7 +12,7 @@ const Banner = () => {
   const [videoEnded, setVideoEnded] = useState(false);
   const [videoError, setVideoError] = useState(false);
   const videoRef = useRef(null);
-
+  
   const handleVideoEnd = () => {
     setVideoEnded(true);
   };
@@ -23,7 +23,7 @@ const Banner = () => {
   };
 
   return (
-    <div id='bannerID' className={`w-screen h-[90vh] md:h-screen ${videoEnded ? ' z-[200]' :' z-[200000]'}  bg-black bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden`}>
+    <div id='highlights' className={`w-screen h-[90vh] md:h-screen ${videoEnded ? ' z-[200]' :' z-[200000]'}  bg-black bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden`}>
       {!videoError && (
         <video
           ref={videoRef}

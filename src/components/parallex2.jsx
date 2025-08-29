@@ -112,7 +112,7 @@ const ParallaxSectionSecond = () => {
                 <div className="content22 "
                     id='safety'
                     ref={textRef}>
-                    <video src='/assets/videos/ktk-safetycover.webm' playsInline muted autoPlay loop  className='w-screen h-screen object-cover'/>
+                    <video src='/assets/videos/safety.webm' playsInline muted autoPlay loop  className='w-screen h-screen object-cover'/>
                     <div className='absolute w-full bottom-0 start-0 p-10 bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
                         <p className={`text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
                             <>

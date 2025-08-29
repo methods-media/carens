@@ -11,7 +11,7 @@ export default function Header() {
   const { t } = useTranslation();
   const router = useRouter();
   const locale = router.locale;
-
+console.log("ROUT",router.asPath)
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -37,23 +37,23 @@ export default function Header() {
               className="h-[20px]"
             />
             <div className='flex gap-2 items-center ' dir={locale == 'ar' ? 'rtl' : 'ltr'}>
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#highlights')}>{t('Highlights')}</p>
+              <p className={`cursor-pointer ${router?.asPath =='/#highlights' ?"text-white":'text-[#FFFFFFAD]'} ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#highlights')}>{t('Highlights')}</p>
               <p className='text-white'>|</p>
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#exterior')}>{locale == 'ar'?'التصميم الخارجي': 'Exterior'} </p>
-              <p className='text-white'>|</p>
-
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#interior')}>{locale == 'ar' ?'التصميم الداخلي': 'Interior'} </p>
+              <p className={`cursor-pointer ${router?.asPath =='/#exterior'?"text-white":'text-[#FFFFFFAD]'} ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#exterior')}>{locale == 'ar'?'التصميم الخارجي': 'Exterior'} </p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#performance')}>{locale == 'ar' ? 'الأداء':'Performance'}</p>
-              <p className='text-white'>|</p>
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#safety')}>{t('Safety')}</p>
+              <p className={`cursor-pointer ${router?.asPath =='/#interior'?"text-white":'text-[#FFFFFFAD]'} ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#interior')}>{locale == 'ar' ?'التصميم الداخلي': 'Interior'} </p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white  !font-["InterRegular"]  text-lg  font-semibold `} onClick={() => router.push('/#kiaConnect')}>{ 'Kia Connect'}</p>
+              <p className={`cursor-pointer ${router?.asPath =='/#performance'?"text-white":'text-[#FFFFFFAD]'} ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#performance')}>{locale == 'ar' ? 'الأداء':'Performance'}</p>
+              <p className='text-white'>|</p>
+              <p className={`cursor-pointer ${router?.asPath =='/#safety'?"text-white":'text-[#FFFFFFAD]'} ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#safety')}>{t('Safety')}</p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer text-[#FFFFFFAD] ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#specs')}>{t('specso')}</p>
+              <p className={`cursor-pointer ${router?.asPath =='/#kiaConnect'?"text-white":'text-[#FFFFFFAD]'} ps-4 text-center   hover:text-white  !font-["InterRegular"]  text-lg  font-semibold `} onClick={() => router.push('/#kiaConnect')}>{ 'Kia Connect'}</p>
+              <p className='text-white'>|</p>
+
+              <p className={`cursor-pointer ${router?.asPath =='/#specs'?"text-white":'text-[#FFFFFFAD]'} ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'} text-lg  font-semibold `} onClick={() => router.push('/#specs')}>{t('specso')}</p>
 
             </div>
             <a href={`/${locale == 'en' ? 'ar' : ''}${router.asPath.replace('/', '')}`} className={`!text-[#FFFFFFAD] text-[17px] font-semibold ${locale == 'ar' ? 'font-["InterBold"]' : 'font-["GSSMedium"]'} `}> {locale=='en'?"العربية":"English"}</a>

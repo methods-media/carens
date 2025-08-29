@@ -22,7 +22,7 @@ const isArabic=i18n?.language=='ar'
         {
             key: 'Cargo (SAE)', label: isArabic ? `المساحة التخزينية` : 'Trunk', value: isArabic ?`1,336 لتر`: '1,336 L', desc: "(SAE capacity without bedliner)", icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/79dcebe4-368a-4e2a-b8b3-1dc230523b00/public` },
         {
-            key: 'weight', label: isArabic ? `الحمولة` : 'Payload ', value: isArabic ? `1,151 كج` : '1,151 kg', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1e6cf6ee-b37a-4cd1-484d-58097b8ccb00/tv`}
+            key: 'weight', label: isArabic ? `الحمولة` : 'Payload ', value: isArabic ? `1,151 كج` : '1,151 kg', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/5eeef5d5-430c-4636-7450-c2ef3d682300/semi`}
     ];
     useEffect(() => {
         const observer = new IntersectionObserver(

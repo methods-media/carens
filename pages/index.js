@@ -54,10 +54,10 @@ export default function Home() {
       <div className='w-screen h-screen'>
         <EngineSection />
       </div>
-      <div className='w-screen h-[70vh]'>
+      <div className='w-screen h-[70vh]' id='exterior'>
         <Exterior />
      </div>
-           <div className="relative" id='exterior' style={{ zIndex: 1000 }}>
+           <div className="relative"  style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
           imagesUrl={exterior1}
@@ -69,7 +69,7 @@ export default function Home() {
       <VRShowroom />
       <VRShowroom showControl={true} />
       <Interior/>
-      <div className="relative" id='interior' style={{ zIndex: 1000 }}>
+      <div className="relative"  style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
           imagesUrl={interior}

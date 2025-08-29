@@ -118,7 +118,7 @@ export const EngineTypesSection = () => {
                 <div className='py-10 pt-20 flex-1 flex justify-start'>
 
                     <img
-                        src={selectedEngine == 1 ? 'https://methods.ae/wp-content/uploads/tk-engine.png' :'https://methods.ae/wp-content/uploads/ktk-crdi-engine.png'}
+                        src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9db0c891-9dcd-4c4b-762a-df3cf86d8900/semi' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0663c68e-5b72-427a-82b7-824b1907dd00/semi'}
                         height={550}
                         width={450}
                         className="animate-bounce w-[350px] h-[450px] lg:w-[550px] lg:h-[650px]"

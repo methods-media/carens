@@ -18,7 +18,7 @@ export const Interior = () => {
     const y = useTransform(scrollYProgress, [0, 0.5], [-150, 50]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
     return (
-        <div ref={sectionRef} className="w-screen bg-[#06141F] flex flex-col justify-center h-[100vh]">
+        <div ref={sectionRef} id='interior' className="w-screen bg-[#06141F] flex flex-col justify-center h-[100vh]">
             <motion.p
                 className={`text-3xl md:text-[52px] text-white text-center ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
                 style={{ scale, y, opacity }}
