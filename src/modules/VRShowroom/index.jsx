@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 import PanoramaViewer from '@src/components/ImageViewer360';
 import { useRouter } from 'next/router';
 import { CDN_BEIGE_FENDER, CDN_BEIGE_STATIC, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER, FRAME_COUNT } from '@src/constants/imageSequence';
-const VRShowroom = ({ height }) => {
+const VRShowroom = ({ showControl=false }) => {
   const containerRef = useRef(null);
   const [view, setView] = useState('exterior')
 
@@ -17,7 +17,7 @@ const VRShowroom = ({ height }) => {
   const autoRotateRef = useRef(null);
   const lastTimeRef = useRef(0);
   const [currentColor, setCurrentColor] = useState('beige');
-  const [isOn,setIsOn]=useState(false)
+  const [isOn, setIsOn] = useState(showControl ?showControl:false)
   const framePositionRef = useRef(0);
   const [colorTextKey, setColorTextKey] = useState(0);
   const { t ,i18n} = useTranslation('common');
@@ -219,7 +219,7 @@ const VRShowroom = ({ height }) => {
       }}
     >
       <p id='vrShowroomText' className={`text-white text-lg  md:text-[28px] z-[50] drop-shadow-2xl [text-shadow:_2px_2px_2px_rgba(0,0,0,0.4)] !absolute start-0 text-center lg:text-start lg:start-10 !top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-        {i18n?.language == 'ar' ? `كيا تاسمان تلبي جميع الأذواق` : 'The Tasman Meets All Tastes'}
+        {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل تاسمان من الداخل والخارج` : `كيا تاسمان تلبي جميع الأذواق` : showControl ?`Discover Kia Tasman's Exterior & Interior in 360°`: 'The Tasman Meets All Tastes'}
       </p>
       <div
           className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-12.5 w-full text-white text-sm z-50 flex flex-col justify-end ps-0 lg:ps-[70px] gap-2 lg:gap-4 items-center'
@@ -231,7 +231,7 @@ const VRShowroom = ({ height }) => {
         {view == 'exterior' ?
           <div className='flex items-center flex-row-reverse gap-2'>
 
-            <div className='flex flex-col items-center gap-2 lg:gap-4'>
+            {showControl ? null : <div className='flex flex-col items-center gap-2 lg:gap-4'>
               <p
                 key={colorTextKey}
                 className={`text-white text-base lg:text-2xl animate-fadeInUp ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}
@@ -261,17 +261,18 @@ const VRShowroom = ({ height }) => {
                   </div>
                 ))}
               </div>
-       </div>
+            </div>}
+         
           </div> : <p className={`text-white text-lg md:text-xl btn-showRoom mt-2 ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>        {t('colors.onyx_black')}</p>
         }
-        <VRControls
+        {showControl ? <VRControls
 
           onViewChange={setView}
           view={view}
 
-        />
+        /> :null}
       </div>
-      {(currentColor == 'beige' && view == 'exterior') ?
+      {/* {(currentColor == 'beige' && view == 'exterior' && showControl) ?
         <div className='absolute left-10 group bottom-[112px] cursor-pointer z-[200]' onClick={() => {
         setIsOn(true)
         }}>
@@ -283,7 +284,7 @@ const VRShowroom = ({ height }) => {
             <img src='/assets/360White.png' className='hidden group-hover:block' width={25} height={25} />
             <p>{i18n?.language == 'ar' ? 'عرض 360 درجة':'360 view'}</p>
           </button>
-      </div>:null}
+      </div>:null} */}
      
       <div
         ref={containerRef}

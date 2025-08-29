@@ -100,7 +100,7 @@ export const EngineTypesSection = () => {
                         </p>
                         <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`torque-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '441'}</p>
+                            <p key={`torque-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '440'}</p>
                             <p key={`torque-2-${animationKey}`} className={`text-3xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `نيوتن/متر` :`Nm`}</p>
                         </div>
                     </div>
@@ -110,7 +110,7 @@ export const EngineTypesSection = () => {
                         </p>
                         <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`trans-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ?`8`:`'8-Speed'` }</p>
+                            <p key={`trans-1-${animationKey}`} className={`text-3xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ?`8`:`8-Speed'` }</p>
                             <p key={`trans-2-${animationKey}`} className={`text-3xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? 'سرعات' : 'SBW' : isArabic ?'سرعات': 'SBW'}</p>
                         </div>
                     </div>

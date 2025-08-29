@@ -22,7 +22,7 @@ const isArabic=i18n?.language=='ar'
         {
             key: 'Cargo (SAE)', label: isArabic ? `المساحة التخزينية` : 'Trunk', value: isArabic ?`1,336 لتر`: '1,336 L', desc: "(SAE capacity without bedliner)", icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/79dcebe4-368a-4e2a-b8b3-1dc230523b00/public` },
         {
-            key: 'weight', label: isArabic ? `الوزن` : 'Weight ', value: isArabic ? `3,250 كج` : '3,250 kg', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1e6cf6ee-b37a-4cd1-484d-58097b8ccb00/tv`}
+            key: 'weight', label: isArabic ? `الحمولة` : 'Payload ', value: isArabic ? `1,151 كج` : '1,151 kg', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1e6cf6ee-b37a-4cd1-484d-58097b8ccb00/tv`}
     ];
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -160,12 +160,12 @@ const isArabic=i18n?.language=='ar'
                                 
                                 :
 
-                                   getCurrentSpec()?.value?.includes('3,250')?
+                                   getCurrentSpec()?.value?.includes('1,151')?
                              
                              <>
-                                {getCurrentSpec()?.value?.split('3,250')?.[0]}
-                                <span className={'font-[InterBold]'}>3,250</span>
-                                  {getCurrentSpec()?.value?.split('3,250')?.[1]}
+                                {getCurrentSpec()?.value?.split('1,151')?.[0]}
+                                <span className={'font-[InterBold]'}>1,151</span>
+                                  {getCurrentSpec()?.value?.split('1,151')?.[1]}
                                 </>
                                 
                                 :

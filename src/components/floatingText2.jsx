@@ -9,7 +9,7 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
         target: sectionRef,
         offset: ["start end", "end start"]
     });
-    const y = useTransform(scrollYProgress, [0, 1], [0, 100]);
+    const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
     const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
     useEffect(() => {

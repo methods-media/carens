@@ -16,9 +16,10 @@ import VRShowroom from '@src/modules/VRShowroom';
 import Dimensions from '@src/components/dimensions';
 import KiaConnect from '@src/components/kiaConnect';
 import Specs from '@src/components/specs';
-import { FloatingText } from '@src/components/floatingText';
 import { FloatingText2 } from '@src/components/floatingText2';
 import { FloatingTextThree } from '@src/components/floatingText3';
+import { Exterior } from '@src/components/exterior';
+import { Interior } from '@src/components/interior';
 
 export default function Home() {
   const { t, i18n } = useTranslation('common');
@@ -50,11 +51,13 @@ export default function Home() {
 
       <Banner />
      
-      <EngineSection />
-      <FloatingText desc={i18n?.language == 'ar' ? `تقدم كيا تاسمان لغة تصميم حديثة مستندة إلى الوظائف، منسجمة مع هوية عائلة كيا.
-تتميز الشبكة الأمامية المستوحاة من "وجه النمر" بأضواء رأسية جريئة وصدام أمامي قوي وغطاء محرك عريض ومرتفع، يُشير إلى قوة الأداء الكامنة.
-ويبرز المظهر الجانبي الواثق مع لمسات رفارف هندسية فريدة وعملية، ليمنح المركبة حضورًا طاغيًا على الطريق.`: `The Kia Tasman applies the latest function-based pickup design language to the Kia family look. The tiger-face radiator grille is framed by bold, vertical lights, a strong front bumper, and a broad, high hood that hints at powerful machinery within. A confident side profile, with unique and practical geometric fender highlights, gives the vehicle a commanding stance.`} />
-      <div className="relative" id='exterior' style={{ zIndex: 1000 }}>
+      <div className='w-screen h-screen'>
+        <EngineSection />
+      </div>
+      <div className='w-screen h-[70vh]'>
+        <Exterior />
+     </div>
+           <div className="relative" id='exterior' style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
           imagesUrl={exterior1}
@@ -64,12 +67,8 @@ export default function Home() {
       </div>
       <SwiperSection height={'min-h-[40vh]'} id={0} />
       <VRShowroom />
-      <FloatingText2
-        head1={i18n?.language == 'ar' ? `قوةٌ صلبة` : `RUGGED`}
-        head2={i18n?.language == 'ar' ? `وأناقة` : `YET`}
-        head3={i18n?.language == 'ar' ? `متقنة` : `REFINED`}   
-        desc={i18n?.language == 'ar' ? `مثل قوتها الخارجية، تتميز تاسمان بجودة المقصورة الداخلية التي تجمع المتانة مع الرفاهية العملية. يعتمد التصميم الداخلي على البساطة والتماثل، مع تفاصيل تقنية متقدمة توازن بين رحابة المساحة وفخامة الأداء.` : `Just as bold on the inside, the Kia Tasman’s interior offers enduring pickup truck quality. The outwardly simple design uses symmetry, pure forms, and a wealth of technology to strike a winning balance of spacious luxury and practicality.`} />
-
+      <VRShowroom showControl={true} />
+      <Interior/>
       <div className="relative" id='interior' style={{ zIndex: 1000 }}>
         <ScrollSequence
           id="canvas4"
@@ -122,6 +121,7 @@ export default function Home() {
                           : `This function allows you to adjust the forward/backward position and angle of the passenger seat from the driver's seat or the rear seat to improve the convenience of getting in and out of the vehicle and living in the rear seat.`)
                   }
                 </div>
+                <p className='text-[#1a1a1a] text-center font-[InterRegular] text-xs'>({isArabic ?'بعض المزايا قد يختلف توفرها حسب البلد':'Some features may vary based on the market'})</p>
               </div>
             </div>
           </div>

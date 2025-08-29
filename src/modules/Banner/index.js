@@ -38,7 +38,7 @@ const Banner = () => {
           muted
           className='w-full h-full object-cover'
         >
-          <source src="/assets/videos/ktk-cover.webm" type="video/mp4" />
+          <source src="/assets/videos/cover.webm" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       )}

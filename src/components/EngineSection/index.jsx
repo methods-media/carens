@@ -50,7 +50,7 @@ export const EngineSection = () => {
 
 
     return (
-        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[15%] w-full h-[55vh] gap-10 rtl:gap-10 md:h-[100vh]'>
+        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[15%] w-full min-h-[100vh] h-[100vh] gap-10 rtl:gap-10 md:h-[100vh]'>
             <motion.p
                 className={`text-3xl md:text-[52px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
                 style={{ scale, y, opacity }}

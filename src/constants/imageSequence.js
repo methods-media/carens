@@ -2,21 +2,21 @@ export const FRAME_COUNT = 72;
 
 export const CDN_SNOW = [
 
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9d36cf24-c665-42bc-76ec-9a86e4aabf00/public",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4f1d9763-870f-444a-dd93-56bddfafc700/semi",
     
 
 
 ]
 export const CDN_WHITE = [
 
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/92988b70-66a9-4397-d6d4-1ba976d41c00/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dc9145c3-96b3-4fa0-5723-3f726d933200/semi",
    
 
 
 
 ]
 export const CDN_WHITE_FENDER = [
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e05f4923-d27e-41cc-b95e-a9d99f920200/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/26875a6c-b83b-4891-fee5-a4f143d57400/semi",
     
 
 
@@ -28,80 +28,78 @@ export const CDN_WHITE_FENDER = [
 
 export const CDN_BEIGE_FENDER = [
 
-
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ed15f338-ec2f-4af7-f68f-2bcdabd37500/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/22ea4c12-4092-4dc5-3aaa-b4422e5fb100/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7a236831-bbc5-4b4f-fa17-720d8a666400/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1e29992b-8bea-4478-31c1-335c0cd79100/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/865ec23f-d138-4d72-919c-bd833b468700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f421729e-b623-4499-8e19-551804836700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3228aea0-cb8e-4642-1107-7b2e527a0a00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/077b60ab-5da3-4971-22db-8837016dee00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/eeb1b535-a9e1-4c10-a5f8-fa19737b2f00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4f9b3312-28ca-4662-bad2-2f22e5882300/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dc250258-9514-4644-9ea8-f3ea9cc93e00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/25185e36-c373-4bfc-7602-caaf1964d800/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/49af25c7-c45c-4413-bd66-334ac51c9400/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/946cb634-54e6-4b94-8d9d-9ecf7ff21000/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d604a617-f9b2-488b-e425-c661d0d5f000/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/377b0e3f-63a1-4eeb-0d8d-35361fff0600/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/15285f84-2dc1-438d-add0-99387898af00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/01ae5b26-5579-4f95-56f0-ab15204a0700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b62a8f2d-26e9-4adb-7a6c-ed9c9baabb00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0072916d-d761-46b8-76b4-ba1fcfa06500/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/70d0e4d7-eea9-4fee-8a5b-4076a7f78e00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8a5bcb88-4d85-4274-285e-6861f339eb00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7a856021-642d-4a29-8259-5c6847d0e600/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/20f43d57-881e-4904-64c7-bfd80aa9b700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dd0553bc-5417-4584-b0d2-2196e859af00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/53dcadb4-343d-46eb-5f19-3a5544ef0a00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9a4092be-4061-4bf8-0d9e-385095a1e500/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3f4a655e-5906-4124-963d-7fe39df18d00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f2e2d743-34d2-4254-0eda-5482822e3a00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/5a2c186a-9e10-4e0d-7c71-e90b53846700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/5cab188c-9bbb-4fd4-0c0e-7808e7ba5c00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ebb3c8b9-bf14-4769-5795-5b673b480d00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8fcab0a2-170e-4bbe-c053-f024b5125a00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/47d3ddef-800f-4ab9-5bc1-d2f6711c4c00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d5b977f5-58b3-45e2-12cf-47a811ca8b00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/60acd95d-e47f-460e-3b36-e1fa09574200/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/34529c7c-1a3f-433f-05ff-d6f28a6f7000/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/5960dcf6-6ee3-41a3-f85c-ecf576b62d00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1d2135a1-7481-4af5-a86b-931754124900/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/564f7caa-a54e-4c83-3a11-5924dcbd6900/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ac092206-5ec1-41d1-88ca-70f2e34a4100/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/641c674d-b2ac-438f-5096-534dbb03d000/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e335985f-91c3-4a2f-b4f3-3d1957c7c000/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8c96a548-9fe0-4377-6349-c0873e589e00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7411ef81-d910-414c-0e20-1b4f6fb5c700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6e8ecbe0-abcb-4161-f1d8-4d114610ce00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/46390d7c-1b34-4fd4-464d-bc744a6d9700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/cd8ffec6-86bf-486b-dd6e-eafafce19e00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a7fb8d20-3d7a-4b3e-6e47-1b4a45c11700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1778b7c9-d16f-4bee-0074-5c23ae719e00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/231e1348-5bf7-4147-b3d2-fc53906fe700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e5202bc8-37e2-4e36-be46-142f86b01800/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e032f201-6f92-43a4-bc13-1df84640a500/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e689bd84-e603-41e8-8c6b-be441e221900/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dc2bcd1f-070f-435a-ad1e-efdc02903a00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8b466f20-1be9-4e5b-6b36-35f2ab254500/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f7944d80-320a-4a43-120e-b224e0d12f00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6d3e57d8-6d9f-40a2-2295-2395b4b75900/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ff9df685-3a62-450c-6c51-2b4348228600/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1c10350d-9dce-4858-49bf-1dc91697fc00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8dbded07-77fc-4d33-b3e1-4e254e24e300/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e36af003-cd46-4a3b-3058-8daf9b27df00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/489b4cb6-c499-43c6-72e9-eeff31f1d700/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/741e89af-92a4-4ec3-0a3e-0236353afc00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/02e1091e-a925-45b2-7171-011e6ed9c800/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ac385695-5666-4aed-d99e-e5b94578c900/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a60a705b-7adb-4295-099b-cbaa2a8d7100/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2af6a1b6-8124-447c-1647-9c482fb27300/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/fb3bd242-6d09-43ab-d115-7ac50d150d00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/985735ad-4751-4e19-7324-51a42ac6bb00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d6cb9246-31f2-4ae8-8913-176905cc1d00/public",
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/89404ba8-3ff1-4e98-b51c-c027292b4d00/public",
-
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/1e5e3ff9-2b70-4fd4-ac92-4f304082aa00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/63365eab-80ed-4875-0dc3-cd232ec3d700/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/fd886f5f-d79e-4886-2888-f5a7bffd2800/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4fc6e704-a7ae-4792-c4fa-139c38a8cb00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f5d8f64e-0623-4794-81bf-384127c41400/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ab320eef-7c77-48f4-96f1-7e09319a2c00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/abb901ba-e61d-4d05-669c-742b8c927500/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/bfbfd24f-d741-4452-55e6-5c5ef3c30000/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/fa5d4cd5-a438-466d-c0c0-5b6d6adbc100/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/23f3e63b-5931-4e7a-f52e-fe2165619e00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f36e3239-a276-4bd6-31e4-eac026bccb00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/44484bd1-4a2d-4df4-d988-23220954f400/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c7ca7fb5-55ff-48e6-8e6e-ebabe4629c00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b06b997e-3e3c-402b-074a-d6378cd81100/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/71fbbee7-cc31-44eb-3204-faca5baabf00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4e8b58c2-e04e-4c34-a52e-47c6d7150f00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/bd8bcbb3-2f60-458c-9b0b-d5d2f7ef0f00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c25cb105-3770-4211-7d28-2d7df3476900/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/373244d6-becb-4157-e05c-ac9c669a6e00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8f001d3a-88c2-4665-a5b4-000bf625cc00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/fab43a18-192d-458d-8332-80ff2066dd00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/db75d018-1107-45b3-3a36-595b7b95c800/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/90e97b30-9095-45af-4efe-925039cdfe00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f665decf-891e-4e46-56bd-4bec0ec0b400/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7227c272-4aba-48c8-4414-d2dbfdbdb000/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/93da8e4b-788e-457d-8ad4-d49b9ea17c00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b3234051-a1ce-433e-e2b2-bf1113463f00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/20d087c6-a977-42f1-c4b1-11d3b8178600/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2fede812-c83f-42e6-2f06-41b973427900/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9960c527-6f78-411b-2f67-1e2d3778a400/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dda6fb1b-e766-40fa-6142-b2b55968d800/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0864942d-ccf2-466d-7707-df447b928e00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/acc5421c-912c-4cbf-c565-1040f5bd8e00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f03a6de4-ee36-4573-ddde-72adc1e3bf00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/01a90839-fc7f-4a33-a1da-4c6818efce00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/571dd7fa-acb3-41bc-455b-2d54c290bb00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c0307891-4c13-4887-6d76-9157ca8e2700/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0d07cace-003c-4ad7-ab91-cffc83654200/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/24ae89fb-050d-4fc1-d925-44f47add9500/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f4f820ce-7a0b-4707-b3a6-b60a649b3300/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/56211a9a-0647-45e8-2b81-e724e554fd00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0d581fe3-5b18-4841-2b16-bb85ab061400/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/89b4151d-bfd6-4f87-deea-4ce0fe778700/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0793be23-068b-44b4-462f-b38b2b87e500/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/5ef8dec8-374f-4a4d-ab27-1b4b235c7c00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c7ace09e-4537-43d2-6210-95440c931a00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/cd7de818-ec48-4921-4d5e-ef3da2150e00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c90f5d64-08fc-4d0f-46d1-3d96f2fc4d00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ff8291fe-30dc-4015-3c6d-b14c3f975e00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c2ea90c5-4106-4c4d-fb80-150eba4dda00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a9d56556-7a73-421d-a5d3-da0c068ed300/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a1066511-5ae8-42a8-e3e1-e72637070300/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/5bcf1f7c-d0ba-4377-6f1e-b564f4df6f00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/eaef7914-73c1-4263-26b9-a5b089ac0b00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f92fcdd3-5f7c-43cb-fd88-c8f6765d8f00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/17822951-2c2a-4f49-4785-c858ec884100/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f47daa3a-cfd3-4118-66a3-ea1bbb728800/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/04b35bf6-8b76-466f-28f0-7a73997b7900/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/37922098-a98b-46e2-9962-8f25ed6cf700/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/62c16342-c631-4990-78ab-09c6388eb200/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4b19bd8d-a54d-4096-767f-3bb76e4e1900/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/386cb5ff-8221-4d20-713d-b24e5b4f8a00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/86ae57ae-f717-43b1-7286-6106f9bf6800/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a73bf4ea-5d0f-44fb-c97e-1cc2a673ba00/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f2763087-168f-49c2-a8ea-f6b687c5b300/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9cbdf528-3513-4be4-73f2-a9dec6b9f600/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c7d05849-3479-49cf-1514-72ce19716200/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3bdcdf5c-9367-4f27-3b0a-58ad8556d500/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3cd92b51-db73-4df9-0183-7264506d9400/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/623cc640-3c50-4637-2cc0-d4a8404e9000/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a5ff64d8-efd7-4197-f73d-b4f6000fb800/semi",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/15f237fa-0a0a-47b6-3e12-d21b32289900/semi",
 
 
 ]
@@ -109,7 +107,7 @@ export const CDN_BEIGE_FENDER = [
 export const CDN_BEIGE_STATIC = [
 
 
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/16e8f6fb-4fdd-44ad-9b5e-263b0742a400/public",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0bad57eb-9abc-415c-5f0a-5ad463d03a00/semi",
     
 
 
@@ -118,7 +116,7 @@ export const CDN_BEIGE_STATIC = [
 export const CDN_TAN_BEIGE = [
 
    
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/32381098-2f8f-4cac-843d-6bb340023a00/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/cae593d8-0d23-4725-b60a-df9106849600/semi",
     
 
 
@@ -127,7 +125,7 @@ export const CDN_TAN_BEIGE = [
 ]
 
 export const CDN_BLUE = [
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/71f23893-5c8d-4f1a-a2d7-c9e1f2340200/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7cdbe884-b878-4175-9cd2-bd77f6855c00/semi",
     
 
 
@@ -139,7 +137,7 @@ export const CDN_BLUE = [
 ]
 export const CDN_RED = [
 
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dac910c2-2e06-49b0-bdaf-1492bca96f00/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d4438ba1-facb-436d-c960-8571fbc77c00/semi",
     
 
 
@@ -149,13 +147,13 @@ export const CDN_RED = [
 
 export const CDN_STEEL_GRAY = [
 
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2174eddf-dd1d-4d9a-74c1-48dbe4acd300/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/cc5d6abf-3239-4f06-a6ec-d1596a036d00/semi",
    
 
 
 ]
 export const CDN_INTERSTELLAR = [
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/77e9c8ce-0731-4bf4-0323-6456c9f75800/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6720056e-d1a2-442b-183d-219b36dcc600/semi",
     
 
 
@@ -169,7 +167,7 @@ export const CDN_INTERSTELLAR = [
 
 export const CDN_GREEN = [
 
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a468886e-20a6-4572-b992-15719b304d00/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d77861c3-32f7-4fb9-27b5-07bfce493600/semi",
   
 
 
@@ -177,7 +175,7 @@ export const CDN_GREEN = [
 
 
 export const CDN_BLACK = [
-    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ecc9c266-a297-422a-642d-b5996ae89d00/tv",
+    "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e1b859e9-eae9-4148-d69c-8f83be36ff00/semi",
     
 
 

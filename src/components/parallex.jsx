@@ -141,21 +141,21 @@ const ParallaxSection = () => {
                         <br/>
                         <span className={`ms-3 ${i18n?.language=='ar'?'hidden':''}`}>
                             {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
-                                <motion.span
+                                <span
                                     key={index}
                                     className={`text-[120px] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
-                                    animate={{
-                                        y: [0, -20, 0],
-                                    }}
-                                    transition={{
-                                        duration: 1.5,
-                                        repeat: Infinity,
-                                        delay: index * 0.2,
-                                        ease: "easeInOut"
-                                    }}
+                                    // animate={{
+                                    //     y: [0, -20, 0],
+                                    // }}
+                                    // transition={{
+                                    //     duration: 1.5,
+                                    //     repeat: Infinity,
+                                    //     delay: index * 0.2,
+                                    //     ease: "easeInOut"
+                                    // }}
                                 >
                                     {item}
-                                </motion.span>
+                                </span>
                             ))}
                         </span>
 

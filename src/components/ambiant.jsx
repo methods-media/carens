@@ -32,7 +32,7 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                 <AnimatePresence mode="wait">
                     <motion.img
                         key={isAmbiant ? 'ambientOn' : 'ambientOff'}
-                        src={isAmbiant ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/73ff05f1-c26a-45bb-8047-306119bb3f00/tv' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/27149298-f163-4478-c461-b7c77fd23e00/tv'}
+                        src={isAmbiant ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/01306e78-7370-4716-0019-5b03b0c1d100/semi' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/27149298-f163-4478-c461-b7c77fd23e00/tv'}
                         width={'100vw'}
                         height={'100vh'}
                         className='h-[60vh] !w-[100vw] md:!h-[100vh] !object-cover'

@@ -97,7 +97,7 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f06a30a2-7ec6-4ac3-80e2-0e4d750b0000/public',
             featureTitle: isArabic ?`هيكل على إطار`: 'Frame Body',
-            featureDescription: isArabic ?`الهيكل المبني على الإطار يمنح المتانة في مواجهة الصدمات والطريق الوعر.`: 'The structure of the body and frame is separate, ensuring durability from impacts when driving on rough roads.'
+            featureDescription: isArabic ?`الهيكل المبني على الإطار يمنح المتانة في مواجهة الصدمات والطريق الوعر.`: 'Body-on-frame structure ensures durability from impacts when driving on rough roads.'
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3d3a9997-dbd0-4628-2a56-749cfc9eda00/public',
@@ -105,9 +105,9 @@ const isArabic=i18n?.language=='ar'
             featureDescription: isArabic ?`ركز على الطريق ودع السيارة تتكفل بالسرعة والكبح في التضاريس الصعبة. نمط الزحف يُساعدك على تسلق المنحدرات الحادة والنزول عنها بكل ثقة.`: 'Focus on the trail, not the throttle. Crawl Mode automatically controls speed and braking on rough terrain, so you can tackle steep climbs and descents with total confidence.'
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/114011a9-a6c3-45e9-ada0-5f80bbad1b00/public',
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/40f27c6d-7b36-4e86-fbd9-8da77dfaf500/semi',
             featureTitle: isArabic ?`وضعية القيادة / التضاريس`: 'Drive / Terrain Mode',
-            featureDescription: isArabic ?`أنماط متعددة للأداء الأمثل والسلامة في ظروف مثل الثلج، والطين، والرمال، والصحراء. فعّل وضعية X-Trek للسيطرة الكاملة بسرعة منخفضة في التضاريس الأصعب.`: "Terrain modes optimizes performance & safety across various conditions such as Snow, Mud, Sand & Desert. Activate the X-Trek mode (low speed cruise control) for driving on especially difficult terrain at low speeds."
+            featureDescription: isArabic ? `أنماط متعددة للأداء الأمثل والسلامة في ظروف مثل الثلج، والطين، والرمال، الصخور. فعّل وضعية X-Trek للسيطرة الكاملة بسرعة منخفضة في التضاريس الأصعب.` : "Terrain modes optimizes performance & safety across various conditions such as Snow, Mud, Desert & Rock. Activate the X-Trek mode (low speed cruise control) for driving on especially difficult terrain at low speeds."
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/bf199f41-1282-40b3-17e6-260397980800/public',
@@ -154,7 +154,7 @@ const isArabic=i18n?.language=='ar'
         {
             video: '/assets/videos/ktk-scc.webm',
             featureTitle: isArabic ?`نظام تثبيت السرعة الذكي (SCC)`: 'Smart Cruise Control (SCC)',
-            featureDescription: isArabic ?`يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.`: 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Tasman to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style. When inactive (Off/Standby), SCC makes note of your driving style (distance between vehicles, acceleration, and reaction speed). When equipped with the Emergency Stop function, the vehicle stops in the lane and emits a warning if the driver does not steer or look forward continuously.'
+            featureDescription: isArabic ?`يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.`: 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Tasman to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style.'
         },
         {
             video: '/assets/videos/ktk-rspa.webm',
