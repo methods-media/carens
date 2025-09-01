@@ -2,11 +2,13 @@ import LanguageSwitcher from '../LanguageSwitcher';
 import { X } from 'lucide-react';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const SideMenu = ({ toggleMenu, isOpen }) => {
   const { locale } = useRouter();
   const isRTL = locale === 'ar';
   const [skipAnimation, setSkipAnimation] = useState(false);
+  const { t } = useTranslation();
 
   const handleClose = (skipAnim = false) => {
     setSkipAnimation(skipAnim);
@@ -41,36 +43,42 @@ const SideMenu = ({ toggleMenu, isOpen }) => {
           <ul className="space-y-2">
             <LanguageSwitcher toggleMenu={value => handleClose(true)} />
             <li>
-              <a href="#design" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
-                Design
+              <a href="#highlights" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
+                {t('Highlights')}
               </a>
             </li>
             <li>
-              <a href="#styling" onClick={() => handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
-                Styling
+              <a href="#exterior" onClick={() => handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
+                {locale == 'ar' ? 'التصميم الخارجي' : 'Exterior'}
               </a>
             </li>
             <li>
-              <a href="#technology" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
-                Technology
+              <a href="#interior" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
+                {locale == 'ar' ? 'التصميم الداخلي' : 'Interior'}
               </a>
             </li>
             <li>
-              <a href="#comfort" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
-                Comfort
+              <a href="#performance" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
+                {locale == 'ar' ? 'الأداء' : 'Performance'}
               </a>
             </li>
             <li>
               <a href="#safety" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
-                Safety
+                {t('Safety')}
               </a>
             </li>
            
             <li>
-              <a href="#specs" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
-                Specifications
+              <a href="#kiaConnect" onClick={()=>handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
+                {'Kia Connect'}
               </a>
             </li>
+            <li>
+              <a href="#specs" onClick={() => handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
+                {t('specs')}
+              </a>
+            </li>
+            
           </ul>
         </nav>
       </div>
