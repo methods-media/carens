@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 export const EngineSection = () => {
     const [isVisible, setIsVisible] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const sectionRef = useRef(null);
     const { locale } = useRouter()
     const { t ,i18n} = useTranslation('common');
@@ -13,14 +14,26 @@ export const EngineSection = () => {
         offset: ["start end", "end start"]
     });
 
+    // Check screen size
+    useEffect(() => {
+        const checkScreenSize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+
+        checkScreenSize();
+        window.addEventListener('resize', checkScreenSize);
+
+        return () => window.removeEventListener('resize', checkScreenSize);
+    }, []);
+
     // Transform scroll progress to scale and position values
     const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1.6, 1, 0.4]);
-    const y = useTransform(scrollYProgress, [0, 0.5], [-300, 0]);
+    const y = useTransform(scrollYProgress, [0, 0.5], [isMobile ? -1000 : -300, 0]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
     // Transform scroll progress for "COME TOGETHER" animation
-    const comeX = useTransform(scrollYProgress, [0, 0.5], [-500, 10]);
-    const togetherX = useTransform(scrollYProgress, [0, 0.5], [500, 10]);
+    const comeX = useTransform(scrollYProgress, [0, 0.5], [isMobile ?-800:-500, 10]);
+    const togetherX = useTransform(scrollYProgress, [0, 0.5], [isMobile ?800:500, isMobile?-18:10]);
     const textOpacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
 
     // Transform scroll progress for "A NEW DIMENSION UNFOLDS" animation
@@ -50,29 +63,29 @@ export const EngineSection = () => {
 
 
     return (
-        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-end pb-[15%] w-full min-h-[100vh] h-[100vh] gap-10 rtl:gap-10 md:h-[100vh]'>
+        <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-center lg:justify-end pb-0 lg:pb-[15%] w-full min-h-[50vh] lg:min-h-[100vh] h-[50vh] lg:h-[100vh] gap-10 rtl:gap-10 lg:h-[100vh]'>
             <motion.p
-                className={`text-3xl md:text-[52px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
+                className={`text-3xl lg:text-[52px] text-center lg:text-start ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
                 style={{ scale, y, opacity }}
             >
                 {i18n?.language == 'ar' ? `حينما تلتقي   ` : ` Where your bold spirit and true practicality`}
             </motion.p>
             <div className={`flex gap-2 ${i18n?.language == 'ar' ? '' : 'gap-2'}`}>
                 <motion.p 
-                    className={`text-4xl md:text-[84px]  ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'} text-white uppercase font-[900]`}
+                    className={`text-4xl lg:text-[84px]  ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'} text-white uppercase font-[900]`}
                     style={{ x: i18n?.language == 'ar' ? togetherX : comeX, opacity: textOpacity }}
                 >
                     {i18n?.language == 'ar' ? `  الجرأة` : `COME `}
                 </motion.p>
                 <motion.p
-                    className={`text-4xl md:text-[84px] text-white uppercase font-[900] ps-8 ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'}`}
+                    className={`text-4xl lg:text-[84px] text-white uppercase font-[900] ps-8 ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'}`}
                     style={{ x: i18n?.language == 'ar' ? comeX : togetherX, opacity: textOpacity }}
                 >
                     {i18n?.language == 'ar' ? `مع العملية` : ` TOGETHER`}
                 </motion.p>
             </div>
             <motion.p
-                className={`text-3xl md:text-[62px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white text-center   uppercase font-[900]`}
+                className={`text-3xl lg:text-[62px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white text-center   uppercase font-[900]`}
                 style={{
                     y: dimensionY,
                     scale: dimensionScale,
@@ -87,7 +100,7 @@ export const EngineSection = () => {
 
 
  const SvgDivider = () => (
-     <svg xmlns="http://www.w3.org/2000/svg" height={'300px'} className='w-[500px] h-[300px] md:w-full' viewBox="0 0 1000 100" preserveAspectRatio="none">
+     <svg xmlns="http://www.w3.org/2000/svg" height={'300px'} className='w-[500px] h-[300px] lg:w-full' viewBox="0 0 1000 100" preserveAspectRatio="none">
         <path fill="#05141F" d="M0,6V0h1000v100L0,6z"></path>
     </svg>
 );

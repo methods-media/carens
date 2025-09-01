@@ -18,9 +18,9 @@ export const Interior = () => {
     const y = useTransform(scrollYProgress, [0, 0.5], [-150, 50]);
     const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
     return (
-        <div ref={sectionRef} id='interior' className="w-screen bg-[#06141F] flex flex-col  items-center justify-center h-[100vh]">
+        <div ref={sectionRef} id='interior' className="w-screen bg-[#06141F] flex flex-col  items-center justify-center h-[60vh] lg:h-[100vh]">
             <motion.p
-                className={`text-3xl md:text-[52px] text-white text-center ${locale == 'ar' ? "font-['GSSMedium'] -ms-[55px]" : "font-[InterBold]"} text-white uppercase font-[900] w-fit`}
+                className={`text-[40px] lg:text-[62px] text-white text-center ${locale == 'ar' ? "font-['GSSMedium'] lg:-ms-[55px]" : "font-[InterBold]"} text-white uppercase font-[900] w-fit`}
                 style={{ scale, y, opacity }}
             >
                 {"   "}{i18n?.language == 'ar' ? `التصميم الداخلي` : `Interior`}

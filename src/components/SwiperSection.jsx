@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
-export const SwiperSection = ({ noBg, dark, id = 0, height }) => {
+export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const { t, i18n } = useTranslation('common');
@@ -210,13 +210,13 @@ const isArabic=i18n?.language=='ar'
     };
 
     return (
-        <div className={`w-full ${noBg ? '' : 'bg-[#06141F]'} ${height ? height:'min-h-screen'} py-10 gap-16 flex flex-col justify-center items-center`}>
+        <div className={`w-full ${noBg ? '' : 'bg-[#06141F]'} ${height ? height:'min-h-[50vh] lg:min-h-screen'} py-10 gap-16 flex flex-col justify-center items-center`}>
 
             <div className="w-full flex items-center justify-center max-w-7xl">
-                <div className="flex-col lg:flex-row flex h-[600px]">
+                <div className=" flex-col items-center lg:items-start lg:flex-row flex h-[700px] lg:h-[600px]">
                     {/* Left Section - Image with specific dimensions */}
                     {slides?.[id][currentSlide]?.image ?
-                        <div className="w-full md:w-[750px] h-[350px] md:h-[600px] relative overflow-hidden">
+                        <div className="w-[90%] lg:w-[550px] lg:ms-4 ms-0 xl:!w-[750px] h-[350px] lg:h-[400px] xl:!h-[600px] relative overflow-hidden">
                             <div
                                 style={{
                                     backgroundImage: slides?.[id][currentSlide]?.image ? `url(${slides?.[id][currentSlide].image})` : 'null',
@@ -230,20 +230,20 @@ const isArabic=i18n?.language=='ar'
                             <button
                                 onClick={prevSlide}
                                 disabled={isAnimating}
-                                className="absolute top-1/2 left-8 md:left-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                                className="absolute top-1/2 left-0 lg:left-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                             >
                                 <ChevronLeft className="w-10 h-10 text-white/70 hover:text-white" />
                             </button>
                             <button
                                 onClick={nextSlide}
                                 disabled={isAnimating}
-                                className="absolute top-1/2 right-8 md:right-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                                className="absolute top-1/2 right-0 lg:right-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                             >
                                 <ChevronRight className="w-10 h-10 text-white/70 hover:text-white" />
                             </button>
                         </div>
-                    : <div className='relative'>
-                            <video src={slides?.[id]?.[currentSlide]?.video} className='w-full rounded-2xl object-cover md:w-[750px] h-[350px] md:h-[600px]' muted playsInline autoPlay loop />
+                        : <div className='relative w-[90%] lg:w-[550px] lg:ms-4 xl:!w-[750px]'>
+                            <video src={slides?.[id]?.[currentSlide]?.video} className='w-full rounded-2xl object-cover md:w-[750px] h-[350px] lg:h-[400px] xl:!h-[600px]' muted playsInline autoPlay loop />
                             <button
                                 onClick={prevSlide}
                                 disabled={isAnimating}
@@ -264,8 +264,8 @@ const isArabic=i18n?.language=='ar'
                   
 
                     {/* Right Section - Content */}
-                    <div className="flex-1 pt-6 md:py-12 p-12 pe-0 flex flex-col justify-start  relative min-w-[550px]">
-                        <div className="text-white space-y-8">
+                    <div className="flex-1 p-4  lg:p-12 pe-0 flex flex-col justify-start  relative w-[90%] lg:h-[100%]">
+                        <div className="text-white space-y-8 w-[90vw] lg:w-auto">
                             {/* Main description */}
                             
 
@@ -336,7 +336,7 @@ const isArabic=i18n?.language=='ar'
                                         
                                         slides?.[id][currentSlide].featureTitle}
                                 </h3>
-                                <p className={`text-sm lg:text-lg leading-relaxed ${dark ? 'text-[#54595F] text-start' : id == 0 ? 'text-[#A3A8AD]' : 'text-white'} ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"} max-w-[89%] md:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
+                                <p className={`text-sm lg:text-lg leading-relaxed max-w-[80vw] ${dark ? 'text-[#54595F] text-start' : id == 0 ? 'text-[#A3A8AD]' : 'text-white'} ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"} lg:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
                                     {slides?.[id][currentSlide].featureDescription}
                                 </p>
@@ -344,7 +344,7 @@ const isArabic=i18n?.language=='ar'
                         </div>
 
                         {/* Pagination */}
-                        <div className="absolute bottom-0 md:bottom-8 end-0 justify-center md:justify-start w-full md:w-auto flex space-x-2">
+                        <div className={`absolute ${bottom ? 'bottom-[14%]' :'bottom-0 '} lg:bottom-8 end-0 lg:end-4 xl:end-0 justify-center lg:justify-start w-full lg:w-auto flex space-x-2`}>
                             {slides?.[id].map((_, index) => (
                                 <button
                                     key={index}

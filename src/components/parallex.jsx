@@ -43,6 +43,8 @@ const ParallaxSection = () => {
   position: relative;
   height: 200vh; /* Make the container tall enough to allow scrolling */
   overflow: hidden;
+  @media (max-width: 1024px) {
+  height:200vh;
 }
 
 .parallax-video {
@@ -88,6 +90,10 @@ const ParallaxSection = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+    @media (max-width: 1024px) {
+  height:100vh;
+  padding:0px;
+}
 }
                 
                 `}
@@ -103,36 +109,9 @@ const ParallaxSection = () => {
                     </video>
                 </div>
                 <div className="content2" ref={textRef}>
-                    {/* <motion.span
-                        className='text-[56px] font-[InterBold] font-extrabold  uppercase'
-                        style={{
-                            x: xTransform
-                        }}
-                    >
-                        {`It's for those who aren't`}<br />{`afraid to get`}
-                        <span className='ms-3'>
-                            {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
-                                <motion.span
-                                    key={index}
-                                    className='text-[56px] font-[InterBold] font-extrabold uppercase inline-block'
-                                    animate={{
-                                        y: [0, -20, 0],
-                                    }}
-                                    transition={{
-                                        duration: 1.5,
-                                        repeat: Infinity,
-                                        delay: index * 0.2,
-                                        ease: "easeInOut"
-                                    }}
-                                >
-                                    {item}
-                                </motion.span>
-                            ))}
-                        </span>
-
-                    </motion.span> */}
+                  
                     <span
-                        className={` ${i18n?.language == 'ar' ? 'font-[GSSMedium] text-[100px]' :'font-[InterBold] text-[40px]'} font-extrabold  uppercase`}
+                        className={` ${i18n?.language == 'ar' ? 'font-[GSSMedium] text-[40px] lg:text-[100px]' :'font-[InterBold] text-[40px]'} font-extrabold  uppercase`}
                         
                     >
                         {i18n?.language == 'ar' ? `للذين لا يخشون ` : `It's for those who aren't afraid to get`}
@@ -143,7 +122,7 @@ const ParallaxSection = () => {
                             {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
                                 <span
                                     key={index}
-                                    className={`text-[120px] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
+                                    className={`text-[60px] lg:text-[120px] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
                                     // animate={{
                                     //     y: [0, -20, 0],
                                     // }}
@@ -162,7 +141,7 @@ const ParallaxSection = () => {
                     </span>
                 </div>
                 <div className="content3 bg- bg-[linear-gradient(180deg,_#06141F00_0%,_#06141F00_20%,_#06141F_80%)]  ">
-                    <SwiperSection id={2} noBg={true} />
+                    <SwiperSection bottom id={2} noBg={true} />
                 </div>
             </div>
         </ParallaxProvider>

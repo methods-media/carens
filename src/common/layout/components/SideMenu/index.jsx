@@ -30,7 +30,7 @@ const SideMenu = ({ toggleMenu, isOpen }) => {
           isOpen
             ? `${isRTL ? 'translate-x-0' : 'translate-x-0'}`
             : `${isRTL ? 'translate-x-[100%]' : '-translate-x-[100%]'}`
-        }`}
+        } z-[10000000]`}
       >
         <div className="w-full flex justify-end cursor-pointer">
           <button onClick={() => handleClose(false)} className="cursor-pointer">

@@ -10,8 +10,8 @@ export default function Footer () {
           
 {pathname.includes('configurator')?null:
 <>
-                    <div className="w-screen bg-[url('https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ff405cbc-5555-4b50-4e1d-1ba45e99d800/public')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] md:h-screen bg-[#05141F]">
-                        <div className={`${locale == 'ar' ? 'min-h-[8vh] md:min-h-[25vh]' : 'min-h-[8vh] md:min-h-[40vh]'}  footer-img-text md:mt-0   flex w-full flex-col justify-center `}
+                    <div className="w-screen bg-[url('https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ff405cbc-5555-4b50-4e1d-1ba45e99d800/public')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] lg:h-screen bg-[#05141F]">
+                        <div className={`${locale == 'ar' ? 'min-h-[8vh] lg:min-h-[25vh]' : 'min-h-[8vh] lg:min-h-[40vh]'}  footer-img-text lg:mt-0   flex w-full flex-col justify-center `}
                  dir="ltr" >
                             <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-between   h-[40vh]">
                                 <div className={`w-full px-12 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
@@ -34,7 +34,7 @@ export default function Footer () {
                     </div>
                     <div dir={'ltr'} className='!bg-[#05141F] w-full  flex  flex-col lg:flex-row  items-center h-[260px] py-10 lg:py-0 lg:h-[120px] justify-between  px-10 relative  '>
 
-                        <div className="flex flex-col gap-2 items-start">
+                        <div className="flex flex-col gap-2 items-center justify-center lg:justify-start lg:items-start">
                             <img src='/assets/images/logoWhite.png' width={100} height={37} />
                             <div className='flex justify-center gap-4  items-start   ' style={{ direction: 'ltr' }}>
 

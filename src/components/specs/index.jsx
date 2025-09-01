@@ -1,5 +1,5 @@
 import { useTranslation } from 'next-i18next';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useSpecs } from './useSpecs';
 
@@ -10,6 +10,7 @@ const Specs = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
     const [slideDirection, setSlideDirection] = useState('next'); // 'next' or 'prev'
+    const [cardsToShow, setCardsToShow] = useState(3); // Default to 3 cards
     const {
         featureCategories,
         featureCategories1,
@@ -18,7 +19,37 @@ const Specs = () => {
         featureCategories4,
         featureCategories5,
     } = useSpecs()
-  
+
+    // Handle responsive behavior
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            let newCardsToShow;
+            if (width < 600) {
+                newCardsToShow = 1; // Mobile: 1 card
+            } else if (width < 1024) {
+                newCardsToShow = 2; // Tablet: 2 cards
+            } else {
+                newCardsToShow = 3; // Desktop: 3 cards
+            }
+
+            // Reset currentSlide if the new cardsToShow would cause issues
+            if (newCardsToShow !== cardsToShow) {
+                setCardsToShow(newCardsToShow);
+                // Reset to a valid slide position
+                setCurrentSlide(0);
+            }
+        };
+
+        // Set initial value
+        handleResize();
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup
+        return () => window.removeEventListener('resize', handleResize);
+    }, [cardsToShow]);
 
 
     const trimLevels = [
@@ -43,7 +74,7 @@ const Specs = () => {
         setCurrentSlide((prev) => {
             const next = prev + 1;
             // Loop back to the beginning when reaching the end
-            return next >= trimLevels.length - 2 ? 0 : next;
+            return next >= trimLevels.length - cardsToShow + 1 ? 0 : next;
         });
         setTimeout(() => setIsAnimating(false), 300);
     };
@@ -55,7 +86,7 @@ const Specs = () => {
         setCurrentSlide((prev) => {
             const next = prev - 1;
             // Loop to the end when going before the beginning
-            return next < 0 ? trimLevels.length - 3 : next;
+            return next < 0 ? trimLevels.length - cardsToShow : next;
         });
         setTimeout(() => setIsAnimating(false), 300);
     };
@@ -68,10 +99,10 @@ const Specs = () => {
         setTimeout(() => setIsAnimating(false), 300);
     };
 
-    // Get the 3 visible trim cards
+    // Get the visible trim cards based on screen size
     const getVisibleTrims = () => {
         const visibleTrims = [];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < cardsToShow; i++) {
             const index = currentSlide + i;
             if (index < trimLevels.length) {
                 visibleTrims.push(trimLevels[index] );
@@ -84,21 +115,21 @@ const Specs = () => {
 
     const TrimCard = ({ trim, index, isEntering }) => (
         <div
-            className={`bg-[#E7EBF0] rounded-[10px] p-6 h-full transition-all duration-300 transform `}
+            className={`bg-[#E7EBF0] rounded-[10px] p-4 md:p-6 h-full transition-all duration-300 transform`}
 
         >
             {/* Trim Name */}
-            <h2 className="text-6xl text-center font-bold text-[#06141F] mb-4">{trim.name}</h2>
+            <h2 className="text-3xl md:text-4xl xl:text-5xl 2xl:text-6xl text-center font-bold text-[#06141F] mb-4">{trim.name}</h2>
 
             {/* Technical Specifications Section */}
-            <div className="mb-6" dir={ isArabic?'rtl':'ltr'}>
-                <h3 className={`text-lg font-medium text-start text-black mb-3 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`} dir={isArabic?'rtl':'ltr' }>{isArabic ? "المواصفات" :"Technical Specifications"}</h3>
+            <div className="mb-4 md:mb-6" dir={isArabic ? 'rtl' : 'ltr'}>
+                <h3 className={`text-base md:text-lg font-medium text-start text-black mb-3 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`} dir={isArabic ? 'rtl' : 'ltr'}>{isArabic ? "المواصفات" : "Technical Specifications"}</h3>
                 <div className="space-y-0">
                     {trim?.features?.map((category, catIndex) => (
                         <div key={category.title} className="w-full">
                             <button
                                 onClick={() => toggleCategory(`${trim.id}${category?.title}`)}
-                                className={`w-full flex justify-between items-center p-3 text-sm font-medium  cursor-pointer transition-all duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} ${openCategories[`${trim.id}${category?.title}`]
+                                className={`w-full flex justify-between items-center p-2 md:p-3 text-xs md:text-sm font-medium  cursor-pointer transition-all duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} ${openCategories[`${trim.id}${category?.title}`]
                                     ? 'bg-[#06141F] text-white'
                                     : 'bg-[#7b848c] text-white '
                                     }`}
@@ -111,7 +142,7 @@ const Specs = () => {
                             {openCategories[`${trim.id}${category?.title}`] && (
                                 <div className="mt-2 ml-3 space-y-1" dir={isArabic?'rtl':'ltr'}>
                                     {category.features.map((feature, featureIndex) => (
-                                        <div key={featureIndex} className={`text-sm flex-wrap text-gray-600 flex items-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
+                                        <div key={featureIndex} className={`text-xs md:text-sm flex-wrap text-gray-600 flex items-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
                                             <span className="text-[#06141F] me-2 mt-1">•</span>
                                             {feature?.toString()?.includes('LED MFR') ?
                                                 <>
@@ -284,39 +315,38 @@ const Specs = () => {
 
     return (
         <section className="min-h-screen bg-white w-full relative overflow-hidden">
-            <div className='max-w-[1400px] mx-auto px-4 py-8'>
+            <div className='max-w-[1400px] mx-auto px-0 lg:px-2 md:px-4 py-4 md:py-8'>
                 {/* Header Section */}
-                <div className="text-start mb-8">
-                    <h1 className={`text-[40px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F] mb-5`}>
+                <div className="text-start mb-8 px-4 md:px-0">
+                    <h1 className={`text-2xl md:text-3xl lg:text-[40px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F] mb-5`}>
                         {isArabic ?`أختر الفئة التي تناسبك`:`  Find the perfect trim for you`}
                     </h1>
-                    <p className={`text-lg text-[#06141F] text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
+                    <p className={`text-base md:text-lg text-[#06141F] text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
                         {isArabic ?`من الأداء القوي إلى التفاصيل الفاخرة، توفر لك تاسمان الخيار الذي يعكس شخصيتك ويُعبّر عن أسلوب قيادتك`:`  From rugged to refined, choose the Tasman trim that matches your drive and your style.`}
                     </p>
                 </div>
 
-                {/* Trim Cards Slider - Show 3 cards at once */}
-                <div className="relative">
+                {/* Trim Cards Slider - Responsive cards display */}
+                <div className="relative  px-[50px] 2xl:px-2">
                     {/* Previous Button */}
                     <button
                         onClick={prevSlide}
                         disabled={isAnimating}
-                        className={`absolute cursor-pointer left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+                        className={`absolute left-12 cursor-pointer 2xl:left-0 top-1/2 transform -translate-y-1/2 -translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
                             }`}
                     >
                         <ChevronLeft className="w-10 h-10 text-[#06141F]" />
                     </button>
 
-                    {/* Three Trim Cards Container */}
-                    <div className="flex justify-center gap-6 " dir='ltr'
->
+                    {/* Responsive Trim Cards Container */}
+                    <div className={`flex justify-center gap-4 md:gap-6 ${cardsToShow === 1 ? 'px-4' : ''}`} dir='ltr'>
                         {visibleTrims.map((trim, index) => (
-                            <div key={trim.id} className="w-[30%]">
+                            <div key={trim.id} className={`${cardsToShow === 1 ? 'w-full max-w-md mx-auto' : cardsToShow === 2 ? 'w-full md:w-1/2 max-w-lg' : 'w-full md:w-1/3'}`}>
                                 <TrimCard
                                     trim={trim}
                                     index={index}
                                     isEntering={
-                                        (slideDirection === 'next' &&index === 2 && isAnimating) || // Next: animate rightmost card
+                                        (slideDirection === 'next' && index === cardsToShow - 1 && isAnimating) || // Next: animate rightmost card
                                         (slideDirection === 'prev' && index === 0 && isAnimating)    // Prev: animate leftmost card
                                     }
                                 />
@@ -328,7 +358,7 @@ const Specs = () => {
                     <button
                         onClick={nextSlide}
                         disabled={isAnimating}
-                        className={`absolute cursor-pointer right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
+                        className={`absolute cursor-pointer right-12 2xl:right-0 top-1/2 transform -translate-y-1/2 translate-x-12 w-10 h-10 rounded-full text-[#06141F] flex items-center justify-center transition-colors z-10 ${isAnimating ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-100'
                             }`}
                     >
                         <ChevronRight className="w-10 h-10 text-[#06141F]" />
@@ -337,7 +367,7 @@ const Specs = () => {
 
                 {/* Dots indicator */}
                 <div className="flex justify-center gap-2 mt-8" dir={'ltr'}>
-                    {Array.from({ length: Math.max(1, trimLevels.length - 2) }).map((_, index) => (
+                    {Array.from({ length: Math.max(1, trimLevels.length - cardsToShow + 1) }).map((_, index) => (
                         <button
                             key={index}
                             onClick={() => goToSlide(index)}

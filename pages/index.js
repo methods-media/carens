@@ -50,10 +50,10 @@ export default function Home() {
 
       <Banner />
      
-      <div className='w-screen h-screen'>
+      <div className='w-screen h-[50vh] lg:h-screen'>
         <EngineSection />
       </div>
-      <div className='w-screen h-[70vh]' id='exterior'>
+      <div className='w-screen  h-[50vh] lg:h-[70vh]' id='exterior'>
         <Exterior />
      </div>
            <div className="relative"  style={{ zIndex: 1000 }}>
@@ -93,7 +93,7 @@ export default function Home() {
       <Specs/>
       {isModalOpen ?
         <div className='fixed w-screen h-screen bg-black/90 z-[10000] flex flex-col items-center justify-center  left-0 top-0'>
-          <div className="bg-white rounded-xl flex flex-col  items-end w-[650px]  relative" >
+          <div className="bg-white rounded-xl flex flex-col  items-end w-[90%] lg:w-[650px]  relative" >
             <button onClick={() => {
               document.body.style.overflow = 'auto'
               setIsModalOpen(false)

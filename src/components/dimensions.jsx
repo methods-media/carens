@@ -62,12 +62,12 @@ const isArabic=i18n?.language=='ar'
 
         
             <section ref={sectionRef} className="min-h-[80vh] bg-white flex flex-col  gap-5 justify-start  relative overflow-hidden" id='specs'>
-                <div className='h-full py-10 w-[1350px] mx-auto flex flex-col justify-start '>
+                <div className='h-full py-10 w-full 2xl:w-[1350px] mx-auto flex flex-col justify-start  lg:px-4 xl:px-0'>
 
                 <h2 className={`text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8 ${isArabic ? 'font-[GSSMedium]' :''}`}>
                         {isArabic ?`تاسمان في أرقام`:`Tasman in Numbers`}
                 </h2>
-                    <div className="flex flex-wrap space-y-3   items-start  justify-center lg:justify-between w-full">
+                    <div className="flex flex-wrap space-y-3  gap-3 lg:gap-0  items-start  justify-center lg:justify-between w-full ">
                     {specifications.map((spec) => (
                         <button
                             key={spec.key}
@@ -84,7 +84,7 @@ const isArabic=i18n?.language=='ar'
                 <div className="w-full flex-col lg:flex-row pt-12 lg:pt-0 flex items-center px-8 justify-between">
                         {/* Left Content */}
                         
-                        <div className={`relative flex flex-col ${isArabic?'gap-2':'gap-0'}  items-start  w-[40%]`}>
+                        <div className={`relative flex flex-col ${isArabic?'gap-2':'gap-0'}  items-start w-full lg:w-[40%]`}>
                             <p className={` ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular] '}   justify-center leading-normal  text-[#DADADA] text-[45px]`}>
                                 {getCurrentSpec()?.label.toUpperCase()}
                             </p>
@@ -178,7 +178,7 @@ const isArabic=i18n?.language=='ar'
 
                   
                     {/* Right Content - 3D Vehicle Render */}
-                    <div className="w-[60%] flex justify-center items-center">
+                    <div className="w-full lg:w-[60%] flex justify-center items-center">
                             <img
                                 src={getCurrentSpec()?.icon}
                                 alt="Kia Tasman 3D Render"

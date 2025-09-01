@@ -102,7 +102,7 @@ export default function KiaConnectEnhanced () {
                 {/* First Column - Carousel */}
                 <div className={` w-full h-[25vh]`}>
                     <div
-                        className="relative h-[25vh] flex items-start flex-row  justify-start"
+                        className="relative h-[25vh] flex  items-start flex-row  justify-center lg:justify-start"
                         ref={carouselRef}
                         onTouchStart={onTouchStart}
                         onTouchMove={onTouchMove}
@@ -112,20 +112,20 @@ export default function KiaConnectEnhanced () {
                         <AnimatePresence  mode="wait">
                             <div
                                 
-                                className='flex items-start justify-center w-[100%]'
+                                className='w-full flex items-start justify-center relative h-[50%] '
                             >
-                                <div className='flex-1  flex-col items-start justify-center'>
+                                <div className='w-full lg:w-auto lg:lex-1    flex-col items-start justify-center'>
                                     <motion.p
                                         key={currentSlide}
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         exit={{ opacity: 0, x: -20 }}
                                         transition={{ duration: 0.3 }}
-                                        className={`text-white text-[22px] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} `}>{slides[currentSlide]?.title}</motion.p>
-                                    <div className='w-full flex items-center mt-5 '>
+                                        className={`text-white text-lg lg:text-[22px] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} `}>{slides[currentSlide]?.title}</motion.p>
+                                    <div className='!w-full flex items-center justify-center lg:justify-start relative mt-5 '>
                                         <button
                                             onClick={prevSlide}
-                                            className="w-[7%]  p-2 rounded-full cursor-pointer "
+                                            className="w-[7%] start-1  absolute lg:relative  lg:p-2 rounded-full cursor-pointer "
                                         >
                                             <ChevronLeft className="w-10 h-10 text-2xl text-[#FFFFFF4A] hover:text-white"  />
                                         </button>
@@ -135,10 +135,10 @@ export default function KiaConnectEnhanced () {
                                             animate={{ opacity: 1, x: 0 }}
                                             exit={{ opacity: 0, x: -20 }}
                                             transition={{ duration: 0.3 }}
-                                            className={`text-white text-base ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}  w-[86%] min-w-[86%] max-w-[86%]  text-center`}>{slides[currentSlide]?.description}</motion.p>
+                                            className={`text-white text-sm lg:text-base ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} w-[80%]  lg:w-[86%] min-w-[80%]  lg:min-w-[86%] max-w-[86%]  text-center`}>{slides[currentSlide]?.description}</motion.p>
                                         <button
                                             onClick={nextSlide}
-                                            className=" w-[7%] p-2 rounded-full cursor-pointer "
+                                            className=" w-[7%]  absolute end-2 lg:relative lg:p-2 rounded-full cursor-pointer "
                                         >
                                             <ChevronRight className="w-10 h-10 text-2xl text-[#FFFFFF4A] hover:text-white"  />
                                         </button>
@@ -152,7 +152,7 @@ export default function KiaConnectEnhanced () {
                       
 
                         {/* Pagination Dots */}
-                        <div className=" w-full absolute bottom-10 justify-center flex">
+                        <div className=" w-full absolute bottom-6 lg:bottom-10 justify-center flex">
                             <div className='flex justify-center space-x-2'>
                                 {slides.map((_, index) => (
                                     <button

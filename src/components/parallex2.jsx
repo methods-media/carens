@@ -46,7 +46,10 @@ const ParallaxSectionSecond = () => {
   position: relative;
   height: 200vh; /* Make the container tall enough to allow scrolling */
   overflow: hidden;
+    @media (max-width: 1024px) {
+  height:100vh;
 }
+  }
 
 .parallax-video1 {
   position: fixed;
@@ -54,6 +57,7 @@ const ParallaxSectionSecond = () => {
   left: 0;
   width: 100%;
   height: 100vh;
+ 
   object-fit: cover;
   z-index: ${isInView ? '-1' : '-10'};
   opacity:${isInView?'1':'0'}
@@ -71,12 +75,15 @@ const ParallaxSectionSecond = () => {
   height: 100vh;
   z-index: 2;
   color: white;
- 
   font-size: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
+     @media (max-width: 1024px) {
+  height:50vh;
+}
+
 }
 
 .content33 {
@@ -91,6 +98,7 @@ const ParallaxSectionSecond = () => {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
 }
                 
                 `}
@@ -102,7 +110,7 @@ const ParallaxSectionSecond = () => {
 
                     </img>
                 </div>
-                <div class="bg-gradient-to-b from-0% h-screen w-screen from-[#06141F]/50 to-100% to-[#00000000]" id="bg-section">
+                <div class="bg-gradient-to-b from-0% h-[50vh] lg:h-screen w-screen from-[#06141F]/50 to-100% to-[#00000000]" id="bg-section">
                     
                    
                   
@@ -112,9 +120,9 @@ const ParallaxSectionSecond = () => {
                 <div className="content22 "
                     id='safety'
                     ref={textRef}>
-                    <video src='/assets/videos/safety.webm' playsInline muted autoPlay loop  className='w-screen h-screen object-cover'/>
-                    <div className='absolute w-full bottom-0 start-0 p-10 bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
-                        <p className={`text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
+                    <video src='/assets/videos/safety.webm' playsInline muted autoPlay loop  className='w-screen h-[50vh] lg:h-screen object-cover'/>
+                    <div className='absolute w-full bottom-0 start-0 p-3 lg:p-10  bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
+                        <p className={`text-xl lg:text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
                             <>
                                 {`أنظمة مساعدة السائق `}
                                 <span className='font-[InterBold]'>(ADAS)</span>
