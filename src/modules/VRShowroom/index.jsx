@@ -17,16 +17,12 @@ const VRShowroom = ({ showControl=false }) => {
   const autoRotateRef = useRef(null);
   const lastTimeRef = useRef(0);
   const [currentColor, setCurrentColor] = useState('beige');
-  const [isOn, setIsOn] = useState(showControl ?showControl:false)
   const framePositionRef = useRef(0);
   const [colorTextKey, setColorTextKey] = useState(0);
   const { t ,i18n} = useTranslation('common');
   const { locale } = useRouter();
 
-  const onChange = () => {
-    setIsOn((prev) => !prev)
-    setCurrentFrame(0)
-  }
+
   const COLORS = [
     { id: 'beige', name: t('colors.beige'), hex: '#939393', chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
     { id: 'tan', name: t('colors.beigeFender'), hex: '#000000', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d53c6dbf-f7c7-490f-c1d4-d60f3eb44900/public" },
@@ -170,7 +166,6 @@ const VRShowroom = ({ showControl=false }) => {
 
   const handleColorChange = async colorId => {
     setCurrentFrame(0)
-    setIsOn(false)
     if (!loadedImages[colorId]) {
       stopAutoRotate();
       await preloadColorImages(colorId);
@@ -272,19 +267,7 @@ const VRShowroom = ({ showControl=false }) => {
 
         /> :null}
       </div>
-      {/* {(currentColor == 'beige' && view == 'exterior' && showControl) ?
-        <div className='absolute left-10 group bottom-[112px] cursor-pointer z-[200]' onClick={() => {
-        setIsOn(true)
-        }}>
-          <button
-            className={` px-6 py-0 cursor-pointer h-[45px] gap-3   text-[#05141F] bg-white hover:bg-[#05141F] hover:text-white flex items-center justify-center rounded-lg shadow-[5px] font-semibold    transition-all duration-1000 ease-out`}
-            style={{ zIndex: 1000 }}
-          >
-            <img src='/assets/360Black.png' className='group-hover:hidden' width={25} height={25} />
-            <img src='/assets/360White.png' className='hidden group-hover:block' width={25} height={25} />
-            <p>{i18n?.language == 'ar' ? 'عرض 360 درجة':'360 view'}</p>
-          </button>
-      </div>:null} */}
+     
      
       <div
         ref={containerRef}
@@ -293,22 +276,22 @@ const VRShowroom = ({ showControl=false }) => {
           height: '100%',
           position: 'relative',
           overflow: 'hidden',
-          cursor:isOn? isDragging.current ? 'grabbing' : 'grab':'',
+          cursor:'pointer',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onMouseDown={isOn?handleMouseDown:null}
-        onMouseMove={isOn?handleMouseMove:null}
-        onMouseUp={isOn?handleMouseUp:null}
-        onMouseLeave={isOn?handleMouseUp:null}
-        onTouchStart={isOn?handleTouchStart:null}
-        onTouchMove={isOn?handleTouchMove:null}
-        onTouchEnd={isOn?handleMouseUp:null}
+        onMouseDown={null}
+        onMouseMove={null}
+        onMouseUp={null}
+        onMouseLeave={null}
+        onTouchStart={null}
+        onTouchMove={null}
+        onTouchEnd={null}
       >
         
         {view == 'exterior' ? <img
-          src={isOn ? CDN_BEIGE_FENDER?.[currentFrame] :loadedImages[currentColor][currentFrame]}
+          src={loadedImages[currentColor][currentFrame]}
           alt={`360° View Frame ${currentFrame + 1}`}
           onError={handleImageError}
           style={{
@@ -316,10 +299,10 @@ const VRShowroom = ({ showControl=false }) => {
             maxHeight: '100%',
             objectFit: 'cover',
             minWidth: '100vw',
-
             userSelect: 'none',
             WebkitUserSelect: 'none',
             pointerEvents: 'none',
+            minHeight:'500px',
           }}
           draggable={false}
         /> :

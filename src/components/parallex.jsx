@@ -111,31 +111,20 @@ const ParallaxSection = () => {
                 <div className="content2" ref={textRef}>
                   
                     <span
-                        className={` ${i18n?.language == 'ar' ? 'font-[GSSMedium] text-[40px] lg:text-[100px]' :'font-[InterBold] text-[40px]'} font-extrabold  uppercase`}
+                        className={` ${i18n?.language == 'ar' ? 'font-[GSSMedium] text-[40px] lg:text-[100px]' :'font-[InterBold] text-[100px]'} font-extrabold  uppercase`}
                         
                     >
-                        {i18n?.language == 'ar' ? `للذين لا يخشون ` : `It's for those who aren't afraid to get`}
+                        {i18n?.language == 'ar' ? `الأداء` : `Performance`}
                         <br/>
-                        {i18n?.language == 'ar' ?`الطرق الوعرة`:''}
-                        <br/>
-                        <span className={`ms-3 ${i18n?.language=='ar'?'hidden':''}`}>
-                            {['B', 'U', 'M', 'P', 'Y']?.map((item, index) => (
+                   
+                        <span className={`ms-3 `}>
                                 <span
-                                    key={index}
-                                    className={`text-[60px] lg:text-[120px] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
-                                    // animate={{
-                                    //     y: [0, -20, 0],
-                                    // }}
-                                    // transition={{
-                                    //     duration: 1.5,
-                                    //     repeat: Infinity,
-                                    //     delay: index * 0.2,
-                                    //     ease: "easeInOut"
-                                    // }}
+                                className={`text-2xl lg:text-2xl w-[80%] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
+                                    
                                 >
-                                    {item}
+                                {i18n?.language == 'en' ? `Bold capability, redefined. The Tasman takes performance into a new dimension` :`قدرات جريئة، بمعني جديد تاسمان تنقل معني الأداء الي بُعد جديد`}
                                 </span>
-                            ))}
+                           
                         </span>
 
                     </span>

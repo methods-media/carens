@@ -18,7 +18,7 @@ export const EngineTypesSection = () => {
     });
 
     // Transform scroll progress for "ANYTHING - ANYWHERE" animation
-    const anythingScale = useTransform(scrollYProgress, [0.6, 0.9], [1, 1.8]);
+    const anythingScale = useTransform(scrollYProgress, [0.6, 0.9], [1, 1.4]);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -51,10 +51,10 @@ export const EngineTypesSection = () => {
     }, [selectedEngine, isInView])
 
     return (
-        <div ref={sectionRef} className='w-screen min-h-screen bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
+        <div ref={sectionRef} className='w-screen min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
            
 
-            <div className='w-full  flex-col lg:flex-row flex items-center  justify-center gap-20 '>
+            <div className='w-full  h-screen flex-col lg:flex-row flex items-center  justify-center gap-20 '>
 
                 <div className='flex  flex-1 items-center lg:items-start w-full h-full lg:w-auto lg:h-auto ps-0 lg:ps-[10%] flex-col gap-5  max-w-full'>
                     <p class={`text-4xl mt-5 lg:mt-0 lg:!text-[62px]  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} !text-white`}>{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
@@ -129,20 +129,28 @@ export const EngineTypesSection = () => {
                     />
                 </div>
             </div>
-            <div className="flex  flex-col items-center  gap-5 py-10">
+            <div className="flex  flex-col items-center  justify-center gap-5 py-10 h-[50vh]">
                 <h3
-                    className={`text-base text-center lg:text-start lg:text-[40px] text-white  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"}`}
+                    className={`text-xl lg:text-[64px] text-center lg:text-start  text-white  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"}`}
 
                 >
-                    {isArabic ?`قوة تجعلك تسحب `:` With such power, the Tasman can tow`}
+                    {isArabic ? `من العمل الي المغامرة` :`From work to adventure`}
                 </h3>
                 <motion.h3
-                    className={`text-xl py-12 lg:text-[64px] text-center lg:text-start text-white ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} uppercase`}
+                    className={`text-base  lg:text-[40px]  py-12  text-center  text-white ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} `}
                     style={{
                         scale: anythingScale
                     }}
                 >
-                    {isArabic ?`أي شيء - إلى أي مكان`:` ANYTHING - ANYWHERE`}
+                    {isArabic ? `قوة الجر في تاسمان تفتح أفاقً جديدة من الإمكانات` :
+                        
+                        <>
+                            {`Kia Tasman's towing strength opens the way`}
+                            <br />
+
+
+                            {`to a new dimension of possibility`}
+                        </>}
                 </motion.h3>
             </div>
         </div>

@@ -19,6 +19,7 @@ import Specs from '@src/components/specs';
 import { FloatingTextThree } from '@src/components/floatingText3';
 import { Exterior } from '@src/components/exterior';
 import { Interior } from '@src/components/interior';
+import ThreeSixty from '@src/modules/ThreeSixty';
 
 export default function Home() {
   const { t, i18n } = useTranslation('common');
@@ -66,7 +67,7 @@ export default function Home() {
       </div>
       <SwiperSection height={'min-h-[40vh]'} id={0} />
       <VRShowroom />
-      <VRShowroom showControl={true} />
+      <ThreeSixty showControl={true} />
       <Interior/>
       <div className="relative"  style={{ zIndex: 1000 }}>
         <ScrollSequence

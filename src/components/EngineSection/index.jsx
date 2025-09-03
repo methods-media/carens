@@ -78,7 +78,7 @@ export const EngineSection = () => {
                     {i18n?.language == 'ar' ? `  الجرأة` : `COME `}
                 </motion.p>
                 <motion.p
-                    className={`text-4xl lg:text-[84px] text-white uppercase font-[900] ps-8 ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'}`}
+                    className={`text-4xl lg:text-[84px] text-white uppercase font-[900] ps-8 lg:ps-2 ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'}`}
                     style={{ x: i18n?.language == 'ar' ? comeX : togetherX, opacity: textOpacity }}
                 >
                     {i18n?.language == 'ar' ? `مع العملية` : ` TOGETHER`}
