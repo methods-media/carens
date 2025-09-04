@@ -119,14 +119,25 @@ const isArabic=i18n?.language=='ar'
             featureTitle: isArabic ?`شاشة معلومات للطرق الوعرة`: 'Off-road Screen',
             featureDescription: isArabic ?`تصلك بمعلومات حالة السيارة الضرورية لقيادة أكثر أمانًا ومتعة خارج الطرق المعبدة.
 
-*قد تختلف توفر صفحة الطرق الوعرة (واجهة المستخدم) ونظام مراقبة الأرض حسب المنطقة وتكوين السيارة.*`: `Provides vehicle status information necessary for off-road driving, providing a safer and more enjoyable driving experience.`
+*قد تختلف توفر صفحة الطرق الوعرة (واجهة المستخدم) ونظام مراقبة الأرض حسب المنطقة وتكوين السيارة.*`: `Provides vehicle status information necessary for off-road driving, providing a safer and more enjoyable driving experience.`,
+      
+         dis: isArabic ? `
+توفر صفحة الطرق الوعرة (واجهة الطرق الوعرة) ونظام عرض الرؤية الأرضية يعتمد على الاختلافات الإقليمية وتجهيزات المركبة المحددة.`: 'The availability of the Off-Road Page (Off-Road GUI) and Ground View Monitor is subject to regional differences and specific vehicle configurations.'
+
+        
+        
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f48cc070-cc92-42f7-c123-d32ea6959800/public',
             featureTitle: isArabic ?`نظام مراقبة الأرض (GVM)`: 'Ground View Monitor (GVM)',
             featureDescription: isArabic ?`احصل على رؤية كاملة لما يختبئ أسفل وأمام سيارتك. نظام GVM يُساعدك على عبور المسارات الضيقة والمناطق الصخرية بكل ثقة.
 
-*قد تختلف توفر صفحة الطرق الوعرة (واجهة المستخدم) ونظام مراقبة الأرض حسب المنطقة وتكوين السيارة.*`: 'Get a clear view of what’s directly beneath and in front of your Tasman. The Ground View Monitor helps you navigate tight trails, rocky paths, and tricky terrain with confidence.'
+*قد تختلف توفر صفحة الطرق الوعرة (واجهة المستخدم) ونظام مراقبة الأرض حسب المنطقة وتكوين السيارة.*`: 'Get a clear view of what’s directly beneath and in front of your Tasman. The Ground View Monitor helps you navigate tight trails, rocky paths, and tricky terrain with confidence.',
+        
+         dis: isArabic ? `
+توفر صفحة الطرق الوعرة (واجهة الطرق الوعرة) ونظام عرض الرؤية الأرضية يعتمد على الاختلافات الإقليمية وتجهيزات المركبة المحددة.`: 'The availability of the Off-Road Page (Off-Road GUI) and Ground View Monitor is subject to regional differences and specific vehicle configurations.'
+
+        
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/51850fdf-eb13-4bed-37e0-44e865cb9e00/public',
@@ -340,6 +351,11 @@ const isArabic=i18n?.language=='ar'
                                     }`}>
                                     {slides?.[id][currentSlide].featureDescription}
                                 </p>
+                                {slides?.[id]?.[currentSlide]?.dis ? <p className={`text-[10px] lg:text-sm flex items-start gap-2   leading-relaxed max-w-[80vw] ${dark ? 'text-[#54595F] text-start' : id == 0 ? 'text-[#A3A8AD]' : 'text-white'} ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"} lg:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
+                                    }`}>
+                                    <img src='/assets/iinnff.png' width={16} className='mt-1' height={16}/>
+                                    {slides?.[id]?.[currentSlide]?.dis}
+                                </p> :null}
                             </div>
                         </div>
 

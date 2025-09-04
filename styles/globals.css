@@ -113,6 +113,11 @@ html[lang='en'] {
 }
 
 
+#scroller{
+  scrollbar-width: none !important;
+  scrollbar-color: 'transparent' !important;
+  
+}
 .mousey {
   border-style: solid;
   box-sizing: border-box;

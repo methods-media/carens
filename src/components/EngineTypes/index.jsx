@@ -51,13 +51,13 @@ export const EngineTypesSection = () => {
     }, [selectedEngine, isInView])
 
     return (
-        <div ref={sectionRef} className='w-screen min-h-screen lg:min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
+        <div ref={sectionRef} className='w-screen min-h-auto lg:min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
            
 
-            <div className='w-full  h-screen flex-col lg:flex-row flex items-center  justify-center gap-20 '>
+            <div className='w-full  h-screen flex-col lg:flex-row flex items-center  justify-center  gap-10 lg:gap-20 '>
 
                 <div className='flex  flex-1 items-center lg:items-start w-full h-full lg:w-auto lg:h-auto ps-0 lg:ps-[10%] flex-col gap-5  max-w-full'>
-                    <p class={`text-4xl mt-5 lg:mt-0 lg:!text-[62px]  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} !text-white`}>{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
+                    <p class={`z-[10000] text-4xl mt-5 lg:mt-0 lg:!text-[62px]  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} !text-white`}>{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
 
                     <div className='flex items-start gap-5 mb-7'>
                         <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom ${isArabic ? "font-['GSSMedium']" : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(1)}
@@ -123,7 +123,7 @@ export const EngineTypesSection = () => {
                     </div>
                     
                 </div>
-                <div className='py-10 pt-20 flex-1 flex justify-start'>
+                <div className='py-0 lg:py-10 pt-4 lg:pt-20 flex-1 flex justify-start'>
 
                     <img
                         src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9db0c891-9dcd-4c4b-762a-df3cf86d8900/semi' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0663c68e-5b72-427a-82b7-824b1907dd00/semi'}
@@ -137,7 +137,7 @@ export const EngineTypesSection = () => {
                     />
                 </div>
             </div>
-            <div className="flex  flex-col items-center  justify-center gap-5 py-10 h-[50vh]">
+            <div className="flex  flex-col items-center  justify-center gap-5 py-10 h-auto lg:h-[50vh]">
                 <h3
                     className={`text-xl lg:text-[64px] text-center lg:text-start  text-white  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"}`}
 

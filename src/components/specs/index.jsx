@@ -376,7 +376,7 @@ const Specs = () => {
                     </button>
 
                     {/* Responsive Trim Cards Container */}
-                    <div className={`flex justify-center gap-4  ${cardsToShow === 1 ? 'px-4' : ''}`} dir='ltr'>
+                    <div className={`flex justify-center gap-4  ${cardsToShow === 1 ? 'mx-6 px-4' : ''}`} dir='ltr'>
                         {visibleTrims.map((trim, index) => (
                             <div key={trim.id} className={`${cardsToShow === 1 ? 'w-full max-w-md mx-auto' : cardsToShow === 2 ? 'w-full md:w-1/2 max-w-lg' : 'w-full md:w-1/3'}`}>
                                 <TrimCard

@@ -67,12 +67,16 @@ const isArabic=i18n?.language=='ar'
                 <h2 className={`text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8 ${isArabic ? 'font-[GSSMedium]' :''}`}>
                         {isArabic ?`تاسمان في أرقام`:`Tasman in Numbers`}
                 </h2>
-                    <div className="flex flex-wrap space-y-3  gap-3 lg:gap-0  items-start  justify-center lg:justify-between w-full ">
+                    <div
+                        id='scroller'
+                      
+                        className="flex ps-[147px] lg:ps-0  overflow-x-auto space-y-3   gap-3 lg:gap-0  items-start  justify-center lg:justify-between w-full ">
                     {specifications.map((spec) => (
                         <button
                             key={spec.key}
                             onClick={() => setSelectedSpec(spec.key)}
-                            className={`text-sm w-[25%] lg:w-auto lg:text-[22px] cursor-pointer font-medium transition-colors pb-3 px-1 lg:px-2 duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} ${selectedSpec === spec.key
+                           
+                            className={`text-sm  lg:w-auto lg:text-[22px] text-nowrap text-ellipsis   cursor-pointer font-medium transition-colors pb-3 px-1 lg:px-2 duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} ${selectedSpec === spec.key
                                 ? 'text-[#06141F]  border-b-1 lg:border-b-3 border-b-[#06141F]  underline-offset-4'
                                 : 'text-[#54595F] hover:text-[#06141F] hover:border-b-1 lg:hover:border-b-3 hover:border-b-[#06141F]'
                                 }`}

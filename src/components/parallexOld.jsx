@@ -60,7 +60,6 @@ const ParallexOLD = ({
                             if (scrollDirection === 'down') {
                                 // Scrolling down - increment index
                                 newIndex = Math.min(lastImageIndex + 1, 2);
-                                console.log("NEW IDNDd",newIndex)
                                 // If we're at max index, remove pin
                                 if (newIndex === 2 && !pinRemoved) {
                                     pinRemoved = true;
@@ -124,8 +123,6 @@ const ParallexOLD = ({
     // Get current image to display
     const imageArray = images.length > 0 ? images : [image];
     const currentImage = imageArray[currentImageIndex];
-    console.log("currentImageIndex", currentImageIndex)
-    console.log("currentImage", currentImage)
     return (
         <div
             id={id}
