@@ -28,7 +28,7 @@ const {i18n}=useTranslation('common')
 
                 <div className="h-full lg:h-[25vh] max-w-[100%] lg:max-w-[80%]  mx-auto flex-col gap-6 lg:gap-0 lg:flex-row flex items-start   ">
                 <div className="w-[90%] lg:flex-1 flex flex-col justify-center  mx-auto h-[50%] lg:h-auto lg:mx-0">
-                    <div className='flex flex-col gap-2 justify-center lg:justify-start items-center lg:items-start gap-5 lg:gapp8'>
+                    <div className='flex flex-col gap-2 justify-center lg:justify-start items-center lg:items-start gap-5 '>
                         <p className='text-white text-2xl text-center justify-start lg:justify-start w-full lg:w-auto lg:text-[40px] font-[InterBold]'>Kia Connect</p>
                             <p className={`text-white text-base  leading-[25px] text-center lg:text-start lg:text-[20px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>{isArabic ?
                             <>
@@ -39,7 +39,8 @@ const {i18n}=useTranslation('common')
                             <button className={`text-sm hover:bg-[#06141F] cursor-pointer py-3 px-6 hover:text-white text-[#06141F] bg-white hover:border hover:border-[#06141F]  w-fit rounded-[5px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
                                 
                                 {isArabic ? `إعرف المزيد` : `Learn More`}</button>
-                           </a>
+                            </a>
+                            <p className={` -mt-2 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'} text-white text-sm`}>{isArabic ?`بعض المزايا قد يختلف توفرها حسب البلد`:'Some features may vary based on the market'}</p>
                     </div>
                 </div>
                 <div className=" h-[50%] lg:h-auto w-full flex justify-center lg:flex-1">
