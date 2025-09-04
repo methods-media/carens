@@ -71,6 +71,9 @@ const ParallaxSection = () => {
   color: white;
   text-align: center;
   padding: 50px;
+  @media(max-width:1024px)
+  {
+  padding:10px}
   font-size: 24px;
   display: flex;
   flex-direction: column;
@@ -101,30 +104,34 @@ const ParallaxSection = () => {
 
             <div className="parallax-container" ref={sectionRef} id='performance'>
                 <div className={`parallax-video ${isInView ? '' : 'opacity-0'}`}>
-                    <video autoPlay muted loop className="video-element">
-                        <source
-                            src="/assets/videos/ktk-performance.webm"
-                            type="video/mp4"
-                        />
+                    <video autoPlay
+                        muted
+                        loop
+                        playsInline
+                        webkit-playsinline="true"
+                        controls={false}
+                        controlsList="noremoteplayback"
+                        disablePictureInPicture
+                        src='/assets/videos/ktk-performance.webm'
+                        className="video-element">
+                        
+                        
                     </video>
                 </div>
                 <div className="content2" ref={textRef}>
                   
                     <span
-                        className={` ${i18n?.language == 'ar' ? 'font-[GSSMedium] text-[40px] lg:text-[100px]' :'font-[InterBold] text-[100px]'} font-extrabold  uppercase`}
+                        className={` ${i18n?.language == 'ar' ? 'font-[GSSMedium] text-[40px] lg:text-[100px]' :'font-[InterBold] text-3xl lg:text-[100px]'} font-extrabold  uppercase`}
                         
                     >
                         {i18n?.language == 'ar' ? `الأداء` : `Performance`}
                         <br/>
                    
-                        <span className={`ms-3 `}>
-                                <span
-                                className={`text-2xl lg:text-2xl w-[80%] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
-                                    
-                                >
-                                {i18n?.language == 'en' ? `Bold capability, redefined. The Tasman takes performance into a new dimension` :`قدرات جريئة، بمعني جديد تاسمان تنقل معني الأداء الي بُعد جديد`}
-                                </span>
-                           
+                        <span
+                            className={`text-lg mt-5 lg:mt-0 lg:text-2xl lg:w-[80%] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
+
+                        >
+                            {i18n?.language == 'en' ? `Bold capability, redefined. The Tasman takes performance into a new dimension` : `قدرات جريئة، بمعني جديد تاسمان تنقل معني الأداء الي بُعد جديد`}
                         </span>
 
                     </span>

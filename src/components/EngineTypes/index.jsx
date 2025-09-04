@@ -51,7 +51,7 @@ export const EngineTypesSection = () => {
     }, [selectedEngine, isInView])
 
     return (
-        <div ref={sectionRef} className='w-screen min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
+        <div ref={sectionRef} className='w-screen min-h-screen lg:min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
            
 
             <div className='w-full  h-screen flex-col lg:flex-row flex items-center  justify-center gap-20 '>
@@ -73,47 +73,55 @@ export const EngineTypesSection = () => {
 
 
                     </div>
-                    <div className='relative flex-col gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
-                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-4xl lg:text-[42px]`}>
-                           {isArabic?`المحرك`:` ENGINE`}
-                        </p>
-                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
+                    <div className="flex-col   gap-5">
+                        <div className="flex items-start flex-1 gap-5 lg:flex-col  lg:gap-5">
+                            <div className='relative flex-col gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
+                                <p className={`  ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"}  text-start  text-[#2A4152] text-2xl lg:text-[42px]`}>
+                                    {isArabic ? `المحرك` : ` ENGINE`}
+                                </p>
+                                <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                            <p key={`engine-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `2.5` : '2.5L' : isArabic ?`2.2`: '2.2L'}</p>
-                            <p key={`engine-2-${animationKey}`} className={`text-2xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `لتر تيربو` : 'T-GDI' : isArabic ? `لتر تيربو` : 'Turbocharged'}</p>
+                                    <p key={`engine-1-${animationKey}`} className={`text-xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `2.5` : '2.5L' : isArabic ? `2.2` : '2.2L'}</p>
+                                    <p key={`engine-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `لتر تيربو` : 'T-GDI' : isArabic ? `لتر تيربو` : 'Turbocharged'}</p>
+                                </div>
+                            </div>
+
+                            <div className='relative flex-col  gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
+                                <p className={`  ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"}  text-start  text-[#2A4152] text-2xl lg:text-[42px]`}>
+                                    {isArabic ? `القدرة الحصانية` : `HORSEPOWER`}
+                                </p>
+                                <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
+
+                                    <p key={`hp-1-${animationKey}`} className={`text-xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '207'}</p>
+                                    <p key={`hp-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `حصان` : 'HP' : isArabic ? `حصان` : 'HP'}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="flex items-start gap-5 lg:flex-col lg:gap-5">
+
+                        <div className='relative flex-col  gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
+                            <p className={`  ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"}  text-start  text-[#2A4152] text-2xl lg:text-[42px]`}>
+                                {isArabic ? `عزم الدوران` : `TORQUE`}
+                            </p>
+                            <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
+
+                                <p key={`torque-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '440'}</p>
+                                <p key={`torque-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `نيوتن/متر` : `Nm`}</p>
+                            </div>
+                        </div>
+                            <div className='relative flex-col  flex-1  gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
+                            <p className={`  ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"}  text-start  text-[#2A4152] text-2xl lg:text-[42px]`}>
+                                {isArabic ? `ناقل السرعات` : `TRANSMISSION`}
+                            </p>
+                            <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
+
+                                <p key={`trans-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `8` : `8-Speed'`}</p>
+                                    <p key={`trans-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? 'سرعات' : 'SBW' : isArabic ? 'سرعات' : 'SBW'}</p>
+                            </div>
+                        </div>
                         </div>
                     </div>
-
-                    <div className='relative flex-col  gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
-                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-4xl lg:text-[42px]`}>
-                            {isArabic ?`القدرة الحصانية`:`HORSEPOWER`}
-                        </p>
-                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
-
-                            <p key={`hp-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '277' : '207'}</p>
-                            <p key={`hp-2-${animationKey}`} className={`text-2xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic?`حصان`:'HP' : isArabic?`حصان`:'HP'}</p>
-                        </div>
-                    </div>
-                    <div className='relative flex-col  gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
-                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-4xl lg:text-[42px]`}>
-                            {isArabic ?`عزم الدوران`:`TORQUE`}
-                        </p>
-                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
-
-                            <p key={`torque-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '421' : '440'}</p>
-                            <p key={`torque-2-${animationKey}`} className={`text-2xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `نيوتن/متر` :`Nm`}</p>
-                        </div>
-                    </div>
-                    <div className='relative flex-col  gap-2 lg:gap-0 items-center lg:items-start flex min-h-[120px] '>
-                        <p className={`  ${isArabic ? "font-['GSSMedium']" :"font-[InterRegular]"}  text-start  text-[#2A4152] text-4xl lg:text-[42px]`}>
-                            {isArabic ? `ناقل السرعات` :`TRANSMISSION`}
-                        </p>
-                        <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
-
-                            <p key={`trans-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ?`8`:`8-Speed'` }</p>
-                            <p key={`trans-2-${animationKey}`} className={`text-2xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? 'سرعات' : 'SBW' : isArabic ?'سرعات': 'SBW'}</p>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div className='py-10 pt-20 flex-1 flex justify-start'>
 

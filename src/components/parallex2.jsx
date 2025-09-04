@@ -120,7 +120,15 @@ const ParallaxSectionSecond = () => {
                 <div className="content22 "
                     id='safety'
                     ref={textRef}>
-            <video src='/assets/videos/ktk-safety.webm' playsInline muted autoPlay loop  className='w-screen h-[50vh] lg:h-screen object-cover'/>
+            <video src='/assets/videos/ktk-safety.webm'
+              autoPlay
+              muted
+              loop
+              playsInline
+              webkit-playsinline="true"
+              controls={false}
+              controlsList="noremoteplayback"
+              disablePictureInPicture className='w-screen h-[50vh] lg:h-screen object-cover'/>
                     <div className='absolute w-full bottom-0 start-0 p-3 lg:p-10  bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
                         <p className={`text-xl lg:text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
                             <>

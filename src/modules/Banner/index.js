@@ -23,22 +23,20 @@ const Banner = () => {
   };
 
   return (
-    <div id='highlights' className={`w-screen h-[50vh] lg:h-[100vh] md:h-screen ${videoEnded ? ' z-[200]' :' z-[200000]'}  bg-black bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden`}>
+    <div id='highlights' className={`w-screen h-[65vh] lg:h-[100vh] md:h-screen ${videoEnded ? ' z-[200]' :' z-[200000]'}  bg-black bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden`}>
       {!videoError && (
         <video
           ref={videoRef}
           onEnded={handleVideoEnd}
-          onError={(error) => {
-            console.log('error', error)
-            handleVideoError(error)
-          }}
+         
           controls={false}
           autoPlay
           playsInline
+          
           muted
           className='w-full h-full object-cover'
         >
-          <source src="/assets/videos/cover.webm" type="video/mp4" />
+          <source src="/assets/videos/cover.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
       )}
@@ -46,7 +44,7 @@ const Banner = () => {
       {(videoEnded || videoError) ? <>
         <div className="absolute justify-center  inset-0 z-40  text-white md:start-[70px]  start-5 top-[100px]">
           <motion.h1
-            className={`     sm:text-6xl text-2xl  ${locale == 'ar' ? "md:text-[52px] font-['GSSBold']" : " md:text-[72px] font-['InterBold']"}`}
+            className={`     sm:text-xl text-xl  ${locale == 'ar' ? "md:text-[52px] font-['GSSBold']" : " md:text-[72px] font-['InterBold']"}`}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -59,7 +57,7 @@ const Banner = () => {
             ) : t('kia_Tasman')}
           </motion.h1>
           <motion.p
-            className={`md:text-[34px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-['InterRegular']"} sm:text-3xl text-2xl`}
+            className={`text-lg md:text-[34px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-['InterRegular']"} `}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
