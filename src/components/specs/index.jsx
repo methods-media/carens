@@ -115,7 +115,7 @@ const Specs = () => {
 
     const TrimCard = ({ trim, index, isEntering }) => (
         <div
-            className={`bg-[#E7EBF0] rounded-[10px] p-4 md:p-6 h-full transition-all duration-300 transform`}
+            className={`bg-[#E7EBF0] rounded-[10px] p-4 md:p-4 h-full transition-all duration-300 transform`}
 
         >
             {/* Trim Name */}
@@ -160,14 +160,43 @@ const Specs = () => {
                                                     <>
                                                         <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('17')?.[0]}</span>
                                                         <span className='font-[InterBold] mx-0.5'>17</span>
-                                                        {feature?.split('17')?.[1]}
-                                                    </> : feature?.includes('18') ?
+                                                        {feature?.split('ABS')?.[1]}
+                                                        </> : feature?.includes('ABS') ?
+                                                            <>
+                                                                <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('ABS')?.[0]}</span>
+                                                                <span className='font-[InterBold] mx-0.5'>ABS</span>
+                                                                {feature?.split('ABS')?.[1]}
+                                                            </> : feature?.includes('18') ?
                                                         <>
                                                             {feature?.split('18')?.[0]}
                                                             <span className='font-[InterBold] mx-0.5'>18</span>
                                                             {feature?.split('18')?.[1]}
                                                         </>
-                                                        :
+                                                                : feature?.includes('ESC') ?
+                                                                    <>
+                                                                        {feature?.split('ESC')?.[0]}
+                                                                        <span className='font-[InterBold] mx-0.5'>ESC</span>
+                                                                        {feature?.split('ESC')?.[1]}
+                                                                    </>
+                                                                    : feature?.includes('DBC') ?
+                                                                        <>
+                                                                            {feature?.split('DBC')?.[0]}
+                                                                            <span className='font-[InterBold] mx-0.5'>DBC</span>
+                                                                            {feature?.split('DBC')?.[1]}
+                                                                        </>
+                                                                        : feature?.includes('HAC') ?
+                                                                            <>
+                                                                                {feature?.split('HAC')?.[0]}
+                                                                                <span className='font-[InterBold] mx-0.5'>HAC</span>
+                                                                                {feature?.split('HAC')?.[1]}
+                                                                            </>
+                                                                            : feature?.includes('TSA') ?
+                                                                                <>
+                                                                                    {feature?.split('TSA')?.[0]}
+                                                                                    <span className='font-[InterBold] mx-0.5'>TSA</span>
+                                                                                    {feature?.split('TSA')?.[1]}
+                                                                                </>
+                                                                                :
                                                         feature?.includes('X-TREK') ?
                                                             <>
                                                                 {feature?.split('X-TREK')?.[0]}
@@ -193,7 +222,15 @@ const Specs = () => {
                                                         <>
                                                             {feature?.split('LED')?.[0]}
                                                             <span className='font-[InterBold] mx-[2px]'>LED</span>
-                                                            {feature?.split('LED')?.[1]}
+                                                                                                    {feature?.split('LED')?.[1]?.includes('MFR') ?
+                                                                                                        <>
+                                                                                                            {feature?.split('LED')?.[1]?.split('MFR')?.[0]}
+                                                                                                            <span className='font-[InterBold]'>MFR</span>
+                                                                                                            {feature?.split('LED')?.[1]?.split('MFR')?.[1]}
+                                                                                                        
+                                                                                                        </>
+                                                                                                    
+                                                                                                    : feature?.split('LED')?.[1]}
                                                         </>
                                                             :
                                                             feature?.includes('Harman / Kardon') ?
@@ -315,7 +352,7 @@ const Specs = () => {
 
     return (
         <section className="min-h-screen bg-white w-full relative overflow-hidden">
-            <div className='max-w-[1400px] mx-auto px-0 lg:px-2 md:px-4 py-4 md:py-8'>
+            <div className='max-w-[1420px] mx-auto px-0 lg:px-2 md:px-4 py-4 md:py-8'>
                 {/* Header Section */}
                 <div className="text-start mb-8 px-4 md:px-0">
                     <h1 className={`text-2xl md:text-3xl lg:text-[40px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F] mb-5`}>
@@ -327,7 +364,7 @@ const Specs = () => {
                 </div>
 
                 {/* Trim Cards Slider - Responsive cards display */}
-                <div className="relative  px-[50px] 2xl:px-2">
+                <div className="relative   2xl:px-2">
                     {/* Previous Button */}
                     <button
                         onClick={prevSlide}
@@ -339,7 +376,7 @@ const Specs = () => {
                     </button>
 
                     {/* Responsive Trim Cards Container */}
-                    <div className={`flex justify-center gap-4 md:gap-6 ${cardsToShow === 1 ? 'px-4' : ''}`} dir='ltr'>
+                    <div className={`flex justify-center gap-4  ${cardsToShow === 1 ? 'px-4' : ''}`} dir='ltr'>
                         {visibleTrims.map((trim, index) => (
                             <div key={trim.id} className={`${cardsToShow === 1 ? 'w-full max-w-md mx-auto' : cardsToShow === 2 ? 'w-full md:w-1/2 max-w-lg' : 'w-full md:w-1/3'}`}>
                                 <TrimCard

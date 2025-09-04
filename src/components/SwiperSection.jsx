@@ -84,11 +84,11 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/369879c6-5ca6-4ac3-bb6b-6ac9f0dbb100/public',
             featureTitle: isArabic ?`مقبس كهرباء في الصندوق`: 'Bed Power Outlet',
-            featureDescription: isArabic ?`مقبس 220 فولت للراحة والكفاءة في العمل أو الرحلات الترفيهية.`: 'The 220V Bedbu has improved work efficiency and leisure usability.'
+            featureDescription: isArabic ?`مقبس 220 فولت للراحة والكفاءة في العمل أو الرحلات الترفيهية.`: 'The 220V power outlet has improved work efficiency and leisure usability.'
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b2d8b0b8-72a6-4257-4c45-2efd511afa00/public',
-            featureTitle: isArabic ?`دواسات أرضية لجميع الفصول`: 'All-Weather Matt',
+            featureTitle: isArabic ?`دواسات أرضية لجميع الفصول`: 'All-Weather Mat',
             featureDescription: isArabic ?`احمِ سيارتك من الداخل مع دواسات كيا الأصلية، والمصنوعة من خامات TPO عالية التحمل ومصممة بحواف مرتفعة لمنع دخول الأوساخ والسوائل، وتمنح سيارتك مظهرًا متجددًا في كل المواسم.`: "Keep your car clean and protected with Kia Genuine All Weather Mats. Crafted from durable TPO material and designed with raised sides, they effectively shield your vehicle's lower footwell from dirt, spills, and debris. Perfect for all seasons, these mats offer a custom fit for your Kia, enhancing both style and functionality."
         }
     ]
@@ -130,7 +130,7 @@ const isArabic=i18n?.language=='ar'
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/51850fdf-eb13-4bed-37e0-44e865cb9e00/public',
-            featureTitle: isArabic ?`قفل تفاضلي إلكتروني (e-LD)`: 'Electronic Locking Differential (e-LD)',
+            featureTitle: isArabic ?`قفل تفاضلي إلكتروني (ELD)`: 'Electronic Locking Differential (ELD)',
             featureDescription: isArabic ?`مع نظام قفل تفاضلي إلكتروني وتوزيع عزم مُعدل للطرق الوعرة، تخوض تاسمان الرمال والطين والأخاديد بثبات.`: 'With an electronic differential lock and off-road-tuned torque delivery, the Tasman pushes through sand, mud, and ruts with confidence.'
         },
         {
@@ -212,7 +212,7 @@ const isArabic=i18n?.language=='ar'
     return (
         <div className={`w-full ${noBg ? '' : 'bg-[#06141F]'} ${height ? height:'min-h-[50vh] lg:min-h-screen'} py-10 gap-16 flex flex-col justify-center items-center`}>
 
-            <div className="w-full flex items-center justify-center max-w-7xl">
+            <div className="w-full flex items-center justify-center max-w-[1420px]">
                 <div className=" flex-col items-center lg:items-start lg:flex-row flex h-[700px] lg:h-[600px]">
                     {/* Left Section - Image with specific dimensions */}
                     {slides?.[id][currentSlide]?.image ?
@@ -264,7 +264,7 @@ const isArabic=i18n?.language=='ar'
                   
 
                     {/* Right Section - Content */}
-                    <div className="flex-1 p-4  lg:p-12 pe-0 flex flex-col justify-start  relative w-[90%] lg:h-[100%]">
+                    <div className="flex-1 p-4  lg:p-12 lg:ps-8 lg:pe-0 pe-0 flex flex-col justify-start  relative w-[90%] lg:h-[100%]">
                         <div className="text-white space-y-8 w-[90vw] lg:w-auto">
                             {/* Main description */}
                             
