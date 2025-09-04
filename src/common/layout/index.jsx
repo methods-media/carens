@@ -68,7 +68,8 @@ const Layout = ({ children }) => {
 
       {pathname.includes('configurator') ? null :
         <div dir='ltr' className={`fixed bottom-[1%] flex flex-col  items-end gap-4 right-[1%] z-[50000] `}>
-      
+          <a href='https://build.kia-tasman.com/' target='_blank'>
+
           <button id='bookNowBtn' onClick={() => { onClickBookNow() }} className={` group py-3 px-6 cursor-pointer  z-[1100]  bg-white hover:bg-[#05141F] hover:text-white flex items-center gap-3 justify-center rounded-[4px]  ${showScrollTop
             ? 'opacity-100  translate-x-0'
             : 'opacity-0  translate-x-16'
@@ -76,7 +77,9 @@ const Layout = ({ children }) => {
             <img src='/assets/puzzleBlack.svg' className='group-hover:hidden' height={16} width={16} />
             <img src='/assets/puzzle.svg' height={16} width={16} className='hidden group-hover:flex' />
           <p className={`text-[14px] ${locale == 'ar' ? "font-['GSSBold']" : "font-['InterBold']"}`}> {i18n?.language=='ar'?`خصص سيارتك الان`:'Build Yours Now'} </p>
-        </button>
+          </button>
+          </a>
+          
           <button
             onClick={scrollToTop}
             className={` w-[50px] h-[35px] cursor-pointer  bg-black/60 text-white flex items-center justify-center rounded-lg shadow-[5px] transition-all duration-300 hover:bg-black  ${showScrollTop

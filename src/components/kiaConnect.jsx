@@ -34,7 +34,12 @@ const {i18n}=useTranslation('common')
                             <>
                                 {`بوابتك لرحلة أذكى وأكثر اتصالاً، تربط سيارتك كيا بهاتفك الذكي بكل سلاسة`}
                             </> : `Kia Connect is your gateway to a smarter, more connected drive, seamlessly linking your Kia to your smartphone.`}</p>
-                            <button className={`text-sm hover:bg-[#06141F] cursor-pointer py-3 px-6 hover:text-white text-[#06141F] bg-white hover:border hover:border-[#06141F]  w-fit rounded-[5px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>{isArabic ? `إعرف المزيد` : `Learn More`}</button>
+                            <a target="_blank" href="https://connect.kia.com/mea/en/kia-connect/">
+                                
+                            <button className={`text-sm hover:bg-[#06141F] cursor-pointer py-3 px-6 hover:text-white text-[#06141F] bg-white hover:border hover:border-[#06141F]  w-fit rounded-[5px] ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
+                                
+                                {isArabic ? `إعرف المزيد` : `Learn More`}</button>
+                           </a>
                     </div>
                 </div>
                 <div className=" h-[50%] lg:h-auto w-full flex justify-center lg:flex-1">
