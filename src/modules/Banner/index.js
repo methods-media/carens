@@ -72,7 +72,7 @@ const Banner = () => {
       {/* bg-gradient-to-b from-transparent to-[#06141F] */}
       {(videoEnded || videoError) ?
         <motion.div
-          className='absolute bottom-0 left-0 w-full bg-gradient-to-b from-[#06141f80] lg:from-transparent to-[#06141F] from-0% lg:from-0% to-100% flex-wrap md:flex-nowrap px-10 lg:px-0  h-auto md:h-[90px] py-2.5  grid  grid-cols-2 items-start  lg:flex lg:items-center mb-0 lg:justify-around md:justify-center gap-5 md:gap-[50px]'
+          className='absolute bottom-0 left-0 w-full bg-gradient-to-b from-[#06141f80] lg:from-transparent to-[#06141F] from-0% lg:from-0% to-100% flex-wrap md:flex-nowrap px-10 lg:px-0  h-auto md:h-[90px] py-2.5  grid  grid-cols-2 items-start  lg:flex lg:items-center mb-0 lg:justify-around md:!justify-center gap-5 md:!gap-[50px] '
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}

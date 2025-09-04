@@ -159,9 +159,12 @@ const Specs = () => {
                                                 feature?.includes('17') ?
                                                     <>
                                                         <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('17')?.[0]}</span>
-                                                        <span className='font-[InterBold] mx-0.5'>17</span>
+                                                            <span className='font-[InterBold] mx-0.5'>17</span>
+                                                            <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('17')?.[1]}</span>
+
                                                         {feature?.split('ABS')?.[1]}
-                                                        </> : feature?.includes('ABS') ?
+                                                        </> :
+                                                        feature?.includes('ABS') ?
                                                             <>
                                                                 <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('ABS')?.[0]}</span>
                                                                 <span className='font-[InterBold] mx-0.5'>ABS</span>
