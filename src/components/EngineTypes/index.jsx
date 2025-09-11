@@ -54,7 +54,7 @@ export const EngineTypesSection = () => {
         <div ref={sectionRef} className='w-screen min-h-auto lg:min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
            
 
-            <div className='w-full  h-screen flex-col lg:flex-row flex items-center  justify-center  gap-10 lg:gap-20 '>
+            <div className='w-full  min-h-screen flex-col lg:flex-row flex items-center  justify-center  gap-6 lg:gap-20 '>
 
                 <div className='flex  flex-1 items-center lg:items-start w-full h-full lg:w-auto lg:h-auto ps-0 lg:ps-[10%] flex-col gap-5  max-w-full'>
                     <p class={`z-[10000] text-4xl mt-5 lg:mt-0 lg:!text-[62px]  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} !text-white`}>{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
@@ -129,7 +129,7 @@ export const EngineTypesSection = () => {
                         src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9db0c891-9dcd-4c4b-762a-df3cf86d8900/semi' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0663c68e-5b72-427a-82b7-824b1907dd00/semi'}
                         height={550}
                         width={450}
-                        className="animate-bounce w-[350px] h-[450px] xl:w-[550px] xl:h-[650px]"
+                        className="animate-bounce w-[300px] h-[350px] xl:w-[550px] xl:h-[650px]"
                         style={{
                             animation: 'float 2.5s ease-in-out infinite'
 
@@ -137,7 +137,7 @@ export const EngineTypesSection = () => {
                     />
                 </div>
             </div>
-            <div className="flex  flex-col items-center  justify-center gap-5 py-10 h-auto lg:h-[50vh]">
+            <div className="flex  flex-col items-center  justify-center gap-5 pt-14 lg:py-10 py-10 h-auto lg:h-[50vh]">
                 <h3
                     className={`text-xl lg:text-[64px] text-center lg:text-start  text-white  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"}`}
 
@@ -145,7 +145,7 @@ export const EngineTypesSection = () => {
                     {isArabic ? `من العمل الي المغامرة` :`From work to adventure`}
                 </h3>
                 <motion.h3
-                    className={`text-base  lg:text-[40px]  py-12  text-center  text-white ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} `}
+                    className={`text-base  lg:text-[40px] py-8  lg:py-12  text-center  text-white ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} `}
                     style={{
                         scale: anythingScale
                     }}

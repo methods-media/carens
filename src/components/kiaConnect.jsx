@@ -16,7 +16,7 @@ const {i18n}=useTranslation('common')
         }} id="kiaConnect">
             <div class="bg-gradient-to-b flex flex-col items-start   justify-center from-0% h-[30vh] lg:h-[75vh] w-screen  to-[#06141F] to-100% from-transparent" id="bg-section">
                     <div className="max-w-[80%] min-w-[80%] mx-auto flex items-start">
-                        <img src='/assets/ktk-kiaconnectlogo.png' className="max-w-[90%] lg:max-w-[500px]" />
+                        <img src='/assets/ktk-kiaconnectlogo.png' className="max-w-[90%] lg:max-w-[500px]" loading="lazy" decoding="async" />
                   </div>
             </div>
 

@@ -75,7 +75,7 @@ const SideMenu = ({ toggleMenu, isOpen }) => {
             </li>
             <li>
               <a href="#specs" onClick={() => handleClose(true)} className={`block p-2 hover:bg-[#081f30]   ${locale == 'en' ? 'font-["InterRegular]' : 'font-["GSSMedium"]'} text-[17px]`}>
-                {t('specs')}
+                {t('specso')}
               </a>
             </li>
             

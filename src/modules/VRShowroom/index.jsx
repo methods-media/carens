@@ -4,7 +4,7 @@ import VRControls from './VRControls';
 import { useTranslation } from 'next-i18next';
 import PanoramaViewer from '@src/components/ImageViewer360';
 import { useRouter } from 'next/router';
-import { CDN_BEIGE_FENDER, CDN_BEIGE_STATIC, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER, FRAME_COUNT } from '@src/constants/imageSequence';
+import {  CDN_BEIGE_STATIC, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER, FRAME_COUNT } from '@src/constants/imageSequence';
 const VRShowroom = ({ showControl=false }) => {
   const containerRef = useRef(null);
   const [view, setView] = useState('exterior')
@@ -293,7 +293,10 @@ const VRShowroom = ({ showControl=false }) => {
         {view == 'exterior' ? <img
           src={loadedImages[currentColor][currentFrame]}
           alt={`360° View Frame ${currentFrame + 1}`}
+
+
           onError={handleImageError}
+         
           style={{
             maxWidth: '100%',
             maxHeight: '100%',
@@ -302,9 +305,10 @@ const VRShowroom = ({ showControl=false }) => {
             userSelect: 'none',
             WebkitUserSelect: 'none',
             pointerEvents: 'none',
-            minHeight:'500px',
+            minHeight: '500px',
           }}
           draggable={false}
+         
         /> :
           <PanoramaViewer
             imageUrl="/assets/ktk-int360-v2.png"

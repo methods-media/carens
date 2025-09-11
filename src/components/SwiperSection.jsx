@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+    const touchStartXRef = useRef(0);
+    const touchStartYRef = useRef(0);
+    const touchCurrentXRef = useRef(0);
+    const isDraggingRef = useRef(false);
     const { t, i18n } = useTranslation('common');
 const isArabic=i18n?.language=='ar'
     const slides1Slides = [
@@ -220,14 +224,48 @@ const isArabic=i18n?.language=='ar'
         changeSlide(index);
     };
 
-    return (
-        <div className={`w-full ${noBg ? '' : 'bg-[#06141F]'} ${height ? height:'min-h-[50vh] lg:min-h-screen'} py-10 gap-16 flex flex-col justify-center items-center`}>
+    const isMobileView = () => typeof window !== 'undefined' && window.innerWidth < 1024;
 
-            <div className="w-full flex items-center justify-center max-w-[1420px]">
-                <div className=" flex-col items-center lg:items-start lg:flex-row flex h-[700px] lg:h-[600px]">
+    const onTouchStart = (e) => {
+        if (isAnimating || !isMobileView()) return;
+        const touch = e.touches?.[0];
+        if (!touch) return;
+        touchStartXRef.current = touch.clientX;
+        touchStartYRef.current = touch.clientY;
+        touchCurrentXRef.current = touch.clientX;
+        isDraggingRef.current = true;
+    };
+
+    const onTouchMove = (e) => {
+        if (!isDraggingRef.current || !isMobileView()) return;
+        const touch = e.touches?.[0];
+        if (!touch) return;
+        touchCurrentXRef.current = touch.clientX;
+    };
+
+    const onTouchEnd = () => {
+        if (!isDraggingRef.current || !isMobileView()) return;
+        const deltaX = touchCurrentXRef.current - touchStartXRef.current;
+        const deltaY = Math.abs(touchStartYRef.current);
+        isDraggingRef.current = false;
+        // Trigger only for horizontal intent and sufficient distance
+        if (Math.abs(deltaX) > 50) {
+            if (deltaX < 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    };
+
+    return (
+        <div className={`w-full ${noBg ? '' : 'bg-[#06141F]'} ${height ? height : 'min-h-[50vh] lg:min-h-screen'} py-10 gap-16 flex flex-col justify-center items-center`} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
+
+            <div className="w-full flex items-center justify-between max-w-[1420px]">
+                <div className=" flex-col items-center w-full lg:items-start lg:flex-row flex min-h-[600px] lg:h-[600px]">
                     {/* Left Section - Image with specific dimensions */}
                     {slides?.[id][currentSlide]?.image ?
-                        <div className="w-[90%] lg:w-[550px] lg:ms-4 ms-0 xl:!w-[750px] h-[350px] lg:h-[400px] xl:!h-[600px] relative overflow-hidden">
+                        <div className="w-[90%] lg:w-[550px] lg:ms-4 ms-0 xl:!w-[750px] h-[250px] lg:h-[400px] xl:!h-[600px] relative overflow-hidden">
                             <div
                                 style={{
                                     backgroundImage: slides?.[id][currentSlide]?.image ? `url(${slides?.[id][currentSlide].image})` : 'null',
@@ -241,31 +279,31 @@ const isArabic=i18n?.language=='ar'
                             <button
                                 onClick={prevSlide}
                                 disabled={isAnimating}
-                                className="absolute top-1/2 left-0 lg:left-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                                className="absolute top-1/2 bg-[#06141f] lg:bg-transparent  lg:ms-0 left-[2px] lg:left-4 transform -translate-y-1/2 w-[30px] lg:w-12 h-[30px] lg:h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                             >
                                 <ChevronLeft className="w-10 h-10 text-white/70 hover:text-white" />
                             </button>
                             <button
                                 onClick={nextSlide}
                                 disabled={isAnimating}
-                                className="absolute top-1/2 right-0 lg:right-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                                className="absolute top-1/2 bg-[#06141f] lg:bg-transparent   right-[2px] lg:right-4 transform -translate-y-1/2 w-[30px] lg:w-12 h-[30px] lg:h-12  bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                             >
                                 <ChevronRight className="w-10 h-10 text-white/70 hover:text-white" />
                             </button>
                         </div>
                         : <div className='relative w-[90%] lg:w-[550px] lg:ms-4 xl:!w-[750px]'>
-                            <video src={slides?.[id]?.[currentSlide]?.video} className='w-full rounded-2xl object-cover md:w-[750px] h-[350px] lg:h-[400px] xl:!h-[600px]' muted playsInline autoPlay loop />
+                            <video src={slides?.[id]?.[currentSlide]?.video} className='w-full rounded-2xl object-cover md:w-[750px] h-[250px] lg:h-[400px] xl:!h-[600px]' muted playsInline autoPlay loop />
                             <button
                                 onClick={prevSlide}
                                 disabled={isAnimating}
-                                className="absolute top-1/2 left-8 md:left-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                                className="absolute top-1/2 left-[2px] bg-[#06141f]   lg:bg-transparent md:left-4 transform -translate-y-1/2 w-[30px] lg:w-12 h-[30px] lg:h-12  bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                             >
                                 <ChevronLeft className="w-10 h-10 text-white/70 hover:text-white" />
                             </button>
                             <button
                                 onClick={nextSlide}
                                 disabled={isAnimating}
-                                className="absolute top-1/2 right-8 md:right-4 transform -translate-y-1/2 w-12 h-12 bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
+                                className="absolute top-1/2 right-[2px] md:right-4   bg-[#06141f] lg:bg-transparent transform -translate-y-1/2 w-[30px] lg:w-12 h-[30px] lg:h-12  bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center text-white text-4xl cursor-pointer transition-all duration-300 z-10 disabled:opacity-50"
                             >
                                 <ChevronRight className="w-10 h-10 text-white/70 hover:text-white" />
                             </button>
@@ -275,7 +313,7 @@ const isArabic=i18n?.language=='ar'
                   
 
                     {/* Right Section - Content */}
-                    <div className="flex-1 p-4  lg:p-12 lg:ps-8 lg:pe-0 pe-0 flex flex-col justify-start  relative w-[90%] lg:h-[100%]">
+                    <div className="flex-1 pt-4  lg:p-12 lg:ps-8 lg:pe-0 pe-0 flex flex-col justify-between lg:justify-start  relative w-[90%] lg:h-[100%]">
                         <div className="text-white space-y-8 w-[90vw] lg:w-auto">
                             {/* Main description */}
                             
@@ -353,14 +391,14 @@ const isArabic=i18n?.language=='ar'
                                 </p>
                                 {slides?.[id]?.[currentSlide]?.dis ? <p className={`text-[10px] lg:text-sm flex items-start gap-2   leading-relaxed max-w-[80vw] ${dark ? 'text-[#54595F] text-start' : id == 0 ? 'text-[#A3A8AD]' : 'text-white'} ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"} lg:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
-                                    <img src='/assets/iinnff.png' width={16} className='mt-1' height={16}/>
+                                    <img src='/assets/iinnff.png' width={16} className='mt-1' height={16} loading="lazy" decoding="async" />
                                     {slides?.[id]?.[currentSlide]?.dis}
                                 </p> :null}
                             </div>
                         </div>
 
                         {/* Pagination */}
-                        <div className={`absolute ${bottom ? 'bottom-[14%]' :'bottom-0 '} lg:bottom-8 end-0 lg:end-4 xl:end-0 justify-center lg:justify-start w-full lg:w-auto flex space-x-2`}>
+                        <div className={`relative mt-5 lg:absolute ${bottom ? 'bottom-[14%]' :'bottom-0 '} lg:bottom-8 end-0 lg:end-4 xl:end-0 justify-center lg:justify-start w-full lg:w-auto flex space-x-2`}>
                             {slides?.[id].map((_, index) => (
                                 <button
                                     key={index}

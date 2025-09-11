@@ -106,7 +106,7 @@ const ParallaxSectionSecond = () => {
 
             <div className="parallax-container1" ref={sectionRef}  >
                 <div className={`parallax-video1 ${isInView?'':'opacity-0'}`}>
-                    <img src='https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b90371ae-573e-45e4-ddbd-04f055cbdd00/semi' className="image-element ">
+            <img src='https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b90371ae-573e-45e4-ddbd-04f055cbdd00/semi' className="image-element " loading="lazy" decoding="async">
 
                     </img>
                 </div>

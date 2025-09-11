@@ -1,25 +1,26 @@
 import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Head from 'next/head';
-import Banner from '../src/modules/Banner';
-import ScrollSequence from '../src/modules/ImageSequence';
+import dynamic from 'next/dynamic';
+const Banner = dynamic(() => import('../src/modules/Banner'), { ssr: false });
+const ScrollSequence = dynamic(() => import('../src/modules/ImageSequence'), { ssr: false });
 import { exterior1, interior } from 'public/assets/seq/seq';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-import { EngineSection } from '@src/components/EngineSection';
-import { SwiperSection } from '../src/components/SwiperSection';
-import ParallaxSection from '@src/components/parallex';
-import ParallaxSectionSecond from '@src/components/parallex2';
-import { EngineTypesSection } from '@src/components/EngineTypes';
-import AmbiantLight from '@src/components/ambiant';
-import VRShowroom from '@src/modules/VRShowroom';
-import Dimensions from '@src/components/dimensions';
-import KiaConnect from '@src/components/kiaConnect';
-import Specs from '@src/components/specs';
-import { FloatingTextThree } from '@src/components/floatingText3';
-import { Exterior } from '@src/components/exterior';
-import { Interior } from '@src/components/interior';
-import ThreeSixty from '@src/modules/ThreeSixty';
+const EngineSection = dynamic(() => import('@src/components/EngineSection').then(m => m.EngineSection), { ssr: false });
+const SwiperSection = dynamic(() => import('../src/components/SwiperSection').then(m => m.SwiperSection), { ssr: false });
+const ParallaxSection = dynamic(() => import('@src/components/parallex'), { ssr: false });
+const ParallaxSectionSecond = dynamic(() => import('@src/components/parallex2'), { ssr: false });
+const EngineTypesSection = dynamic(() => import('@src/components/EngineTypes').then(m => m.EngineTypesSection), { ssr: false });
+const AmbiantLight = dynamic(() => import('@src/components/ambiant'), { ssr: false });
+const VRShowroom = dynamic(() => import('@src/modules/VRShowroom'), { ssr: false });
+const Dimensions = dynamic(() => import('@src/components/dimensions'), { ssr: false });
+const KiaConnect = dynamic(() => import('@src/components/kiaConnect'), { ssr: false });
+const Specs = dynamic(() => import('@src/components/specs'), { ssr: false });
+const FloatingTextThree = dynamic(() => import('@src/components/floatingText3').then(m => m.FloatingTextThree), { ssr: false });
+const Exterior = dynamic(() => import('@src/components/exterior').then(m => m.Exterior), { ssr: false });
+const Interior = dynamic(() => import('@src/components/interior').then(m => m.Interior), { ssr: false });
+const ThreeSixty = dynamic(() => import('@src/modules/ThreeSixty'), { ssr: false });
 
 export default function Home() {
   const { t, i18n } = useTranslation('common');
@@ -100,7 +101,7 @@ export default function Home() {
               setIsModalOpen(false)
             }} className="text-black text-3xl cursor-pointer rounded-full w-10 h-10 bg-white absolute end-4 top-4 ">×</button>
             <div className='flex flex-col items-center  w-full'>
-              <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9103fa63-4b86-45ef-e14a-c0bba7424000/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/310ca7e9-3708-4516-35a0-d81e50342100/public' : isModalOpen == 3 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7ce5f2db-cd28-475f-2909-5ed588c6a100/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ebfb9ad5-4957-46f6-6c96-b3cc3bdd0c00/public'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" />
+              <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9103fa63-4b86-45ef-e14a-c0bba7424000/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/310ca7e9-3708-4516-35a0-d81e50342100/public' : isModalOpen == 3 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7ce5f2db-cd28-475f-2909-5ed588c6a100/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ebfb9ad5-4957-46f6-6c96-b3cc3bdd0c00/public'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" loading="lazy" decoding="async" />
               <div className="p-6 flex flex-col gap-3 ">
                 <div className={`text-[#333] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[20px]`}>{isModalOpen == 1 ? isArabic ? `شاشة بانورامية مدمجة` : 'Panoramic Integrated Display' : isModalOpen == 2 ? isArabic ? `شاحن هاتف لاسلكي مزدوج` : 'Dual Wireless Charger' : isModalOpen == 3 ? isArabic ? `طاولة مركزية` : 'Console Table' : isArabic ? `مفتاح تحكم بمقعد الراكب` : 'Passenger Walk-in Switch'}</div>
                 <div className={`text-[#666]  text-center ${i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'} text-sm`}

@@ -123,7 +123,7 @@ const Specs = () => {
 
             {/* Technical Specifications Section */}
             <div className="mb-4 md:mb-6" dir={isArabic ? 'rtl' : 'ltr'}>
-                <h3 className={`text-base md:text-lg font-medium text-start text-black mb-3 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`} dir={isArabic ? 'rtl' : 'ltr'}>{isArabic ? "المواصفات" : "Technical Specifications"}</h3>
+                <h3 className={`text-base md:text-lg font-medium text-start text-black mb-3 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`} dir={isArabic ? 'rtl' : 'ltr'}>{isArabic ? "مواصفات المركبة" : "Vehicle Features"}</h3>
                 <div className="space-y-0">
                     {trim?.features?.map((category, catIndex) => (
                         <div key={category.title} className="w-full">
