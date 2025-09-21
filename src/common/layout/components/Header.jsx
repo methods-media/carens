@@ -49,7 +49,6 @@ export default function Header() {
               <p className={`cursor-pointer ${router?.asPath =='/#safety'?"text-white":'text-[#FFFFFFAD]'}  ps-2 xl:ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'}  text-base xl:text-lg  font-semibold `} onClick={() => router.push('/#safety')}>{t('Safety')}</p>
               <p className='text-white'>|</p>
 
-              <p className={`cursor-pointer ${router?.asPath =='/#kiaConnect'?"text-white":'text-[#FFFFFFAD]'}  ps-2 xl:ps-4 text-center   hover:text-white  !font-["InterRegular"]   text-base xl:text-lg  font-semibold `} onClick={() => router.push('/#kiaConnect')}>{ 'Kia Connect'}</p>
               <p className='text-white'>|</p>
 
               <p className={`cursor-pointer ${router?.asPath =='/#specs'?"text-white":'text-[#FFFFFFAD]'}  ps-2 xl:ps-4 text-center   hover:text-white ${locale == 'en' ? 'font-["InterRegular"]' : 'font-["GSSMedium"]'}  text-base xl:text-lg  font-semibold `} onClick={() => router.push('/#specs')}>{t('specso')}</p>

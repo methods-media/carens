@@ -13,88 +13,76 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
 const isArabic=i18n?.language=='ar'
     const slides1Slides = [
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f44c6bdf-0295-4e7c-02b4-bc1b8f973d00/public',
-            featureTitle: isArabic ? `عجلات ألمنيوم 17 إنش مع إطارات لجميع التضاريس` : '17” Alloy Wheels with All-Terrain Tires',
-            featureDescription: isArabic ? `تصميم نظيف وواثق يمزج الأداء اليومي بالأناقة المتحفظة. تمنح هذه العجلات كيا تاسمان لمسة راقية.` : 'A clean, confident design that blends everyday performance with understated style. These alloys bring a refined edge to your Tasman’s foundation.'
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d23d7516-d3c1-46b0-4c63-e4d588eeae00/public',
+            featureTitle: t('swiper.starmap0'),
+            // featureDescription: isArabic ? `تصميم نظيف وواثق يمزج الأداء اليومي بالأناقة المتحفظة. تمنح هذه العجلات كيا كارينز لمسة راقية.` : 'A clean, confident design that blends everyday performance with understated style. These alloys bring a refined edge to your Carens’s foundation.'
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0d1507c4-c94f-45c8-33df-c29ba19ab800/public',
-            featureTitle: isArabic ?`مصابيح أمامية LED`: 'LED Projection Headlights',
-            featureDescription: isArabic ? `مصابيح تاسمان الأمامية بتقنية LED تضيء الطريق بوضوح ودقة , مثالية للقيادة أثناء الليل او النهار في مختلف الظروف.` :'Shine brighter, see further. The Tasman’s LED headlights cut through the dark with precision and clarity – built for late-night drives and early starts.'
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8b955558-af7c-4146-e897-6cf109438300/public',
+            featureTitle: t('swiper.taillamp0'),
+            // featureDescription: isArabic ? `مصابيح كارينز الأمامية بتقنية LED تضيء الطريق بوضوح ودقة , مثالية للقيادة أثناء الليل او النهار في مختلف الظروف.` : 'Shine brighter, see further. The Carens’s LED headlights cut through the dark with precision and clarity – built for late-night drives and early starts.'
         },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2dc0d5c1-4ee1-496b-ffff-d0f1c1e16400/public',
-            featureTitle: isArabic ?`مصابيح خلفية LED`: 'LED Rear Lights',
-            featureDescription: isArabic ? `تأتي كيا تاسمان بمصابيح خلفية مزدوجة LED تنتج إضاءة ساطعة وواضحة لرؤية وأمان أفضل. هذه المصابيح تعزز من الشكل العصري للسيارة وتجعلك مرئيًا بوضوح أمام جميع مستخدمي الطريق في شتى الظروف.` : "The Kia Tasman is equipped with distinctive full LED rear combination lamps that provide bright, clear illumination for enhanced visibility and safety. These LED rear lights contribute to the vehicle's modern, confident design while ensuring you are clearly seen by other road users in all conditions."
-        },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/275d62e7-19c7-41b1-eb22-f88ea4a7ab00/public',
-            featureTitle: isArabic ?`قضبان سقف`: 'Roof Rack',
-            featureDescription: isArabic ?`مصممة لتحمل المزيد ، حيث تزيد من سعة التخزين، لكي تأخذ كل أغراضك أينما اتجهت مغامراتك.`: 'Built for extra cargo and bigger adventures – the roof rack expands your carrying capacity, so you can take more gear wherever the road leads.'
-        },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/25192b86-b024-4ee0-54d5-6674344f9c00/public',
-            featureTitle: isArabic ?`عتبات جانبية`: 'Side Steps',
-            featureDescription: isArabic ?`مصنوعة لتتحمل وترتقي بالمظهر القوي. العتبات الجانبية تضيف لمسة مغامرة عملية، وتجعل دخول وخروج السيارة أكثر سهولة ، مثالية لمن يحبون الطرق الوعرة.`: 'Built tough with a no-nonsense look, the pipe-type sidestep adds off-road flair and practical access. Ideal for those who like their ride a little rougher around the edges.'
-        },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d0a780d6-59e9-477f-04d2-310e71f4ad00/public',
-            featureTitle: isArabic ?`عتبات ركنية`: 'Corner Steps',
-            featureDescription: isArabic ?`تم تثبيت عتبة عند زوايا الصندوق الخلفي لسهولة الدخول والخروج وتحميل الأمتعة.`: 'A step has been installed in the rear corner to make it easier to get on and off the bed.'
-        },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9158b597-5bfe-4a3c-daee-1e7595366b00/public',
-            featureTitle: isArabic ?`تخزين جانبي في الرفارف`: 'Fender Side Storage',
-            featureDescription: isArabic ?`تخزين مبتكر وآمن مدمج بسلاسة في الرفارف ، مثالي للأدوات أو المعدات التي تحتاجها في التنقل.`: 'Smart, secure, and seamlessly built into the fender — perfect for stashing tools, gear, or anything you need on the go.'
-        },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c92d72f0-d329-4ff2-e090-fc98f0bafd00/public',
-            featureTitle: isArabic ?`درع حماية سفلي`: 'Underbody Skid Plate',
-            featureDescription: isArabic ? `لحماية أثناء مغامرات الطرق الوعرة، تأتي تاسمان مزودة بدرع حماية سفلي صُلب يحمي الهيكل السفلي من الصخور والرواسب، ليحافظ على سلامة المكونات المهمة ويُعزّز صلابة المركبة واستعدادها لأقسى البيئات.` : "For serious off-road protection, the Tasman comes with underbody skid plates. These robust plates shield the vehicle's undercarriage from rocks, debris, and rough terrain, helping to maintain critical component integrity when venturing off the beaten path. This feature reinforces the Tasman's ruggedness and readiness for demanding environments.."
-        }
+        // {
+        //     image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2dc0d5c1-4ee1-496b-ffff-d0f1c1e16400/public',
+        //     featureTitle: t('swiper.tigerface0'),
+        //     // featureDescription: isArabic ? `تأتي كيا كارينز بمصابيح خلفية مزدوجة LED تنتج إضاءة ساطعة وواضحة لرؤية وأمان أفضل. هذه المصابيح تعزز من الشكل العصري للسيارة وتجعلك مرئيًا بوضوح أمام جميع مستخدمي الطريق في شتى الظروف.` : "The Kia Carens is equipped with distinctive full LED rear combination lamps that provide bright, clear illumination for enhanced visibility and safety. These LED rear lights contribute to the vehicle's modern, confident design while ensuring you are clearly seen by other road users in all conditions."
+        // },
+        // {
+        //     image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/275d62e7-19c7-41b1-eb22-f88ea4a7ab00/public',
+        //     featureTitle: t('swiper.skidplate0'),
+        //     // featureDescription: isArabic ?`مصممة لتحمل المزيد ، حيث تزيد من سعة التخزين، لكي تأخذ كل أغراضك أينما اتجهت مغامراتك.`: 'Built for extra cargo and bigger adventures – the roof rack expands your carrying capacity, so you can take more gear wherever the road leads.'
+        // },
+        // {
+        //     image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/25192b86-b024-4ee0-54d5-6674344f9c00/public',
+        //     featureTitle: t('swiper.alloywheel0'),
+        //     // featureDescription: isArabic ?`مصنوعة لتتحمل وترتقي بالمظهر القوي. العتبات الجانبية تضيف لمسة مغامرة عملية، وتجعل دخول وخروج السيارة أكثر سهولة ، مثالية لمن يحبون الطرق الوعرة.`: 'Built tough with a no-nonsense look, the pipe-type sidestep adds off-road flair and practical access. Ideal for those who like their ride a little rougher around the edges.'
+        // },
+        // {
+        //     image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d0a780d6-59e9-477f-04d2-310e71f4ad00/public',
+        //     featureTitle: t('swiper.sunroof0'),
+        //     // featureDescription: isArabic ?`تم تثبيت عتبة عند زوايا الصندوق الخلفي لسهولة الدخول والخروج وتحميل الأمتعة.`: 'A step has been installed in the rear corner to make it easier to get on and off the bed.'
+        // },
+       
     ];
    
     const swiper2Slides = [
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d48b7706-7ab0-4d15-c40e-bb557f277b00/public',
-            featureTitle: isArabic ?`مصباح باب جانبي`: 'Door Spot Lamp',
-            featureDescription: isArabic ?`مصابيح الباب تضيء الأرضية والمحيط عند الدخول أو الخروج. تمنحك رؤية أفضل وأمان أعلى في الظلام، كما تنبّه المارة والمركبات الأخرى.`: "The door spot lamps are cleverly integrated on the front doors to illuminate the ground and surroundings when entering or exiting the vehicle. This feature enhances convenience and safety, especially in dark or low-light environments, by lighting your path and alerting nearby pedestrians or vehicles."
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dd10d875-db68-49d3-8a39-ded3883a6300/public',
+            featureTitle: t('swiper.display0'),
+            // featureDescription: isArabic ?`تم تثبيت عتبة عند زوايا الصندوق الخلفي لسهولة الدخول والخروج وتحميل الأمتعة.`: 'A step has been installed in the rear corner to make it easier to get on and off the bed.'
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6647ac8c-52b0-4b1a-b195-b22f35d35d00/public',
-            featureTitle: isArabic ?`نظام صوت Harman Kardon الفاخر`: 'Harman Kardon Premium Sound System',
-            featureDescription: isArabic ?`ارتقِ بالتجربة السمعية ، نظام Harman Kardon يُقدّم صوتًا ثريًا وغامرًا لتجعل كل رحلة وكأنها جزء من مغامراتك.`: 'Crank it up or set the mood – the Harman Kardon system delivers rich, immersive audio that transforms every journey into a soundtrack-worthy experience.'
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/de84e446-2696-4f6e-7e5a-44565c84d000/public',
+            featureTitle: t('swiper.tray0'),
+            // featureDescription: isArabic ? `تأتي كيا كارينز بمصابيح خلفية مزدوجة LED تنتج إضاءة ساطعة وواضحة لرؤية وأمان أفضل. هذه المصابيح تعزز من الشكل العصري للسيارة وتجعلك مرئيًا بوضوح أمام جميع مستخدمي الطريق في شتى الظروف.` : "The Kia Carens is equipped with distinctive full LED rear combination lamps that provide bright, clear illumination for enhanced visibility and safety. These LED rear lights contribute to the vehicle's modern, confident design while ensuring you are clearly seen by other road users in all conditions."
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9ba40bd5-a780-4a3e-fda5-589fe37e9100/public',
-            featureTitle: isArabic ?`تخزين متعدّد في التابلوه`: 'Crashpad Multi-Storage',
-            featureDescription: isArabic ?`يوفر الدرج الموجود أمام مقعد الراكب مساحة تخزين إضافية للأشياء التي تود إبقاؤها قريبة وسهلة الوصول.`: 'The passenger seat crash pad storage space allows you to store items anywhere within reach.'
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9bae52ca-3b8d-4af0-094a-480065a5a400/semi',
+            featureTitle: t('swiper.ambientlight0'),
+            // featureDescription: isArabic ?`مصممة لتحمل المزيد ، حيث تزيد من سعة التخزين، لكي تأخذ كل أغراضك أينما اتجهت مغامراتك.`: 'Built for extra cargo and bigger adventures – the roof rack expands your carrying capacity, so you can take more gear wherever the road leads.'
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/71549e8b-dffb-4d4a-9c06-8fd409ebcb00/public',
-            featureTitle: isArabic ?`مقاعد خلفية قابلة للأمالة والأنزلاق`: 'Sliding & Reclining Rear Seats',
-            featureDescription: isArabic ?`تمدد أو استرخِ كما تشاء، حيث تنزلق المقاعد الخلفية وتتحرك لتضمن أقصى درجات الراحة، سواء كنت تحمل أغراضك أو تحتاج إلى قسط من الراحة بعد يوم طويل.`: `Stretch out or settle in. The rear seats slide and recline for maximum comfort – whether you're loading up gear or lounging after a long day outdoors.`
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c7203a7f-a815-4967-6a41-8ecca5308500/public',
+            featureTitle: t('swiper.roofvent0'),
+            // featureDescription: isArabic ?`مصنوعة لتتحمل وترتقي بالمظهر القوي. العتبات الجانبية تضيف لمسة مغامرة عملية، وتجعل دخول وخروج السيارة أكثر سهولة ، مثالية لمن يحبون الطرق الوعرة.`: 'Built tough with a no-nonsense look, the pipe-type sidestep adds off-road flair and practical access. Ideal for those who like their ride a little rougher around the edges.'
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/69164a9b-4ac3-414e-299e-c500dcc24000/tv',
-            featureTitle: isArabic ?`تخزين أسفل المقعد`: 'Under-Seat Storage',
-            featureDescription: isArabic ?`تصميم ذكي لراحتك اليومية. يحتوي الصف الثاني على مساحة تخزين خفية بسعة 33 لترًا، مثالية للحفاظ على مقتنياتك آمنة ومنظمة وسهلة الوصول.`: `Smart design meets everyday convenience. The second-row packs 33 liters of hidden storage – perfect for keeping things tidy, secure, and easily accessible.`
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2b1c794d-368a-479c-9d68-e539c45aae00/public',
+            featureTitle: t('swiper.consoleControl'),
+            // featureDescription: isArabic ? `مصابيح كارينز الأمامية بتقنية LED تضيء الطريق بوضوح ودقة , مثالية للقيادة أثناء الليل او النهار في مختلف الظروف.` : 'Shine brighter, see further. The Carens’s LED headlights cut through the dark with precision and clarity – built for late-night drives and early starts.'
+        },
+       
+        {
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/580c2195-1938-410d-d8fd-48da1c3c0900/public',
+            featureTitle: t('swiper.wirelesscharge0'),
+            // featureDescription: isArabic ?`مصممة لتحمل المزيد ، حيث تزيد من سعة التخزين، لكي تأخذ كل أغراضك أينما اتجهت مغامراتك.`: 'Built for extra cargo and bigger adventures – the roof rack expands your carrying capacity, so you can take more gear wherever the road leads.'
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/8766195c-da08-4999-a010-1c9e6a319600/public',
-            featureTitle: isArabic ?`مصباح صندوق التحميل`: 'Bed Lamp',
-            featureDescription: isArabic ?`إضاءة LED قياسية لدعم التحميل الليلي براحة وسهولة.`: 'LED lighting is standard to support night loading.'
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c5cc729f-9dcb-4cac-c56c-d472a4234100/public',
+            featureTitle: t('swiper.sunroof0'),
+            // featureDescription: isArabic ?`مصنوعة لتتحمل وترتقي بالمظهر القوي. العتبات الجانبية تضيف لمسة مغامرة عملية، وتجعل دخول وخروج السيارة أكثر سهولة ، مثالية لمن يحبون الطرق الوعرة.`: 'Built tough with a no-nonsense look, the pipe-type sidestep adds off-road flair and practical access. Ideal for those who like their ride a little rougher around the edges.'
         },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/369879c6-5ca6-4ac3-bb6b-6ac9f0dbb100/public',
-            featureTitle: isArabic ?`مقبس كهرباء في الصندوق`: 'Bed Power Outlet',
-            featureDescription: isArabic ?`مقبس 220 فولت للراحة والكفاءة في العمل أو الرحلات الترفيهية.`: 'The 220V power outlet has improved work efficiency and leisure usability.'
-        },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b2d8b0b8-72a6-4257-4c45-2efd511afa00/public',
-            featureTitle: isArabic ?`دواسات أرضية لجميع الفصول`: 'All-Weather Mat',
-            featureDescription: isArabic ?`احمِ سيارتك من الداخل مع دواسات كيا الأصلية، والمصنوعة من خامات TPO عالية التحمل ومصممة بحواف مرتفعة لمنع دخول الأوساخ والسوائل، وتمنح سيارتك مظهرًا متجددًا في كل المواسم.`: "Keep your car clean and protected with Kia Genuine All Weather Mats. Crafted from durable TPO material and designed with raised sides, they effectively shield your vehicle's lower footwell from dirt, spills, and debris. Perfect for all seasons, these mats offer a custom fit for your Kia, enhancing both style and functionality."
-        }
+      
     ]
   
     const swiper3Slides = [
@@ -116,7 +104,7 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/bf199f41-1282-40b3-17e6-260397980800/public',
             featureTitle: isArabic ?`قدرة اجتياز المياه`: 'Wading',
-            featureDescription: isArabic ? `مصممة لتخطي أصعب التضاريس وعبور المياه بقدرة غمر تصل إلى 800 مم بسرعة أقل من 7 كم/س. مع مدخل هواء عالي داخل الرفرف الأمامي لمنع تسرب الماء، وتوصيلات كهربائية مقاومة للماء لضمان القوة والاعتمادية في مغامراتك.` : "Designed to tackle challenging terrain and water crossings, the Kia Tasman offers a confident wading capability of up to 800mm depth at speeds under 7 km/h. The engineering includes a high air intake positioned inside the front fender to prevent water ingress, along with waterproof connectors for critical components, ensuring durability and reliability during off-road adventures."
+            featureDescription: isArabic ? `مصممة لتخطي أصعب التضاريس وعبور المياه بقدرة غمر تصل إلى 800 مم بسرعة أقل من 7 كم/س. مع مدخل هواء عالي داخل الرفرف الأمامي لمنع تسرب الماء، وتوصيلات كهربائية مقاومة للماء لضمان القوة والاعتمادية في مغامراتك.` : "Designed to tackle challenging terrain and water crossings, the Kia Carens offers a confident wading capability of up to 800mm depth at speeds under 7 km/h. The engineering includes a high air intake positioned inside the front fender to prevent water ingress, along with waterproof connectors for critical components, ensuring durability and reliability during off-road adventures."
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/87dcae85-2e22-40e0-abc9-eafceb0e2500/public',
@@ -136,7 +124,7 @@ const isArabic=i18n?.language=='ar'
             featureTitle: isArabic ?`نظام مراقبة الأرض (GVM)`: 'Ground View Monitor (GVM)',
             featureDescription: isArabic ?`احصل على رؤية كاملة لما يختبئ أسفل وأمام سيارتك. نظام GVM يُساعدك على عبور المسارات الضيقة والمناطق الصخرية بكل ثقة.
 
-*قد تختلف توفر صفحة الطرق الوعرة (واجهة المستخدم) ونظام مراقبة الأرض حسب المنطقة وتكوين السيارة.*`: 'Get a clear view of what’s directly beneath and in front of your Tasman. The Ground View Monitor helps you navigate tight trails, rocky paths, and tricky terrain with confidence.',
+*قد تختلف توفر صفحة الطرق الوعرة (واجهة المستخدم) ونظام مراقبة الأرض حسب المنطقة وتكوين السيارة.*`: 'Get a clear view of what’s directly beneath and in front of your Carens. The Ground View Monitor helps you navigate tight trails, rocky paths, and tricky terrain with confidence.',
         
          dis: isArabic ? `
 توفر صفحة الطرق الوعرة (واجهة الطرق الوعرة) ونظام عرض الرؤية الأرضية يعتمد على الاختلافات الإقليمية وتجهيزات المركبة المحددة.`: 'The availability of the Off-Road Page (Off-Road GUI) and Ground View Monitor is subject to regional differences and specific vehicle configurations.'
@@ -146,7 +134,7 @@ const isArabic=i18n?.language=='ar'
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/51850fdf-eb13-4bed-37e0-44e865cb9e00/public',
             featureTitle: isArabic ?`قفل تفاضلي إلكتروني (ELD)`: 'Electronic Locking Differential (ELD)',
-            featureDescription: isArabic ?`مع نظام قفل تفاضلي إلكتروني وتوزيع عزم مُعدل للطرق الوعرة، تخوض تاسمان الرمال والطين والأخاديد بثبات.`: 'With an electronic differential lock and off-road-tuned torque delivery, the Tasman pushes through sand, mud, and ruts with confidence.'
+            featureDescription: isArabic ? `مع نظام قفل تفاضلي إلكتروني وتوزيع عزم مُعدل للطرق الوعرة، تخوض كارينز الرمال والطين والأخاديد بثبات.` : 'With an electronic differential lock and off-road-tuned torque delivery, the Carens pushes through sand, mud, and ruts with confidence.'
         },
         {
             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e61fd259-8f73-439e-2823-2ba47d01e200/public',
@@ -169,7 +157,7 @@ const isArabic=i18n?.language=='ar'
         {
             video: '/assets/videos/ktk-scc.webm',
             featureTitle: isArabic ?`نظام تثبيت السرعة الذكي (SCC)`: 'Smart Cruise Control (SCC)',
-            featureDescription: isArabic ?`يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.`: 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Tasman to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style.'
+            featureDescription: isArabic ? `يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.` : 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Carens to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style.'
         },
         {
             video: '/assets/videos/ktk-rspa.webm',
@@ -334,10 +322,10 @@ const isArabic=i18n?.language=='ar'
                                             {slides?.[id][currentSlide].featureTitle?.split('Harman Kardon')?.[0]}
                                             <span className='font-[InterBold]'>Harman Kardon</span>
                                             {slides?.[id][currentSlide].featureTitle?.split('Harman Kardon')?.[1]}
-                                            </> : slides?.[id][currentSlide].featureTitle?.includes('X-Trek') ? <>
-                                                {slides?.[id][currentSlide].featureTitle?.split('X-Trek')?.[0]}
-                                                <span className='font-[InterBold]'>X-Trek</span>
-                                                {slides?.[id][currentSlide].featureTitle?.split('X-Trek')?.[1]}
+                                            </> : slides?.[id][currentSlide].featureTitle?.includes('26.62') ? <>
+                                                {slides?.[id][currentSlide].featureTitle?.split('26.62')?.[0]}
+                                                <span className='font-[InterBold]'>26.62</span>
+                                                {slides?.[id][currentSlide].featureTitle?.split('26.62')?.[1]}
                                                 </> : slides?.[id][currentSlide].featureTitle?.includes('(GVM)') ? <>
                                                     {slides?.[id][currentSlide].featureTitle?.split('(GVM)')?.[0]}
                                                     <span className='font-[InterBold]'>(GVM)</span>
@@ -362,10 +350,10 @@ const isArabic=i18n?.language=='ar'
                                                                         {slides?.[id][currentSlide].featureTitle?.split('SCC')?.[0]}
                                                                         <span className='font-[InterBold]'>SCC</span>
                                                                         {slides?.[id][currentSlide].featureTitle?.split('SCC')?.[1]}
-                                    </> : slides?.[id][currentSlide].featureTitle?.includes('RSPA') ? <>
-                                        {slides?.[id][currentSlide].featureTitle?.split('RSPA')?.[0]}
-                                        <span className='font-[InterBold]'>RSPA</span>
-                                        {slides?.[id][currentSlide].featureTitle?.split('RSPA')?.[1]}
+                                    </> : slides?.[id][currentSlide].featureTitle?.includes('64') ? <>
+                                        {slides?.[id][currentSlide].featureTitle?.split('64')?.[0]}
+                                        <span className='font-[InterBold]'>64</span>
+                                        {slides?.[id][currentSlide].featureTitle?.split('64')?.[1]}
                                     </> :
                                                                                 slides?.[id][currentSlide].featureTitle?.includes('RCTA') ? <>
                                                                                     {slides?.[id][currentSlide].featureTitle?.split('RCTA')?.[0]}

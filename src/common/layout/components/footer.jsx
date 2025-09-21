@@ -10,18 +10,18 @@ export default function Footer ({ removeMedia }) {
           
 {pathname.includes('configurator')?null:
 <>
-                    <div className="w-screen bg-[url('https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ff405cbc-5555-4b50-4e1d-1ba45e99d800/public')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] lg:h-screen bg-[#05141F]">
+                    <div className="w-screen bg-[url('https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f461d1a3-7bcf-487b-4de7-c548007fdb00/public')] footer-img  bg-no-repeat flex flex-col justify-start items-start bg-cover bg-center h-[40vh] lg:h-screen bg-[#05141F]">
                         <div className={`${locale == 'ar' ? 'min-h-[8vh] lg:min-h-[25vh]' : 'min-h-[8vh] lg:min-h-[40vh]'}  footer-img-text lg:mt-0   flex w-full flex-col justify-center `}
                  dir="ltr" >
                             <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-between   h-[40vh]">
                                 <div className={`w-full px-12 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
                                     <p className={`text-xl lg:text-[40px] text-start ${isArabic ?'font-[GSSMedium]':'font-[InterBold]'}`}>{isArabic ?`أينما تأخذك الحياة`:`Wherever life takes you`}</p>
                                     <p dir={locale=='ar'?'rtl':'ltr'} className={`text-sm lg:text-lg text-black text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
-                                        {isArabic ? `سواء كنت تتجول في شوارع المدينة أو تتحدى أصعب الطرق. عِش الحرية الحقيقية وجرّب مزيج القوة والأناقة الذي لا تقدمه سوى كيا تاسمان.` : <>
+                                        {isArabic ? `سواء كنت تتجول في شوارع المدينة أو تتحدى أصعب الطرق. عِش الحرية الحقيقية وجرّب مزيج القوة والأناقة الذي لا تقدمه سوى كيا كارينز.` : <>
                                         
                                             Whether navigating city streets or conquering the toughest trails. Embrace the freedom <br />
                                             to go further and experience the perfect blend of capability and style<br />
-                                            that only Kia Tasman can deliver.</>}
+                                            that only Kia Carens can deliver.</>}
                                       
 
                                     </p>

@@ -174,7 +174,7 @@ const ThreeSixty = ({ showControl = false }) => {
     >
 
       <p id='vrShowroomText2' className={`text-white text-base  md:text-[28px] z-[50] drop-shadow-2xl [text-shadow:_2px_2px_2px_rgba(0,0,0,0.4)] !absolute start-0 text-center lg:text-start lg:start-10 top-8 lg:!top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-        {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل تاسمان من الداخل والخارج` : `كيا تاسمان تلبي جميع الأذواق` : showControl ? `Discover Kia Tasman's Exterior & Interior in 360°` : 'The Tasman Meets All Tastes'}
+        {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل كارينز من الداخل والخارج` : `كيا كارينز تلبي جميع الأذواق` : showControl ? `Discover Kia Carens's Exterior & Interior in 360°` : 'The Carens Meets All Tastes'}
       </p>
       <div
        
@@ -279,7 +279,7 @@ const ThreeSixty = ({ showControl = false }) => {
           draggable={false}
         /> :
           <PanoramaViewer
-            imageUrl="/assets/ktk-int360-v2.png"
+            imageUrl="/assets/panorama.png"
 
           />
 

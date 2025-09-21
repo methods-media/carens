@@ -4,7 +4,7 @@ import VRControls from './VRControls';
 import { useTranslation } from 'next-i18next';
 import PanoramaViewer from '@src/components/ImageViewer360';
 import { useRouter } from 'next/router';
-import {  CDN_BEIGE_STATIC, CDN_BLACK, CDN_BLUE, CDN_GREEN, CDN_INTERSTELLAR, CDN_RED, CDN_SNOW, CDN_STEEL_GRAY, CDN_TAN_BEIGE, CDN_WHITE, CDN_WHITE_FENDER, FRAME_COUNT } from '@src/constants/imageSequence';
+const cloudSrc ='https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg'
 const VRShowroom = ({ showControl=false }) => {
   const containerRef = useRef(null);
   const [view, setView] = useState('exterior')
@@ -16,7 +16,7 @@ const VRShowroom = ({ showControl=false }) => {
   const startX = useRef(0);
   const autoRotateRef = useRef(null);
   const lastTimeRef = useRef(0);
-  const [currentColor, setCurrentColor] = useState('beige');
+  const [currentColor, setCurrentColor] = useState(0);
   const framePositionRef = useRef(0);
   const [colorTextKey, setColorTextKey] = useState(0);
   const { t ,i18n} = useTranslation('common');
@@ -24,33 +24,30 @@ const VRShowroom = ({ showControl=false }) => {
 
 
   const COLORS = [
-    { id: 'beige', name: t('colors.beige'), hex: '#939393', chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/08342870-b29c-4b1c-8e32-796b0139d200/public" },
-    { id: 'tan', name: t('colors.beigeFender'), hex: '#000000', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d53c6dbf-f7c7-490f-c1d4-d60f3eb44900/public" },
-    { id: 'white', name: t('colors.clear_white'), hex: '#FFFFFF', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4952bc85-a2df-46ab-081d-d25f6177ce00/public"},
-    { id: 'whiteFender', name: t('colors.clear_white_fender'), hex: '#909598', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4a912299-4456-49f6-05a4-321c33d18e00/public" },
-    { id: 'green', name: t('colors.green'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/00e9b9b6-6c5e-446f-6b7a-d9bc41e71a00/public" },
-    { id: 'blue', name: t('colors.wave_blue'), hex: '#344f7e', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/a8f7b28b-ff09-42b2-b0ab-3eccbed81500/public" },
-    { id: 'red', name: t('colors.fiery_red'), hex: '#ae2736', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/15311daf-6c93-409c-f457-e8c1867d7600/public" },
-    { id: 'gray', name: t('colors.gray'), hex: "#565656", chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2ec05ee8-5a4d-4bcd-0aa7-1d0308c8e300/public" },
-    { id: 'snow', name: t('colors.snow_white_pearl'), hex: '#f6f6f6', chip:"https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ad847c7a-3269-443f-42f4-db56d986c600/public" },
-    { id: 'steel', name: t('colors.steel_gray'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/34c49397-583e-4209-7ef7-06d6e17d4b00/public" },
-    { id: 'black', name: t('colors.black'), hex: "#565656", chip: "https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b969f132-bf2b-4e32-1373-f54363d4ed00/public" },
+    { id: 'white', name: t('colors.clear_white'), hex: '#FFFFFF', chip:"/97333cf4-011c-4050-53fc-3547e992cf00/public",index:0},
+    { id: 'silver', name: t('colors.silver'), hex: '#939393', chip: "/8bf7623f-ab9f-4bcf-6ced-87e650d8d000/public" ,index:1},
+    { id: 'snow', name: t('colors.snow_white_pearl'), hex: '#f6f6f6', chip: "/a87bec21-a2b6-4672-2f11-5af7e0537d00/public" ,index:2},
+    { id: 'green', name: t('colors.green'), hex: "#565656", chip: "/b9087368-0b30-41a0-ea27-0f7b84968c00/public" ,index:3},
+    { id: 'gray', name: t('colors.gray'), hex: "#565656", chip:"/77d3ddcf-8158-4e11-1b18-f3e731332000/public" ,index:4},
+    { id: 'blue', name: t('colors.wave_blue'), hex: '#344f7e', chip:"/91a64c4d-3b92-4718-fb43-5f0fd8b24100/public" ,index:5},
+    { id: 'black', name: t('colors.black'), hex: "#565656", chip: "/35deb35b-0ddd-416d-ac22-fadb7f476800/public" ,index:6},
+    { id: 'steel', name: t('colors.steel_gray'), hex: "#565656", chip: "/ad13f2cb-eb37-400f-46ed-a1e81e575100/public" ,index:7},
+    
   ];
+  const imageSrc = [
+    '/5541d17d-21df-4e52-ed34-4f297452dd00/big',
+    '/699cd1a7-a0ce-49c2-fa50-f44732a89c00/big',
+    '/0a693f6d-b1c6-4873-bcaf-a947c09f2600/big',
+    '/95ff3259-3d64-4e5b-3805-fcfe4c1d8d00/big',
+    '/ff3c94b2-c21b-47cc-b199-2efb93145f00/big',
+    '/7269ad6f-131e-489b-0870-23c0af352600/big',
+    '/74d778e8-ba50-40de-4544-3833489fb500/big',
+    '/1bbc0bff-7d25-4668-99f8-210b80445a00/big',]
 
-  const preloadColorImages = async colorId => {
-    const urls = colorId === 'snow' ?
-      CDN_SNOW : colorId === 'white' ?
-        CDN_WHITE : colorId === 'whiteFender' ?
-          CDN_WHITE_FENDER : colorId === 'tan' ?
-            CDN_TAN_BEIGE : colorId === 'beige' ?
-              CDN_BEIGE_STATIC : colorId === 'blue' ?
-                CDN_BLUE : colorId === 'red' ?
-                  CDN_RED : colorId === 'steel' ?
-                    CDN_STEEL_GRAY : colorId === 'gray' ? CDN_INTERSTELLAR : colorId =='green'?CDN_GREEN: CDN_BLACK;
-
-    const imageElements = urls.map(url => {
+  const preloadColorImages = async () => {
+    const imageElements = imageSrc.map(url => {
       const img = new Image();
-      img.src = url;
+      img.src = `${cloudSrc}${url}`;
       img.crossOrigin = 'anonymous';
       return img;
     });
@@ -69,12 +66,11 @@ const VRShowroom = ({ showControl=false }) => {
               }
             }),
         ),
-      );
+      ).then((value) => {
+        setLoadedImages([...value]);
+      });
 
-      setLoadedImages(prev => ({
-        ...prev,
-        [colorId]: urls,
-      }));
+      
 
       return true;
     } catch (error) {
@@ -88,15 +84,9 @@ const VRShowroom = ({ showControl=false }) => {
       try {
         setIsLoaded(false);
 
-        const initialSuccess = await preloadColorImages('white');
+        const initialSuccess = await preloadColorImages();
         if (initialSuccess) {
           setIsLoaded(true);
-
-          COLORS.forEach(color => {
-            if (color.id !== 'white') {
-              preloadColorImages(color.id).catch(console.error);
-            }
-          });
         }
       } catch (error) {
         console.error('Failed to load images:', error);
@@ -115,54 +105,7 @@ const VRShowroom = ({ showControl=false }) => {
     }
   };
 
-  const handleMouseDown = e => {
-    isDragging.current = true;
-    startX.current = e.pageX;
-    stopAutoRotate();
-  };
 
-  const handleMouseMove = e => {
-    if (!isDragging.current) return;
-
-    const deltaX = e.pageX - startX.current;
-    const sensitivity = 2;
-    let frameDelta = deltaX / sensitivity;
-
-    framePositionRef.current -= frameDelta;
-    if (framePositionRef.current < 0) framePositionRef.current += FRAME_COUNT;
-    if (framePositionRef.current >= FRAME_COUNT)
-      framePositionRef.current -= FRAME_COUNT;
-
-    setCurrentFrame(Math.floor(framePositionRef.current));
-    startX.current = e.pageX;
-  };
-
-  const handleMouseUp = () => {
-    isDragging.current = false;
-  };
-
-  const handleTouchStart = e => {
-    e.preventDefault();
-    isDragging.current = true;
-    startX.current = e.touches[0].pageX;
-    stopAutoRotate();
-  };
-  const handleTouchMove = e => {
-    if (!isDragging.current) return;
-    e.preventDefault();
-
-    const deltaX = e.touches[0].pageX - startX.current;
-    const sensitivity = 2;
-    let frameDelta = deltaX / sensitivity;
-
-    framePositionRef.current -= frameDelta;
-    if (framePositionRef.current < 0) framePositionRef.current += FRAME_COUNT;
-    if (framePositionRef.current >= FRAME_COUNT)
-      framePositionRef.current -= FRAME_COUNT;
-
-    setCurrentFrame(Math.floor(framePositionRef.current));
-    startX.current = e.touches[0].pageX;
-  };
 
   const handleColorChange = async colorId => {
     setCurrentFrame(0)
@@ -214,7 +157,7 @@ const VRShowroom = ({ showControl=false }) => {
       }}
     >
       <p id='vrShowroomText' className={`text-white text-base  md:text-[28px] z-[50] drop-shadow-2xl [text-shadow:_2px_2px_2px_rgba(0,0,0,0.4)] !absolute start-0 text-center lg:text-start lg:start-10 top-12 lg:!top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-        {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل تاسمان من الداخل والخارج` : `كيا تاسمان تلبي جميع الأذواق` : showControl ?`Discover Kia Tasman's Exterior & Interior in 360°`: 'The Tasman Meets All Tastes'}
+        {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل كارينز من الداخل والخارج` : `كيا كارينز تلبي جميع الأذواق` : showControl ? `Discover Kia Carens's Exterior & Interior in 360°` : 'The Carens Meets All Tastes'}
       </p>
       <div
           className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-12.5 w-full text-white text-sm z-50 flex flex-col justify-end ps-0 lg:ps-[70px] gap-2 lg:gap-4 items-center'
@@ -231,7 +174,7 @@ const VRShowroom = ({ showControl=false }) => {
                 key={colorTextKey}
                 className={`text-white text-base lg:text-2xl animate-fadeInUp ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}
               >
-                {COLORS?.filter?.((item) => item?.id == currentColor)?.[0]?.name}
+                {COLORS?.filter?.((item) => item?.index == currentColor)?.[0]?.name}
               </p>
               <div className='flex  gap-1.5 lg:gap-3' dir='ltr' >
                 {COLORS.map(color => (
@@ -242,9 +185,9 @@ const VRShowroom = ({ showControl=false }) => {
                     <button
                       key={color.name}
                       className=' rounded-sm w-7 btn-color-showRoom h-7 md:w-[50px] md:h-[50px] hover:scale-110 cursor-pointer '
-                      onClick={() => handleColorChange(color.id)}
+                      onClick={() => handleColorChange(color.index)}
                       style={{
-                        background: `url(${color.chip}) no-repeat center center`,
+                        background: `url(${cloudSrc}${color.chip}) no-repeat center center`,
 
                         backgroundSize: 'cover',
                       }}
@@ -281,18 +224,12 @@ const VRShowroom = ({ showControl=false }) => {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-        onMouseDown={null}
-        onMouseMove={null}
-        onMouseUp={null}
-        onMouseLeave={null}
-        onTouchStart={null}
-        onTouchMove={null}
-        onTouchEnd={null}
+      
       >
         
         {view == 'exterior' ? <img
-          src={loadedImages[currentColor][currentFrame]}
-          alt={`360° View Frame ${currentFrame + 1}`}
+          src={loadedImages[currentColor]}
+          alt={`360° View Frame1`}
 
 
           onError={handleImageError}

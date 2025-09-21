@@ -26,10 +26,10 @@ export const Interior = () => {
                 {"   "}{i18n?.language == 'ar' ? `التصميم الداخلي` : `Interior`}
             </motion.p>
             <FloatingText2
-                head1={i18n?.language == 'ar' ? `قوة صلبة` : `RUGGED`}
-                head2={i18n?.language == 'ar' ? `وأناقة` : `YET`}
-                head3={i18n?.language == 'ar' ? `متقنة` : `REFINED`}
-                desc={i18n?.language == 'ar' ? `مثل قوتها الخارجية، تتميز تاسمان بجودة المقصورة الداخلية التي تجمع المتانة مع الرفاهية العملية. يعتمد التصميم الداخلي على البساطة والتماثل، مع تفاصيل تقنية متقدمة توازن بين رحابة المساحة وفخامة الأداء.` : `Just as bold on the inside, the Kia Tasman’s interior offers enduring pickup truck quality. The outwardly simple design uses symmetry, pure forms, and a wealth of technology to strike a winning balance of spacious luxury and practicality.`} />
+                head1={i18n?.language == 'ar' ? `شعور بالعودة` : `FEELING`}
+                head2={i18n?.language == 'ar' ? `الي` : `OF`}
+                head3={i18n?.language == 'ar' ? `الوطن` : `HOMECOMING`}
+                desc={t('int_desc')} />
      </div>
     )
 }

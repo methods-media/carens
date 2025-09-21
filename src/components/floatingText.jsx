@@ -46,7 +46,10 @@ export const FloatingText = ({ head, desc }) => {
             <motion.p
                 style={{ y, opacity }}
                 className={`text-white text-sm lg:text-xl px-5  leading-[30px] ${i18n?.language=='ar'? "font-['GSSMedium']" :"font-[InterRegular]"} text-center max-w-[1330px] mx-auto`}>
-                {desc}
+                {desc?.split('LED')?.[0]}
+                <span className='font-[InterRegular]'>LED</span>
+                {desc?.split('LED')?.[1]}
+
             </motion.p>
         </div>
     )

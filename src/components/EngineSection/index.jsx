@@ -68,21 +68,17 @@ export const EngineSection = () => {
                 className={`text-3xl lg:text-[52px] text-center lg:text-start ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
                 style={{ scale, y, opacity }}
             >
-                {i18n?.language == 'ar' ? `حينما تلتقي   ` : ` Where your bold spirit and true practicality`}
+                {i18n?.language == 'ar' ? `حيث يلتقي التصميم الجرئ` : ` Where bold design meets thoughtful innovation`}
             </motion.p>
             <div className={`flex gap-2 ${i18n?.language == 'ar' ? '' : 'gap-2'}`}>
                 <motion.p 
                     className={`text-4xl lg:text-[84px]  ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'} text-white uppercase font-[900]`}
                     style={{ x: i18n?.language == 'ar' ? togetherX : comeX, opacity: textOpacity }}
                 >
-                    {i18n?.language == 'ar' ? `  الجرأة` : `COME `}
+                    {i18n?.language == 'ar' ? `مع` : `WITH`}
                 </motion.p>
-                <motion.p
-                    className={`text-4xl lg:text-[84px] text-white uppercase font-[900] ps-8 lg:ps-2 ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'}`}
-                    style={{ x: i18n?.language == 'ar' ? comeX : togetherX, opacity: textOpacity }}
-                >
-                    {i18n?.language == 'ar' ? `مع العملية` : ` TOGETHER`}
-                </motion.p>
+               
+              
             </div>
             <motion.p
                 className={`text-3xl lg:text-[62px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white text-center   uppercase font-[900]`}
@@ -92,7 +88,7 @@ export const EngineSection = () => {
                     filter: blurFilter
                 }}
             >
-                {i18n?.language == 'ar' ?` يبدأ بُعدٌ جديد`:`A NEW DIMENSSION UNFOLDS`}
+                {i18n?.language == 'ar' ? `الابتكار المدروس` :`commanding presence`}
             </motion.p>
         </div>
     )

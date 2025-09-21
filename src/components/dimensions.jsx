@@ -65,7 +65,7 @@ const isArabic=i18n?.language=='ar'
                 <div className='h-full py-10 w-full 2xl:w-[1350px] mx-auto flex flex-col justify-start  lg:px-4 xl:px-0'>
 
                 <h2 className={`text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8 ${isArabic ? 'font-[GSSMedium]' :''}`}>
-                        {isArabic ?`تاسمان في أرقام`:`Tasman in Numbers`}
+                        {isArabic ? `كارينز في أرقام` : `Carens in Numbers`}
                 </h2>
                     <div
                         id='scroller'
@@ -185,7 +185,7 @@ const isArabic=i18n?.language=='ar'
                     <div className="w-full lg:w-[60%] flex justify-center items-center">
                             <img
                                 src={getCurrentSpec()?.icon}
-                                alt="Kia Tasman 3D Render"
+                                alt="Kia Carens 3D Render"
                                 className="w-full h-auto object-contain"
                             />
                     </div>

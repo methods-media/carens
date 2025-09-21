@@ -131,7 +131,7 @@ const ParallaxSection = () => {
                             className={`text-lg mt-5 lg:mt-0 lg:text-2xl lg:w-[80%] ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'} font-extrabold uppercase inline-block`}
 
                         >
-                            {i18n?.language == 'en' ? `Bold capability, redefined. The Tasman takes performance into a new dimension` : `قدرات جريئة، بمعني جديد تاسمان تنقل معني الأداء الي بُعد جديد`}
+                            {i18n?.language == 'en' ? `Bold capability, redefined. The Carens takes performance into a new dimension` : `قدرات جريئة، بمعني جديد كارينز تنقل معني الأداء الي بُعد جديد`}
                         </span>
 
                     </span>

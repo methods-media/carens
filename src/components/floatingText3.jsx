@@ -48,7 +48,7 @@ export const FloatingTextThree = () => {
             <motion.p
                 style={{ y }}
                 className={`text-white text-2xl lg:text-[72px] font-bold uppercase text-center whitespace-nowrap ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
-                {isArabic ? "الدليل في المواصفات" : 'The proof in the specs'}
+                {isArabic ? "سهولة ذكية في التفاعل" : 'The thoughtful ease of tuning in'}
             </motion.p>
         </div>
     )
