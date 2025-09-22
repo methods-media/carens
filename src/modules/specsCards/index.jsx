@@ -49,7 +49,7 @@ export const SpecsCards = ({ model ,id}) => {
         {
             title: t('bca'),
             description: t('bca_description'),
-            image: '/assets/new/KCL4-SFV-BCA.webm'
+            image: '/assets/new/kia-carens-bca.webm'
         },
         {
             title: t('pca_r'),

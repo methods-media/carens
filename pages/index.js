@@ -87,7 +87,7 @@ export default function Home() {
       <div className="content22 w-screen h-[50vh] lg:h-screen relative"
         id='safety'
         >
-        <video src='/assets/videos/KCL4-SFV-BCA.webm'
+        <video src='/assets/videos/kia-carens-bca.webm'
           autoPlay
           muted
           loop
