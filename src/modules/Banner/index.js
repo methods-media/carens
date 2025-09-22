@@ -63,27 +63,28 @@ const Banner = () => {
           </div>
           <div className='flex flex-col '>
             <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? "محرك 1.5 لتر تيربو" : '1.5L T-GDI'}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `117 حصان \ ناقل حركة 5 سرعات` : `117HP / 5-Speed `}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `117 حصان` : `117HP`}</p>
           </div>
         </div>
-        {/* <div className='flex items-center  justify-start lg:justify-center gap-[10px]'>
-          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
-            <Treck />
-          </div>
-          <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? `نظام قيادة الصحراء` : `Desert Mode`}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `32.2° Approach Angle` : '32-degree Approach Angle'}</p>
-          </div>
-        </div> */}
-        {/* <div className='flex items-center  justify-start lg:justify-center gap-[10px]'>
+       
+        <div className='flex items-center  justify-start lg:justify-center gap-[10px]'>
           <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <Terrain />
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{'Kia Connect'}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `مع مفتاح الرقمي` : 'With Digital Key'}</p>
+            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? 'ناقل الحركة': "6-Speed AT" }</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `6 سرعات أوتوماتيكي` : 'Transmission'}</p>
           </div>
-        </div> */}
+        </div>
+        <div className='flex items-center  justify-start lg:justify-center gap-[10px]'>
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
+            <Treck />
+          </div>
+          <div className='flex flex-col '>
+            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? `شاشة 26.62 أنش` : `26.62 Inch`}</p>
+            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `بانورامية` : 'Panoramic Screen'}</p>
+          </div>
+        </div>
         <div className='flex items-center  justify-start lg:justify-center  gap-1 md:gap-[10px]'>
           <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
             <WarrantySVG />
