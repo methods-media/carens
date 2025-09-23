@@ -15,13 +15,11 @@ export default function Footer ({ removeMedia }) {
                  dir="ltr" >
                             <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-between   h-[40vh]">
                                 <div className={`w-full px-12 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
-                                    <p className={`text-xl lg:text-[40px] text-start ${isArabic ?'font-[GSSMedium]':'font-[InterBold]'}`}>{isArabic ?`أينما تأخذك الحياة`:`Wherever life takes you`}</p>
+                                    <p className={`text-xl lg:text-[40px] text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>{isArabic ? `متعة الحركة` :`The Thrill of Moving`}</p>
                                     <p dir={locale=='ar'?'rtl':'ltr'} className={`text-sm lg:text-lg text-black text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
-                                        {isArabic ? `سواء كنت تتجول في شوارع المدينة أو تتحدى أصعب الطرق. عِش الحرية الحقيقية وجرّب مزيج القوة والأناقة الذي لا تقدمه سوى كيا كارينز.` : <>
+                                        {isArabic ? `مع كل منعطف وكل امتداد للطريق، تجعل كارينز الجديدة رحلاتك اليومية تجربة تستحق الترقب.`: <>
                                         
-                                            Whether navigating city streets or conquering the toughest trails. Embrace the freedom <br />
-                                            to go further and experience the perfect blend of capability and style<br />
-                                            that only Kia Carens can deliver.</>}
+                                            With every turn and every stretch of road, the new Carens transforms daily drives into something to look forward to.</>}
                                       
 
                                     </p>

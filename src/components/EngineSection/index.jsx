@@ -65,12 +65,12 @@ export const EngineSection = () => {
     return (
         <div ref={sectionRef} className='bg-[#06141F] flex flex-col items-center justify-center lg:justify-end pb-0 lg:pb-[15%] w-full min-h-[50vh] lg:min-h-[100vh] h-[50vh] lg:h-[100vh] gap-10 rtl:gap-10 lg:h-[100vh]'>
             <motion.p
-                className={`text-3xl lg:text-[52px] text-center lg:text-start ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
+                className={`text-3xl lg:text-[52px] text-center  ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white uppercase font-[900]`}
                 style={{ scale, y, opacity }}
             >
                 {i18n?.language == 'ar' ? `حيث يلتقي التصميم الجرئ` : ` Where bold design meets thoughtful innovation`}
             </motion.p>
-            <div className={`flex gap-2 ${i18n?.language == 'ar' ? '' : 'gap-2'}`}>
+            {/* <div className={`flex gap-2 ${i18n?.language == 'ar' ? '' : 'gap-2'}`}>
                 <motion.p 
                     className={`text-4xl lg:text-[84px]  ${i18n?.language == 'ar' ? "font-['GSSMedium']" : 'font-[InterBold]'} text-white uppercase font-[900]`}
                     style={{ x: i18n?.language == 'ar' ? togetherX : comeX, opacity: textOpacity }}
@@ -79,8 +79,8 @@ export const EngineSection = () => {
                 </motion.p>
                
               
-            </div>
-            <motion.p
+            </div> */}
+            {/* <motion.p
                 className={`text-3xl lg:text-[62px] ${locale == 'ar' ? "font-['GSSMedium']" : "font-[InterBold]"} text-white text-center   uppercase font-[900]`}
                 style={{
                     y: dimensionY,
@@ -89,7 +89,7 @@ export const EngineSection = () => {
                 }}
             >
                 {i18n?.language == 'ar' ? `الابتكار المدروس` :`commanding presence`}
-            </motion.p>
+            </motion.p> */}
         </div>
     )
 };

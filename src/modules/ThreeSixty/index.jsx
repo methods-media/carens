@@ -226,7 +226,7 @@ const ThreeSixty = ({ showControl = false }) => {
                 </div>
               </div>}
 
-            </div> : <p className={`text-white text-lg md:text-xl btn-showRoom mt-2 ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>        {t('colors.onyx_black')}</p>
+            </div> :''
           }
           {showControl ? <VRControls
 

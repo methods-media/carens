@@ -60,12 +60,12 @@ export const EngineTypesSection = () => {
                     <p class={`z-[10000] text-4xl mt-5 lg:mt-0 lg:!text-[62px]  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} !text-white`}>{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
 
                     <div className='flex items-start gap-5 mb-7'>
-                        <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom ${isArabic ? "font-['GSSMedium']" : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(1)}
+                        {/* <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom ${isArabic ? "font-['GSSMedium']" : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(1)}
                         >
 
                             {isArabic?`محرك بنزين`:`Petrol Engine`}
 
-                        </button>
+                        </button> */}
                         {/* <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px] ${selectedEngine == 0 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm  btn-showRoom ${isArabic ? "font-['GSSMedium']" : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(0)}
                         >           {isArabic?`محرك ديزل`:`Diesel Engine`}
                         </button> */}
@@ -142,7 +142,7 @@ export const EngineTypesSection = () => {
                     className={`text-xl lg:text-[64px] text-center lg:text-start  text-white  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"}`}
 
                 >
-                    {isArabic ? `من العمل الي المغامرة` :`From work to adventure`}
+                    {isArabic ? `وعد بالعناية` :`THE PROMISE OF CARING`}
                 </h3>
                 {/* <motion.h3
                     className={`text-base  lg:text-[40px] py-8  lg:py-12  text-center  text-white ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} `}

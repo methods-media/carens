@@ -10,20 +10,14 @@ const Dimensions = () => {
 const isArabic=i18n?.language=='ar'
     const specifications = [
         {
-            key: 'length', label: isArabic ? `الطول` : 'Length', value: isArabic ?`5,410 مم`: '5,410MM', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/85d55440-c821-4ec1-aee1-a00c4ca79100/public` },
+            key: 'length', label: isArabic ? `الطول` : 'Length', value: isArabic ? `4,550 مم` : '4,550MM', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/443ba543-7504-4342-29da-0e933d74aa00/public` },
         {
-            key: 'width', label: isArabic ? `العرض` : 'Width', value: isArabic ?`1,930 مم`: '1,930 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/04486424-3e73-455f-36f6-8ad07a97a100/public`},
+            key: 'width', label: isArabic ? `العرض` : 'Width', value: isArabic ? `1,800 مم` : '1,800 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/cb876741-5520-4ced-0464-5dcb0b89c300/public`},
         {
-            key: 'height', label: isArabic ? `الارتفاع` : 'Height', value: isArabic ?`1,920 مم`:'1,920 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/6c94dd75-4aec-4418-5880-733c43c1e500/public`},
-        {
-            key: 'Ground Clearance', label: isArabic ? `الخلوص الارضي` : 'Ground Clearance', value: isArabic ?`252 مم`: '252 mm', icon: `https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3df2aea7-2ff2-4355-d442-b68b8d3b4000/tv` },
-        {
-            key: 'wheelbase', label: isArabic ? `قاعدة العجلات` : 'Wheelbase', value: isArabic ?`3,270 مم`: '3,270 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/b487a28a-c69d-45fa-8979-f85450c4dc00/public`},
-        {
-            key: 'Cargo (SAE)', label: isArabic ? `المساحة التخزينية` : 'Trunk', value: isArabic ?`1,336 لتر`: '1,336 L', desc: "(SAE capacity without bedliner)", icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/79dcebe4-368a-4e2a-b8b3-1dc230523b00/public` },
-        {
-            key: 'weight', label: isArabic ? `الحمولة` : 'Payload ', value: isArabic ? `1,151 كج` : '1,151 kg', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/5eeef5d5-430c-4636-7450-c2ef3d682300/semi`}
-    ];
+            key: 'height', label: isArabic ? `الارتفاع` : 'Height', value: isArabic ? `1,708 مم` : '1,708 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/e3af4c00-879e-4298-a290-fe67d2755f00/public`},
+      {
+          key: 'wheelbase', label: isArabic ? `قاعدة العجلات` : 'Wheelbase', value: isArabic ? `2,780 مم` : '2,780 mm', icon:`https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/81358983-119e-485f-bd95-922b8f87e000/public`},
+               ];
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
@@ -70,7 +64,7 @@ const isArabic=i18n?.language=='ar'
                     <div
                         id='scroller'
                       
-                        className="flex ps-[147px] lg:ps-0  overflow-x-auto space-y-3   gap-3 lg:gap-0  items-start  justify-center lg:justify-between w-full ">
+                        className="flex ps-[147px] lg:ps-0  overflow-x-auto space-y-3   gap-3 lg:gap-7  items-start  justify-center  w-full ">
                     {specifications.map((spec) => (
                         <button
                             key={spec.key}
@@ -94,24 +88,24 @@ const isArabic=i18n?.language=='ar'
                             </p>
                             <div className='flex items-center gap-1 h-full text-white  leading-normal    justify-center text-center' style={{marginTop:'-28px'}}>
 
-                                <p key={`engine-1-${animationKey}`} className={`text-[52px]  ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F]  ${isInView ? 'in-view' : ''}`}>{getCurrentSpec()?.value?.includes('5,410')?
+                                <p key={`engine-1-${animationKey}`} className={`text-[52px]  ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[#06141F]  ${isInView ? 'in-view' : ''}`}>{getCurrentSpec()?.value?.includes('4,550')?
                              
                              <>
-                                {getCurrentSpec()?.value?.split('5,410')?.[0]}
-                                <span className={'font-[InterBold]'}>5,410</span>
-                                  {getCurrentSpec()?.value?.split('5,410')?.[1]}
+                                {getCurrentSpec()?.value?.split('4,550')?.[0]}
+                                <span className={'font-[InterBold]'}>4,550</span>
+                                  {getCurrentSpec()?.value?.split('4,550')?.[1]}
                                 </>
                                 
                                 :
                                 
                                 
                                 
-                                getCurrentSpec()?.value?.includes('1,930')?
+                                getCurrentSpec()?.value?.includes('1,800')?
                              
                              <>
-                                {getCurrentSpec()?.value?.split('1,930')?.[0]}
-                                <span className={'font-[InterBold]'}>1,930</span>
-                                  {getCurrentSpec()?.value?.split('1,930')?.[1]}
+                                {getCurrentSpec()?.value?.split('1,800')?.[0]}
+                                <span className={'font-[InterBold]'}>1,800</span>
+                                  {getCurrentSpec()?.value?.split('1,800')?.[1]}
                                 </>
                                 
                                 :
@@ -119,12 +113,12 @@ const isArabic=i18n?.language=='ar'
 
 
 
-                                 getCurrentSpec()?.value?.includes('1,920')?
+                                 getCurrentSpec()?.value?.includes('1,708')?
                              
                              <>
-                                {getCurrentSpec()?.value?.split('1,920')?.[0]}
-                                <span className={'font-[InterBold]'}>1,920</span>
-                                  {getCurrentSpec()?.value?.split('1,920')?.[1]}
+                                {getCurrentSpec()?.value?.split('1,708')?.[0]}
+                                <span className={'font-[InterBold]'}>1,708</span>
+                                  {getCurrentSpec()?.value?.split('1,708')?.[1]}
                                 </>
                                 
                                 :
@@ -142,12 +136,12 @@ const isArabic=i18n?.language=='ar'
 
 
 
-                                  getCurrentSpec()?.value?.includes('3,270')?
+                                  getCurrentSpec()?.value?.includes('2,780')?
                              
                              <>
-                                {getCurrentSpec()?.value?.split('3,270')?.[0]}
-                                <span className={'font-[InterBold]'}>3,270</span>
-                                  {getCurrentSpec()?.value?.split('3,270')?.[1]}
+                                {getCurrentSpec()?.value?.split('2,780')?.[0]}
+                                <span className={'font-[InterBold]'}>2,780</span>
+                                  {getCurrentSpec()?.value?.split('2,780')?.[1]}
                                 </>
                                 
                                 :

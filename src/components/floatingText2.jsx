@@ -45,10 +45,10 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
             <div className={`relative flex items-center justify-center h-20 ${i18n?.language == 'ar' ? 'font-[GSSMedium]' :'font-[InterBold]'}`} >
                 <motion.p
                     initial={{ x: 0, opacity: 0, scale: 0.8 }}
-                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? 90 : 165 : isMobile ? -115 : -240, opacity: 1, scale: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? 40 : 165 : isMobile ? -85 : -310, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
-                    className={`absolute text-white text-3xl lg:text-6xl whitespace-nowrap overflow-ellipsis `}
+                    className={`absolute text-white text-xl lg:text-6xl whitespace-nowrap overflow-ellipsis `}
                     style={{
                         fontFamily: i18n?.language == ' ar' ? 'font-[GSSBold] !important' : 'font-[InterBold]'
                     }}
@@ -57,10 +57,10 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
                 </motion.p>
                 <motion.p
                     initial={{ opacity: 0 }}
-                    whileInView={{ x: i18n?.language == 'ar' ? isMobile? -25:-75 : isMobile?'':-58, opacity: 1, scale: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? isMobile? -40:-75 : isMobile?0:-58, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     viewport={{ once: true }}
-                    className={`absolute text-white text-3xl lg:text-6xl   `}
+                    className={`absolute text-white text-xl lg:text-6xl   `}
 
                     style={{
                         fontFamily: i18n?.language == ' ar' ? 'font-[GSSBold] !important' : 'font-[InterBold]'
@@ -70,10 +70,10 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
                 </motion.p>
                 <motion.p
                     initial={{ x: 0, opacity: 0, scale: 0.8 }}
-                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? -115 : -210 : isMobile ? 105 : 217, opacity: 1, scale: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? -90 : -210 : isMobile ? 95 : 223, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                     viewport={{ once: true }}
-                    className={`absolute text-white text-3xl lg:text-6xl  `}
+                    className={`absolute text-white text-xl lg:text-6xl  `}
                     style={{
                         fontFamily: i18n?.language == ' ar' ? 'font-[GSSBold] !important' : 'font-[InterBold]'
                     }}

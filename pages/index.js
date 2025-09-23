@@ -9,8 +9,6 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 const EngineSection = dynamic(() => import('@src/components/EngineSection').then(m => m.EngineSection), { ssr: false });
 const SwiperSection = dynamic(() => import('../src/components/SwiperSection').then(m => m.SwiperSection), { ssr: false });
-const ParallaxSection = dynamic(() => import('@src/components/parallex'), { ssr: false });
-const ParallaxSectionSecond = dynamic(() => import('@src/components/parallex2'), { ssr: false });
 const EngineTypesSection = dynamic(() => import('@src/components/EngineTypes').then(m => m.EngineTypesSection), { ssr: false });
 const AmbiantLight = dynamic(() => import('@src/components/ambiant'), { ssr: false });
 const VRShowroom = dynamic(() => import('@src/modules/VRShowroom'), { ssr: false });
@@ -122,39 +120,35 @@ export default function Home() {
               setIsModalOpen(false)
             }} className="text-black text-3xl cursor-pointer rounded-full w-10 h-10 bg-white absolute end-4 top-4 ">×</button>
             <div className='flex flex-col items-center  w-full'>
-              <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9103fa63-4b86-45ef-e14a-c0bba7424000/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/310ca7e9-3708-4516-35a0-d81e50342100/public' : isModalOpen == 3 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/7ce5f2db-cd28-475f-2909-5ed588c6a100/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ebfb9ad5-4957-46f6-6c96-b3cc3bdd0c00/public'} width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" loading="lazy" decoding="async" />
+              <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3a643686-eb00-416f-0630-f7c9c0603700/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d3613d09-c20f-4775-2154-faddbf3cdc00/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d3613d09-c20f-4775-2154-faddbf3cdc00/public' } width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" loading="lazy" decoding="async" />
               <div className="p-6 flex flex-col gap-3 ">
-                <div className={`text-[#333] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[20px]`}>{isModalOpen == 1 ? isArabic ? `شاشة بانورامية مدمجة` : 'Panoramic Integrated Display' : isModalOpen == 2 ? isArabic ? `شاحن هاتف لاسلكي مزدوج` : 'Dual Wireless Charger' : isModalOpen == 3 ? isArabic ? `طاولة مركزية` : 'Console Table' : isArabic ? `مفتاح تحكم بمقعد الراكب` : 'Passenger Walk-in Switch'}</div>
-                <div className={`text-[#666]  text-center ${i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'} text-sm`}
-                  style={{
-                    fontFamily: i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'
-                }}
+                <div className={`text-[#333] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[20px]`}>
+                  {isModalOpen == 1 ?
+                    <>
+                      {t('swiper.Bose0')?.split('Bose')?.[0]}
+                      <span className='font-[InterBold]'>BOSE</span>
+                      {t('swiper.Bose0')?.split('Bose')?.[1]}
+
+                    </>
+                    
+                    : isModalOpen == 2 ? t('swiper.Cooling0') : t('swiper.Center0')}
+                </div>
+                <div className={`text-[#666]  text-center ${i18n?.language == 'ar' ? 'font-[GSSMedium]' : 'font-[InterRegular]'} text-sm`}
+                 
                 >
                   {isModalOpen == 1 ?
-                    (isArabic ?
-                      `استمتع بنظام المعلومات والترفيه الأحدث مع أكبر شاشة في فئتها. كما يمكنك تحديث سيارتك بسهولة عن طريق التحديثات الهوائية (OTA).`
-                      : `Enjoy the brand's state-of-the-art infotainment system with the widest display in its class. You can also maintain your vehicle to the latest through OTA Update.`)
-                    : isModalOpen == 2 ?
-                      (isArabic ?
-                        `ابقَ في حالة تواصل وشحن دائم للأجهزة عن طريق شاحنين لاسلكيين وتوصيلات USB Type-C متعددة.`
-                        : `Keep your phone & devices charged on the go with available wireless charging trays & multiple USB Type-C chargers.`)
-                      : isModalOpen == 3 ?
-                        (isArabic ?
-                          `تحوّل الطاولة القابلة للتمدد في الكونسول سيارتك إلى مكتبٍ متنقل، حيث يمكنك فتح جزء من مسند الذراع لتكوين طاولة عريضة مناسبة للحاسوب أو المستندات ، أو حتى لتناول وجبة خفيفة.`
-                          : `An expandable console table turns the Kia Carens into a private mobile office. Unfold the upper part of the console armrest to create a wide table you can use for checking your laptop or documents—or enjoying a simple meal.`)
-                        : (isArabic ?
-                          `يمكنك تعديل وضع مقعد الراكب الأمامي للأمام أو الخلف أو تعديل الزاوية بكل سهولة من كرسي السائق أو المقاعد الخلفية، مما يعزز سهولة الدخول والخروج وراحة ركاب المقاعد الخلفية.`
-                          : `This function allows you to adjust the forward/backward position and angle of the passenger seat from the driver's seat or the rear seat to improve the convenience of getting in and out of the vehicle and living in the rear seat.`)
-                  }
-                </div>
-                {isModalOpen == 1 ?
-                  <p
                     
-                    style={{
-                      fontFamily: i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'
-                    }}
-                    className={`text-[#1a1a1a] text-center ${i18n?.language == 'ar' ? 'Font-[GSSMedium]' : 'font-[InterRegular]'} text-xs`}>({isArabic ? 'بعض المزايا قد يختلف توفرها حسب البلد' : 'Some features may vary based on the market'})</p>
-               : null}
+                    <>
+                      {t('swiper.Bose1')?.split('Bose')?.[0]}
+                      <span className='font-[InterBold]'>BOSE</span>
+                      {t('swiper.Bose1')?.split('Bose')?.[1]}
+
+                    </>
+                  
+                    
+                    : isModalOpen == 2 ? t('swiper.Cooling1') : t('swiper.Center1')}
+                </div>
+              
               </div>
             </div>
           </div>

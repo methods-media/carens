@@ -47,7 +47,7 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                         {/* First interactive point - largest circle */}
                         <motion.div
                             onClick={() => setIsModalOpen(1)}
-                            className='absolute top-1/2 left-[42%] z-[90] cursor-pointer'
+                            className='absolute top-[45%] right-[24%] z-[90] cursor-pointer'
                             whileHover={{ scale: 1.2 }}
                             animate={{
                                 scale: [1, 1.3, 1],
@@ -67,7 +67,7 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                         {/* Second interactive point */}
                         <motion.div
                             onClick={() => setIsModalOpen(2)}
-                            className='absolute top-[67%] left-[43.5%] z-[90] cursor-pointer'
+                            className='absolute top-[86%] left-[62%] z-[90] cursor-pointer'
                             whileHover={{ scale: 1.2 }}
                             animate={{
                                 scale: [1, 1.3, 1],
@@ -88,7 +88,7 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                         {/* Third interactive point */}
                         <motion.div
                             onClick={() => setIsModalOpen(3)}
-                            className='absolute top-[72%] left-[54%] z-[90] cursor-pointer'
+                            className='absolute top-[60%] left-[53%] z-[90] cursor-pointer'
                             whileHover={{ scale: 1.2 }}
                             animate={{
                                 scale: [1, 1.3, 1],
@@ -106,26 +106,6 @@ export default function AmbiantLight ({ isModalOpen, setIsModalOpen }) {
                             <div className='w-2 h-2  rounded-full absolute top-3 left-3'></div>
                         </motion.div>
 
-                        {/* Fourth interactive point */}
-                        <motion.div
-                            onClick={() => setIsModalOpen(4)}
-                            className='absolute top-[73%] left-[65%] z-[90] cursor-pointer'
-                            whileHover={{ scale: 1.2 }}
-                            animate={{
-                                scale: [1, 1.3, 1],
-                            }}
-                            transition={{
-                                duration: 1,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: 1.5
-                            }}
-                        >
-                            <div className='w-8 h-8  rounded-full border-2 border-white/40'></div>
-                            <div className='w-6 h-6  rounded-full border-2 border-white/60 absolute top-1 left-1'></div>
-                            <div className='w-4 h-4  rounded-full border-2 border-white absolute top-2 left-2'></div>
-                            <div className='w-2 h-2  rounded-full absolute top-3 left-3'></div>
-                        </motion.div>
                 </>}
             </>
 
