@@ -70,38 +70,46 @@ const isArabic=i18n?.language=='ar'
             featureTitle: isArabic ? `شاشة الرؤية المحيطة (SVM)` : 'Surround View Monitor (SVM)',
             featureDescription: isArabic ? `تعرض صور المركبة من كاميرات واسعة الزاوية لإظهار الرؤية المحيطية في أوضاع عرض مختلفة. توفر رؤية ثلاثية الأبعاد 360  درجة قابلة للتغيير.` : 'See it all, from every angle. The Surround View Monitor gives you a 360-degree bird’s-eye view of your surroundings – perfect for navigating tight trails or crowded city streets.'
         },
-//         {
-//             video: '/assets/videos/ktk-fca2.webm',
-//             featureTitle: isArabic ?`نظام مساعد لتجنب الاصطدام الأمامي  (FCA 2)`: 'Forward Collision-Avoidance Assist 2 (FCA2)',
-//             featureDescription: isArabic ?`يراقب هذا النظام محيطك ويقوم بتحذيرك في حال تحديد خطر اصطدام بمركبة أخرى أو بأحد المشاة أو راكب دراجة أمامك. يقوم نظام FCA 2 بتوقيف السيارة تلقائياً، كما يساعد في توجيه عجلة القيادة في حال قام بتحديد خطر الاصطدام بمركبة أو أحد المشاة أو راكب دراجة، بالقرب من الجهة الأمامية للسيارة.`: 'FCA 2 monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane. It also automatically assists steering when there is a risk of collision with an oncoming vehicle or a vehicle in the next lane while changing lanes, as well as with a vehicle or pedestrian on the edge of the lane.'
-//         },
-//         {
-//             video: '/assets/videos/ktk-lfa2.webm',
-//             featureTitle: isArabic ?`نظام المساعدة على اتباع المسار (LFA)`: 'Lane Following Assist 2 (LFA2)',
-//             featureDescription: isArabic ?`يستخدم هذا النظام كاميرا الرؤية الأمامية لمساعدتك على إبقاء السيارة في وسط المسار أثناء القيادة وذلك من خلال تحديد خطوط المسار أو السيارة التي أمامك.
-// `: 'LFA 2 helps center the vehicle in the lane. Steering control has been improved and a Hands-On Detection (HOD) sensor can determine whether the driver is holding the steering wheel for optimal system performance.'
-//         },
-//         {
-//             video: '/assets/videos/ktk-scc.webm',
-//             featureTitle: isArabic ?`نظام تثبيت السرعة الذكي (SCC)`: 'Smart Cruise Control (SCC)',
-//             featureDescription: isArabic ? `يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.` : 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Carens to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style.'
-//         },
-//         {
-//             video: '/assets/videos/ktk-rspa.webm',
-//             featureTitle: isArabic ?`نظام المساعدة الذكي لركن السيارة عن بعد (RSPA)`: 'Remote Smart Parking Assist (RSPA)',
-//             featureDescription: isArabic ?`يتيح لك إمكانية ركن السيارة أو إخراجها من الموقف من دون أن تضطر لركوبها وذلك باستخدام تقنية الاستشعار حيث يقوم نظام RSPA 2 بتحديد مواقف السيارات، ثم يساعدك تلقائياً في توجيه السيارة والقيادة ونقل الحركة. أما في حال استشعر وجود عائق فيعمد النظام إلى توقيف المركبة تلقائياً. ويتميز هذا النظام المحسن بقدرته على التعرف على خطوط المواقف والمساعدة في الركن الموازي بالإضافة إلى خاصية التشغيل عن بُعد المحسنة.`: `RSPA lets you park in or exit a parking spot as you stand outside the vehicle. Using sensor technology, it automatically assists with steering, accelerating, decelerating and shifting, while also automatically braking if it senses an obstacle.`
-//         },
-//         {
-//             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/ccb1515c-3eeb-4d00-8ec0-6258bff05800/public',
-//             featureTitle: isArabic ?`نظام المساعدة على تجنب الاصطدام الخلفي (RCTA)`: 'Rear Cross-Traffic Collision-Avoidance Assist',
-//             featureDescription: isArabic ?`يصدر النظام تحذيراً عند تحديد خطر الاصطدام بمركبة تقترب من اليسار أو اليمين عند الرجوع إلى الخلف كما يساعد تلقائياً في المناورة في حال تصاعد خطر الاصطدام.
-// `: `If a risk of collision with an approaching vehicle from the left or right is detected while reversing, a warning is given, and if the risk of collision increases even after the warning, the system automatically assists with braking.`
-//         },
-//         {
-//             image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/03fd8687-2076-4b77-d7a5-0d301d081600/public',
-//             featureTitle: isArabic ?`شاشة عرض النقطة العمياء (BVM)`: 'Blind-Spot View Monitor (BVM)',
-//             featureDescription: isArabic ?`عند تشغيل مفتاح إشارة الانعطاف، يتم عرض الصورة الجانبية الخلفية للاتجاه المقابل في لوحة العدادات`: 'BVM displays the rear-side image of the corresponding direction when the turn signal switch is engaged.'
-//         },
+        {
+            video: '/assets/videos/FCA.webm',
+            featureTitle: isArabic ?`نظام مساعد لتجنب الاصطدام الأمامي  (FCA)`: 'Forward Collision-Avoidance Assist (FCA)',
+            featureDescription: isArabic ?`يراقب هذا النظام محيطك ويقوم بتحذيرك في حال تحديد خطر اصطدام بمركبة أخرى أو بأحد المشاة أو راكب دراجة أمامك. يقوم نظام FCA  بتوقيف السيارة تلقائياً، كما يساعد في توجيه عجلة القيادة في حال قام بتحديد خطر الاصطدام بمركبة أو أحد المشاة أو راكب دراجة، بالقرب من الجهة الأمامية للسيارة.`: 'FCA  monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane. It also automatically assists steering when there is a risk of collision with an oncoming vehicle or a vehicle in the next lane while changing lanes, as well as with a vehicle or pedestrian on the edge of the lane.'
+        },
+        {
+            video: '/assets/videos/LKA.webm',
+            featureTitle: isArabic ?`نظام المساعدة على اتباع المسار (LKA)`: 'Lane Keep Assist  (LKA)',
+            featureDescription: isArabic ?`يستخدم هذا النظام كاميرا الرؤية الأمامية لمساعدتك على إبقاء السيارة في وسط المسار أثناء القيادة وذلك من خلال تحديد خطوط المسار أو السيارة التي أمامك.
+`: 'LKA  helps center the vehicle in the lane. Steering control has been improved and a Hands-On Detection (HOD) sensor can determine whether the driver is holding the steering wheel for optimal system performance.'
+        },
+        {
+            video: '/assets/videos/SCC.webm',
+            featureTitle: isArabic ?`نظام تثبيت السرعة الذكي (SCC)`: 'Smart Cruise Control (SCC)',
+            featureDescription: isArabic ? `يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.` : 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Carens to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style.'
+        },
+        {
+            video: '/assets/videos/Parking sensor.webm',
+            featureTitle: isArabic ?`حساس الركن`: 'Parking Sensor',
+            featureDescription: isArabic ?
+`يُساعدك حساس الاصطفاف على ركن السيارة بأمان من خلال تنبيهك عند الاقتراب من أي عائق. يعمل النظام بتقنية الاستشعار ليكشف المسافة بين سيارتك والعوائق المحيطة، مما يقلل من مخاطر الاصطدام ويسهّل عملية الاصطفاف سواء في الأماكن الضيقة أو أثناء المناورة.`                :
+`The parking sensor helps you park safely by alerting you when approaching an obstacle. Using sensor technology, it detects the distance between your vehicle and surrounding objects, reducing the risk of collisions and making parking easier in tight spaces or while maneuvering.`        },
+        {
+            image: '/assets/Saf-1.avif',
+            featureTitle: isArabic ? "6 وسائد هوائية": '6 Airbags as Standard ',
+            featureDescription: isArabic ? "حماية شاملة لجميع الركاب، مما يضمن ركوب آمن للجميع.":
+                "Comprehensive protection for all passengers, ensuring everyone rides securely."
+        },
+        {
+            image: '/assets/saf2.avif',
+            featureTitle: isArabic ? "نظام ESC, HAC, VSM, DBC, ABS, BAS" : 'ESC, HAC, VSM, DBC, ABS, BAS',
+            featureDescription: isArabic ? "ابق واثقاً في السيطرة مع أنظمة تدعم الفرملة، والانطلاق على المرتفعات، والاستقرار الديناميكي في كل رحلة."
+ : "Stay confidently in control with systems that support braking, hill starts, and dynamic stability during every drive."
+        },
+        {
+            image: '/assets/Saf-3.avif',
+            featureTitle: isArabic ? "فرامل قرصية على جميع العجلات" : 'All Wheel Disc Brakes',
+            featureDescription: isArabic ? "توقف أكثر سلاسة وأماناً، سواء في المدينة أو على الطريق السريع."
+ : "Smoother, safer stops, whether in the city or on the highway."
+        },
         
         
     ]
@@ -180,7 +188,7 @@ const isArabic=i18n?.language=='ar'
                             <div
                                 style={{
                                     backgroundImage: slides?.[id][currentSlide]?.image ? `url(${slides?.[id][currentSlide].image})` : 'null',
-                                    backgroundSize: 'cover',
+                                    backgroundSize: currentSlide==5?'contain': 'cover',
                                     backgroundPosition: 'center',
                                     backgroundRepeat: 'no-repeat'
                                 }}
@@ -203,7 +211,7 @@ const isArabic=i18n?.language=='ar'
                             </button>
                         </div>
                         : <div className='relative w-[90%] lg:w-[550px] lg:ms-4 xl:!w-[750px]'>
-                            <video src={slides?.[id]?.[currentSlide]?.video} className='w-full rounded-2xl object-cover md:w-[750px] h-[250px] lg:h-[400px] xl:!h-[600px]' muted playsInline autoPlay loop />
+                            <video src={slides?.[id]?.[currentSlide]?.video} className={`w-full rounded-2xl ${currentSlide == 1 ? ' object-fit bg-black' :' object-cover'} bg-black md:w-[750px] h-[250px] lg:h-[400px] xl:!h-[600px]`} muted playsInline autoPlay loop />
                             <button
                                 onClick={prevSlide}
                                 disabled={isAnimating}
@@ -246,10 +254,10 @@ const isArabic=i18n?.language=='ar'
                                                 {slides?.[id][currentSlide].featureTitle?.split('LED')?.[1]?.split('Star-map')?.[1]}
 
                                             </> : slides?.[id][currentSlide].featureTitle?.split('LED')?.[1]}
-                                        </> : slides?.[id][currentSlide].featureTitle?.includes('Harman Kardon') ? <>
-                                            {slides?.[id][currentSlide].featureTitle?.split('Harman Kardon')?.[0]}
-                                            <span className='font-[InterBold]'>Harman Kardon</span>
-                                            {slides?.[id][currentSlide].featureTitle?.split('Harman Kardon')?.[1]}
+                                        </> : slides?.[id][currentSlide].featureTitle?.includes('FCA') ? <>
+                                            {slides?.[id][currentSlide].featureTitle?.split('FCA')?.[0]}
+                                            <span className='font-[InterBold]'>FCA</span>
+                                            {slides?.[id][currentSlide].featureTitle?.split('FCA')?.[1]}
                                             </> : slides?.[id][currentSlide].featureTitle?.includes('26.62') ? <>
                                                 {slides?.[id][currentSlide].featureTitle?.split('26.62')?.[0]}
                                                 <span className='font-[InterBold]'>26.62</span>
@@ -297,7 +305,23 @@ const isArabic=i18n?.language=='ar'
                                                     {slides?.[id][currentSlide].featureTitle?.split('SVM')?.[0]}
                                                     <span className='font-[InterBold]'>SVM</span>
                                                     {slides?.[id][currentSlide].featureTitle?.split('SVM')?.[1]}
+                                                                                        </> : slides?.[id][currentSlide].featureTitle?.includes('LKA') ? <>
+                                                                                            {slides?.[id][currentSlide].featureTitle?.split('LKA')?.[0]}
+                                                                                            <span className='font-[InterBold]'>LKA</span>
+                                                                                            {slides?.[id][currentSlide].featureTitle?.split('LKA')?.[1]}
+                                                </> : slides?.[id][currentSlide].featureTitle?.includes('6') ? <>
+                                                    {slides?.[id][currentSlide].featureTitle?.split('6')?.[0]}
+                                                    <span className='font-[InterBold]'>6</span>
+                                                    {slides?.[id][currentSlide].featureTitle?.split('6')?.[1]}
                                                 </> :
+                                                
+                                                
+                                                                                                    slides?.[id][currentSlide].featureTitle?.includes('ESC, HAC, VSM, DBC, ABS, BAS') ? <>
+                                                                                                        {slides?.[id][currentSlide].featureTitle?.split('ESC, HAC, VSM, DBC, ABS, BAS')?.[0]}
+                                                                                                        <span className='font-[InterBold]'>ESC, HAC, VSM, DBC, ABS, BAS</span>
+                                                                                                        {slides?.[id][currentSlide].featureTitle?.split('ESC, HAC, VSM, DBC, ABS, BAS')?.[1]}
+                                                                                                    </> 
+                                                :
                                         
                                         slides?.[id][currentSlide].featureTitle}
                                 </h3>
@@ -307,7 +331,19 @@ const isArabic=i18n?.language=='ar'
                                         {slides?.[id][currentSlide].featureDescription?.split('17')?.[0]}
                                         <span className='font-[InterBold]'>17</span>
                                         {slides?.[id][currentSlide].featureDescription?.split('17')?.[1]}
-                                    </> :
+                                    </> : slides?.[id][currentSlide].featureDescription?.includes('FCA') ? <>
+                                        {slides?.[id][currentSlide].featureDescription?.split('FCA')?.[0]}
+                                        <span className='font-[InterBold]'>FCA</span>
+                                        {slides?.[id][currentSlide].featureDescription?.split('FCA')?.[1]}
+                                        </> : slides?.[id][currentSlide].featureDescription?.includes('LKA') ? <>
+                                            {slides?.[id][currentSlide].featureDescription?.split('LKA')?.[0]}
+                                            <span className='font-[InterBold]'>LKA</span>
+                                            {slides?.[id][currentSlide].featureDescription?.split('LKA')?.[1]}
+                                            </> : slides?.[id][currentSlide].featureDescription?.includes('EV5') ? <>
+                                                {slides?.[id][currentSlide].featureDescription?.split('EV5')?.[0]}
+                                                <span className='font-[InterBold]'>EV5</span>
+                                                {slides?.[id][currentSlide].featureDescription?.split('EV5')?.[1]}
+                                            </> :
                                         slides?.[id][currentSlide].featureDescription?.includes('360') ? <>
                                         {slides?.[id][currentSlide].featureDescription?.split('360')?.[0]}
                                         <span className='font-[InterBold]'>360</span>

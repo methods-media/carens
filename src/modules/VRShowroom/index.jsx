@@ -16,7 +16,7 @@ const VRShowroom = ({ showControl=false }) => {
   const startX = useRef(0);
   const autoRotateRef = useRef(null);
   const lastTimeRef = useRef(0);
-  const [currentColor, setCurrentColor] = useState(0);
+  const [currentColor, setCurrentColor] = useState(7);
   const framePositionRef = useRef(0);
   const [colorTextKey, setColorTextKey] = useState(0);
   const { t ,i18n} = useTranslation('common');
@@ -24,14 +24,14 @@ const VRShowroom = ({ showControl=false }) => {
 
 
   const COLORS = [
+    { id: 'steel', name: t('colors.steel_gray'), hex: "#565656", chip: "/8bf7623f-ab9f-4bcf-6ced-87e650d8d000/public" ,index:7},
     { id: 'white', name: t('colors.clear_white'), hex: '#FFFFFF', chip:"/97333cf4-011c-4050-53fc-3547e992cf00/public",index:0},
     { id: 'silver', name: t('colors.silver'), hex: '#939393', chip: "/ad13f2cb-eb37-400f-46ed-a1e81e575100/public" ,index:1},
     { id: 'snow', name: t('colors.snow_white_pearl'), hex: '#f6f6f6', chip: "/a87bec21-a2b6-4672-2f11-5af7e0537d00/public" ,index:2},
     { id: 'green', name: t('colors.green'), hex: "#565656", chip: "/b9087368-0b30-41a0-ea27-0f7b84968c00/public" ,index:3},
-    { id: 'gray', name: t('colors.gray'), hex: "#565656", chip:"/77d3ddcf-8158-4e11-1b18-f3e731332000/public" ,index:4},
     { id: 'blue', name: t('colors.wave_blue'), hex: '#344f7e', chip:"/91a64c4d-3b92-4718-fb43-5f0fd8b24100/public" ,index:5},
+    { id: 'gray', name: t('colors.gray'), hex: "#565656", chip:"/77d3ddcf-8158-4e11-1b18-f3e731332000/public" ,index:4},
     { id: 'black', name: t('colors.black'), hex: "#565656", chip: "/35deb35b-0ddd-416d-ac22-fadb7f476800/public" ,index:6},
-    { id: 'steel', name: t('colors.steel_gray'), hex: "#565656", chip: "/8bf7623f-ab9f-4bcf-6ced-87e650d8d000/public" ,index:7},
     
   ];
   const imageSrc = [

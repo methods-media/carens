@@ -60,15 +60,16 @@ export const EngineTypesSection = () => {
                     <p class={`z-[10000] text-4xl mt-5 lg:mt-0 lg:!text-[62px]  ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} !text-white`}>{isArabic ?`مجموعة الدفع والحركة`:`Powertrain`}</p>
 
                     <div className='flex items-start gap-5 mb-7'>
-                        {/* <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom ${isArabic ? "font-['GSSMedium']" : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(1)}
+                        <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px]   ${selectedEngine == 1 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm   btn-showRoom ${isArabic ? `font-["InterRegular"]` : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(1)}
                         >
 
-                            {isArabic?`محرك بنزين`:`Petrol Engine`}
+                            {`MPI`}
 
-                        </button> */}
-                        {/* <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px] ${selectedEngine == 0 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm  btn-showRoom ${isArabic ? "font-['GSSMedium']" : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(0)}
-                        >           {isArabic?`محرك ديزل`:`Diesel Engine`}
-                        </button> */}
+                        </button> 
+                         <button className={`text-sm md:text-[21px] bg-[#06141F] px-[27px] py-[10px] ${selectedEngine == 0 ? 'text-[#06141F]  bg-gray-200 ' : 'text-gray-200 hover:text-[#06141F]  hover:bg-gray-200 border border-gray-200 '} rounded-sm  btn-showRoom ${isArabic ? `font-["InterRegular"]` : `font-["InterRegular"]` } cursor-pointer `} onClick={() => setSelectedEngine(0)}
+                        >           
+                            {`T-GDI`}
+                        </button>
 
 
 
@@ -81,8 +82,8 @@ export const EngineTypesSection = () => {
                                 </p>
                                 <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                                    <p key={`engine-1-${animationKey}`} className={`text-xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `1.5` : '1.5' : isArabic ? `1.5` : '1.5'}</p>
-                                    <p key={`engine-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `لتر تيربو` : 'T-GDI' : isArabic ? `لتر تيربو` : 'Turbocharged'}</p>
+                                    <p key={`engine-1-${animationKey}`} className={`text-xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{'1.5'}{ isArabic?'':'L'}</p>
+                                    <p key={`engine-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `لتر ` : 'MPI' : isArabic ? `لتر تيربو` : 'T-GDI'}</p>
                                 </div>
                             </div>
 
@@ -92,7 +93,7 @@ export const EngineTypesSection = () => {
                                 </p>
                                 <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                                    <p key={`hp-1-${animationKey}`} className={`text-xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '117' : '117'}</p>
+                                    <p key={`hp-1-${animationKey}`} className={`text-xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '115' : '160'}</p>
                                     <p key={`hp-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `حصان` : 'HP' : isArabic ? `حصان` : 'HP'}</p>
                                 </div>
                             </div>
@@ -105,7 +106,7 @@ export const EngineTypesSection = () => {
                             </p>
                             <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                                <p key={`torque-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? '253' : '253'}</p>
+                                <p key={`torque-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{!selectedEngine ? '253' : '143.8'}</p>
                                 <p key={`torque-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `نيوتن/متر` : `Nm`}</p>
                             </div>
                         </div>
@@ -115,8 +116,8 @@ export const EngineTypesSection = () => {
                             </p>
                             <div className='flex items-center gap-1 h-full text-white    justify-center text-center'>
 
-                                <p key={`trans-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{isArabic ? `6` : `6-Speed'`}</p>
-                                    <p key={`trans-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? 'سرعات' : 'SBW' : isArabic ? 'سرعات' : 'SBW'}</p>
+                                    <p key={`trans-1-${animationKey}`} className={`text-2xl lg:text-[50px] !font-[InterBold] animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? `6` : `6-Speed'` : isArabic ? `7` : `7-Speed'`}</p>
+                                    <p key={`trans-2-${animationKey}`} className={`text-xl lg:text-[50px] ${isArabic ? "font-['GSSMedium']" : "!font-[InterBold]"} animate-bg-wipe1 ${isInView ? 'in-view' : ''}`}>{selectedEngine ? isArabic ? 'سرعات' : 'CVT' : isArabic ? 'سرعات' : 'DCT'}</p>
                             </div>
                         </div>
                         </div>

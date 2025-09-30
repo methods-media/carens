@@ -99,7 +99,7 @@ const ThreeSixty = ({ showControl = false }) => {
     const sensitivity = 2;
     let frameDelta = deltaX / sensitivity;
 
-    framePositionRef.current -= frameDelta;
+    framePositionRef.current += frameDelta;
     if (framePositionRef.current < 0) framePositionRef.current += FRAME_COUNT;
     if (framePositionRef.current >= FRAME_COUNT)
       framePositionRef.current -= FRAME_COUNT;
@@ -126,7 +126,7 @@ const ThreeSixty = ({ showControl = false }) => {
     const sensitivity = 2;
     let frameDelta = deltaX / sensitivity;
 
-    framePositionRef.current -= frameDelta;
+    framePositionRef.current += frameDelta;
     if (framePositionRef.current < 0) framePositionRef.current += FRAME_COUNT;
     if (framePositionRef.current >= FRAME_COUNT)
       framePositionRef.current -= FRAME_COUNT;
@@ -177,13 +177,13 @@ const ThreeSixty = ({ showControl = false }) => {
         {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل كارينز من الداخل والخارج` : `كيا كارينز تلبي جميع الأذواق` : showControl ? `Discover Kia Carens's Exterior & Interior in 360°` : 'The Carens Meets All Tastes'}
       </p>
       <div
-       
-        className={ `absolute top-0 right-0 w-full h-full flex flex-col justify-center items-center `}
+
+        className={`absolute top-0 right-0 w-full h-full flex flex-col justify-center items-center `}
 
       >
 
 
-       
+
         <div
           className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-12.5 w-full text-white text-sm z-50 flex flex-col justify-end ps-0 lg:ps-[70px] gap-2 lg:gap-4 items-center'
 
@@ -226,7 +226,7 @@ const ThreeSixty = ({ showControl = false }) => {
                 </div>
               </div>}
 
-            </div> :''
+            </div> : ''
           }
           {showControl ? <VRControls
 
@@ -250,14 +250,14 @@ const ThreeSixty = ({ showControl = false }) => {
           alignItems: 'center',
           justifyContent: 'center',
         }}
-       
-        onMouseDown={handleMouseDown }
-        onMouseMove={handleMouseMove }
-        onMouseUp={handleMouseUp }
-        onMouseLeave={handleMouseUp }
-        onTouchStart={handleTouchStart }
-        onTouchMove={handleTouchMove }
-        onTouchEnd={handleMouseUp }
+
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleMouseUp}
       >
 
         {view == 'exterior' ? <img

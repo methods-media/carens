@@ -58,31 +58,35 @@ const Banner = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className='flex items-center  justify-start lg:justify-center  gap-[10px]'>
-          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
-            <Engine />
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px] flex items-center justify-center'>
+            <img src='/assets/icons8-alloy-64.png' className='w-10 h-10'/>
           </div>
-          <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? "محرك 1.5 لتر تيربو" : '1.5L T-GDI'}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `117 حصان` : `117HP`}</p>
+          <div className='flex flex-col justify-center '>
+            <p className='text-white text-sm md:text-lg'>{t('rims12')}</p>
+            {/* <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `117 حصان` : `117HP`}</p> */}
           </div>
         </div>
        
         <div className='flex items-center  justify-start lg:justify-center gap-[10px]'>
-          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
-            <Terrain />
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px] '>
+            <img src='/assets/Sunroof.avif'/>
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? 'ناقل الحركة': "6-Speed AT" }</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `6 سرعات أوتوماتيكي` : 'Transmission'}</p>
+            <p className='text-white text-sm md:text-lg'>{t('Sunroof0') }</p>
+            {/* <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `6 سرعات أوتوماتيكي` : 'Transmission'}</p> */}
           </div>
         </div>
         <div className='flex items-center  justify-start lg:justify-center gap-[10px]'>
-          <div className='w-8 md:w-[50px] h-8 md:h-[50px]'>
-            <Treck />
+          <div className='w-8 md:w-[50px] h-8 md:h-[50px] rotate-180'>
+            
+            <img src='/assets/ADAS.avif' />
+
           </div>
           <div className='flex flex-col '>
-            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? `شاشة 26.62 أنش` : `26.62 Inch`}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `بانورامية` : 'Panoramic Screen'}</p>
+            <p className='text-white text-sm md:text-lg'>{t('adas')}</p>
+            <p className='text-white text-sm md:text-lg'>{t('adas1')}</p>
+
+            {/* <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `بانورامية` : 'Panoramic Screen'}</p> */}
           </div>
         </div>
         <div className='flex items-center  justify-start lg:justify-center  gap-1 md:gap-[10px]'>
@@ -91,7 +95,7 @@ const Banner = () => {
           </div>
           <div className='flex flex-col '>
             <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? `ضمان 5 سنوات` : '5 Years Warranty'}</p>
-            <p className='text-[#A3A8AD] text-xs md:text-sm'>{i18n?.language == 'ar' ? `أو 100 ألف كيلومتر (أيهما أقرب)` : 'Or 100,000 Km W.C.F'}</p>
+            <p className='text-white text-sm md:text-lg'>{i18n?.language == 'ar' ? `أو 100 ألف كيلومتر (أيهما أقرب)` : 'Or 100,000 Km W.C.F'}</p>
           </div>
         </div>
       </motion.div> 

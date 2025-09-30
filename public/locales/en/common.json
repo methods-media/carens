@@ -29,43 +29,47 @@
   "loading_360": "Loading 360° View...",
   "loading_images": "Loading images...",
   "sequence_complete": "Sequence Complete",
-  "kia_Carens": "Kia Carens ",
-  "push_beyond_ordinary": "For Epic Journeys",
+  "kia_Carens": "The New Kia Carens ",
+  "push_beyond_ordinary": "Where life comes together",
   "head_turning_design": "Head-turning Design",
-  "ext_desc":"Every journey makes a statement. The new Carens makes it boldly. Kia’s new design language brings together a bold stance, an aggressive front, and striking LED DRLs, ensuring that every arrival feels like a warm reunion. Because when you travel with the ones who matter, the outside should feel just as special as what’s within.",
-  "int_desc":"Stepping into the new Carens  feels like entering a space that just gets you. From the immersive Dual Panoramic Display to the sleek D-cut steering wheel and the smart simplicity of the Infotainment / Temperature Control Swap Switch, every element is designed to keep your senses in sync. Add ventilated cup holders for everyday comfort and the rich sound of the Bose speaker system and you’ve got a cabin that doesn’t just impress, it resonates.",
+  "ext_desc": "Every journey makes a statement. The new Carens makes it boldly. Kia’s new design language brings together a bold stance, an aggressive front, and striking LED DRLs, ensuring that every arrival feels like a warm reunion. Because when you travel with the ones who matter, the outside should feel just as special as what’s within.",
+  "int_desc": "Stepping into the new Carens  feels like entering a space that just gets you. From the immersive Dual Panoramic Display to the sleek D-cut steering wheel and the smart simplicity of the Infotainment / Temperature Control Swap Switch, every element is designed to keep your senses in sync. Add ventilated cup holders for everyday comfort and the rich sound of the Bose speaker system and you’ve got a cabin that doesn’t just impress, it resonates.",
   "led_headlights": "LED Star-map Headlights",
   "led_headlights_description": "The vehicle is equipped with distinctive LED cube projector headlights and star-map daytime running lights (DRLs). These provide a wide stance and a premium presence, making the Carens stand out both day and night",
   "led_rear_lamps": "LED Rear Combination Lamps",
   "led_rear_lamps_description": "Horizontally connected rear lamps wit LED lamps offering improved visibility and a modern aesthetic, complementing the car's futuristic design",
   "fastback_design": "Fastback Design",
   "fastback_description": "The Carens features a sleek fastback roofline, which not only enhances aerodynamics but also gives the car a sporty, coupe-like appearance",
+  "rims12": "17\" Alloy Wheels",
+  "Sunroof0": "Sliding Sunroof",
+  "adas": "Advanced ADAS - Blind-Spot",
+  "adas1": "and front collision Avoidance assist",
+
   "swiper": {
     "starmap0": "Front LED Star-map Headlights",
     "starmap1": "Make every arrival memorable with Star-map inspired LED headlights, offering both a distinctive signature look and enhanced illumination for family safety and style.",
     "taillamp0": "Rear LED Star-map Tail Lamps",
-    "taillamp1": "Stand out day and night with striking Star-map LED tail lamps, which not only ensure optimal visibility but also add a touch of elegance to your journeys.",  
+    "taillamp1": "Stand out day and night with striking Star-map LED tail lamps, which not only ensure optimal visibility but also add a touch of elegance to your journeys.",
     "rims0": "17-inch Crystal Cut Dual-tone Alloy Wheels",
+    "sunroof": "Sunroof",
     "rims1": "Turn heads at every corner with bold 17-inch crystal cut dual-tone alloy wheels, blending sporty allure with upscale sophistication for every adventure.",
-    "Bose0":"Bose Premium Sound System",
-    "Bose1":"Transform every drive into a concert with the immersive Bose premium sound system, delivering crisp clarity and deep bass for unforgettable family moments.",
-    "Center0":"Center Console Controls",
-    "Center1":"Take command with smartly arranged center console controls, ensuring all essential functions are within easy reach to add both convenience and luxury to each trip.",
-    "Cooling0":"Cooling Cup Holder",
-    "Cooling1":"Refresh your journeys with thoughtfully designed cooling cup holders, so every beverage stays chilled—ideal for long drives and family outings.",
-   
-   
-   
+    "Bose0": "Bose Premium Sound System",
+    "Bose1": "Transform every drive into a concert with the immersive Bose premium sound system, delivering crisp clarity and deep bass for unforgettable family moments.",
+    "Center0": "Center Console Controls",
+    "Center1": "Take command with smartly arranged center console controls, ensuring all essential functions are within easy reach to add both convenience and luxury to each trip.",
+    "Cooling0": "Cooling Cup Holder",
+    "Cooling1": "Refresh your journeys with thoughtfully designed cooling cup holders, so every beverage stays chilled—ideal for long drives and family outings.",
+
     "wirless0": "Smartphones Wireless Charger",
     "wirless1": "Stay effortlessly connected and powered with an integrated wireless charger, which keeps devices charged without the clutter of cables—perfect for busy families on the go.",
-    "Panoramic0":"Panoramic Display",
-    "Panoramic1":"Enjoy seamless connectivity and entertainment with the wide, dual panoramic display, crafted for intuitive access so everyone can easily stay in touch and engaged.",
-    "Rear0":"Rear Seat Tray Table",
-    "Rear1":"Maximize comfort and utility with the foldable rear tray tables, making snacks, activities, and relaxation more convenient for every passenger.",
-    "Roof0":"Roof Mounted Air Vents",
-    "Roof1":"Experience superior climate comfort with roof-mounted air vents that deliver cool, gentle airflow to every seat, keeping the whole family comfortable.",
-    "Sunroof0":"Sunroof",
-    "Sunroof1":"Let stories unfold beneath the open sky—the panoramic sunroof offers bright, expansive views and brings in fresh air, enriching every shared journey with a premium ambiance."
+    "Panoramic0": "Panoramic Display",
+    "Panoramic1": "Enjoy seamless connectivity and entertainment with the wide, dual panoramic display, crafted for intuitive access so everyone can easily stay in touch and engaged.",
+    "Rear0": "Rear Seat Tray Table",
+    "Rear1": "Maximize comfort and utility with the foldable rear tray tables, making snacks, activities, and relaxation more convenient for every passenger.",
+    "Roof0": "Roof Mounted Air Vents",
+    "Roof1": "Experience superior climate comfort with roof-mounted air vents that deliver cool, gentle airflow to every seat, keeping the whole family comfortable.",
+    "Sunroof0": "Sunroof",
+    "Sunroof1": "Let stories unfold beneath the open sky—the panoramic sunroof offers bright, expansive views and brings in fresh air, enriching every shared journey with a premium ambiance."
   },
 
   "tiger_nose_grille": "Signature Tiger-nose Grille",
@@ -197,8 +201,6 @@
     "silver": "Sparkling Silver",
     "green": "Pewter Olive",
     "gray": "Gravity Gray"
-
-   
   },
   "explore_more": "Explore More",
   "specTrimsSpecs": {

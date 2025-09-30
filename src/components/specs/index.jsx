@@ -16,9 +16,8 @@ const Specs = () => {
         featureCategories1,
         featureCategories2,
         featureCategories3,
-        featureCategories4,
-        featureCategories5,
     } = useSpecs()
+    console.log("openCategories", openCategories)
 
     // Handle responsive behavior
     useEffect(() => {
@@ -54,11 +53,9 @@ const Specs = () => {
 
     const trimLevels = [
         { id: 'LX', name: 'LX', features: featureCategories },
-        { id: 'EX', name: 'EX', features: featureCategories1 },
-        { id: 'EX-Top', name: 'EX-Top', features: featureCategories2 },
-        { id: 'X-Line', name: 'X-Line', features: featureCategories3 },
-        { id: 'X-Pro', name: 'X-Pro', features: featureCategories4 },
-        { id: 'X-Pro+', name: 'X-Pro+', features: featureCategories5 }
+        { id: 'LX+', name: 'LX+', features: featureCategories1 },
+        { id: 'EX', name: 'EX', features: featureCategories2 },
+        { id: 'SX', name: 'SX', features: featureCategories3 },
     ];
     const toggleCategory = (categoryKey) => {
         setOpenCategories(prev => ({
@@ -112,7 +109,7 @@ const Specs = () => {
     };
 
     const visibleTrims = getVisibleTrims();
-
+    
     const TrimCard = ({ trim, index, isEntering }) => (
         <div
             className={`bg-[#E7EBF0] rounded-[10px] p-4 md:p-4 h-full transition-all duration-300 transform`}
@@ -126,225 +123,299 @@ const Specs = () => {
                 <h3 className={`text-base md:text-lg font-medium text-start text-black mb-3 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`} dir={isArabic ? 'rtl' : 'ltr'}>{isArabic ? "مواصفات المركبة" : "Vehicle Features"}</h3>
                 <div className="space-y-0">
                     {trim?.features?.map((category, catIndex) => (
-                        <div key={category.title} className="w-full">
-                            <button
-                                onClick={() => toggleCategory(`${trim.id}${category?.title}`)}
-                                className={`w-full flex justify-between items-center p-2 md:p-3 text-xs md:text-sm font-medium  cursor-pointer transition-all duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} ${openCategories[`${trim.id}${category?.title}`]
-                                    ? 'bg-[#06141F] text-white'
-                                    : 'bg-[#7b848c] text-white '
-                                    }`}
-                            >
-                                {category.title}
-                                <span className="text-lg">
-                                    {openCategories[`${trim.id}${category?.title}`] ? '−' : '+'}
-                                </span>
-                            </button>
-                            {openCategories[`${trim.id}${category?.title}`] && (
-                                <div className="mt-2 ml-3 space-y-1" dir={isArabic?'rtl':'ltr'}>
-                                    {category.features.map((feature, featureIndex) => (
-                                        <div key={featureIndex} className={`text-xs md:text-sm flex-wrap text-gray-600 flex items-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
-                                            <span className="text-[#06141F] me-2 mt-1">•</span>
-                                            {feature?.toString()?.includes('LED MFR') ?
-                                                <>
-                                                    {feature?.split('LED MFR')?.[0]}
-                                                    <span className='font-[InterBold] mx-[2px]'>LED MFR</span>
-                                                    {feature?.split('LED MFR')?.[1]}
-                                                </> : feature?.toString()?.includes('28') ?
+                        <>
+                            {/* {trim?.id != 'LX' && catIndex == 0 ? <p className='text-black text-center w-full'>{category.features?.[0]}</p> :
+                              } */}
+                            <div key={category.title} className="w-full">
+                                <button
+                                    onClick={() => toggleCategory(`${trim.id}${category?.title}`)}
+                                    className={`w-full flex justify-between items-center p-2 md:p-3 text-xs md:text-sm font-medium  cursor-pointer transition-all duration-300 ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} ${openCategories[`${trim.id}${category?.title}`]
+                                        ? 'bg-[#06141F] text-white'
+                                        : 'bg-[#7b848c] text-white '
+                                        }`}
+                                >
+                                    {category.title}
+                                    <span className="text-lg">
+                                        {openCategories[`${trim.id}${category?.title}`] ? '−' : '+'}
+                                    </span>
+                                </button>
+                                {openCategories[`${trim.id}${category?.title}`] && (
+                                    <div className="mt-2 ml-3 space-y-1" dir={isArabic ? 'rtl' : 'ltr'}>
+                                        {category.features.map((feature, featureIndex) => (
+                                            <div key={featureIndex} className={`text-xs md:text-sm  text-gray-600 flex items-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
+                                                <span className="text-[#06141F] me-2 mt-1">•</span>
+                                                {feature?.toString()?.includes('LED (DRL)') ?
                                                     <>
-                                                        {feature?.split('28')?.[0]}
-                                                        <span className='font-[InterBold] mx-[2px]'>28</span>
-                                                        {feature?.split('28')?.[1]}
-                                                    </>
-                                                :
-                                                feature?.includes('17') ?
-                                                    <>
-                                                        <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('17')?.[0]}</span>
-                                                            <span className='font-[InterBold] mx-0.5'>17</span>
-                                                            <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('17')?.[1]}</span>
+                                                        {feature?.split('LED (DRL)')?.[0]}
+                                                        <span className='font-[InterBold] mx-[2px]'>LED (DRL)</span>
+                                                        {feature?.split('LED (DRL)')?.[1]}
+                                                    </> : feature?.toString()?.includes('28') ?
+                                                        <>
+                                                            {feature?.split('28')?.[0]}
+                                                            <span className='font-[InterBold] mx-[2px]'>28</span>
+                                                            {feature?.split('28')?.[1]}
+                                                        </>
+                                                        : feature?.toString()?.includes('16') ?
+                                                            <>
+                                                                {feature?.split('16')?.[0]}
+                                                                <span className='font-[InterBold] mx-[2px]'>16</span>
+                                                                {feature?.split('16')?.[1]}
+                                                            </> : feature?.toString()?.includes('50:50') ?
+                                                                <>
+                                                                    {feature?.split('50:50')?.[0]}
+                                                                    <span className='font-[InterBold] mx-[2px]'>50:50</span>
+                                                                    {feature?.split('50:50')?.[1]}
+                                                                </>:
+                                                            feature?.toString()?.includes('4.2') ?
+                                                                <>
+                                                                    {feature?.split('4.2')?.[0]}
+                                                                    <span className='font-[InterBold] mx-[2px]'>4.2</span>
+                                                                    {feature?.split('4.2')?.[1]?.split('8')?.[0]}
+                                                                    <span className='font-[InterBold] mx-[2px]'>8</span>
+                                                                    {feature?.split('4.2')?.[1]?.split('8')?.[1]}
 
-                                                        {feature?.split('ABS')?.[1]}
-                                                        </> :
-                                                        feature?.includes('ABS') ?
+
+                                                                </>:
+                                                        feature?.includes('17') ?
                                                             <>
-                                                                <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('ABS')?.[0]}</span>
-                                                                <span className='font-[InterBold] mx-0.5'>ABS</span>
+                                                                <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('17')?.[0]}</span>
+                                                                <span className='font-[InterBold] mx-0.5'>17</span>
+                                                                <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('17')?.[1]}</span>
+
                                                                 {feature?.split('ABS')?.[1]}
-                                                            </> : feature?.includes('18') ?
-                                                        <>
-                                                            {feature?.split('18')?.[0]}
-                                                            <span className='font-[InterBold] mx-0.5'>18</span>
-                                                            {feature?.split('18')?.[1]}
-                                                        </>
-                                                                : feature?.includes('ESC') ?
+                                                            </> :
+                                                            feature?.includes('ABS') ?
+                                                                <>
+                                                                    <span className='overflow-hidden text-nowrap text-ellipsis'>{feature?.split('ABS')?.[0]}</span>
+                                                                    <span className='font-[InterBold] mx-0.5'>ABS</span>
+                                                                    {feature?.split('ABS')?.[1]}
+                                                                </> : feature?.includes('18') ?
                                                                     <>
-                                                                        {feature?.split('ESC')?.[0]}
-                                                                        <span className='font-[InterBold] mx-0.5'>ESC</span>
-                                                                        {feature?.split('ESC')?.[1]}
+                                                                        {feature?.split('18')?.[0]}
+                                                                        <span className='font-[InterBold] mx-0.5'>18</span>
+                                                                        {feature?.split('18')?.[1]}
                                                                     </>
-                                                                    : feature?.includes('DBC') ?
+                                                                    : feature?.includes('ESC') ?
                                                                         <>
-                                                                            {feature?.split('DBC')?.[0]}
-                                                                            <span className='font-[InterBold] mx-0.5'>DBC</span>
-                                                                            {feature?.split('DBC')?.[1]}
+                                                                            {feature?.split('ESC')?.[0]}
+                                                                            <span className='font-[InterBold] mx-0.5'>ESC</span>
+                                                                            {feature?.split('ESC')?.[1]}
                                                                         </>
-                                                                        : feature?.includes('HAC') ?
+                                                                        : feature?.includes('DBC') ?
                                                                             <>
-                                                                                {feature?.split('HAC')?.[0]}
-                                                                                <span className='font-[InterBold] mx-0.5'>HAC</span>
-                                                                                {feature?.split('HAC')?.[1]}
+                                                                                {feature?.split('DBC')?.[0]}
+                                                                                <span className='font-[InterBold] mx-0.5'>DBC</span>
+                                                                                {feature?.split('DBC')?.[1]}
                                                                             </>
-                                                                            : feature?.includes('TSA') ?
+                                                                            : feature?.includes('HAC') ?
                                                                                 <>
-                                                                                    {feature?.split('TSA')?.[0]}
-                                                                                    <span className='font-[InterBold] mx-0.5'>TSA</span>
-                                                                                    {feature?.split('TSA')?.[1]}
+                                                                                    {feature?.split('HAC')?.[0]}
+                                                                                    <span className='font-[InterBold] mx-0.5'>HAC</span>
+                                                                                    {feature?.split('HAC')?.[1]}
                                                                                 </>
-                                                                                :
-                                                        feature?.includes('X-TREK') ?
-                                                            <>
-                                                                {feature?.split('X-TREK')?.[0]}
-                                                                <span className='font-[InterBold] mx-0.5'>X-TREK</span>
-                                                                {feature?.split('X-TREK')?.[1]}
-                                                            </>:
-                                                        feature?.includes('2.0') ?
-                                                            <>
-                                                                {feature?.split('2.0')?.[0]}
-                                                                <span className='font-[InterBold] mx-0.5'>2.0</span>
-                                                                {feature?.split('2.0')?.[1]}
-                                                            </> : feature?.includes('ITBC') ?
-                                                                <>
-                                                                    {feature?.split('ITBC')?.[0]}
-                                                                    <span className='font-[InterBold] mx-0.5'>ITBC</span>
-                                                                    {feature?.split('ITBC')?.[1]?.includes('ctr') ? <>
-                                                                        {feature?.split('ITBC')?.[1]?.split('ctr')?.[0]}
-                                                                        <span className='font-[InterBold]'>ctr</span>
-                                                                        {feature?.split('ITBC')?.[1]?.split('ctr')?.[1]}
-                                                                    </> : feature?.split('ITBC')?.[1]}
-                                                                </> :
-                                                        feature?.includes('LED') ?
-                                                        <>
-                                                            {feature?.split('LED')?.[0]}
-                                                            <span className='font-[InterBold] mx-[2px]'>LED</span>
-                                                                                                    {feature?.split('LED')?.[1]?.includes('MFR') ?
-                                                                                                        <>
-                                                                                                            {feature?.split('LED')?.[1]?.split('MFR')?.[0]}
-                                                                                                            <span className='font-[InterBold]'>MFR</span>
-                                                                                                            {feature?.split('LED')?.[1]?.split('MFR')?.[1]}
-                                                                                                        
-                                                                                                        </>
-                                                                                                    
-                                                                                                    : feature?.split('LED')?.[1]}
-                                                        </>
-                                                            :
-                                                            feature?.includes('Harman / Kardon') ?
-                                                                <>
-                                                                    {feature?.split('Harman / Kardon')?.[0]}
-                                                                    <span className='font-[InterBold] mx-[2px]'>Harman / Kardon</span>
-                                                                    {feature?.split('Harman / Kardon')?.[1]}
-                                                                </>
-                                                                :
-                                                        
-                                                        feature?.includes('12') ?
-                                                            <>
-                                                                {feature?.split('12')?.[0]}
-                                                                <span className='font-[InterBold] mx-0.5'>12</span>
-                                                                {feature?.split('12')?.[1]}
-                                                            </>
-                                                            : feature?.includes('1.5') ?
-                                                                <>
-                                                                    {feature?.split('1.5')?.[0]}
-                                                                    <span className='font-[InterBold] mx-0.5'>1.5</span>
-                                                                    {feature?.split('1.5')?.[1]}
-                                                                </>
-                                                                : feature?.includes('onee') ?
-                                                                    <>
-                                                                        {feature?.split('onee')?.[0]}
-                                                                        <span className='font-[InterBold] mx-0.5'>1</span>
-                                                                        {feature?.split('onee')?.[1]}
-                                                                    </>:
-                                                            
-                                            
-                                                                                            feature?.includes(`fours`) ?
-                                                                <>
-                                                                                                    {feature?.split(`fours`)?.[0]}
-                                                                                                    <span className='font-[InterBold] mx-0.5'>4</span>
-                                                                                                    {feature?.split(`fours`)?.[1]}
-                                                                </>
-                                            :
-                                            feature?.includes('twlevee') ?
-                                            <>
-                                                {feature?.split('twlevee')?.[0]}
-                                                <span className='font-[InterBold] mx-0.5'>12.3</span>
-                                                                        {feature?.split('twlevee')?.[1]?.includes('DAB') ?
-                                                                            <>
-                                                                                {feature?.split('twlevee')?.[1]?.split('DAB')[0]}
-                                                                                <span className='font-[InterBold] '>DAB</span>
-                                                                                {feature?.split('twlevee')?.[1]?.split('DAB')[1]}
-                                                                            </>
-                                                                        : feature?.split('twlevee')?.[1]}
-                                            </>
-                                                                    : feature?.includes('USB') ?
-                                                                        <>
-                                                                            {feature?.split('USB')?.[0]}
-                                                                            <span className='font-[InterBold] mx-0.5'>USB</span>
-                                                                            {feature?.split('USB')?.[1]}
-                                                                        </>
-                                                                        :
-                                                                feature?.includes('6') ?
-                                                                    <>
-                                                                        {feature?.split('6')?.[0]}
-                                                                        <span className='font-[InterBold] mx-0.5'>6</span>
-                                                                        {feature?.split('6')?.[1]}
-                                                                    </>
-                                                                    :
-                                                                    feature?.includes('twoo') ?
-                                                                        <>
-                                                                            {feature?.split('twoo')?.[0]}
-                                                                            <span className='font-[InterBold]'>2</span>
-                                                                            {feature?.split('twoo')?.[1]}
-                                                                        </>
-                                                                        :
-                                                                        feature?.includes('xl1') ?
-                                                                            <>
-                                                                                {feature?.split('xl1')?.[0]}
-                                                                                <span className='font-[InterBold]'>1</span>
-                                                                                {feature?.split('xl1')?.[1]}
-                                                                            </>
-                                                                            :
-                                                                    feature?.includes('AT') ?
-                                                                        <>
-                                                                            {feature?.split('AT')?.[0]}
-                                                                            <span className='font-[InterBold] mx-[2px]'>AT</span>
-                                                                            {feature?.split('AT')?.[1]}
-                                                                        </>
-                                                                        : feature?.includes("ABS + ESC + DBC + HAC + TSA") ?
-                                                                            <>
-                                                                                {feature?.split("ABS + ESC + DBC + HAC + TSA")?.[0]}
-                                                                                <span className='font-[InterBold] mx-0.5'>ABS + ESC + DBC + HAC + TSA</span>
-                                                                                {feature?.split("ABS + ESC + DBC + HAC + TSA")?.[1]}
-                                                                            </>
-                                                                            :
-                                                                            feature?.includes("xx") ?
-                                                                                <>
-                                                                                    {feature?.split("xx")?.[0]}
-                                                                                    <span className='font-[InterBold] mx-0.5'>60:40</span>
-                                                                                    {feature?.split("xx")?.[1]}
-                                                                                </>
-                                                                                : feature?.includes("220") ?
+                                                                                : feature?.includes('TSA') ?
                                                                                     <>
-                                                                                        {feature?.split("220")?.[0]}
-                                                                                        <span className='font-[InterBold] mx-0.25'>220</span>
-                                                                                        {feature?.split("220")?.[1]}
+                                                                                        {feature?.split('TSA')?.[0]}
+                                                                                        <span className='font-[InterBold] mx-0.5'>TSA</span>
+                                                                                        {feature?.split('TSA')?.[1]}
                                                                                     </>
                                                                                     :
-                                                        
-                                                        
-                                                        feature}
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                                                                                    feature?.includes('X-TREK') ?
+                                                                                        <>
+                                                                                            {feature?.split('X-TREK')?.[0]}
+                                                                                            <span className='font-[InterBold] mx-0.5'>X-TREK</span>
+                                                                                            {feature?.split('X-TREK')?.[1]}
+                                                                                        </> :
+                                                                                        feature?.includes('2.0') ?
+                                                                                            <>
+                                                                                                {feature?.split('2.0')?.[0]}
+                                                                                                <span className='font-[InterBold] mx-0.5'>2.0</span>
+                                                                                                {feature?.split('2.0')?.[1]}
+                                                                                            </> : feature?.includes('ITBC') ?
+                                                                                                <>
+                                                                                                    {feature?.split('ITBC')?.[0]}
+                                                                                                    <span className='font-[InterBold] mx-0.5'>ITBC</span>
+                                                                                                    {feature?.split('ITBC')?.[1]?.includes('ctr') ? <>
+                                                                                                        {feature?.split('ITBC')?.[1]?.split('ctr')?.[0]}
+                                                                                                        <span className='font-[InterBold]'>ctr</span>
+                                                                                                        {feature?.split('ITBC')?.[1]?.split('ctr')?.[1]}
+                                                                                                    </> : feature?.split('ITBC')?.[1]}
+                                                                                                </> :
+                                                                                                feature?.includes('LED') ?
+                                                                                                    <>
+                                                                                                        {feature?.split('LED')?.[0]}
+                                                                                                        <span className='font-[InterBold] mx-[2px]'>LED</span>
+                                                                                                        {feature?.split('LED')?.[1]?.includes('MFR') ?
+                                                                                                            <>
+                                                                                                                {feature?.split('LED')?.[1]?.split('MFR')?.[0]}
+                                                                                                                <span className='font-[InterBold]'>MFR</span>
+                                                                                                                {feature?.split('LED')?.[1]?.split('MFR')?.[1]}
+
+                                                                                                            </>
+
+                                                                                                            : feature?.split('LED')?.[1]}
+                                                                                                    </>
+                                                                                                    :
+                                                                                                    feature?.includes('Harman / Kardon') ?
+                                                                                                        <>
+                                                                                                            {feature?.split('Harman / Kardon')?.[0]}
+                                                                                                            <span className='font-[InterBold] mx-[2px]'>Harman / Kardon</span>
+                                                                                                            {feature?.split('Harman / Kardon')?.[1]}
+                                                                                                        </>
+                                                                                                        :
+
+                                                                                                        feature?.includes('12') ?
+                                                                                                            <>
+                                                                                                                {feature?.split('12')?.[0]}
+                                                                                                                <span className='font-[InterBold] mx-0.5'>12</span>
+                                                                                                                {feature?.split('12')?.[1]}
+                                                                                                            </>
+                                                                                                            : feature?.includes('1.5') ?
+                                                                                                                <>
+                                                                                                                    {feature?.split('1.5')?.[0]}
+                                                                                                                    <span className='font-[InterBold] mx-0.5'>1.5</span>
+                                                                                                                    {feature?.split('1.5')?.[1]}
+                                                                                                                </>
+                                                                                                                : feature?.includes('onee') ?
+                                                                                                                    <>
+                                                                                                                        {feature?.split('onee')?.[0]}
+                                                                                                                        <span className='font-[InterBold] mx-0.5'>1</span>
+                                                                                                                        {feature?.split('onee')?.[1]}
+                                                                                                                    </> :
+
+
+                                                                                                                    feature?.includes(`fours`) ?
+                                                                                                                        <>
+                                                                                                                            {feature?.split(`fours`)?.[0]}
+                                                                                                                            <span className='font-[InterBold] mx-0.5'>4</span>
+                                                                                                                            {feature?.split(`fours`)?.[1]}
+                                                                                                                        </>
+                                                                                                                        :
+                                                                                                                        feature?.includes('twlevee') ?
+                                                                                                                            <>
+                                                                                                                                {feature?.split('twlevee')?.[0]}
+                                                                                                                                <span className='font-[InterBold] mx-0.5'>12.3</span>
+                                                                                                                                {feature?.split('twlevee')?.[1]?.includes('DAB') ?
+                                                                                                                                    <>
+                                                                                                                                        {feature?.split('twlevee')?.[1]?.split('DAB')[0]}
+                                                                                                                                        <span className='font-[InterBold] '>DAB</span>
+                                                                                                                                        {feature?.split('twlevee')?.[1]?.split('DAB')[1]}
+                                                                                                                                    </>
+                                                                                                                                    : feature?.split('twlevee')?.[1]}
+                                                                                                                            </>
+                                                                                                                            : feature?.includes('USB') ?
+                                                                                                                                <>
+                                                                                                                                    {feature?.split('USB')?.[0]}
+                                                                                                                                    <span className='font-[InterBold] mx-0.5'>USB</span>
+                                                                                                                                    {feature?.split('USB')?.[1]}
+                                                                                                                                </>
+                                                                                                                                            : feature?.includes('FR MTC') ?
+                                                                                                                                                <>
+                                                                                                                                                    {feature?.split('FR MTC')?.[0]}
+                                                                                                                                                    <span className='font-[InterBold] mx-0.5'>FR MTC</span>
+                                                                                                                                                    {feature?.split('FR MTC')?.[1]}
+                                                                                                                                                </> : feature?.includes('RR MTC') ?
+                                                                                                                                                    <>
+                                                                                                                                                        {feature?.split('RR MTC')?.[0]}
+                                                                                                                                                        <span className='font-[InterBold] mx-0.5'>RR MTC</span>
+                                                                                                                                                        {feature?.split('RR MTC')?.[1]}
+                                                                                                                                                    </> : feature?.includes('BCA') ?
+                                                                                                                                                        <>
+                                                                                                                                                            {feature?.split('BCA')?.[0]}
+                                                                                                                                                            <span className='font-[InterBold] mx-0.5'>BCA</span>
+                                                                                                                                                            {feature?.split('BCA')?.[1]}
+                                                                                                                                                        </> : feature?.includes('Bose') ?
+                                                                                                                                                            <>
+                                                                                                                                                                {feature?.split('Bose')?.[0]}
+                                                                                                                                                                <span className='font-[InterBold] mx-0.5'>BOSE</span>
+                                                                                                                                                                {feature?.split('Bose')?.[1]}
+                                                                                                                                                            </>:
+                                                                                                                                                    feature?.includes('lxsx') ?
+                                                                                                                                                        <>
+                                                                                                                                                            {feature?.split('lxsx')?.[0]}
+                                                                                                                                                            <span className='font-[InterBold] mx-0.5'>FCA1.5 + LKA + LFA + SCC</span>
+                                                                                                                                                            {feature?.split('lxsx')?.[1]}
+                                                                                                                                                        </> :
+
+
+                                                                                                                                                    
+                                                                                                                                feature?.includes('6') ?
+                                                                                                                                    <>
+                                                                                                                                        {feature?.split('6')?.[0]}
+                                                                                                                                        <span className='font-[InterBold] mx-0.5'>6</span>
+                                                                                                                                        {feature?.split('6')?.[1]}
+                                                                                                                                    </>
+                                                                                                                                    :
+                                                                                                                                    feature?.includes('twoo') ?
+                                                                                                                                        <>
+                                                                                                                                            {feature?.split('twoo')?.[0]}
+                                                                                                                                            <span className='font-[InterBold]'>2</span>
+                                                                                                                                            {feature?.split('twoo')?.[1]}
+                                                                                                                                        </>
+                                                                                                                                        :
+                                                                                                                                        feature?.includes('xl1') ?
+                                                                                                                                            <>
+                                                                                                                                                {feature?.split('xl1')?.[0]}
+                                                                                                                                                <span className='font-[InterBold]'>1</span>
+                                                                                                                                                {feature?.split('xl1')?.[1]}
+                                                                                                                                            </>
+                                                                                                                                            :
+                                                                                                                                            feature?.includes('AT') ?
+                                                                                                                                                <>
+                                                                                                                                                    {feature?.split('AT')?.[0]}
+                                                                                                                                                    <span className='font-[InterBold] mx-[2px]'>AT</span>
+                                                                                                                                                    {feature?.split('AT')?.[1]}
+                                                                                                                                                </>
+                                                                                                                                                            : feature?.includes("EXBDC") ?
+                                                                                                                                                    <>
+                                                                                                                                                                    {feature?.split("EXBDC")?.[0]}
+                                                                                                                                                        <span className='font-[InterBold] mx-0.5'>ABS + ESC + DBC + HAC</span>
+                                                                                                                                                                    {feature?.split("EXBDC")?.[1]}
+                                                                                                                                                    </>
+                                                                                                                                                                : feature?.includes("RVM") ?
+                                                                                                                                                                    <>
+                                                                                                                                                                        {feature?.split("RVM")?.[0]}
+                                                                                                                                                                        <span className='font-[InterBold] mx-0.5'>RVM</span>
+                                                                                                                                                                        {feature?.split("RVM")?.[1]}
+                                                                                                                                                                    </> : feature?.includes("TPMS") ?
+                                                                                                                                                                        <>
+                                                                                                                                                                            {feature?.split("TPMS")?.[0]}
+                                                                                                                                                                            <span className='font-[InterBold] mx-0.5'>TPMS</span>
+                                                                                                                                                                            {feature?.split("TPMS")?.[1]}
+                                                                                                                                                                        </> : feature?.includes("ORVV") ?
+                                                                                                                                                                            <>
+                                                                                                                                                                                {feature?.split("ORVV")?.[0]}
+                                                                                                                                                                                <span className='font-[InterBold] mx-0.5'>ORVM</span>
+                                                                                                                                                                                {feature?.split("ORVV")?.[1]}
+                                                                                                                                                                            </> : feature?.includes("EPB") ?
+                                                                                                                                                                                <>
+                                                                                                                                                                                    {feature?.split("EPB")?.[0]}
+                                                                                                                                                                                    <span className='font-[InterBold] mx-0.5'>EPB</span>
+                                                                                                                                                                                    {feature?.split("EPB")?.[1]}
+                                                                                                                                                                                </>:
+                                                                                                                                                    feature?.includes("xx") ?
+                                                                                                                                                        <>
+                                                                                                                                                            {feature?.split("xx")?.[0]}
+                                                                                                                                                            <span className='font-[InterBold] mx-0.5'>60:40</span>
+                                                                                                                                                            {feature?.split("xx")?.[1]}
+                                                                                                                                                        </>
+                                                                                                                                                        : feature?.includes("220") ?
+                                                                                                                                                            <>
+                                                                                                                                                                {feature?.split("220")?.[0]}
+                                                                                                                                                                <span className='font-[InterBold] mx-0.25'>220</span>
+                                                                                                                                                                {feature?.split("220")?.[1]}
+                                                                                                                                                            </>
+                                                                                                                                                            :
+
+
+                                                                                                                                                            feature}
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                          
+                        </>
                     ))}
                 </div>
             </div>
