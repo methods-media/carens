@@ -425,7 +425,7 @@ const Specs = () => {
     );
 
     return (
-        <section className="min-h-screen bg-white w-full relative overflow-hidden">
+        <section className="min-h-[70vh] lg:min-h-screen bg-white w-full relative overflow-hidden">
             <div className='max-w-[1420px] mx-auto px-0 lg:px-2 md:px-4 py-4 md:py-8'>
                 {/* Header Section */}
                 <div className="text-start mb-8 px-4 md:px-0">

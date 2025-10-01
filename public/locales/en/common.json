@@ -42,8 +42,8 @@
   "fastback_description": "The Carens features a sleek fastback roofline, which not only enhances aerodynamics but also gives the car a sporty, coupe-like appearance",
   "rims12": "17\" Alloy Wheels",
   "Sunroof0": "Sliding Sunroof",
-  "adas": "Advanced ADAS - Blind-Spot",
-  "adas1": "and front collision Avoidance assist",
+  "adas": "Advanced ADAS",
+  "adas1": "BCA and FCA",
 
   "swiper": {
     "starmap0": "Front LED Star-map Headlights",
@@ -64,6 +64,7 @@
     "wirless1": "Stay effortlessly connected and powered with an integrated wireless charger, which keeps devices charged without the clutter of cables—perfect for busy families on the go.",
     "Panoramic0": "Panoramic Display",
     "Panoramic1": "Enjoy seamless connectivity and entertainment with the wide, dual panoramic display, crafted for intuitive access so everyone can easily stay in touch and engaged.",
+    "Panoramic2":"Specifications may vary by country.",
     "Rear0": "Rear Seat Tray Table",
     "Rear1": "Maximize comfort and utility with the foldable rear tray tables, making snacks, activities, and relaxation more convenient for every passenger.",
     "Roof0": "Roof Mounted Air Vents",

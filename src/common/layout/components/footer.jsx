@@ -14,7 +14,7 @@ export default function Footer ({ removeMedia }) {
                         <div className={`${locale == 'ar' ? 'min-h-[8vh] lg:min-h-[25vh]' : 'min-h-[8vh] lg:min-h-[40vh]'}  footer-img-text lg:mt-0   flex w-full flex-col justify-center `}
                  dir="ltr" >
                             <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-between   h-[40vh]">
-                                <div className={`w-full px-12 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
+                                <div className={`w-full px-6 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
                                     <p className={`text-xl lg:text-[40px] text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>{isArabic ? `متعة الحركة` :`The Thrill of Moving`}</p>
                                     <p dir={locale=='ar'?'rtl':'ltr'} className={`text-sm lg:text-lg text-black text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
                                         {isArabic ? `مع كل منعطف وكل امتداد للطريق، تجعل كارينز الجديدة رحلاتك اليومية تجربة تستحق الترقب.`: <>

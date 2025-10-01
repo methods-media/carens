@@ -162,144 +162,7 @@ const ScrollSequence = ({ id, imagesUrl, totalFrames, startTextFrame2, startText
         opacity: isVisible ? 1 : 0.99,
       }}
     >
-      <AnimatePresence>
-        {showText && (
-          <motion.div
-            className='absolute bottom-[10%] w-full left-0 text-white text-2xl z-[300] flex items-center justify-center flex-col gap-2'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-          >
-            <div className='w-full px-2 md:px-0 md:w-[50%] sequenceTextID' > 
-              <p id='sequenceText' className={`text-center text-lg md:text-[28px] leading-[25px] mb-1 ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>{
-                text?.includes('LED') ? <>
-                  {text.split('LED')[0]}
-                  <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>LED</span>
-                  {text.split('LED')[1]}
-                </> : text?.includes('29.9') ? <>
-                    {text.split('29.9')[0]}
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>29.9</span>
-                    {text.split('29.9')[1]}
-                  </> : (text?.includes('D') && locale=='ar') ? <>
-                    {text.split('D')[0]}
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>D</span>
-                    {text.split('D')[1]}
-                    </> : text?.includes('8') ? <>
-                      {text.split('8')[0]}
-                      <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>8</span>
-                      {text.split('8')[1]}
-                    </> :text
-                
-                }</p>
-              <p id='sequenceDesc' className={`text-center text-sm md:text-base leading-[25px]   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-                {description?.includes('LED') ?
-                <>
-                  {description.split('LED')[0]}
-                  <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>LED</span>
-                    {description.split('LED')[1]?.includes('DRLs') ?
-                      <>
-                    {description.split('LED')[1]?.split('DRLs')[0]}
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>DRLs</span>
-                        {description.split('LED')[1]?.split('DRLs')[1]?.split('K4')[0]}
-                        {description.split('LED')[1]?.split('DRLs')[1]?.includes('K4') ?
-                          <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>K4</span>
-                        : null}
-                    {description.split('LED')[1]?.split('DRLs')[1]?.split('K4')[1]}
 
-                  
-                  </> : <>
-                    {(description.split('LED')[1])?.split('K4')[0]}
-                        {(description.split('LED')[1])?.includes('K4') ?
-                          <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>K4</span>
-                        : null}
-                    {(description.split('LED')[1])?.split('K4')[1]}
-                  </>}
-                 
-
-              
-                </> 
-                : description?.includes('K4') ? <>
-                  {(description)?.split('K4')[0]}
-                  <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>K4</span>
-                  {(description)?.split('K4')[1]}
-                </> :description}</p>
-            </div>
-          </motion.div>
-        )}
-        {showText2 && (
-          <motion.div
-            className='absolute bottom-[10%] w-full left-0 text-white text-2xl z-[300] flex items-center justify-center flex-col gap-2'
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-          >
-            <div className='w-full px-2 md:px-0 md:w-[50%]  sequenceTextID'>
-              <p id='sequenceText2' className={`text-center text-lg md:text-[28px] leading-[25px] mb-1 ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>{
-                text2?.includes('LED') ? <>
-                  {text2.split('LED')[0]}
-                  <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>LED</span>
-                  {text2.split('LED')[1]}
-                </> : text2?.includes('29.9') ? <>
-                  {text2.split('29.9')[0]}
-                  <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>29.9</span>
-                  {text2.split('29.9')[1]}
-                </> : (text2?.includes('D') && locale == 'ar') ? <>
-                  {text2.split('D')[0]}
-                  <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>D</span>
-                  {text2.split('D')[1]}
-                </> : text2?.includes('8') ? <>
-                  {text2.split('8')[0]}
-                  <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>8</span>
-                  {text2.split('8')[1]}
-                </> : text2
-
-              }</p>
-              <p id='sequenceDesc2' className={`text-center text-sm md:text-base leading-[25px]  ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-                {description2?.includes('LED') ?
-                <>
-                  {description2.split('LED')[0]}
-                  {description2?.includes('LED')
-                    ?
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>LED</span> : null}
-                  {description2.split('LED')[1]?.includes('DRLs') ? <>
-                    {description2.split('LED')[1]?.split('DRLs')[0]}
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>DRLs</span>
-                    {description2.split('LED')[1]?.split('DRLs')[1]?.split('K4')[0]}
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>K4</span>
-                    {description2.split('LED')[1]?.split('DRLs')[1]?.split('K4')[1]}
-
-
-                  </> : <>
-                    {(description2.split('LED')[1])?.split('K4')[0]}
-                      {(description2.split('LED')[1])?.includes('K4') ?
-                        <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>K4</span>
-                        : null}
-                      {(description2.split('LED')[1])?.split('K4')[1]}
-                  </>}
-
-
-
-                </>
-                : description2?.includes('K4') ? <>
-                  {(description2)?.split('K4')[0]}
-                  {(description2.split('LED')[1])?.includes('K4') ?
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>K4</span>
-                    : null}  
-                  {(description2)?.split('K4')[1]}
-                </> : description2?.includes("K4") ?
-                    <>
-                    {description2?.split('K4')[0]}
-                    <span style={{ fontFamily: 'InterBold', fontWeight: 700 }}>K4</span>
-                    {description2?.split('K4')[1]}
-                    </>
-                
-                : description2}</p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
       <canvas
         ref={canvasRef}
         id={id}
@@ -309,6 +172,7 @@ const ScrollSequence = ({ id, imagesUrl, totalFrames, startTextFrame2, startText
           backfaceVisibility: 'hidden',
           WebkitBackfaceVisibility: 'hidden',
           willChange: 'transform',
+          objectPosition: id == 'canvas5' ? 'center bottom' : '',
         }}
       />
       {isLoading && (

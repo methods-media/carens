@@ -69,7 +69,7 @@ export default function Home() {
       <Interior/>
       <div className="relative"  style={{ zIndex: 1000 }}>
         <ScrollSequence
-          id="canvas4"
+          id="canvas5"
           imagesUrl={interior}
           totalFrames={interior?.length}
          
@@ -85,7 +85,7 @@ export default function Home() {
       <div className="content22 w-screen h-[50vh] lg:h-screen relative"
         id='safety'
         >
-        <video src='/assets/videos/kia-carens-bca.webm'
+        <video src='/assets/videos/stcSaftey.webm'
           autoPlay
           muted
           loop
@@ -113,14 +113,23 @@ export default function Home() {
       <Dimensions />
       <Specs/>
       {isModalOpen ?
-        <div className='fixed w-screen h-screen bg-black/90 z-[10000] flex flex-col items-center justify-center  left-0 top-0'>
-          <div className="bg-white rounded-xl flex flex-col  items-end w-[90%] lg:w-[650px]  relative" >
+        <div
+          className='fixed w-screen h-screen bg-black/90 z-[10000] flex flex-col items-center justify-center  left-0 top-0'
+          onClick={() => {
+            document.body.style.overflow = 'auto'
+            setIsModalOpen(false)
+          }}
+        >
+          <div
+            className="bg-white rounded-xl flex flex-col  items-end w-[90%] lg:w-[650px]  relative"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button onClick={() => {
               document.body.style.overflow = 'auto'
               setIsModalOpen(false)
             }} className="text-black text-3xl cursor-pointer rounded-full w-10 h-10 bg-white absolute end-4 top-4 ">×</button>
             <div className='flex flex-col items-center  w-full'>
-              <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3a643686-eb00-416f-0630-f7c9c0603700/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d3613d09-c20f-4775-2154-faddbf3cdc00/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d3613d09-c20f-4775-2154-faddbf3cdc00/public' } width={'100%'} height={'70%'} alt="Analytics Overview" className="rounded-t-xl" loading="lazy" decoding="async" />
+              <img src={isModalOpen == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/3a643686-eb00-416f-0630-f7c9c0603700/public' : isModalOpen == 2 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/4cc0b2b5-02d8-4de1-ec66-18e949218a00/public' : 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/d3613d09-c20f-4775-2154-faddbf3cdc00/public'} width={'100%'} height={'450px'} alt="Analytics Overview" className="md:h-[450px] rounded-t-xl" loading="lazy" decoding="async" />
               <div className="p-6 flex flex-col gap-3 ">
                 <div className={`text-[#333] text-center ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'} text-[20px]`}>
                   {isModalOpen == 1 ?

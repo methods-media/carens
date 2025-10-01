@@ -51,7 +51,7 @@ export const EngineTypesSection = () => {
     }, [selectedEngine, isInView])
 
     return (
-        <div ref={sectionRef} className='w-screen min-h-auto lg:min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
+        <div ref={sectionRef} id="performance" className='w-screen min-h-auto lg:min-h-[150vh] bg-[#06141F] min-w-full 2xl:min-w-[1400px]  flex flex-col items-center justify-start '>
            
 
             <div className='w-full  min-h-screen flex-col lg:flex-row flex items-center  justify-center  gap-6 lg:gap-20 '>
@@ -127,7 +127,7 @@ export const EngineTypesSection = () => {
                 <div className='py-0 lg:py-10 pt-4 lg:pt-20 flex-1 flex justify-start'>
 
                     <img
-                        src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/9db0c891-9dcd-4c4b-762a-df3cf86d8900/semi' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/0663c68e-5b72-427a-82b7-824b1907dd00/semi'}
+                        src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/258387bf-922e-4e47-4efa-3f030da78500/public' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/87c863d7-784f-4d15-21c0-47f38c8d5c00/public'}
                         height={550}
                         width={450}
                         className="animate-bounce w-[300px] h-[350px] xl:w-[550px] xl:h-[650px]"

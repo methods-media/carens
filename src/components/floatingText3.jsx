@@ -47,7 +47,7 @@ export const FloatingTextThree = () => {
         <div ref={sectionRef} className='bg-[#05141F] w-screen h-[40vh] lg:h-[80vh] relative overflow-hidden flex items-center justify-center'>
             <motion.p
                 style={{ y }}
-                className={`text-white text-2xl lg:text-[72px] font-bold uppercase text-center whitespace-nowrap ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
+                className={`text-white text-lg lg:text-[40px] xl:text-[52px] 2xl:text-[72px] font-bold uppercase text-center whitespace-nowrap ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>
                 {isArabic ? "سهولة ذكية في التفاعل" : 'The thoughtful ease of tuning in'}
             </motion.p>
         </div>

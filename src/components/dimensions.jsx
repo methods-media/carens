@@ -64,7 +64,7 @@ const isArabic=i18n?.language=='ar'
                     <div
                         id='scroller'
                       
-                        className="flex ps-[147px] lg:ps-0  overflow-x-auto space-y-3   gap-3 lg:gap-7  items-start  justify-center  w-full ">
+                        className="flex ps-0  overflow-x-auto space-y-3   gap-3 lg:gap-7  items-start  justify-center  w-full ">
                     {specifications.map((spec) => (
                         <button
                             key={spec.key}
