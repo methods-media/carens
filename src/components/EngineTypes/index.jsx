@@ -9,7 +9,7 @@ export const EngineTypesSection = () => {
     const [isInView, setIsInView] = useState(false)
     const [animationKey, setAnimationKey] = useState(0)
     const sectionRef = useRef(null)
-    const { i18n } = useTranslation('common')
+    const { i18n ,t} = useTranslation('common')
     const isArabic=i18n?.language=='ar'
     // Framer motion scroll animations
     const { scrollYProgress } = useScroll({
@@ -122,12 +122,19 @@ export const EngineTypesSection = () => {
                         </div>
                         </div>
                     </div>
+                    <div className="pt-0 lg:pt-6"> 
+
+                        <p className={`text-[10px]  lg:text-sm flex items-center gap-2   leading-relaxed max-w-[80vw] text-white ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"} lg:max-w-full text-start transition-opacity duration-300 ease-in-out`}>
+                            <img src='/assets/iinnff.png' width={16}  height={16} loading="lazy" decoding="async" />
+                            {t('swiper.Panoramic2')}
+                        </p> 
+                    </div>
                     
                 </div>
                 <div className='py-0 lg:py-10 pt-4 lg:pt-20 flex-1 flex justify-start'>
 
                     <img
-                        src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/258387bf-922e-4e47-4efa-3f030da78500/public' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/87c863d7-784f-4d15-21c0-47f38c8d5c00/public'}
+                        src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/258387bf-922e-4e47-4efa-3f030da78500/public' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/306046c1-2668-44a2-6f5f-fa5529ff9a00/public'}
                         height={550}
                         width={450}
                         className="animate-bounce w-[300px] h-[350px] xl:w-[550px] xl:h-[650px]"

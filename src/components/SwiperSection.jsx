@@ -112,7 +112,7 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
                 : "Stay confidently in control with systems that support braking, hill starts, and dynamic stability during every drive."
         },
         {
-            image: '/assets/Saf-3.avif',
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/f4224167-948f-4680-42c2-57570b6a4100/public',
             featureTitle: isArabic ? "فرامل قرصية على جميع العجلات" : 'All Wheel Disc Brakes',
             featureDescription: isArabic ? "توقف أكثر سلاسة وأماناً، سواء في المدينة أو على الطريق السريع."
                 : "Smoother, safer stops, whether in the city or on the highway."
