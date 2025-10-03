@@ -174,7 +174,7 @@ const ThreeSixty = ({ showControl = false }) => {
     >
 
       <p id='vrShowroomText2' className={`text-white text-base  md:text-[28px] z-[50] drop-shadow-2xl [text-shadow:_2px_2px_2px_rgba(0,0,0,0.4)] !absolute start-0 text-center lg:text-start lg:start-10 top-8 lg:!top-22  w-full leading-1   ${locale == 'ar' ? 'font-["GSSBold"]' : 'font-["InterBold"]'}`}>
-        {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل كارينز من الداخل والخارج` : `كيا كارينز تلبي جميع الأذواق` : showControl ? `Discover Kia Carens's Exterior & Interior in 360°` : 'The Carens Meets All Tastes'}
+        {i18n?.language == 'ar' ? showControl ? `استكشف تفاصيل كارينز من الداخل والخارج` : `كيا كارينز تلبي جميع الأذواق` : showControl ? `Discover Kia Carens in 360°` : 'The Carens Meets All Tastes'}
       </p>
       <div
 
@@ -185,7 +185,7 @@ const ThreeSixty = ({ showControl = false }) => {
 
 
         <div
-          className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-[102vh] w-full text-white text-sm z-50 flex flex-col justify-end ps-0 gap-2 lg:gap-4 items-center'
+          className={`mt-0 lg:mt-12.5 absolute bottom-3 ${view == 'exterior' ? 'lg:bottom-[103vh]' : 'lg:bottom-[83vh]'}  w-full text-white text-sm z-50 flex flex-col justify-end ps-0 gap-2 lg:gap-4 items-center lg:items-start lg:ps-10 `}
 
         >
 
