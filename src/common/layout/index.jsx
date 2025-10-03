@@ -74,8 +74,7 @@ const Layout = ({ children }) => {
             ? 'opacity-100  translate-x-0'
             : 'opacity-0  translate-x-16'
           } transition-all duration-1000 ease-out`}>
-              <img src='/assets/puzzleBlack.svg' className='group-hover:hidden' height={16} width={16} loading="lazy" decoding="async" />
-              <img src='/assets/puzzle.svg' height={16} width={16} className='hidden group-hover:flex' loading="lazy" decoding="async" />
+            
           <p className={`text-[14px] ${locale == 'ar' ? "font-['GSSBold']" : "font-['InterBold']"}`}> {i18n?.language=='ar'?`احجز الان`:'Book Now'} </p>
           </button>
           </a>

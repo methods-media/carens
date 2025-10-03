@@ -45,7 +45,7 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
             <div className={`relative flex items-center justify-center h-20 ${i18n?.language == 'ar' ? 'font-[GSSMedium]' :'font-[InterBold]'}`} >
                 <motion.p
                     initial={{ x: 0, opacity: 0, scale: 0.8 }}
-                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? 40 : 165 : isMobile ? -85 : -310, opacity: 1, scale: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? 60 : 190 : isMobile ? -85 : -310, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     viewport={{ once: true }}
                     className={`absolute text-white text-xl lg:text-6xl whitespace-nowrap overflow-ellipsis `}
@@ -57,7 +57,7 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
                 </motion.p>
                 <motion.p
                     initial={{ opacity: 0 }}
-                    whileInView={{ x: i18n?.language == 'ar' ? isMobile? -40:-75 : isMobile?0:-58, opacity: 1, scale: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? isMobile? -10:-15 : isMobile?0:-58, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
                     viewport={{ once: true }}
                     className={`absolute text-white text-xl lg:text-6xl   `}
@@ -70,7 +70,7 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
                 </motion.p>
                 <motion.p
                     initial={{ x: 0, opacity: 0, scale: 0.8 }}
-                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? -90 : -210 : isMobile ? 95 : 223, opacity: 1, scale: 1 }}
+                    whileInView={{ x: i18n?.language == 'ar' ? isMobile ? -73 : -205 : isMobile ? 95 : 223, opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
                     viewport={{ once: true }}
                     className={`absolute text-white text-xl lg:text-6xl  `}
@@ -82,19 +82,16 @@ export const FloatingText2 = ({ head1,head2,head3, desc }) => {
                 </motion.p>
             </div>
             <div className={`w-full `}
-                style={{
-                    fontFamily: i18n?.language == ' ar' ? 'font-[GSSMedium] !important' : 'font-[InterRegular] !important'
-
-            }}>
+                >
                 
             <motion.p
                     style={{
                         y, opacity, 
-                    
-                        fontFamily: i18n?.language == ' ar' ? 'font-[GSSMedium] !important' : 'font-[InterRegular] !important'
-                }}
-                className={`text-white text-sm lg:text-xl  leading-[30px] text-center max-w-[1330px] mx-auto px-6`}>
-                {desc}
+                                    }}
+                    className={`text-white text-sm lg:text-xl  leading-[30px] text-center max-w-[1330px] mx-auto px-6 ${i18n?.language == 'ar' ? '!font-[GSSMedium] ' : ' !font-[InterRegular] '}`}>
+                    {desc?.split('Carens')?.[0]}
+                    <span className='font-[InterRegular]'> Carens</span>
+                    {desc?.split('Carens')?.[1]}
 
             </motion.p>
          </div>

@@ -26,9 +26,9 @@ export const Interior = () => {
                 {"   "}{i18n?.language == 'ar' ? `التصميم الداخلي` : `Interior`}
             </motion.p>
             <FloatingText2
-                head1={i18n?.language == 'ar' ? `شعور بالعودة` : `THE FEELING`}
-                head2={i18n?.language == 'ar' ? `الي` : `OF`}
-                head3={i18n?.language == 'ar' ? `الوطن` : `HOMECOMING`}
+                head1={i18n?.language == 'ar' ? `احساس` : `THE FEELING`}
+                head2={i18n?.language == 'ar' ? `الرحابة` : `OF`}
+                head3={i18n?.language == 'ar' ? `والراحة` : `HOMECOMING`}
                 desc={t('int_desc')} />
      </div>
     )

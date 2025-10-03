@@ -23,7 +23,7 @@ const Banner = () => {
   };
 
   return (
-    <div id='highlights' className={`w-screen h-[65vh] lg:h-[100vh] md:h-screen z-[200] bg-[url(https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/380620e1-c1d0-4052-f469-2c1e229be700/big)] bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden`}>
+    <div id='highlights' className={`w-screen h-[65vh] lg:h-[100vh] md:h-screen z-[200] bg-[url(https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/dfdc5373-7cbd-4aea-a070-753175037800/big)] bg-cover bg-center bg-no-repeat   relative flex items-center justify-end overflow-hidden`}>
       <div className="absolute justify-center   inset-0 z-40  text-white md:start-[70px]  start-5 top-[100px]">
         <motion.h1
           className={`     sm:text-xl text-xl  ${locale == 'ar' ? "md:text-[42px] font-['GSSBold']" : " md:text-[52px] font-['InterBold']"}`}

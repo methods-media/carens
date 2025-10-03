@@ -70,37 +70,52 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
         {
             video: '/assets/videos/kia-carens-bca.webm',
             featureTitle: isArabic ?`نظام مساعدة تجنب الاصطدام في النقاط العمياء (BCA)` : 'Blind-Spot Collision-Avoidance Assist (BCA)',
-            featureDescription: isArabic ?`يكتشف المركبات الموجودة في النقاط العمياء ويمكنه المساعدة في الحفاظ على مسار المركبة في حالة محاولة تغيير المسار بشكل غير آمن`:"Detects vehicles in blind spots and can help maintain the vehicle's course if an unsafe lane change is attempted"        },
-        {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/434e4ca7-da0a-4861-fa83-589697702100/public',
-            featureTitle: isArabic ? `شاشة الرؤية المحيطة (SVM)` : 'Surround View Monitor (SVM)',
-            featureDescription: isArabic ? `تعرض صور المركبة من كاميرات واسعة الزاوية لإظهار الرؤية المحيطية في أوضاع عرض مختلفة. توفر رؤية ثلاثية الأبعاد 360  درجة قابلة للتغيير.` : 'See it all, from every angle. The Surround View Monitor gives you a 360-degree bird’s-eye view of your surroundings – perfect for navigating tight trails or crowded city streets.'
+            featureDescription: isArabic ? `يكتشف المركبات الموجودة في النقاط العمياء ويمكنه المساعدة في الحفاظ على مسار المركبة في حالة محاولة تغيير المسار بشكل غير آمن` : "Detects vehicles in blind spots and can help maintain the vehicle's course if an unsafe lane change is attempted",
         },
+     
+      
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/70cba2aa-2e0f-4345-6321-5de1c12ec300/public',
+            video: "/assets/videos/FCA.webm",
             featureTitle: isArabic ? `نظام مساعد لتجنب الاصطدام الأمامي  (FCA)` : 'Forward Collision-Avoidance Assist (FCA)',
-            featureDescription: isArabic ? `يراقب هذا النظام محيطك ويقوم بتحذيرك في حال تحديد خطر اصطدام بمركبة أخرى أو بأحد المشاة أو راكب دراجة أمامك. يقوم نظام FCA  بتوقيف السيارة تلقائياً، كما يساعد في توجيه عجلة القيادة في حال قام بتحديد خطر الاصطدام بمركبة أو أحد المشاة أو راكب دراجة، بالقرب من الجهة الأمامية للسيارة.` : 'FCA  monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane. It also automatically assists steering when there is a risk of collision with an oncoming vehicle or a vehicle in the next lane while changing lanes, as well as with a vehicle or pedestrian on the edge of the lane.'
+            featureDescription: isArabic ? `يراقب هذا النظام محيطك ويقوم بتحذيرك في حال تحديد خطر اصطدام بمركبة أخرى أو بأحد المشاة أو راكب دراجة أمامك. يقوم نظام FCA  بتوقيف السيارة تلقائياً، كما يساعد في توجيه عجلة القيادة في حال قام بتحديد خطر الاصطدام بمركبة أو أحد المشاة أو راكب دراجة، بالقرب من الجهة الأمامية للسيارة.` :
+             'FCA monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane.',
+            dis: t('swiper.Panoramic2'),
+            dis2:true
+
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/eb906451-25ac-4664-1e3d-27ed44605900/public',
+            video: "/assets/videos/LKA.webm",
             featureTitle: isArabic ? `نظام المساعدة على اتباع المسار (LKA)` : 'Lane Keep Assist  (LKA)',
             featureDescription: isArabic ? `يستخدم هذا النظام كاميرا الرؤية الأمامية لمساعدتك على إبقاء السيارة في وسط المسار أثناء القيادة وذلك من خلال تحديد خطوط المسار أو السيارة التي أمامك.
-`: 'LKA  helps center the vehicle in the lane. Steering control has been improved and a Hands-On Detection (HOD) sensor can determine whether the driver is holding the steering wheel for optimal system performance.'
+`: 'LKA  helps center the vehicle in the lane. Steering control has been improved and a Hands-On Detection (HOD) sensor can determine whether the driver is holding the steering wheel for optimal system performance.',
+        dis: t('swiper.Panoramic2'),
+            dis2: true
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/2f484718-f0a4-4b18-582b-7b0873988a00/public',
+            video: "/assets/videos/SCC.webm",
             featureTitle: isArabic ? `نظام تثبيت السرعة الذكي (SCC)` : 'Smart Cruise Control (SCC)',
-            featureDescription: isArabic ? `يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.` : 'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Carens to a stop then proceeds again when the vehicle ahead accelerates. If the stop is extended, you may need to press the accelerator pedal. When activated, SCC drives automatically, reflecting the learned driving style.'
+            featureDescription: isArabic ? `يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.` :
+             'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Carens to a stop then proceeds again when the vehicle ahead accelerates.',
+        dis: t('swiper.Panoramic2'),
+            dis2: true
         },
         {
             video: '/assets/videos/Parking sensor.webm',
             featureTitle: isArabic ? `حساس الركن` : 'Parking Sensor',
             featureDescription: isArabic ?
                 `يُساعدك حساس الاصطفاف على ركن السيارة بأمان من خلال تنبيهك عند الاقتراب من أي عائق. يعمل النظام بتقنية الاستشعار ليكشف المسافة بين سيارتك والعوائق المحيطة، مما يقلل من مخاطر الاصطدام ويسهّل عملية الاصطفاف سواء في الأماكن الضيقة أو أثناء المناورة.` :
-                `The parking sensor helps you park safely by alerting you when approaching an obstacle. Using sensor technology, it detects the distance between your vehicle and surrounding objects, reducing the risk of collisions and making parking easier in tight spaces or while maneuvering.`
+                `The parking sensor helps you park safely by alerting you when approaching an obstacle. Using sensor technology, it detects the distance between your vehicle and surrounding objects, reducing the risk of collisions and making parking easier in tight spaces or while maneuvering.`,
+            dis: t('swiper.Panoramic2'),
+            dis2: true
         },
         {
-            image: '/assets/Saf-1.avif',
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/434e4ca7-da0a-4861-fa83-589697702100/public',
+            featureTitle: isArabic ? `شاشة الرؤية المحيطة (SVM)` : 'Surround View Monitor (SVM)',
+            featureDescription: isArabic ? `تعرض صور المركبة من كاميرات واسعة الزاوية لإظهار الرؤية المحيطية في أوضاع عرض مختلفة. توفر رؤية ثلاثية الأبعاد 360  درجة قابلة للتغيير.` : 'See it all, from every angle. The Surround View Monitor gives you a 360-degree bird’s-eye view of your surroundings – perfect for navigating tight trails or crowded city streets.'
+
+        },
+        {
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c4906690-a5f4-4de1-5a23-3e7cf95d1600/public',
             featureTitle: isArabic ? "6 وسائد هوائية" : '6 Airbags as Standard ',
             featureDescription: isArabic ? "حماية شاملة لجميع الركاب، مما يضمن ركوب آمن للجميع." :
                 "Comprehensive protection for all passengers, ensuring everyone rides securely."
@@ -218,7 +233,7 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
                             </button>
                         </div>
                         : <div className='relative w-[90%] lg:w-[550px] lg:ms-4 xl:!w-[750px]'>
-                            <video src={slides?.[id]?.[currentSlide]?.video} className={`w-full rounded-2xl ${currentSlide == 1 ? ' object-fit bg-black' : ' object-cover'} bg-black md:w-[750px] h-[250px] lg:h-[400px] xl:!h-[600px]`} muted playsInline autoPlay loop />
+                            <video src={slides?.[id]?.[currentSlide]?.video} className={`w-full rounded-2xl ${ ' object-cover'} bg-black md:w-[750px] h-[250px] lg:h-[400px] xl:!h-[600px]`} muted playsInline autoPlay loop />
                             <button
                                 onClick={prevSlide}
                                 disabled={isAnimating}
@@ -372,7 +387,7 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
                                 </p>
                                 {slides?.[id]?.[currentSlide]?.dis ? <p className={`text-[10px] lg:text-sm flex items-start gap-2   leading-relaxed max-w-[80vw] ${dark ? 'text-[#54595F] text-start' : id == 0 ? 'text-[#A3A8AD]' : 'text-white'} ${isArabic ? "font-['GSSMedium']" : "font-[InterRegular]"} lg:max-w-full text-start transition-opacity duration-300 ease-in-out ${isAnimating ? 'opacity-0' : 'opacity-100'
                                     }`}>
-                                    <img src='/assets/iinnff.png' width={16} className='mt-1' height={16} loading="lazy" decoding="async" />
+                                    <img src={slides?.[id]?.[currentSlide]?.dis2 ? '/assets/info2.png' : '/assets/iinnff.png'} width={16} className='mt-1' height={16} loading="lazy" decoding="async" />
                                     {slides?.[id]?.[currentSlide]?.dis}
                                 </p> : null}
                             </div>

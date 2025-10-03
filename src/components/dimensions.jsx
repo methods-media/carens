@@ -59,7 +59,7 @@ const isArabic=i18n?.language=='ar'
                 <div className='h-full py-10 w-full 2xl:w-[1350px] mx-auto flex flex-col justify-start  lg:px-4 xl:px-0'>
 
                 <h2 className={`text-3xl lg:text-5xl text-center lg:text-start font-bold text-[#06141F] mb-8 ${isArabic ? 'font-[GSSMedium]' :''}`}>
-                        {isArabic ? `كارينز في أرقام` : `Carens in Numbers`}
+                        {isArabic ? `أبعاد كارينز` : `Carens in Numbers`}
                 </h2>
                     <div
                         id='scroller'

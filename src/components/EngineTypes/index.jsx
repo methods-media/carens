@@ -134,7 +134,7 @@ export const EngineTypesSection = () => {
                 <div className='py-0 lg:py-10 pt-4 lg:pt-20 flex-1 flex justify-start'>
 
                     <img
-                        src={selectedEngine == 1 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/258387bf-922e-4e47-4efa-3f030da78500/public' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/306046c1-2668-44a2-6f5f-fa5529ff9a00/public'}
+                        src={selectedEngine == 0 ? 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/258387bf-922e-4e47-4efa-3f030da78500/public' :'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/306046c1-2668-44a2-6f5f-fa5529ff9a00/public'}
                         height={550}
                         width={450}
                         className="animate-bounce w-[300px] h-[350px] xl:w-[550px] xl:h-[650px]"

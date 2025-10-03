@@ -161,7 +161,7 @@ const ThreeSixty = ({ showControl = false }) => {
   }
   return (
     <div
-      className={`vr-showroom h-[500px] showRoom-container lg:h-screen z-[110]`}
+      className={`vr-showroom h-[500px] showRoom-container ${view == 'exterior'?'lg:h-[120vh]':'lg:h-screen'} z-[110]`}
       style={{
         aspectRatio: '16/9',
         maxWidth: '100%',
@@ -185,7 +185,7 @@ const ThreeSixty = ({ showControl = false }) => {
 
 
         <div
-          className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-12.5 w-full text-white text-sm z-50 flex flex-col justify-end ps-0 lg:ps-[70px] gap-2 lg:gap-4 items-center'
+          className='mt-0 lg:mt-12.5 absolute bottom-3 lg:bottom-[102vh] w-full text-white text-sm z-50 flex flex-col justify-end ps-0 gap-2 lg:gap-4 items-center'
 
         >
 
@@ -266,7 +266,7 @@ const ThreeSixty = ({ showControl = false }) => {
           onError={handleImageError}
           style={{
             maxWidth: '100vw',
-            maxHeight: '100vh',
+            maxHeight: '120vh',
             objectFit: 'cover',
             minHeight: '100vh',
             minWidth: '100vw',
