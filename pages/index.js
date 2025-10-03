@@ -85,15 +85,16 @@ export default function Home() {
       <div className="content22 w-screen h-[50vh] lg:h-screen relative"
         id='safety'
         >
-        <video src='/assets/videos/stcSaftey.webm'
-          autoPlay
-          muted
-          loop
-          playsInline
-          webkit-playsinline="true"
-          controls={false}
-          controlsList="noremoteplayback"
-          disablePictureInPicture className='w-screen h-[50vh] lg:h-screen object-cover' />
+        <img src='https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/094bd897-fca4-44ec-e4ad-dd48271d9800/big'
+          // autoPlay
+          // muted
+          // loop
+          // playsInline
+          // webkit-playsinline="true"
+          // controls={false}
+          // controlsList="noremoteplayback"
+          // disablePictureInPicture
+          className='w-screen h-[50vh] lg:h-screen object-cover' />
         <div className='absolute w-full bottom-0 start-0 p-3 lg:p-10  bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
           <p className={`text-xl lg:text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
             <>
