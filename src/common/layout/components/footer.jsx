@@ -15,11 +15,11 @@ export default function Footer ({ removeMedia }) {
                  dir="ltr" >
                             <div className="bg-gradient-to-b from-white to-transparent w-full flex flex-col justify-between   h-[40vh]">
                                 <div className={`w-full px-6 flex flex-col gap-5 mx-auto  ${isArabic ?'items-end':''}`}>
-                                    <p className={`text-xl lg:text-[40px] text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>{isArabic ? `الشعور بالتميز كل يوم` :`The everyday feeling of epic.`}</p>
+                                    <p className={`text-xl lg:text-[40px] text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterBold]'}`}>{isArabic ? `حيث تجمع الرحلات اليومية العائلات معًا` :`Where everyday journeys bring families together`}</p>
                                     <p dir={locale=='ar'?'rtl':'ltr'} className={`text-sm lg:text-lg text-black text-start ${isArabic ? 'font-[GSSMedium]' : 'font-[InterRegular]'}`}>
-                                        {isArabic ? `مع كل منعطف وكل امتداد للطريق، تجعل كارينز الجديدة رحلاتك اليومية تجربة تستحق الترقب.`: <>
+                                        {isArabic ? `بتصميم مدروس، ومساحة واسعة، وذكاء عملي، تجعل الكارينز الجديدة كل رحلة تجربة لا تُنسى.`: <>
                                         
-                                            With every turn and every stretch of road, the new Carens transforms daily drives into something to look forward to.</>}
+                                            With thoughtful design, generous space, and smart practicality, the new Carens makes every drive something special.</>}
                                       
 
                                     </p>

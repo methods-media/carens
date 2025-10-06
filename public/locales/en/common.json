@@ -60,7 +60,7 @@
     "Cooling0": "Cooling Cup Holder",
     "Cooling1": "Refresh your journeys with thoughtfully designed cooling cup holders, so every beverage stays chilled—ideal for long drives and family outings.",
 
-    "wirless0": "Smartphones Wireless Charger",
+    "wirless0": "Smartphone Wireless Charger",
     "wirless1": "Stay effortlessly connected and powered with an integrated wireless charger, which keeps devices charged without the clutter of cables—perfect for busy families on the go.",
     "Panoramic0": "Panoramic Display",
     "Panoramic1": "Enjoy seamless connectivity and entertainment with the wide, dual panoramic display, crafted for intuitive access so everyone can easily stay in touch and engaged.",
@@ -158,6 +158,7 @@
   "explore": "Explore More",
   "dimensions": "Dimensions (mm)",
   "height": "Height",
+  "fcaDesc":"FCA detects potential collisions with vehicles, motorcyclists, pedestrians, or cyclists ahead- including oncoming traffic at intersections or in the same lane-  and automatically assists braking to help prevent impact.",
   "length": "Length",
   "width": "Width",
   "wheelbase": "Wheelbase",

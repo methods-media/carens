@@ -85,25 +85,39 @@ export default function Home() {
       <div className="content22 w-screen h-[50vh] lg:h-screen relative"
         id='safety'
         >
-        <img src='https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/094bd897-fca4-44ec-e4ad-dd48271d9800/big'
-          // autoPlay
-          // muted
-          // loop
-          // playsInline
-          // webkit-playsinline="true"
-          // controls={false}
-          // controlsList="noremoteplayback"
-          // disablePictureInPicture
+        <video src='/assets/videos/FCA.webm'
+          autoPlay
+          muted
+          loop
+          playsInline
+          webkit-playsinline="true"
+          controls={false}
+          controlsList="noremoteplayback"
+          disablePictureInPicture
           className='w-screen h-[50vh] lg:h-screen object-cover' />
-        <div className='absolute w-full bottom-0 start-0 p-3 lg:p-10  bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
-          <p className={`text-xl lg:text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
+        <div className='absolute w-full top-0 start-0 p-3 lg:p-10  bg-gradient-to-b from-white to-transparent flex flex-col justify-end items-start'>
+          <p className={`text-xl lg:text-[42px] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-start`}> {i18n?.language == 'ar' ?
             <>
               {`أنظمة مساعدة السائق `}
               <span className='font-[InterBold]'>(ADAS)</span>
 
             </>
 
-            : `Advanced Driver Assistance System (ADAS)`} </p>
+            : `Advanced Driver Assistance Systems (ADAS)`} </p>
+        </div>
+        <div className='absolute w-full bottom-0 start-0 p-3 lg:p-10  gap-2 lg:gap-4  bg-gradient-to-t h-[50vh] from-white to-transparent flex flex-col justify-end items-center'>
+          <p className={`text-sm lg:text-2xl text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> {i18n?.language == 'ar' ?
+            <>
+              {`نظام مساعد لتجنب الاصطدام الأمامي`}
+              <span className='font-[InterBold]'>{" "}(FCA){" "}</span>
+
+            </>
+            : 'Forward Collision-Avoidance Assist (FCA)'} </p>
+          <p className={`text-xs lg:text-lg leading-relaxed max-w-full lg:max-w-[80%] text-black ${locale == 'ar' ? 'font-[GSSMedium]' : 'font-[InterBold]'}  text-center`}> 
+            {t('fcaDesc')?.split('FCA')?.[0]}
+            <span className='font-[InterBold]'>FCA</span>
+            {t('fcaDesc')?.split('FCA')?.[1]}
+            </p>
         </div>
       </div>
 

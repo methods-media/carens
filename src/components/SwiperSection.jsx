@@ -74,15 +74,15 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
         },
      
       
-        {
-            video: "/assets/videos/FCA.webm",
-            featureTitle: isArabic ? `نظام مساعد لتجنب الاصطدام الأمامي  (FCA)` : 'Forward Collision-Avoidance Assist (FCA)',
-            featureDescription: isArabic ? `يراقب هذا النظام محيطك ويقوم بتحذيرك في حال تحديد خطر اصطدام بمركبة أخرى أو بأحد المشاة أو راكب دراجة أمامك. يقوم نظام FCA  بتوقيف السيارة تلقائياً، كما يساعد في توجيه عجلة القيادة في حال قام بتحديد خطر الاصطدام بمركبة أو أحد المشاة أو راكب دراجة، بالقرب من الجهة الأمامية للسيارة.` :
-             'FCA monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane.',
-            dis: t('swiper.Panoramic2'),
-            dis2:true
+        // {
+        //     video: "/assets/videos/FCA.webm",
+        //     featureTitle: isArabic ? `نظام مساعد لتجنب الاصطدام الأمامي  (FCA)` : 'Forward Collision-Avoidance Assist (FCA)',
+        //     featureDescription: isArabic ? `يراقب هذا النظام محيطك ويقوم بتحذيرك في حال تحديد خطر اصطدام بمركبة أخرى أو بأحد المشاة أو راكب دراجة أمامك. يقوم نظام FCA  بتوقيف السيارة تلقائياً، كما يساعد في توجيه عجلة القيادة في حال قام بتحديد خطر الاصطدام بمركبة أو أحد المشاة أو راكب دراجة، بالقرب من الجهة الأمامية للسيارة.` :
+        //      'FCA monitors the surroundings and automatically assists braking when the risk of collision increases with a vehicle, motorcyclist, pedestrian, or cyclist ahead; with an oncoming vehicle from the opposite side or from the left/right side at an intersection; or with a directly oncoming vehicle in the same lane.',
+        //     dis: t('swiper.Panoramic2'),
+        //     dis2:true
 
-        },
+        // },
         {
             video: "/assets/videos/LKA.webm",
             featureTitle: isArabic ? `نظام المساعدة على اتباع المسار (LKA)` : 'Lane Keep Assist  (LKA)',
