@@ -85,9 +85,8 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
         // },
         {
             video: "/assets/videos/LKA.webm",
-            featureTitle: isArabic ? `نظام المساعدة على اتباع المسار (LKA)` : 'Lane Keep Assist  (LKA)',
-            featureDescription: isArabic ? `يستخدم هذا النظام كاميرا الرؤية الأمامية لمساعدتك على إبقاء السيارة في وسط المسار أثناء القيادة وذلك من خلال تحديد خطوط المسار أو السيارة التي أمامك.
-`: 'LKA  helps center the vehicle in the lane. Steering control has been improved and a Hands-On Detection (HOD) sensor can determine whether the driver is holding the steering wheel for optimal system performance.',
+            featureTitle: isArabic ? `نظام مساعد الحفاظ على المسار (LKA) ونظام متابعة المسار (LFA)` : 'Lane Keep Assist (LKA) & Lane Follow Assist (LFA)',
+            featureDescription: isArabic ? "يمنع نظام مساعد الحفاظ على المسار (LKA) انحرافك غير المقصود عن المسار، بينما يعزز نظام متابعة المسار (LFA) سهولة القيادة بمساعدتك على إبقاء السيارة في وسط المسار." :'LKA prevents you from accidentally drifting from the lane and LFA enhances driving convenience by helping to keep the vehicle centered in its lane' ,
         dis: t('swiper.Panoramic2'),
             dis2: true
         },
@@ -101,7 +100,7 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
         },
         {
             video: '/assets/videos/Parking sensor.webm',
-            featureTitle: isArabic ? `حساس الركن` : 'Parking Sensor',
+            featureTitle: isArabic ? `حساسات ركن امامية و خلفية` : 'Front & Rear Parking sensors',
             featureDescription: isArabic ?
                 `يُساعدك حساس الاصطفاف على ركن السيارة بأمان من خلال تنبيهك عند الاقتراب من أي عائق. يعمل النظام بتقنية الاستشعار ليكشف المسافة بين سيارتك والعوائق المحيطة، مما يقلل من مخاطر الاصطدام ويسهّل عملية الاصطفاف سواء في الأماكن الضيقة أو أثناء المناورة.` :
                 `The parking sensor helps you park safely by alerting you when approaching an obstacle. Using sensor technology, it detects the distance between your vehicle and surrounding objects, reducing the risk of collisions and making parking easier in tight spaces or while maneuvering.`,
@@ -115,8 +114,8 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
 
         },
         {
-            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/c4906690-a5f4-4de1-5a23-3e7cf95d1600/public',
-            featureTitle: isArabic ? "6 وسائد هوائية" : '6 Airbags as Standard ',
+            image: 'https://imagedelivery.net/2Dh6erMZ0IA4Y2r-mRikDg/84d3d48e-e961-415d-86b9-a58cae16f400/public',
+            featureTitle: isArabic ? "6 وسائد هوائية" : '6 Airbags',
             featureDescription: isArabic ? "حماية شاملة لجميع الركاب، مما يضمن ركوب آمن للجميع." :
                 "Comprehensive protection for all passengers, ensuring everyone rides securely."
         },
@@ -304,11 +303,7 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
                                         {slides?.[id][currentSlide].featureTitle?.split('FCA 2')?.[0]}
                                         <span className='font-[InterBold]'>FCA 2</span>
                                         {slides?.[id][currentSlide].featureTitle?.split('FCA 2')?.[1]}
-                                    </> : slides?.[id][currentSlide].featureTitle?.includes('LFA') ? <>
-                                        {slides?.[id][currentSlide].featureTitle?.split('LFA')?.[0]}
-                                        <span className='font-[InterBold]'>LFA</span>
-                                        {slides?.[id][currentSlide].featureTitle?.split('LFA')?.[1]}
-                                    </> : slides?.[id][currentSlide].featureTitle?.includes('SCC') ? <>
+                                    </>: slides?.[id][currentSlide].featureTitle?.includes('SCC') ? <>
                                         {slides?.[id][currentSlide].featureTitle?.split('SCC')?.[0]}
                                         <span className='font-[InterBold]'>SCC</span>
                                         {slides?.[id][currentSlide].featureTitle?.split('SCC')?.[1]}
@@ -334,7 +329,10 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
                                                 </> : slides?.[id][currentSlide].featureTitle?.includes('LKA') ? <>
                                                     {slides?.[id][currentSlide].featureTitle?.split('LKA')?.[0]}
                                                     <span className='font-[InterBold]'>LKA</span>
-                                                    {slides?.[id][currentSlide].featureTitle?.split('LKA')?.[1]}
+                                                                                                {slides?.[id][currentSlide].featureTitle?.split('LKA')?.[1]?.split('LFA')?.[0]}
+                                                                                                <span className='font-[InterBold]'>LFA</span>
+
+                                                                                                {slides?.[id][currentSlide].featureTitle?.split('LKA')?.[1]?.split('LFA')?.[1]}
                                                 </> : slides?.[id][currentSlide].featureTitle?.includes('6') ? <>
                                                     {slides?.[id][currentSlide].featureTitle?.split('6')?.[0]}
                                                     <span className='font-[InterBold]'>6</span>
@@ -364,7 +362,9 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
                                     </> : slides?.[id][currentSlide].featureDescription?.includes('LKA') ? <>
                                         {slides?.[id][currentSlide].featureDescription?.split('LKA')?.[0]}
                                         <span className='font-[InterBold]'>LKA</span>
-                                        {slides?.[id][currentSlide].featureDescription?.split('LKA')?.[1]}
+                                                {slides?.[id][currentSlide].featureDescription?.split('LKA')?.[1]?.split('LFA')?.[0]}
+                                                <span className='font-[InterBold]'>LFA</span>
+                                                {slides?.[id][currentSlide].featureDescription?.split('LKA')?.[1]?.split('LFA')?.[1]}
                                     </> : slides?.[id][currentSlide].featureDescription?.includes('EV5') ? <>
                                         {slides?.[id][currentSlide].featureDescription?.split('EV5')?.[0]}
                                         <span className='font-[InterBold]'>EV5</span>

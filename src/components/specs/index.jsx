@@ -171,7 +171,7 @@ const Specs = () => {
                                                                     {feature?.split('4.2')?.[0]}
                                                                     <span className='font-[InterBold] mx-[2px]'>4.2</span>
                                                                     {feature?.split('4.2')?.[1]?.split('8')?.[0]}
-                                                                    <span className='font-[InterBold] mx-[2px]'>8</span>
+                                                                        {isArabic ? <span className='font-[InterBold] mx-[2px]'>8</span>:null}
                                                                     {feature?.split('4.2')?.[1]?.split('8')?.[1]}
 
 
@@ -365,7 +365,12 @@ const Specs = () => {
                                                                                                                                                     {feature?.split('AT')?.[0]}
                                                                                                                                                     <span className='font-[InterBold] mx-[2px]'>AT</span>
                                                                                                                                                     {feature?.split('AT')?.[1]}
-                                                                                                                                                </>
+                                                                                                                                                                                </> : feature?.includes("Cruise Control") ?
+                                                                                                                                                                                    <>
+                                                                                                                                                                                        {feature?.split("Cruise Control")?.[0]}
+                                                                                                                                                                                        <span className='font-[InterBold] mx-0.5'>Cruise Control</span>
+                                                                                                                                                                                        {feature?.split("Cruise Control")?.[1]}
+                                                                                                                                                                                    </>
                                                                                                                                                             : feature?.includes("EXBDC") ?
                                                                                                                                                     <>
                                                                                                                                                                     {feature?.split("EXBDC")?.[0]}
@@ -392,7 +397,27 @@ const Specs = () => {
                                                                                                                                                                                     {feature?.split("EPB")?.[0]}
                                                                                                                                                                                     <span className='font-[InterBold] mx-0.5'>EPB</span>
                                                                                                                                                                                     {feature?.split("EPB")?.[1]}
-                                                                                                                                                                                </>:
+                                                                                                                                                                                                        </> : feature?.includes("SCC") ?
+                                                                                                                                                                                                            <>
+                                                                                                                                                                                                                {feature?.split("SCC")?.[0]}
+                                                                                                                                                                                                                <span className='font-[InterBold] mx-0.5'>SCC</span>
+                                                                                                                                                                                                                {feature?.split("SCC")?.[1]}
+                                                                                                                                                                                                            </> : feature?.includes("xsxs") ?
+                                                                                                                                                                                                                <>
+                                                                                                                                                                                                                    {feature?.split("xsxs")?.[0]}
+                                                                                                                                                                                                                    <span className='font-[InterBold] mx-0.5'>FCA 1.5</span>
+                                                                                                                                                                                                                    {feature?.split("xsxs")?.[1]}
+                                                                                                                                                                                                                </> : feature?.includes("LKA") ?
+                                                                                                                                                                                                                    <>
+                                                                                                                                                                                                                        {feature?.split("LKA")?.[0]}
+                                                                                                                                                                                                                        <span className='font-[InterBold] mx-0.5'>LKA</span>
+                                                                                                                                                                                                                        {feature?.split("LKA")?.[1]}
+                                                                                                                                                                                                                    </> : feature?.includes("LFA") ?
+                                                                                                                                                                                                                        <>
+                                                                                                                                                                                                                            {feature?.split("LFA")?.[0]}
+                                                                                                                                                                                                                            <span className='font-[InterBold] mx-0.5'>LFA</span>
+                                                                                                                                                                                                                            {feature?.split("LFA")?.[1]}
+                                                                                                                                                                                                                        </> :
                                                                                                                                                     feature?.includes("xx") ?
                                                                                                                                                         <>
                                                                                                                                                             {feature?.split("xx")?.[0]}
