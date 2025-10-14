@@ -93,8 +93,7 @@ export const SwiperSection = ({ noBg, dark, id = 0, height, bottom }) => {
         {
             video: "/assets/videos/SCC.webm",
             featureTitle: isArabic ? `نظام تثبيت السرعة الذكي (SCC)` : 'Smart Cruise Control (SCC)',
-            featureDescription: isArabic ? `يساعدك في الحفاظ على مسافة آمنة من السيارة التي أمامك بالسرعة التي تحددها. ستتوقف سيارتك EV5 تلقائياً في حال توقفت السيارة التي أمامك فجأة، ثم تستأنف سيرها. أما إذا توقفت السيارة لمدة أطول، فيمكنك عندها متابعة السير من خلال الضغط على دواسة الوقود أو مفتاح +/-.` :
-             'SCC helps you drive at a preset speed while maintaining a safe distance from the vehicle ahead. It automatically brings the Carens to a stop then proceeds again when the vehicle ahead accelerates.',
+            featureDescription: isArabic ? '  تساعدك على القيادة بسرعة محددة مسبقاً مع الحفاظ على مسافة أمان بينك وبين السيارة التي أمامك. في حركة المرور المتوقفة والمتحركة، تقوم السيارة أوتوماتيكياً بالتوقف ثم تستأنف السير عندما تبدأ السيارة الأمامية في التسارع.':     'SCC helps you to drive at a preset speed while maintaining a safe distance from the vehicle ahead. In Stop & go traffic, it automatically brings the Carens to a stop then proceeds again when the vehicle ahead accelerates.',
         dis: t('swiper.Panoramic2'),
             dis2: true
         },
